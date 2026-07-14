@@ -7,7 +7,7 @@
 **Protocol status:** Pre-results  
 **Circuit-family results visible at initial freeze:** No  
 **Primary implementation plan:** `implementation_order.md`
-**Protocol-freeze Git commit:** To be inserted after the initial commit
+**Protocol-freeze Git commit:** 6ca148b7916e16d121edb4827948a7af73197db2
 
 ---
 
