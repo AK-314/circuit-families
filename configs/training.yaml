@@ -28,7 +28,6 @@ device:
   override: null
   priority:
     - cuda
-    - mps
     - cpu
 
 validation:

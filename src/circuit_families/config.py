@@ -270,7 +270,7 @@ def validate_training_config(config: Mapping[str, Any]) -> None:
 
     device = _mapping(root.get("device"), "device")
     _require(device, "override", None, "device")
-    _require(device, "priority", ["cuda", "mps", "cpu"], "device")
+    _require(device, "priority", ["cuda", "cpu"], "device")
 
     validation = _mapping(root.get("validation"), "validation")
     for key in (

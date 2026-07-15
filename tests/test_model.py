@@ -2,6 +2,7 @@
 
 from __future__ import annotations
 
+import pytest
 import torch
 
 from circuit_families.config import load_model_config
@@ -115,7 +116,7 @@ def test_different_seed_changes_initial_model() -> None:
     )
 
 
-def test_default_device_priority_prefers_cuda_then_mps(
+def test_default_device_priority_prefers_cuda_then_cpu(
     monkeypatch,
 ) -> None:
     monkeypatch.setattr(torch.cuda, "is_available", lambda: True)
@@ -128,7 +129,22 @@ def test_default_device_priority_prefers_cuda_then_mps(
 
     monkeypatch.setattr(torch.cuda, "is_available", lambda: False)
 
-    assert resolve_device().type == "mps"
+    assert resolve_device().type == "cpu"
+
+
+def test_explicit_mps_override_is_rejected(
+    monkeypatch,
+) -> None:
+    monkeypatch.setattr(
+        "circuit_families.training.device.mps_is_available",
+        lambda: True,
+    )
+
+    with pytest.raises(
+        ValueError,
+        match="cuda, cpu",
+    ):
+        resolve_device("mps")
 
 
 def test_device_falls_back_to_cpu(monkeypatch) -> None:

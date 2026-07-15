@@ -6,7 +6,7 @@ from typing import Any
 
 import torch
 
-DEVICE_PRIORITY = ("cuda", "mps", "cpu")
+DEVICE_PRIORITY = ("cuda", "cpu")
 SUPPORTED_DEVICES = frozenset(DEVICE_PRIORITY)
 
 
@@ -20,7 +20,7 @@ def mps_is_available() -> bool:
 
 
 def resolve_device(override: str | None = None) -> torch.device:
-    """Resolve a requested device or choose CUDA, then MPS, then CPU."""
+    """Resolve a requested device or choose CUDA, then CPU."""
 
     if override is not None:
         if not isinstance(override, str) or not override.strip():
@@ -30,7 +30,7 @@ def resolve_device(override: str | None = None) -> torch.device:
 
         if requested not in SUPPORTED_DEVICES:
             raise ValueError(
-                "device override must be one of: cuda, mps, cpu."
+                "device override must be one of: cuda, cpu."
             )
 
         if requested == "cuda" and not torch.cuda.is_available():
@@ -38,18 +38,10 @@ def resolve_device(override: str | None = None) -> torch.device:
                 "CUDA was explicitly requested but is not available."
             )
 
-        if requested == "mps" and not mps_is_available():
-            raise RuntimeError(
-                "MPS was explicitly requested but is not available."
-            )
-
         return torch.device(requested)
 
     if torch.cuda.is_available():
         return torch.device("cuda")
-
-    if mps_is_available():
-        return torch.device("mps")
 
     return torch.device("cpu")
 

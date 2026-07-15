@@ -61,7 +61,7 @@ def parse_args() -> argparse.Namespace:
     )
     parser.add_argument(
         "--device",
-        choices=("cuda", "mps", "cpu"),
+        choices=("cuda", "cpu"),
         default=None,
         help="Optional explicit device override.",
     )
