@@ -12,9 +12,17 @@ from circuit_families.training.checkpoints import (
     restore_checkpoint,
     save_checkpoint,
 )
+from circuit_families.training.data import (
+    TrainingData,
+    load_training_data,
+)
 from circuit_families.training.device import (
     device_record,
     resolve_device,
+)
+from circuit_families.training.logging import (
+    append_jsonl,
+    read_jsonl,
 )
 from circuit_families.training.metrics import (
     OUTPUT_CLASS_COUNT,
@@ -34,6 +42,8 @@ __all__ = [
     "OUTPUT_CLASS_COUNT",
     "ResumeState",
     "SavedCheckpoint",
+    "TrainingData",
+    "append_jsonl",
     "build_optimizer",
     "canonical_state_hash",
     "checkpoint_filename",
@@ -46,7 +56,9 @@ __all__ = [
     "final_position_logits",
     "gradient_norm",
     "load_checkpoint_payload",
+    "load_training_data",
     "parameter_norm",
+    "read_jsonl",
     "reload_and_reevaluate",
     "resolve_device",
     "restore_checkpoint",
