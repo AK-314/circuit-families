@@ -33,17 +33,26 @@ from circuit_families.training.metrics import (
     gradient_norm,
     parameter_norm,
 )
+from circuit_families.training.run import (
+    ExecutionPlan,
+    TrainingRunResult,
+    build_execution_plan,
+    run_training,
+)
 from circuit_families.training.trainer import (
     build_optimizer,
     train_full_batch_step,
 )
 
 __all__ = [
+    "ExecutionPlan",
     "OUTPUT_CLASS_COUNT",
     "ResumeState",
     "SavedCheckpoint",
     "TrainingData",
+    "TrainingRunResult",
     "append_jsonl",
+    "build_execution_plan",
     "build_optimizer",
     "canonical_state_hash",
     "checkpoint_filename",
@@ -62,6 +71,7 @@ __all__ = [
     "reload_and_reevaluate",
     "resolve_device",
     "restore_checkpoint",
+    "run_training",
     "save_checkpoint",
     "train_full_batch_step",
 ]
