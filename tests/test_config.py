@@ -126,3 +126,98 @@ def test_inconsistent_counts_fail_clearly() -> None:
         match="must be 8939",
     ):
         validate_task_config(config)
+
+
+def test_loads_frozen_model_config() -> None:
+    from circuit_families.config import load_model_config
+
+    config = load_model_config("configs/model.yaml")
+
+    assert config["model"]["d_vocab"] == 114
+    assert config["model"]["d_vocab_out"] == 113
+    assert config["model"]["normalization_type"] is None
+
+
+def test_loads_frozen_training_config() -> None:
+    from circuit_families.config import load_training_config
+
+    config = load_training_config("configs/training.yaml")
+
+    assert config["optimizer"]["name"] == "AdamW"
+    assert config["training"]["max_steps"] == 40_000
+    assert config["training"]["evaluation_interval"] == 50
+
+
+def test_model_config_rejects_shared_output_vocabulary(
+    tmp_path: Path,
+) -> None:
+    from circuit_families.config import (
+        ConfigError,
+        load_model_config,
+    )
+
+    config = yaml.safe_load(
+        Path("configs/model.yaml").read_text(encoding="utf-8")
+    )
+    config["model"]["d_vocab_out"] = 114
+
+    path = tmp_path / "model.yaml"
+    path.write_text(
+        yaml.safe_dump(config, sort_keys=False),
+        encoding="utf-8",
+    )
+
+    with pytest.raises(
+        ConfigError,
+        match=r"model\.d_vocab_out must be 113",
+    ):
+        load_model_config(path)
+
+
+def test_training_config_rejects_optimizer_change(
+    tmp_path: Path,
+) -> None:
+    from circuit_families.config import (
+        ConfigError,
+        load_training_config,
+    )
+
+    config = yaml.safe_load(
+        Path("configs/training.yaml").read_text(encoding="utf-8")
+    )
+    config["optimizer"]["weight_decay"] = 0.0
+
+    path = tmp_path / "training.yaml"
+    path.write_text(
+        yaml.safe_dump(config, sort_keys=False),
+        encoding="utf-8",
+    )
+
+    with pytest.raises(
+        ConfigError,
+        match=r"optimizer\.weight_decay must be 1\.0",
+    ):
+        load_training_config(path)
+
+
+def test_combined_configuration_hash_is_stable() -> None:
+    from circuit_families.config import (
+        combined_config_hash,
+        load_config,
+        load_model_config,
+        load_training_config,
+    )
+
+    configs = {
+        "task": load_config("configs/task.yaml"),
+        "model": load_model_config("configs/model.yaml"),
+        "training": load_training_config("configs/training.yaml"),
+    }
+
+    reordered = {
+        "training": configs["training"],
+        "task": configs["task"],
+        "model": configs["model"],
+    }
+
+    assert combined_config_hash(configs) == combined_config_hash(reordered)
