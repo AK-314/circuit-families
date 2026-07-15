@@ -138,10 +138,6 @@ Metrics that require one or more recovered circuits—such as median circuit siz
 
 No primary scientific hypothesis or comparison is created after its result is visible.
 
-## **ELI5**
-
-Write down what each possible result would mean before running the experiment, so you cannot rewrite the prediction after seeing the answer.
-
 ---
 
 # **Stage 2 — Freeze the calibration and sensitivity rules**
@@ -213,10 +209,6 @@ Recovered family size will later be reported as a function of:
 
 Neither the fidelity threshold nor the distinctness criterion is selected to maximise the observed pre-to-post difference.
 
-## **ELI5**
-
-Decide in advance how accurate and how different two solutions must be, then test whether the conclusion survives reasonable changes to both rules.
-
 ---
 
 # **Stage 3 — Build the minimal repository**
@@ -280,10 +272,6 @@ However:
 
 The first model can be trained and its outputs saved without requiring a mature software package.
 
-## **ELI5**
-
-Build only enough scaffolding to run the experiment safely; do not spend the first week decorating the laboratory.
-
 ---
 
 # **Stage 4 — Generate the task data**
@@ -328,10 +316,6 @@ Possible subsets:
 ## **Acceptance gate**
 
 Regenerating the dataset from the same config produces the same hash.
-
-## **ELI5**
-
-Make the question sheet once and record exactly which questions are for learning and which are for testing.
 
 ---
 
@@ -379,10 +363,6 @@ Dense saving is necessary because a sharp grokking transition may pass between s
 
 Every saved checkpoint reproduces its recorded evaluation metrics.
 
-## **ELI5**
-
-Take frequent snapshots so the moment the network begins understanding the rule is not missed.
-
 ---
 
 # **Stage 6 — Train the first grokking seed**
@@ -415,10 +395,6 @@ Check:
 ## **Acceptance gate**
 
 The observed transition is credible grokking rather than a logging or evaluation artefact.
-
-## **ELI5**
-
-First prove that one model changes from remembering examples to learning the general maths rule.
 
 ---
 
@@ -482,10 +458,6 @@ The reduced grid must be selected before scaling and applied uniformly. Do not a
 
 The experiment contains enough checkpoints to support a transition or dynamics claim, not merely an endpoint comparison.
 
-## **ELI5**
-
-Do not only photograph the caterpillar and butterfly; take pictures during the transformation too.
-
 ---
 
 # **Stage 8 — Implement component masking and fidelity evaluation**
@@ -539,10 +511,6 @@ Hierarchical results must be labelled as hierarchical search results.
 
 The all-retained mask reproduces the full model exactly within numerical tolerance.
 
-## **ELI5**
-
-Create switches for the network’s pieces and make sure the switches work before searching for the important pieces.
-
 ---
 
 # **Stage 9 — Recover the first sparse circuits**
@@ -583,10 +551,6 @@ Run on:
 
 Every reported circuit independently satisfies the candidate threshold used for calibration.
 
-## **ELI5**
-
-Use a quick estimate to decide which pieces to test removing, but perform the real exam before accepting the smaller network.
-
 ---
 
 # **Stage 10 — Run the early Fourier-style sanity check**
@@ -620,10 +584,6 @@ A mismatch should trigger investigation of:
 ## **Acceptance gate**
 
 Any conflict between known model structure and the recovered circuit is investigated before diversity search begins.
-
-## **ELI5**
-
-Before scaling the experiment, check that the first recovered explanation resembles something already known about how this task is solved.
 
 ---
 
@@ -662,10 +622,6 @@ After the threshold is frozen, regenerate every reported diversity-family result
 ## **Acceptance gate**
 
 No reported circuit family was created under an unfrozen primary threshold.
-
-## **ELI5**
-
-Choose the pass mark before counting how many alternative answers each model has.
 
 ---
 
@@ -738,10 +694,6 @@ Project the total compute before scaling.
 
 The search produces valid distinct alternatives and cannot easily manufacture families from degraded or random masks.
 
-## **ELI5**
-
-Check that the method really finds different working solutions rather than different-looking broken ones.
-
 ---
 
 # **Stage 13 — Select the matched no-generalisation control**
@@ -781,10 +733,6 @@ Freeze the selected regime before inspecting any circuit-family metric.
 
 The control was selected independently of its circuit-family outcome.
 
-## **ELI5**
-
-Keep the model and simplifying pressure the same, but give it a training setup where it memorises without learning the full rule.
-
 ---
 
 # **Stage 14 — Run the random-label control**
@@ -823,10 +771,6 @@ Run the identical:
 
 The random-label model received the same search budget and was evaluated at matched training times.
 
-## **ELI5**
-
-Compare the real maths model with a model trained for the same amount of time on nonsense answers.
-
 ---
 
 # **Stage 15 — Run the matched no-generalisation control**
@@ -863,10 +807,6 @@ Use behaviourally comparable stages and matched training budgets.
 ## **Acceptance gate**
 
 The control differs through the frozen training-fraction intervention rather than altered regularisation.
-
-## **ELI5**
-
-Compare the grokking model with a model that memorised the same kind of problem but never learned to generalise.
 
 ---
 
@@ -920,10 +860,6 @@ Do not describe this as the true number of mechanisms.
 ## **Acceptance gate**
 
 Structurally different circuits are not automatically treated as functionally different explanations.
-
-## **ELI5**
-
-Count both how many solutions look different and how many actually behave differently on new parts of the task.
 
 ---
 
@@ -979,10 +915,6 @@ If a condition has no valid circuits at a threshold:
 
 The headline conclusion is not dependent on one arbitrary fidelity or overlap cutoff.
 
-## **ELI5**
-
-Turn both important dials and check that the conclusion does not disappear when either dial moves slightly.
-
 ---
 
 # **Stage 18 — Scale across dynamics checkpoints and seeds**
@@ -1035,10 +967,6 @@ If only one control seed exists, comparisons remain descriptive.
 
 A dynamics claim is supported by repeated checkpoint measurements, and an across-seed claim is not based on one unusually clean run.
 
-## **ELI5**
-
-Repeat the movie across several independently trained networks, not just the first and last frames of one network.
-
 ---
 
 # **Stage 19 — Run matched comparisons and handle degenerate cells**
@@ -1075,10 +1003,6 @@ An empty family may itself support a substantive conclusion, but it cannot enter
 ## **Acceptance gate**
 
 No comparison silently excludes conditions because valid circuits were difficult or impossible to recover.
-
-## **ELI5**
-
-Compare like with like, but do not pretend an explanation exists where the search found none.
 
 ---
 
@@ -1125,10 +1049,6 @@ A “four of five seeds in the same direction” pattern may be reported as an i
 
 No result treats circuits within one model as independent experimental replications.
 
-## **ELI5**
-
-Ask how each individual model changed, then compare those changes, instead of mixing all its circuits into one giant pile.
-
 ---
 
 # **Stage 21 — Produce the principal figures**
@@ -1172,10 +1092,6 @@ Where space allows, include:
 
 Every figure regenerates from saved result tables without retraining.
 
-## **ELI5**
-
-Every graph should come from a saved spreadsheet of results, not from hidden manual steps.
-
 ---
 
 # **Stage 22 — Freeze the primary analysis**
@@ -1215,10 +1131,6 @@ Instead:
 ## **Acceptance gate**
 
 The final interpretation is anchored to the predictions that existed before the results.
-
-## **ELI5**
-
-Return to the original predictions and mark what happened, rather than rewriting them to match the outcome.
 
 ---
 
@@ -1262,10 +1174,6 @@ Do not claim:
 
 Every claim remains within the evidence provided by the fixed-budget search, controls, sensitivity analyses, and seed count.
 
-## **ELI5**
-
-Tell the story the evidence supports, including mixed or inconvenient findings.
-
 ---
 
 # **Stage 24 — Minimum reproducibility audit**
@@ -1300,10 +1208,6 @@ Tell the story the evidence supports, including mixed or inconvenient findings.
 
 The paper does not depend on undocumented notebook state or manual data editing.
 
-## **ELI5**
-
-Someone else should be able to take the saved experiment and reproduce every reported number and graph.
-
 ---
 
 # **Optional extension — Edge-level robustness**
@@ -1313,10 +1217,6 @@ Begin only after the component-level paper is complete.
 Use selected checkpoints and a reduced analysis grid to test whether the main conclusion depends on defining circuits as heads and neurons rather than edges.
 
 This extension must not delay the principal paper.
-
-## **ELI5**
-
-Only after the main experiment works should you check whether a much more detailed microscope changes the answer.
 
 ---
 
