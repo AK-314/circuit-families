@@ -26,6 +26,120 @@ DEFAULT_LOGIT_RELATIVE_TOLERANCE = 1.0e-6
 
 
 @dataclass(frozen=True)
+class FullModelReference:
+    """Frozen full-model final-position outputs for exact mask evaluation."""
+
+    final_logits: torch.Tensor
+    predictions: torch.Tensor
+    evaluated_example_count: int
+    inference_batch_size: int
+
+
+def compute_full_model_reference(
+    model: HookedTransformer,
+    inputs: torch.Tensor,
+    targets: torch.Tensor,
+    *,
+    batch_size: int,
+) -> FullModelReference:
+    """Compute full-model final-position outputs once in fixed order."""
+
+    _validate_evaluation_data(model, inputs, targets)
+    batch_size = _validate_batch_size(batch_size)
+
+    example_count = inputs.shape[0]
+    final_logit_batches: list[torch.Tensor] = []
+
+    was_training = model.training
+    model.eval()
+
+    try:
+        for start in range(0, example_count, batch_size):
+            stop = min(start + batch_size, example_count)
+
+            with torch.inference_mode():
+                sequence_logits = model(inputs[start:stop])
+
+            final_logit_batches.append(
+                final_position_logits(sequence_logits)
+                .detach()
+                .clone()
+            )
+    finally:
+        model.train(was_training)
+
+    final_logits = torch.cat(final_logit_batches, dim=0)
+    predictions = final_logits.argmax(dim=-1)
+
+    if not bool(torch.isfinite(final_logits).all().item()):
+        raise FloatingPointError(
+            "Full-model reference logits must all be finite."
+        )
+
+    return FullModelReference(
+        final_logits=final_logits,
+        predictions=predictions,
+        evaluated_example_count=example_count,
+        inference_batch_size=batch_size,
+    )
+
+
+def _validate_full_model_reference(
+    reference: FullModelReference,
+    inputs: torch.Tensor,
+) -> None:
+    if not isinstance(reference, FullModelReference):
+        raise TypeError(
+            "full_model_reference must be a FullModelReference."
+        )
+
+    example_count = inputs.shape[0]
+
+    if reference.evaluated_example_count != example_count:
+        raise ValueError(
+            "Full-model reference example count does not match inputs."
+        )
+
+    if reference.final_logits.ndim != 2:
+        raise ValueError(
+            "Full-model reference logits must have shape "
+            "[example, class]."
+        )
+
+    if reference.final_logits.shape[0] != example_count:
+        raise ValueError(
+            "Full-model reference logit count does not match inputs."
+        )
+
+    if reference.predictions.shape != (example_count,):
+        raise ValueError(
+            "Full-model reference predictions must have shape "
+            "[example]."
+        )
+
+    if reference.final_logits.device != inputs.device:
+        raise ValueError(
+            "Full-model reference logits must be on the input device."
+        )
+
+    if reference.predictions.device != inputs.device:
+        raise ValueError(
+            "Full-model reference predictions must be on the input "
+            "device."
+        )
+
+    if reference.final_logits.requires_grad:
+        raise ValueError(
+            "Full-model reference logits must be detached."
+        )
+
+    if not bool(torch.isfinite(reference.final_logits).all().item()):
+        raise FloatingPointError(
+            "Full-model reference logits must all be finite."
+        )
+
+
+@dataclass(frozen=True)
 class MaskEvaluationMetrics:
     """Complete Stage 8 behavioural-fidelity metrics for one mask."""
 
@@ -173,6 +287,7 @@ def evaluate_component_mask(
     mask: ComponentMask,
     *,
     batch_size: int,
+    full_model_reference: FullModelReference | None = None,
 ) -> MaskEvaluationMetrics:
     """Compare masked and full models over all examples in fixed order.
 
@@ -189,6 +304,19 @@ def evaluate_component_mask(
 
     _validate_evaluation_data(model, inputs, targets)
     batch_size = _validate_batch_size(batch_size)
+
+    if full_model_reference is None:
+        full_model_reference = compute_full_model_reference(
+            model,
+            inputs,
+            targets,
+            batch_size=batch_size,
+        )
+    else:
+        _validate_full_model_reference(
+            full_model_reference,
+            inputs,
+        )
 
     example_count = inputs.shape[0]
 
@@ -211,21 +339,22 @@ def evaluate_component_mask(
             batch_inputs = inputs[start:stop]
             batch_targets = targets[start:stop]
 
-            with torch.inference_mode():
-                full_sequence_logits = model(batch_inputs)
+            full_logits = full_model_reference.final_logits[
+                start:stop
+            ]
+            full_predictions = full_model_reference.predictions[
+                start:stop
+            ]
 
             masked_sequence_logits = masked_model_logits(
                 model,
                 batch_inputs,
                 mask,
             )
-
-            full_logits = final_position_logits(full_sequence_logits)
             masked_logits = final_position_logits(
                 masked_sequence_logits
             )
 
-            full_predictions = full_logits.argmax(dim=-1)
             masked_predictions = masked_logits.argmax(dim=-1)
 
             agreement_count += int(
