@@ -32,20 +32,42 @@ def test_load_training_data_matches_frozen_archive() -> None:
     assert data.train_count == 3_830
     assert data.test_count == 8_939
 
+    assert data.full_inputs is not None
+    assert data.full_targets is not None
+    assert data.full_inputs.shape == (12_769, 3)
+    assert data.full_targets.shape == (12_769,)
+
     assert data.train_inputs.shape == (3_830, 3)
     assert data.train_targets.shape == (3_830,)
     assert data.test_inputs.shape == (8_939, 3)
     assert data.test_targets.shape == (8_939,)
 
+    assert data.full_inputs.dtype == torch.long
+    assert data.full_targets.dtype == torch.long
     assert data.train_inputs.dtype == torch.long
     assert data.train_targets.dtype == torch.long
     assert data.test_inputs.dtype == torch.long
     assert data.test_targets.dtype == torch.long
 
+    assert data.full_inputs.device.type == "cpu"
+    assert data.full_targets.device.type == "cpu"
     assert data.train_inputs.device.type == "cpu"
+    assert torch.all(data.full_inputs[:, -1] == 113)
     assert torch.all(data.train_inputs[:, -1] == 113)
+    assert int(data.full_targets.min()) >= 0
+    assert int(data.full_targets.max()) < 113
     assert int(data.train_targets.min()) >= 0
     assert int(data.train_targets.max()) < 113
+
+    expected_left = torch.arange(113).repeat_interleave(113)
+    expected_right = torch.arange(113).repeat(113)
+
+    assert torch.equal(data.full_inputs[:, 0], expected_left)
+    assert torch.equal(data.full_inputs[:, 1], expected_right)
+    assert torch.equal(
+        data.full_targets,
+        (expected_left + expected_right) % 113,
+    )
 
     assert data.dataset_hashes["dataset_sha256"] == (
         "af13d2181f5f1122bc528c6dfadbdc67"

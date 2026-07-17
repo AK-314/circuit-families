@@ -18,7 +18,7 @@ from circuit_families.training.checkpoints import file_sha256
 
 @dataclass(frozen=True)
 class TrainingData:
-    """Primary train/test tensors and their provenance identifiers."""
+    """Validated full, train, and test tensors with provenance."""
 
     train_inputs: torch.Tensor
     train_targets: torch.Tensor
@@ -33,6 +33,8 @@ class TrainingData:
     total_count: int
     train_count: int
     test_count: int
+    full_inputs: torch.Tensor | None = None
+    full_targets: torch.Tensor | None = None
 
 
 def _load_json_mapping(path: str | Path, name: str) -> dict[str, Any]:
@@ -303,6 +305,8 @@ def load_training_data(
                 "Training and test indices are not exhaustive."
             )
 
+        full_inputs_array = inputs.copy()
+        full_targets_array = true_labels.copy()
         train_inputs_array = inputs[train_indices].copy()
         train_targets_array = true_labels[train_indices].copy()
         test_inputs_array = inputs[test_indices].copy()
@@ -342,6 +346,16 @@ def load_training_data(
     }
 
     return TrainingData(
+        full_inputs=torch.as_tensor(
+            full_inputs_array,
+            dtype=torch.long,
+            device=selected_device,
+        ),
+        full_targets=torch.as_tensor(
+            full_targets_array,
+            dtype=torch.long,
+            device=selected_device,
+        ),
         train_inputs=torch.as_tensor(
             train_inputs_array,
             dtype=torch.long,
