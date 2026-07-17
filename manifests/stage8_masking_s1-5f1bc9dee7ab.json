@@ -1,0 +1,210 @@
+{
+  "component_definitions": {
+    "attention_heads": {
+      "activation_axis": 2,
+      "count": 4,
+      "hook_name": "blocks.0.attn.hook_z",
+      "identifiers": [
+        "H0",
+        "H1",
+        "H2",
+        "H3"
+      ],
+      "masked_value": "complete per-head output vector"
+    },
+    "fixed_non_searchable_components": [
+      "token_embeddings",
+      "positional_embeddings",
+      "residual_connections",
+      "attention_matrices_within_retained_heads",
+      "mlp_weights_within_retained_neurons",
+      "unembedding",
+      "biases"
+    ],
+    "mlp_neurons": {
+      "activation_axis": 2,
+      "count": 512,
+      "first_identifier": "N0",
+      "hook_name": "blocks.0.mlp.hook_post",
+      "last_identifier": "N511",
+      "masked_value": "individual post-ReLU activation"
+    },
+    "searchable_component_count": 516
+  },
+  "configuration_hashes": {
+    "combined_sha256": "5f1bc9dee7ab55c53b19f7750e1e4c571a0cb84981d5fccdba88158c2b1e36e2",
+    "model_sha256": "0b263f3e01b5de162663632903069e87fc675e29b2f3e46f0979e8ae7537952c",
+    "task_sha256": "7ef9c73ff18f14d1c59cbc1a636d73caa23da099817714ffc70864b1ac00d377",
+    "training_sha256": "ebe04e9854542d13839903767f8da04f6af7560df5f782572c5308a1ca02d89a"
+  },
+  "creation_timestamp_utc": "2026-07-17T15:50:47.297988+00:00",
+  "dataset": {
+    "archive_sha256": "76c499f9d90d8561d12186f8cc7080f8c5cf7460c9f471c1e7b327b0b15337c5",
+    "dataset_sha256": "af13d2181f5f1122bc528c6dfadbdc67b0a38ea02c10b4fd504a492aca8afafa",
+    "example_count": 12769,
+    "example_ordering": "lexicographic",
+    "includes_training_and_test_examples": true,
+    "metadata_sha256": "acbfe6a61b48eb2a2ad522389185085858f72c960906e13291ee85f8bc95564f",
+    "split_sha256": "c83ac398724817fae6a0d137d0f1c6d0b8786eee43efaff5c3d34de0a891b7f2"
+  },
+  "device": {
+    "cuda_available": false,
+    "cuda_device_count": 0,
+    "cuda_devices": [],
+    "device_index": null,
+    "device_type": "cpu",
+    "mps_available": true,
+    "selected_device": "cpu",
+    "selected_device_name": "CPU"
+  },
+  "evaluation": {
+    "absolute_tolerance": 1e-06,
+    "batch_ordering": "fixed_lexicographic_no_shuffle",
+    "batch_size": 256,
+    "evaluated_sequence_position": -1,
+    "full_model_reference": {
+      "cached": false,
+      "checkpoint_specific": true,
+      "method": "computed_live"
+    },
+    "primary_fidelity": "matching masked and full top-one predictions divided by evaluated examples",
+    "relative_tolerance": 1e-06,
+    "valid_output_classes": {
+      "count": 113,
+      "equals_token_eligible": false,
+      "maximum": 112,
+      "minimum": 0
+    },
+    "validation_case_count": 11
+  },
+  "experiment_type": "component_masking_validation",
+  "git_cleanliness": {
+    "status_at_start": "clean",
+    "working_tree_clean_at_start": true
+  },
+  "mask_convention": {
+    "ablated": 0,
+    "ablation_baseline": "zero",
+    "retained": 1
+  },
+  "masking_code_git_commit": "2404a3c11f0595b2e9d8d6b4eef64c0589c33a12",
+  "outputs": {
+    "saved_masks": [
+      {
+        "mask_id": "component-mask-ba6cb1b5df5d81f1",
+        "mask_type": "all_retained",
+        "path": "results/raw/stage8-masking-s1-5f1bc9dee7ab/masks/all_retained.json",
+        "retained_component_count": 516,
+        "sha256": "6beaef00e230f0c05466b6b8a790f6be8aeafdc8807d72a39320930081da4dfc"
+      },
+      {
+        "mask_id": "component-mask-2ec3944a611c33c9",
+        "mask_type": "all_ablated",
+        "path": "results/raw/stage8-masking-s1-5f1bc9dee7ab/masks/all_ablated.json",
+        "retained_component_count": 0,
+        "sha256": "f2462e98b96e0b17a669b23e76ffaae13b6fd70e174714dc900bb969f6e0e378"
+      },
+      {
+        "mask_id": "component-mask-a4bb7e615696239b",
+        "mask_type": "head_H0_ablated",
+        "path": "results/raw/stage8-masking-s1-5f1bc9dee7ab/masks/head_H0_ablated.json",
+        "retained_component_count": 515,
+        "sha256": "0f2ae7b3f6f6b298a2379da7715bbf6c9bec0b55970e65050233d8b2bb3370b1"
+      },
+      {
+        "mask_id": "component-mask-157bbf5de1fe2e3a",
+        "mask_type": "neuron_N0_ablated",
+        "path": "results/raw/stage8-masking-s1-5f1bc9dee7ab/masks/neuron_N0_ablated.json",
+        "retained_component_count": 515,
+        "sha256": "f8b031ec3820adadb02cab02125199985d968b855434209ebac22c1c060e069e"
+      },
+      {
+        "mask_id": "component-mask-92adf34ce2a5b0df",
+        "mask_type": "saved_arbitrary_reloaded",
+        "path": "results/raw/stage8-masking-s1-5f1bc9dee7ab/masks/saved_arbitrary_reloaded.json",
+        "retained_component_count": 510,
+        "sha256": "576ce56217dc7f114b156341c64a985cac2a94b6dbb1d6a27c5b7babecf57611"
+      }
+    ],
+    "validation_table": {
+      "path": "results/tables/seed_1_stage8_mask_validation.csv",
+      "sha256": "7f7ea152ff2dca4dd18d2b17a6f8e75414a1df47ecb83c40430c54f371627496"
+    }
+  },
+  "schema_version": 1,
+  "scientific_interpretation": "machinery validation only; no mask is classified as a sparse circuit",
+  "selected_checkpoints": [
+    {
+      "checkpoint_sha256": "815265490d13d24a0d6d29eb99a900ee186f78cd0a63593de1a62af7ce710f7a",
+      "model_state_sha256": "d070cc4ba819ecde9e97cdac2be67ed28ec45fd3e53a69fbb646104b3dbf3913",
+      "path": "checkpoints/modular-addition-training-s1-5f1bc9dee7ab/step_00000200.pt",
+      "phase": "pre-grokking",
+      "training_step": 200
+    },
+    {
+      "checkpoint_sha256": "8edd5afa0fb7d6759405a0ddc86e1e107a2758ba62918597ceb89f590e0c2d71",
+      "model_state_sha256": "f9fd515f459eb18db77b7df9132d0af4736506c2cb145ba6cf65888baeb2f476",
+      "path": "checkpoints/modular-addition-training-s1-5f1bc9dee7ab/step_00003400.pt",
+      "phase": "10%",
+      "training_step": 3400
+    },
+    {
+      "checkpoint_sha256": "687672a1ad461fe4ce8f1e5d3da99e3bffc342199a19612ebdaaf8807ad222f0",
+      "model_state_sha256": "2d56d18caec3f39c49b45e52f7366fe19069ce003e10a7bceaaf79324f8ad363",
+      "path": "checkpoints/modular-addition-training-s1-5f1bc9dee7ab/step_00007450.pt",
+      "phase": "25%",
+      "training_step": 7450
+    },
+    {
+      "checkpoint_sha256": "94d77d3cfefba5700b9f1fcf6f393cc7a6f94e0447d55be1e8d6d786ce7d5810",
+      "model_state_sha256": "275cbe9a9b1edc5b6bf7b400a98ab47759c1c07ab0603e6e1aa2e39ba9e0f1a9",
+      "path": "checkpoints/modular-addition-training-s1-5f1bc9dee7ab/step_00008150.pt",
+      "phase": "50%",
+      "training_step": 8150
+    },
+    {
+      "checkpoint_sha256": "a42529861e3ca64664b59a66eaf4f6b7fcbaca59a1d78befd8333083e3594a74",
+      "model_state_sha256": "7e5957f725816b6728d82aef5e4ee63b60ce10506635d52d8d69999969e08c8a",
+      "path": "checkpoints/modular-addition-training-s1-5f1bc9dee7ab/step_00008500.pt",
+      "phase": "75%",
+      "training_step": 8500
+    },
+    {
+      "checkpoint_sha256": "60e539119c242ee1491e27bb2da381de6421475e6d0ded8d9b01113cb83cf5ac",
+      "model_state_sha256": "3232930db134f8607f6754e134dfacd34fd9de2d0a3f19e1030cfa5fd2513478",
+      "path": "checkpoints/modular-addition-training-s1-5f1bc9dee7ab/step_00008650.pt",
+      "phase": "90%",
+      "training_step": 8650
+    },
+    {
+      "checkpoint_sha256": "5b449db5ff9a62d5b621450c013bc25949499ed767e6db1723561a4e87ab8d70",
+      "model_state_sha256": "18c66dc1802016a1bdf888070e87ebc615a98d7d1fb310613be0a7abdeccc72b",
+      "path": "checkpoints/modular-addition-training-s1-5f1bc9dee7ab/step_00009050.pt",
+      "phase": "stable post-grokking",
+      "training_step": 9050
+    }
+  ],
+  "software": {
+    "packages": {
+      "PyYAML": "6.0.3",
+      "numpy": "2.4.6",
+      "pandas": "2.3.3",
+      "torch": "2.13.0",
+      "transformer-lens": "3.5.1"
+    },
+    "python": "3.11.15"
+  },
+  "source_manifests": {
+    "checkpoint_selection": {
+      "path": "manifests/checkpoints_seed_1.json",
+      "sha256": "a33b856e07b9223d6ee552810d8b4eb6f20ae2eb74427934933ef022ba48fd23"
+    },
+    "training": {
+      "path": "manifests/training_modular-addition-training-s1-5f1bc9dee7ab.json",
+      "sha256": "ac0df071552db645e18679a03de3f3a9ce5469f2fc14aa64b3f3308d30d9d1db"
+    }
+  },
+  "source_training_run_id": "modular-addition-training-s1-5f1bc9dee7ab",
+  "stage8_run_id": "stage8-masking-s1-5f1bc9dee7ab",
+  "validation_status": "passed"
+}
