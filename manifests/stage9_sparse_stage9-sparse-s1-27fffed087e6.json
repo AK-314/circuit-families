@@ -1,0 +1,687 @@
+{
+  "candidate_tie_breaking": {
+    "ranking_score_tie": "lower stable component index",
+    "within_first_valid_batch": "highest exact fidelity, then lower stable component index"
+  },
+  "component_definition": {
+    "attention_head_hook": "blocks.0.attn.hook_z",
+    "mask_semantics": {
+      "retained": 1,
+      "zero_ablated": 0
+    },
+    "mlp_neuron_hook": "blocks.0.mlp.hook_post",
+    "searchable_component_count": 516
+  },
+  "creation_timestamp_utc": "2026-07-17T19:13:07.594209+00:00",
+  "development_label": null,
+  "execution_command": [
+    "uv",
+    "run",
+    "python",
+    "scripts/run_stage9_pilot.py",
+    "--run-id",
+    "modular-addition-training-s1-5f1bc9dee7ab",
+    "--checkpoint-manifest",
+    "manifests/checkpoints_seed_1.json",
+    "--stage8-manifest",
+    "manifests/stage8_masking_s1-5f1bc9dee7ab.json",
+    "--ranking-batch-size",
+    "256",
+    "--evaluation-batch-size",
+    "256",
+    "--exact-evaluation-budget",
+    "10000",
+    "--device",
+    "cpu"
+  ],
+  "experiment_type": "stage9_sparse_search_pilot",
+  "git_cleanliness": {
+    "clean_implementation_commit_verified_before_first_cell": true,
+    "later_dirty_paths_are_generated_stage9_artifacts": true
+  },
+  "method_development": false,
+  "outputs": {
+    "cells": [
+      {
+        "accepted_removal_trajectory": {
+          "path": "results/raw/stage9-sparse-s1-27fffed087e6/step_00009050/threshold_09900/accepted_removals.jsonl",
+          "sha256": "dc824a0a054cb76c0b106d39f0c07b566159682ebadc43c18518c69186b4c6a1"
+        },
+        "candidate_evaluation_log": {
+          "path": "results/raw/stage9-sparse-s1-27fffed087e6/step_00009050/threshold_09900/candidate_evaluations.jsonl",
+          "sha256": "2d9d9b32be14e1e0812a0c4e3cd96fcfa74bc8f9fd73daa51e0d27d64b19e32a"
+        },
+        "cell_summary": {
+          "path": "results/raw/stage9-sparse-s1-27fffed087e6/step_00009050/threshold_09900/cell_summary.json",
+          "sha256": "b8b9d912912f9bcfacb5db7021893f47bbe4173cc86bbbfae9e3b66a7a027805"
+        },
+        "checkpoint_step": 9050,
+        "execution_index": 1,
+        "fidelity_threshold": 0.99,
+        "final_mask": {
+          "path": "results/raw/stage9-sparse-s1-27fffed087e6/step_00009050/threshold_09900/final_mask.json",
+          "sha256": "f61240e67b41fa8f60cbe20d22bb6182b9a226f984a4aa7d219ec7bc27758446"
+        },
+        "output_directory": "results/raw/stage9-sparse-s1-27fffed087e6/step_00009050/threshold_09900",
+        "phase": "stable post-grokking",
+        "runtime_telemetry": {
+          "included_in_deterministic_scientific_hashes": false,
+          "path": "results/raw/stage9-sparse-s1-27fffed087e6/step_00009050/threshold_09900/runtime_telemetry.json",
+          "sha256": "a5e6e55c48155a4330088cf84583f53cdb4aaf991641aca475082b6138e87718"
+        },
+        "status": "valid_sparse_circuit"
+      },
+      {
+        "accepted_removal_trajectory": {
+          "path": "results/raw/stage9-sparse-s1-27fffed087e6/step_00009050/threshold_09750/accepted_removals.jsonl",
+          "sha256": "8e98319db8ca0cdf4248adb0e0f4125869e15a6c60c1702a7824be7e48c958fb"
+        },
+        "candidate_evaluation_log": {
+          "path": "results/raw/stage9-sparse-s1-27fffed087e6/step_00009050/threshold_09750/candidate_evaluations.jsonl",
+          "sha256": "e4f720a66f446f2c4ee8e35c71da76420442a4765857c5777086933af796892e"
+        },
+        "cell_summary": {
+          "path": "results/raw/stage9-sparse-s1-27fffed087e6/step_00009050/threshold_09750/cell_summary.json",
+          "sha256": "f5e7f2954131728bc04c6abb478c12e739ab3d43654e4a720b4805ab0ce74c66"
+        },
+        "checkpoint_step": 9050,
+        "execution_index": 2,
+        "fidelity_threshold": 0.975,
+        "final_mask": {
+          "path": "results/raw/stage9-sparse-s1-27fffed087e6/step_00009050/threshold_09750/final_mask.json",
+          "sha256": "443c313d15fdcba61fe5ec0caa74c517a080e2216d493c9c064cec2461d1c60f"
+        },
+        "output_directory": "results/raw/stage9-sparse-s1-27fffed087e6/step_00009050/threshold_09750",
+        "phase": "stable post-grokking",
+        "runtime_telemetry": {
+          "included_in_deterministic_scientific_hashes": false,
+          "path": "results/raw/stage9-sparse-s1-27fffed087e6/step_00009050/threshold_09750/runtime_telemetry.json",
+          "sha256": "98b6c9c7c3ff82f902da19ec309a613c60d86fc940d5abba4f915f7fa7e0d7b5"
+        },
+        "status": "valid_sparse_circuit"
+      },
+      {
+        "accepted_removal_trajectory": {
+          "path": "results/raw/stage9-sparse-s1-27fffed087e6/step_00009050/threshold_09500/accepted_removals.jsonl",
+          "sha256": "ff12a607acf7534be95a5cb60e128d66e8900e71a0d508e53475829a08ff0345"
+        },
+        "candidate_evaluation_log": {
+          "path": "results/raw/stage9-sparse-s1-27fffed087e6/step_00009050/threshold_09500/candidate_evaluations.jsonl",
+          "sha256": "aa0e83912d0ba7995e827c61dd3d3c4ad84c33cae20d143526df12291a7c124d"
+        },
+        "cell_summary": {
+          "path": "results/raw/stage9-sparse-s1-27fffed087e6/step_00009050/threshold_09500/cell_summary.json",
+          "sha256": "4d98e43bb441b39c04541fcffb77cccf52265578758b1b4cb93341ee49ae6fd0"
+        },
+        "checkpoint_step": 9050,
+        "execution_index": 3,
+        "fidelity_threshold": 0.95,
+        "final_mask": {
+          "path": "results/raw/stage9-sparse-s1-27fffed087e6/step_00009050/threshold_09500/final_mask.json",
+          "sha256": "be465e02768cf7eda8127f8c0c91b0905eefd6c6942941c6116ba0dd15c03898"
+        },
+        "output_directory": "results/raw/stage9-sparse-s1-27fffed087e6/step_00009050/threshold_09500",
+        "phase": "stable post-grokking",
+        "runtime_telemetry": {
+          "included_in_deterministic_scientific_hashes": false,
+          "path": "results/raw/stage9-sparse-s1-27fffed087e6/step_00009050/threshold_09500/runtime_telemetry.json",
+          "sha256": "b35c2131281f5df1acfc010e5a594daa4b8248040d057231824d61a8da742463"
+        },
+        "status": "valid_sparse_circuit"
+      },
+      {
+        "accepted_removal_trajectory": {
+          "path": "results/raw/stage9-sparse-s1-27fffed087e6/step_00009050/threshold_09000/accepted_removals.jsonl",
+          "sha256": "500d0d17566760eb489fed2907a696f0b07f3a7af7c06014cb061739ef4b957f"
+        },
+        "candidate_evaluation_log": {
+          "path": "results/raw/stage9-sparse-s1-27fffed087e6/step_00009050/threshold_09000/candidate_evaluations.jsonl",
+          "sha256": "cc12089342a2606e3cf8874c141eda3560518aa9157412e4083664e64944a0ed"
+        },
+        "cell_summary": {
+          "path": "results/raw/stage9-sparse-s1-27fffed087e6/step_00009050/threshold_09000/cell_summary.json",
+          "sha256": "eda71ccef0f1517d6e98b6b9fb977d712743bbb268cb492510fc75837977235e"
+        },
+        "checkpoint_step": 9050,
+        "execution_index": 4,
+        "fidelity_threshold": 0.9,
+        "final_mask": {
+          "path": "results/raw/stage9-sparse-s1-27fffed087e6/step_00009050/threshold_09000/final_mask.json",
+          "sha256": "91e2f13a982f3cd5632a9ae17900c6ca64184af5aee1a50a30af792392ee060b"
+        },
+        "output_directory": "results/raw/stage9-sparse-s1-27fffed087e6/step_00009050/threshold_09000",
+        "phase": "stable post-grokking",
+        "runtime_telemetry": {
+          "included_in_deterministic_scientific_hashes": false,
+          "path": "results/raw/stage9-sparse-s1-27fffed087e6/step_00009050/threshold_09000/runtime_telemetry.json",
+          "sha256": "21c823591c24e11586a475c549a5c2489f3c0de06ec4b64af48be8d8aa9acfe4"
+        },
+        "status": "valid_sparse_circuit"
+      },
+      {
+        "accepted_removal_trajectory": {
+          "path": "results/raw/stage9-sparse-s1-27fffed087e6/step_00009050/threshold_08500/accepted_removals.jsonl",
+          "sha256": "35e822756008e7b8007c7e764d918fedd1d5a31879e5d01190821cbaae4161af"
+        },
+        "candidate_evaluation_log": {
+          "path": "results/raw/stage9-sparse-s1-27fffed087e6/step_00009050/threshold_08500/candidate_evaluations.jsonl",
+          "sha256": "d7bc3b47748fb6a6603b5f71134ff76548e95b46c264a72d58a577081dac9888"
+        },
+        "cell_summary": {
+          "path": "results/raw/stage9-sparse-s1-27fffed087e6/step_00009050/threshold_08500/cell_summary.json",
+          "sha256": "2dd120ab8404ea74f393248305a2f75910f8e01a8723f1294275bf20533391dd"
+        },
+        "checkpoint_step": 9050,
+        "execution_index": 5,
+        "fidelity_threshold": 0.85,
+        "final_mask": {
+          "path": "results/raw/stage9-sparse-s1-27fffed087e6/step_00009050/threshold_08500/final_mask.json",
+          "sha256": "3309027cc538ad67a7dc602b43a72f66c5f9e06269b322144766d1e09f437c3a"
+        },
+        "output_directory": "results/raw/stage9-sparse-s1-27fffed087e6/step_00009050/threshold_08500",
+        "phase": "stable post-grokking",
+        "runtime_telemetry": {
+          "included_in_deterministic_scientific_hashes": false,
+          "path": "results/raw/stage9-sparse-s1-27fffed087e6/step_00009050/threshold_08500/runtime_telemetry.json",
+          "sha256": "193c0d613fae1e801acf3d6a63e558edf2d5f5c3998982099dad3f57feceff03"
+        },
+        "status": "valid_sparse_circuit"
+      },
+      {
+        "accepted_removal_trajectory": {
+          "path": "results/raw/stage9-sparse-s1-27fffed087e6/step_00009050/threshold_08000/accepted_removals.jsonl",
+          "sha256": "6cf023e457b44d5bca6ec9f1a644e47a3bf4181fe41d11693af06f95cd9dfdf4"
+        },
+        "candidate_evaluation_log": {
+          "path": "results/raw/stage9-sparse-s1-27fffed087e6/step_00009050/threshold_08000/candidate_evaluations.jsonl",
+          "sha256": "c505c3cafa62a238ec1854a97bc61e93919996ac4e4c1c6e7fb3b13113dc381f"
+        },
+        "cell_summary": {
+          "path": "results/raw/stage9-sparse-s1-27fffed087e6/step_00009050/threshold_08000/cell_summary.json",
+          "sha256": "17723505a12e95704ede73fd2cf09deadebbe230ae63ff1a354c4d11421df7cf"
+        },
+        "checkpoint_step": 9050,
+        "execution_index": 6,
+        "fidelity_threshold": 0.8,
+        "final_mask": {
+          "path": "results/raw/stage9-sparse-s1-27fffed087e6/step_00009050/threshold_08000/final_mask.json",
+          "sha256": "12aa85d7ae7daeb18aa6a18d1709a76ad10c2bb373531fbc0a710934e1a5b08a"
+        },
+        "output_directory": "results/raw/stage9-sparse-s1-27fffed087e6/step_00009050/threshold_08000",
+        "phase": "stable post-grokking",
+        "runtime_telemetry": {
+          "included_in_deterministic_scientific_hashes": false,
+          "path": "results/raw/stage9-sparse-s1-27fffed087e6/step_00009050/threshold_08000/runtime_telemetry.json",
+          "sha256": "f7cf4c4bc750b2bff9ae29e4adf077f12f06abe4840192417148cc3b54c11621"
+        },
+        "status": "valid_sparse_circuit"
+      },
+      {
+        "accepted_removal_trajectory": {
+          "path": "results/raw/stage9-sparse-s1-27fffed087e6/step_00000200/threshold_09900/accepted_removals.jsonl",
+          "sha256": "90540532f5208999af0261e38175c2cb659d5b4b745a3119519980842248bf95"
+        },
+        "candidate_evaluation_log": {
+          "path": "results/raw/stage9-sparse-s1-27fffed087e6/step_00000200/threshold_09900/candidate_evaluations.jsonl",
+          "sha256": "4b1e0fc0c07216fda7587ae6d547c270f075fd5f08f819ff4cb08cdd0a01a764"
+        },
+        "cell_summary": {
+          "path": "results/raw/stage9-sparse-s1-27fffed087e6/step_00000200/threshold_09900/cell_summary.json",
+          "sha256": "e5561d1c3469c85650add4a6ff35a08503ca8dfda145e4fe33c3d5bde9c0b424"
+        },
+        "checkpoint_step": 200,
+        "execution_index": 7,
+        "fidelity_threshold": 0.99,
+        "final_mask": {
+          "path": "results/raw/stage9-sparse-s1-27fffed087e6/step_00000200/threshold_09900/final_mask.json",
+          "sha256": "63623939ed03805cb033ed348ebf48c00e66d6ce2e25795b3556ec1b37c3009f"
+        },
+        "output_directory": "results/raw/stage9-sparse-s1-27fffed087e6/step_00000200/threshold_09900",
+        "phase": "pre-grokking",
+        "runtime_telemetry": {
+          "included_in_deterministic_scientific_hashes": false,
+          "path": "results/raw/stage9-sparse-s1-27fffed087e6/step_00000200/threshold_09900/runtime_telemetry.json",
+          "sha256": "3384e2b895fea3fd8a0cba16dc780b1b6b5b0441fd5e6e9005eecbeef4f8d915"
+        },
+        "status": "valid_but_not_meaningfully_sparse"
+      },
+      {
+        "accepted_removal_trajectory": {
+          "path": "results/raw/stage9-sparse-s1-27fffed087e6/step_00000200/threshold_09750/accepted_removals.jsonl",
+          "sha256": "6df77f027d81aedb75f0a1a1c1ebef5420dc4dcee3b74d918306069a5d3c62be"
+        },
+        "candidate_evaluation_log": {
+          "path": "results/raw/stage9-sparse-s1-27fffed087e6/step_00000200/threshold_09750/candidate_evaluations.jsonl",
+          "sha256": "423b69560ee4f361d5375cc88ad1d728e7a09b3b23d49eaef8a83c4bfee09abc"
+        },
+        "cell_summary": {
+          "path": "results/raw/stage9-sparse-s1-27fffed087e6/step_00000200/threshold_09750/cell_summary.json",
+          "sha256": "a23050d49006b3e780e7a2f979ba320495df2a1ed4c280a398945af2a9c80932"
+        },
+        "checkpoint_step": 200,
+        "execution_index": 8,
+        "fidelity_threshold": 0.975,
+        "final_mask": {
+          "path": "results/raw/stage9-sparse-s1-27fffed087e6/step_00000200/threshold_09750/final_mask.json",
+          "sha256": "2c167cbcb419cdb5908408b66759daf1a15e3d715d82c76cb55fc92a20237b6d"
+        },
+        "output_directory": "results/raw/stage9-sparse-s1-27fffed087e6/step_00000200/threshold_09750",
+        "phase": "pre-grokking",
+        "runtime_telemetry": {
+          "included_in_deterministic_scientific_hashes": false,
+          "path": "results/raw/stage9-sparse-s1-27fffed087e6/step_00000200/threshold_09750/runtime_telemetry.json",
+          "sha256": "d8a84edc61a8bf1a01567c8b6364cd33b72160f45b145c1e5a9a9730e898bd28"
+        },
+        "status": "valid_but_not_meaningfully_sparse"
+      },
+      {
+        "accepted_removal_trajectory": {
+          "path": "results/raw/stage9-sparse-s1-27fffed087e6/step_00000200/threshold_09500/accepted_removals.jsonl",
+          "sha256": "d1654e366775bc7bdc1e88af642816b04458839582fc563e3f15742f20746b59"
+        },
+        "candidate_evaluation_log": {
+          "path": "results/raw/stage9-sparse-s1-27fffed087e6/step_00000200/threshold_09500/candidate_evaluations.jsonl",
+          "sha256": "b327a860b7a5042ce751092331fb3fbcb1205a79c4a7460f0081b8bfa6904007"
+        },
+        "cell_summary": {
+          "path": "results/raw/stage9-sparse-s1-27fffed087e6/step_00000200/threshold_09500/cell_summary.json",
+          "sha256": "f6482c58643f9b8258c89444548cd4bc9e97ad589aa6674150a3e00de70ee8fe"
+        },
+        "checkpoint_step": 200,
+        "execution_index": 9,
+        "fidelity_threshold": 0.95,
+        "final_mask": {
+          "path": "results/raw/stage9-sparse-s1-27fffed087e6/step_00000200/threshold_09500/final_mask.json",
+          "sha256": "6a9bf434dbbd445284813b15c4e19b6da6520bbdc500c6bd65074646b3642f63"
+        },
+        "output_directory": "results/raw/stage9-sparse-s1-27fffed087e6/step_00000200/threshold_09500",
+        "phase": "pre-grokking",
+        "runtime_telemetry": {
+          "included_in_deterministic_scientific_hashes": false,
+          "path": "results/raw/stage9-sparse-s1-27fffed087e6/step_00000200/threshold_09500/runtime_telemetry.json",
+          "sha256": "edcb90373beeb3ac6873af0079f8babb288a02376791259a454df07d3fb98e28"
+        },
+        "status": "valid_but_not_meaningfully_sparse"
+      },
+      {
+        "accepted_removal_trajectory": {
+          "path": "results/raw/stage9-sparse-s1-27fffed087e6/step_00000200/threshold_09000/accepted_removals.jsonl",
+          "sha256": "e684cffa2d9680970d8133dd6ecfe2e324fb68a04db42d966b14358c65db3924"
+        },
+        "candidate_evaluation_log": {
+          "path": "results/raw/stage9-sparse-s1-27fffed087e6/step_00000200/threshold_09000/candidate_evaluations.jsonl",
+          "sha256": "4f494f9edebd9c78a4e1497fd306a849edc68394f1ecff2aba681c3531b934b7"
+        },
+        "cell_summary": {
+          "path": "results/raw/stage9-sparse-s1-27fffed087e6/step_00000200/threshold_09000/cell_summary.json",
+          "sha256": "9bfc9a876c4966a17717f97cc37278a138f5dbdec16ca90a63350285a1717cee"
+        },
+        "checkpoint_step": 200,
+        "execution_index": 10,
+        "fidelity_threshold": 0.9,
+        "final_mask": {
+          "path": "results/raw/stage9-sparse-s1-27fffed087e6/step_00000200/threshold_09000/final_mask.json",
+          "sha256": "ad1b734ad7acb95b0a57cbfb387bde5199e06914cd45f3938572c113f1144d98"
+        },
+        "output_directory": "results/raw/stage9-sparse-s1-27fffed087e6/step_00000200/threshold_09000",
+        "phase": "pre-grokking",
+        "runtime_telemetry": {
+          "included_in_deterministic_scientific_hashes": false,
+          "path": "results/raw/stage9-sparse-s1-27fffed087e6/step_00000200/threshold_09000/runtime_telemetry.json",
+          "sha256": "dd337c48269150486060e2fe96517ed898d36876cc23e964e0653f6e87b95866"
+        },
+        "status": "valid_but_not_meaningfully_sparse"
+      },
+      {
+        "accepted_removal_trajectory": {
+          "path": "results/raw/stage9-sparse-s1-27fffed087e6/step_00000200/threshold_08500/accepted_removals.jsonl",
+          "sha256": "559d837adfdf8f62d3cef966a7f1eba3e3597821c264c7edc8ba271e0a0fa2bc"
+        },
+        "candidate_evaluation_log": {
+          "path": "results/raw/stage9-sparse-s1-27fffed087e6/step_00000200/threshold_08500/candidate_evaluations.jsonl",
+          "sha256": "c74e79dcca7e16814f2da7a97f60f1714ff00d2c41f9b783f0b8e5562253a778"
+        },
+        "cell_summary": {
+          "path": "results/raw/stage9-sparse-s1-27fffed087e6/step_00000200/threshold_08500/cell_summary.json",
+          "sha256": "ed4db0dc7722aa3328433f4fd7ade348e661d4466405d62a57edc98e8b11c58d"
+        },
+        "checkpoint_step": 200,
+        "execution_index": 11,
+        "fidelity_threshold": 0.85,
+        "final_mask": {
+          "path": "results/raw/stage9-sparse-s1-27fffed087e6/step_00000200/threshold_08500/final_mask.json",
+          "sha256": "b9817b29ecf09b7ccc904e4f5e5cba7c59dd47f3e3789e83ad9a2a7b766d077b"
+        },
+        "output_directory": "results/raw/stage9-sparse-s1-27fffed087e6/step_00000200/threshold_08500",
+        "phase": "pre-grokking",
+        "runtime_telemetry": {
+          "included_in_deterministic_scientific_hashes": false,
+          "path": "results/raw/stage9-sparse-s1-27fffed087e6/step_00000200/threshold_08500/runtime_telemetry.json",
+          "sha256": "75af0167cf554c482a42d41b200deea3ccc846ed82c18d7c70bd66d5a5019005"
+        },
+        "status": "valid_but_not_meaningfully_sparse"
+      },
+      {
+        "accepted_removal_trajectory": {
+          "path": "results/raw/stage9-sparse-s1-27fffed087e6/step_00000200/threshold_08000/accepted_removals.jsonl",
+          "sha256": "413ee0dc064f2b070e0f4bce8f2971b703531dbbcc1d2639b7273240cb0892bb"
+        },
+        "candidate_evaluation_log": {
+          "path": "results/raw/stage9-sparse-s1-27fffed087e6/step_00000200/threshold_08000/candidate_evaluations.jsonl",
+          "sha256": "11d3cfcbe484f08737983a62d00867f1b7cfb8ea240d90afd728af33e096a35c"
+        },
+        "cell_summary": {
+          "path": "results/raw/stage9-sparse-s1-27fffed087e6/step_00000200/threshold_08000/cell_summary.json",
+          "sha256": "a83f7e21fa03091f5649411072667e7a65530d1d72616196c3658d16642310a2"
+        },
+        "checkpoint_step": 200,
+        "execution_index": 12,
+        "fidelity_threshold": 0.8,
+        "final_mask": {
+          "path": "results/raw/stage9-sparse-s1-27fffed087e6/step_00000200/threshold_08000/final_mask.json",
+          "sha256": "bbbac5e5f29472ae0cd59f0972d76f35dc90fb8319a31b0cb8cdc02f11cc2437"
+        },
+        "output_directory": "results/raw/stage9-sparse-s1-27fffed087e6/step_00000200/threshold_08000",
+        "phase": "pre-grokking",
+        "runtime_telemetry": {
+          "included_in_deterministic_scientific_hashes": false,
+          "path": "results/raw/stage9-sparse-s1-27fffed087e6/step_00000200/threshold_08000/runtime_telemetry.json",
+          "sha256": "d3c614eefd9272a83fef7eab2dc25f2805ef8488a2aa2d58851d195d4b835575"
+        },
+        "status": "valid_but_not_meaningfully_sparse"
+      },
+      {
+        "accepted_removal_trajectory": {
+          "path": "results/raw/stage9-sparse-s1-27fffed087e6/step_00008150/threshold_09900/accepted_removals.jsonl",
+          "sha256": "92efd7c564a5e061c7509f0df56d1388318bf6eefc42e4244bb5d4948178b974"
+        },
+        "candidate_evaluation_log": {
+          "path": "results/raw/stage9-sparse-s1-27fffed087e6/step_00008150/threshold_09900/candidate_evaluations.jsonl",
+          "sha256": "404a50dff8080e091cec93ae4e6981ed971624425ada05446ab96aabab4f41d3"
+        },
+        "cell_summary": {
+          "path": "results/raw/stage9-sparse-s1-27fffed087e6/step_00008150/threshold_09900/cell_summary.json",
+          "sha256": "cababcdfd652dc875b9d8cb66e183f9ea61f312425911030f44262bf536c4db5"
+        },
+        "checkpoint_step": 8150,
+        "execution_index": 13,
+        "fidelity_threshold": 0.99,
+        "final_mask": {
+          "path": "results/raw/stage9-sparse-s1-27fffed087e6/step_00008150/threshold_09900/final_mask.json",
+          "sha256": "10ac9068fbb0e63f445f7b54d1817ec90bac38ba5c918d2e6c6ffa92e9c61d85"
+        },
+        "output_directory": "results/raw/stage9-sparse-s1-27fffed087e6/step_00008150/threshold_09900",
+        "phase": "50%",
+        "runtime_telemetry": {
+          "included_in_deterministic_scientific_hashes": false,
+          "path": "results/raw/stage9-sparse-s1-27fffed087e6/step_00008150/threshold_09900/runtime_telemetry.json",
+          "sha256": "09124ef0be4498d85ea6b11d6a13ee39f9ee75039950989c7a6ecb51755ea38f"
+        },
+        "status": "valid_but_not_meaningfully_sparse"
+      },
+      {
+        "accepted_removal_trajectory": {
+          "path": "results/raw/stage9-sparse-s1-27fffed087e6/step_00008150/threshold_09750/accepted_removals.jsonl",
+          "sha256": "4decb45e7c5d4c14fa70a82610ba85d2e28de8c677334c32839e37dab89af43e"
+        },
+        "candidate_evaluation_log": {
+          "path": "results/raw/stage9-sparse-s1-27fffed087e6/step_00008150/threshold_09750/candidate_evaluations.jsonl",
+          "sha256": "5814c69be1d2a8cdba2d9ed26695c5e02a29b94dd980d22a60dbbb8597f4343e"
+        },
+        "cell_summary": {
+          "path": "results/raw/stage9-sparse-s1-27fffed087e6/step_00008150/threshold_09750/cell_summary.json",
+          "sha256": "94ffe793d3ba14776b5bddee7be0db7c1acd1a1fed6fda70046b6592e7e8341b"
+        },
+        "checkpoint_step": 8150,
+        "execution_index": 14,
+        "fidelity_threshold": 0.975,
+        "final_mask": {
+          "path": "results/raw/stage9-sparse-s1-27fffed087e6/step_00008150/threshold_09750/final_mask.json",
+          "sha256": "0711593c84da8f12158afcd5395248617f6d7230e5ad4373704c7fb68feaac2a"
+        },
+        "output_directory": "results/raw/stage9-sparse-s1-27fffed087e6/step_00008150/threshold_09750",
+        "phase": "50%",
+        "runtime_telemetry": {
+          "included_in_deterministic_scientific_hashes": false,
+          "path": "results/raw/stage9-sparse-s1-27fffed087e6/step_00008150/threshold_09750/runtime_telemetry.json",
+          "sha256": "2fbe8e11fe4742cfbaabcc40514aad25f3d12821e0a6b8ba7afd740f2843e506"
+        },
+        "status": "valid_but_not_meaningfully_sparse"
+      },
+      {
+        "accepted_removal_trajectory": {
+          "path": "results/raw/stage9-sparse-s1-27fffed087e6/step_00008150/threshold_09500/accepted_removals.jsonl",
+          "sha256": "db456d7453f7864e49b8bdbfd203e72634f304e27c5916ce4341e31f491a4f6d"
+        },
+        "candidate_evaluation_log": {
+          "path": "results/raw/stage9-sparse-s1-27fffed087e6/step_00008150/threshold_09500/candidate_evaluations.jsonl",
+          "sha256": "ef128bc927d809a3c423e074ec603077e435ac3ea2751578214c5f93ae006fab"
+        },
+        "cell_summary": {
+          "path": "results/raw/stage9-sparse-s1-27fffed087e6/step_00008150/threshold_09500/cell_summary.json",
+          "sha256": "33d07ca63159e3da364f679ce354ff2cb8696461e59f4e23a80334f000123abe"
+        },
+        "checkpoint_step": 8150,
+        "execution_index": 15,
+        "fidelity_threshold": 0.95,
+        "final_mask": {
+          "path": "results/raw/stage9-sparse-s1-27fffed087e6/step_00008150/threshold_09500/final_mask.json",
+          "sha256": "7f67e02de4c525e55248be9615dc2df556dcb47c34a3cb3f49c0c9581a9e39bf"
+        },
+        "output_directory": "results/raw/stage9-sparse-s1-27fffed087e6/step_00008150/threshold_09500",
+        "phase": "50%",
+        "runtime_telemetry": {
+          "included_in_deterministic_scientific_hashes": false,
+          "path": "results/raw/stage9-sparse-s1-27fffed087e6/step_00008150/threshold_09500/runtime_telemetry.json",
+          "sha256": "34abe17d8a32f98bb5dc3ab70b8b0e72e5118d628c1186b08d2f8ad2f302fd09"
+        },
+        "status": "valid_but_not_meaningfully_sparse"
+      },
+      {
+        "accepted_removal_trajectory": {
+          "path": "results/raw/stage9-sparse-s1-27fffed087e6/step_00008150/threshold_09000/accepted_removals.jsonl",
+          "sha256": "bf7659a93beee1b11d773e0acc0325ba93a4f9082f34785bd0110d9b80091f3f"
+        },
+        "candidate_evaluation_log": {
+          "path": "results/raw/stage9-sparse-s1-27fffed087e6/step_00008150/threshold_09000/candidate_evaluations.jsonl",
+          "sha256": "ce40a1c2cf8dfafca4a26bae29f153f17d4ecb256cea3ae260d68b624679ea38"
+        },
+        "cell_summary": {
+          "path": "results/raw/stage9-sparse-s1-27fffed087e6/step_00008150/threshold_09000/cell_summary.json",
+          "sha256": "f361aa3382d7d68e5990bf19b46f83514d04205582457b0fce59b51d0a4d0d2b"
+        },
+        "checkpoint_step": 8150,
+        "execution_index": 16,
+        "fidelity_threshold": 0.9,
+        "final_mask": {
+          "path": "results/raw/stage9-sparse-s1-27fffed087e6/step_00008150/threshold_09000/final_mask.json",
+          "sha256": "14b0f2445de458779b8e389baf2b32aeede255659e92cba664de23fb4a873d0c"
+        },
+        "output_directory": "results/raw/stage9-sparse-s1-27fffed087e6/step_00008150/threshold_09000",
+        "phase": "50%",
+        "runtime_telemetry": {
+          "included_in_deterministic_scientific_hashes": false,
+          "path": "results/raw/stage9-sparse-s1-27fffed087e6/step_00008150/threshold_09000/runtime_telemetry.json",
+          "sha256": "31f15345490f67b19357554393560b680566b929a98147dac279601e6574eb2e"
+        },
+        "status": "valid_but_not_meaningfully_sparse"
+      },
+      {
+        "accepted_removal_trajectory": {
+          "path": "results/raw/stage9-sparse-s1-27fffed087e6/step_00008150/threshold_08500/accepted_removals.jsonl",
+          "sha256": "8bdb8f1bc822d57831b096279937f0d5e8fc722dc88d5ba2a50d4f7d4deb6ffd"
+        },
+        "candidate_evaluation_log": {
+          "path": "results/raw/stage9-sparse-s1-27fffed087e6/step_00008150/threshold_08500/candidate_evaluations.jsonl",
+          "sha256": "558abbbf252355212a9328849ad85e47499ba0c3d9e7acd1e43cace6d9f6682e"
+        },
+        "cell_summary": {
+          "path": "results/raw/stage9-sparse-s1-27fffed087e6/step_00008150/threshold_08500/cell_summary.json",
+          "sha256": "525ffdeaed7c5a37f9e00db1d6d4c7b2aa1fb2408865484d8816af6ad1b15e7f"
+        },
+        "checkpoint_step": 8150,
+        "execution_index": 17,
+        "fidelity_threshold": 0.85,
+        "final_mask": {
+          "path": "results/raw/stage9-sparse-s1-27fffed087e6/step_00008150/threshold_08500/final_mask.json",
+          "sha256": "a8f49c075fec12d429fc5b7195c4697afad150a5f6b2c1158e18fc4dcc4317ea"
+        },
+        "output_directory": "results/raw/stage9-sparse-s1-27fffed087e6/step_00008150/threshold_08500",
+        "phase": "50%",
+        "runtime_telemetry": {
+          "included_in_deterministic_scientific_hashes": false,
+          "path": "results/raw/stage9-sparse-s1-27fffed087e6/step_00008150/threshold_08500/runtime_telemetry.json",
+          "sha256": "753eb89d32da2def31bf321a91a8b02b56f3e3ca9a2fe279c798a574da8c03d4"
+        },
+        "status": "valid_but_not_meaningfully_sparse"
+      },
+      {
+        "accepted_removal_trajectory": {
+          "path": "results/raw/stage9-sparse-s1-27fffed087e6/step_00008150/threshold_08000/accepted_removals.jsonl",
+          "sha256": "0150e22d8afe4ceb10a5756272bfddfa0b776f817bfc49e7170bbba4614c669e"
+        },
+        "candidate_evaluation_log": {
+          "path": "results/raw/stage9-sparse-s1-27fffed087e6/step_00008150/threshold_08000/candidate_evaluations.jsonl",
+          "sha256": "e5c5ae89ed0831d3aec34b65e738bd95e6e00806620d83b3a3f7dc4887b0f754"
+        },
+        "cell_summary": {
+          "path": "results/raw/stage9-sparse-s1-27fffed087e6/step_00008150/threshold_08000/cell_summary.json",
+          "sha256": "a162923f9f82a1f460f8a9761897f2633daf31d2a69a6391c2ad791e7116cadc"
+        },
+        "checkpoint_step": 8150,
+        "execution_index": 18,
+        "fidelity_threshold": 0.8,
+        "final_mask": {
+          "path": "results/raw/stage9-sparse-s1-27fffed087e6/step_00008150/threshold_08000/final_mask.json",
+          "sha256": "bf4ed5cfeec66da17a2a14be5075b236c99bdd00e28cd942884d4d0098a2b753"
+        },
+        "output_directory": "results/raw/stage9-sparse-s1-27fffed087e6/step_00008150/threshold_08000",
+        "phase": "50%",
+        "runtime_telemetry": {
+          "included_in_deterministic_scientific_hashes": false,
+          "path": "results/raw/stage9-sparse-s1-27fffed087e6/step_00008150/threshold_08000/runtime_telemetry.json",
+          "sha256": "283915780bfb72ac67bdc1a1d5cd8a56cc011d1219fc971f0899ab37ed16f7f6"
+        },
+        "status": "valid_but_not_meaningfully_sparse"
+      }
+    ],
+    "deterministic_result_table": {
+      "path": "results/tables/seed_1_stage9_sparse_search.csv",
+      "sha256": "9e8d323ab682e39464dd628820de8a622f55ff31276c6eac3fd7310641a05636"
+    },
+    "nondeterministic_runtime_table": {
+      "excluded_from_deterministic_rerun_hash_check": true,
+      "path": "results/tables/seed_1_stage9_sparse_search_runtime.csv",
+      "sha256": "0cef0862d6a3dc173b9dc7d27893889e166a2ad4de746b8a14d299c44ef7e33f"
+    },
+    "raw_artifact_archive": {
+      "contained_file_count": 2949,
+      "content_scope": {
+        "complete_raw_stage9_tree": true,
+        "includes_accepted_removal_trajectories": true,
+        "includes_all_accepted_masks": true,
+        "includes_candidate_evaluation_logs": true,
+        "includes_cell_summaries": true,
+        "includes_final_masks": true,
+        "includes_hash_inventories": true,
+        "includes_runtime_telemetry": true
+      },
+      "extract_to": "results/raw",
+      "format": "tar.gz",
+      "packaging": {
+        "deterministic_given_identical_source_tree": true,
+        "file_mode": "0644",
+        "gid": 0,
+        "gzip_compression_level": 9,
+        "gzip_mtime": 0,
+        "sorted_member_paths": true,
+        "tar_format": "PAX",
+        "tar_member_mtime": 0,
+        "uid": 0
+      },
+      "path": "results/archives/stage9-sparse-s1-27fffed087e6.tar.gz",
+      "restored_top_level_directory": "stage9-sparse-s1-27fffed087e6",
+      "runtime_note": "The archive contains official-run runtime telemetry. Runtime telemetry remains excluded from deterministic cross-rerun scientific artifact comparisons.",
+      "sha256": "8d613c30e98f057bd9dc41c9fe57f5799c71bcedbf072cc82d1c9bd7ba1124c3",
+      "size_bytes": 8702326
+    }
+  },
+  "primary_fidelity_threshold_selected": false,
+  "raw_artifact_retention": {
+    "reason": "The complete unpacked tree contains 2,949 files and is approximately 116 MB. A deterministic compressed archive preserves the complete evidence while avoiding thousands of loose Git objects.",
+    "tracked_archive": "results/archives/stage9-sparse-s1-27fffed087e6.tar.gz",
+    "unpacked_directory": "results/raw/stage9-sparse-s1-27fffed087e6",
+    "unpacked_directory_ignored_by_git": true
+  },
+  "runtime_artifact_resolution": {
+    "deterministic_scientific_table_contains_runtime": false,
+    "reason": "Measured wall-clock time is nondeterministic. It is recorded in a separate runtime table so mask, trajectory, candidate-log, summary, and compact scientific-table hashes can reproduce exactly."
+  },
+  "schema_version": 1,
+  "search_configuration": {
+    "algorithm": "deterministic_greedy_single_deletion",
+    "candidate_batch_size": 16,
+    "checkpoint_execution_order": [
+      {
+        "checkpoint_step": 9050,
+        "phase": "stable post-grokking"
+      },
+      {
+        "checkpoint_step": 200,
+        "phase": "pre-grokking"
+      },
+      {
+        "checkpoint_step": 8150,
+        "phase": "50%"
+      }
+    ],
+    "checkpoint_manifest_sha256": "a33b856e07b9223d6ee552810d8b4eb6f20ae2eb74427934933ef022ba48fd23",
+    "component_count": 516,
+    "device": "cpu",
+    "evaluation_batch_size": 256,
+    "exact_evaluation_budget_per_cell": 10000,
+    "fidelity_threshold_execution_order": [
+      0.99,
+      0.975,
+      0.95,
+      0.9,
+      0.85,
+      0.8
+    ],
+    "implementation_git_commit": "254d4b02bfc6e747c6a83b3164160015ee00659e",
+    "meaningfully_sparse_max_components": 258,
+    "method_development": false,
+    "ranking_batch_size": 256,
+    "ranking_score_definition": "signed first-order predicted pseudo-target loss change under deletion: score_i = -g_i * dL/dg_i; retained gates have g_i=1",
+    "source_training_run_id": "modular-addition-training-s1-5f1bc9dee7ab",
+    "stage8_manifest_sha256": "ed6aca8d20d43ea7618936b962c8e865859c21894e5d809580106ffe73a8d4e5"
+  },
+  "software": {
+    "packages": {
+      "PyYAML": "6.0.3",
+      "numpy": "2.4.6",
+      "pandas": "2.3.3",
+      "torch": "2.13.0",
+      "transformer-lens": "3.5.1"
+    },
+    "python": "3.11.15"
+  },
+  "source_manifests": {
+    "checkpoint_selection": {
+      "path": "manifests/checkpoints_seed_1.json",
+      "sha256": "a33b856e07b9223d6ee552810d8b4eb6f20ae2eb74427934933ef022ba48fd23"
+    },
+    "stage8_masking": {
+      "path": "manifests/stage8_masking_s1-5f1bc9dee7ab.json",
+      "sha256": "ed6aca8d20d43ea7618936b962c8e865859c21894e5d809580106ffe73a8d4e5"
+    }
+  },
+  "source_training_run_id": "modular-addition-training-s1-5f1bc9dee7ab",
+  "stage9_implementation_git_commit": "254d4b02bfc6e747c6a83b3164160015ee00659e",
+  "stage9_run_id": "stage9-sparse-s1-27fffed087e6",
+  "threshold_calibration": {
+    "pre_and_transition": "excluded_from_primary_threshold_calibration",
+    "selection_performed_in_stage9": false,
+    "stable_post": "eligible_for_later_stage11_primary_threshold_calibration"
+  }
+}
