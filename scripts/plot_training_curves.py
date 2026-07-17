@@ -53,7 +53,7 @@ def main() -> None:
         manifest_path=manifest_path,
         csv_path=repository
         / "results/tables"
-        / "seed_0_training_metrics.csv",
+        / f"{args.output_stem.replace('_training_curves', '')}_training_metrics.csv",
         png_path=repository / "figures" / f"{args.output_stem}.png",
         pdf_path=repository / "figures" / f"{args.output_stem}.pdf",
         caption_path=repository

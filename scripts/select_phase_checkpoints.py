@@ -88,11 +88,13 @@ def main() -> None:
 
     result = select_phase_checkpoints(records)
 
+    seed = int(manifest["seed"]["value"])
+
     phase_table_path = (
         repository
         / "results"
         / "tables"
-        / "seed_0_phase_checkpoints.csv"
+        / f"seed_{seed}_phase_checkpoints.csv"
     )
 
     write_phase_table(
@@ -103,7 +105,7 @@ def main() -> None:
     phase_manifest_path = (
         repository
         / "manifests"
-        / "checkpoints_seed_0.json"
+        / f"checkpoints_seed_{seed}.json"
     )
 
     git_status = subprocess.run(

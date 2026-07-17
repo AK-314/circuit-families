@@ -1,0 +1,185 @@
+{
+  "creation_timestamp_utc": "2026-07-17T06:17:47.131242+00:00",
+  "descriptive_transition_candidates": {},
+  "earliest_stable_post_sequence_steps": [
+    8850,
+    8900,
+    8950,
+    9000,
+    9050
+  ],
+  "formal_transition_checkpoints": {
+    "10%": {
+      "absolute_target_error": 0.00021254867315292914,
+      "achieved_test_accuracy": 0.09978745132684708,
+      "achieved_train_accuracy": 1.0,
+      "checkpoint_path": "checkpoints/modular-addition-training-s1-5f1bc9dee7ab/step_00003400.pt",
+      "checkpoint_sha256": "8edd5afa0fb7d6759405a0ddc86e1e107a2758ba62918597ceb89f590e0c2d71",
+      "phase_label": "10%",
+      "run_id": "modular-addition-training-s1-5f1bc9dee7ab",
+      "selection_status": "selected",
+      "target_test_accuracy": 0.1,
+      "test_loss": 17.46401023864746,
+      "train_loss": 0.00014679862943012267,
+      "training_step": 3400
+    },
+    "25%": {
+      "absolute_target_error": 0.0029365718364715576,
+      "achieved_test_accuracy": 0.25293657183647156,
+      "achieved_train_accuracy": 1.0,
+      "checkpoint_path": "checkpoints/modular-addition-training-s1-5f1bc9dee7ab/step_00007450.pt",
+      "checkpoint_sha256": "687672a1ad461fe4ce8f1e5d3da99e3bffc342199a19612ebdaaf8807ad222f0",
+      "phase_label": "25%",
+      "run_id": "modular-addition-training-s1-5f1bc9dee7ab",
+      "selection_status": "selected",
+      "target_test_accuracy": 0.25,
+      "test_loss": 8.109823226928711,
+      "train_loss": 7.721770816715434e-05,
+      "training_step": 7450
+    },
+    "50%": {
+      "absolute_target_error": 0.01415148377418518,
+      "achieved_test_accuracy": 0.4858485162258148,
+      "achieved_train_accuracy": 1.0,
+      "checkpoint_path": "checkpoints/modular-addition-training-s1-5f1bc9dee7ab/step_00008150.pt",
+      "checkpoint_sha256": "94d77d3cfefba5700b9f1fcf6f393cc7a6f94e0447d55be1e8d6d786ce7d5810",
+      "phase_label": "50%",
+      "run_id": "modular-addition-training-s1-5f1bc9dee7ab",
+      "selection_status": "selected",
+      "target_test_accuracy": 0.5,
+      "test_loss": 3.8397655487060547,
+      "train_loss": 0.00031825259793549776,
+      "training_step": 8150
+    },
+    "75%": {
+      "absolute_target_error": 0.018430471420288086,
+      "achieved_test_accuracy": 0.7684304714202881,
+      "achieved_train_accuracy": 1.0,
+      "checkpoint_path": "checkpoints/modular-addition-training-s1-5f1bc9dee7ab/step_00008500.pt",
+      "checkpoint_sha256": "a42529861e3ca64664b59a66eaf4f6b7fcbaca59a1d78befd8333083e3594a74",
+      "phase_label": "75%",
+      "run_id": "modular-addition-training-s1-5f1bc9dee7ab",
+      "selection_status": "selected",
+      "target_test_accuracy": 0.75,
+      "test_loss": 0.8443329334259033,
+      "train_loss": 0.0003959056339226663,
+      "training_step": 8500
+    },
+    "90%": {
+      "absolute_target_error": 0.01565054655075071,
+      "achieved_test_accuracy": 0.9156505465507507,
+      "achieved_train_accuracy": 1.0,
+      "checkpoint_path": "checkpoints/modular-addition-training-s1-5f1bc9dee7ab/step_00008650.pt",
+      "checkpoint_sha256": "60e539119c242ee1491e27bb2da381de6421475e6d0ded8d9b01113cb83cf5ac",
+      "phase_label": "90%",
+      "run_id": "modular-addition-training-s1-5f1bc9dee7ab",
+      "selection_status": "selected",
+      "target_test_accuracy": 0.9,
+      "test_loss": 0.2735099494457245,
+      "train_loss": 7.512327283620834e-05,
+      "training_step": 8650
+    }
+  },
+  "has_valid_pre_checkpoint": true,
+  "incomplete_grid": false,
+  "phase_selection_rules": {
+    "pre_grokking": {
+      "maximum_test_accuracy": 0.05,
+      "minimum_train_accuracy": 0.999,
+      "missing_rule": "no substitution",
+      "must_precede_first_test_accuracy_at_or_above": 0.1,
+      "selection": "latest saved checkpoint"
+    },
+    "stable_post_grokking": {
+      "minimum_test_accuracy": 0.99,
+      "required_consecutive_checkpoints": 5,
+      "selection": "fifth checkpoint in earliest qualifying sequence"
+    },
+    "transition_landmarks": {
+      "eligible_interval": "strictly after selected pre checkpoint and strictly before selected stable-post checkpoint",
+      "missing_pre_rule": "no formal transition landmarks; optional candidates are descriptive_only_missing_pre",
+      "selection": "nearest saved test accuracy",
+      "targets": {
+        "10%": 0.1,
+        "25%": 0.25,
+        "50%": 0.5,
+        "75%": 0.75,
+        "90%": 0.9
+      },
+      "tie_break": "earlier training step"
+    }
+  },
+  "phase_table": {
+    "path": "results/tables/seed_1_phase_checkpoints.csv",
+    "sha256": "cea586e8ec21d9bcdae82ff5022672491acaa4261de2f0960ee7c38bb57f7194"
+  },
+  "pilot_eligibility_from_stage_7": "eligible_subject_to_frozen_grokking_criteria",
+  "pre_checkpoint": {
+    "absolute_target_error": null,
+    "achieved_test_accuracy": 0.0485512912273407,
+    "achieved_train_accuracy": 1.0,
+    "checkpoint_path": "checkpoints/modular-addition-training-s1-5f1bc9dee7ab/step_00000200.pt",
+    "checkpoint_sha256": "815265490d13d24a0d6d29eb99a900ee186f78cd0a63593de1a62af7ce710f7a",
+    "phase_label": "pre-grokking",
+    "run_id": "modular-addition-training-s1-5f1bc9dee7ab",
+    "selection_status": "selected",
+    "target_test_accuracy": null,
+    "test_loss": 18.2559814453125,
+    "train_loss": 0.02843901701271534,
+    "training_step": 200
+  },
+  "pre_checkpoint_failure_reason": null,
+  "pre_checkpoint_status": "selected",
+  "preferred_grid": [
+    "pre-grokking",
+    "10%",
+    "25%",
+    "50%",
+    "75%",
+    "90%",
+    "stable post-grokking"
+  ],
+  "preferred_grid_status": "complete",
+  "prospective_reduced_grid_fallback": {
+    "grid": [
+      "pre-grokking",
+      "50%",
+      "stable post-grokking"
+    ],
+    "selected_for_scaled_seeds": false,
+    "status": "pending_stage_12_compute_projection"
+  },
+  "provenance": {
+    "phase_selection_git_commit": "d4293979db3903b2b0ec0f3bc106314178340160",
+    "phase_selection_git_status": "dirty",
+    "training_git_commit": "d4293979db3903b2b0ec0f3bc106314178340160"
+  },
+  "run_id": "modular-addition-training-s1-5f1bc9dee7ab",
+  "schema_version": 1,
+  "selected_stable_post_checkpoint": {
+    "absolute_target_error": null,
+    "achieved_test_accuracy": 0.9991050362586975,
+    "achieved_train_accuracy": 1.0,
+    "checkpoint_path": "checkpoints/modular-addition-training-s1-5f1bc9dee7ab/step_00009050.pt",
+    "checkpoint_sha256": "5b449db5ff9a62d5b621450c013bc25949499ed767e6db1723561a4e87ab8d70",
+    "phase_label": "stable post-grokking",
+    "run_id": "modular-addition-training-s1-5f1bc9dee7ab",
+    "selection_status": "selected",
+    "target_test_accuracy": null,
+    "test_loss": 0.0027095251716673374,
+    "train_loss": 1.168965241049591e-06,
+    "training_step": 9050
+  },
+  "software": {
+    "PyYAML": "6.0.3",
+    "numpy": "2.4.6",
+    "pandas": "2.3.3",
+    "torch": "2.13.0",
+    "transformer-lens": "3.5.1"
+  },
+  "source_metrics": {
+    "path": "results/raw/modular-addition-training-s1-5f1bc9dee7ab/metrics.jsonl",
+    "sha256": "51575645bb14e3d7897ed3c0c671c9fd0a0c1121aa5f7e09404cf0d2237c1975"
+  },
+  "source_training_manifest": "manifests/training_modular-addition-training-s1-5f1bc9dee7ab.json"
+}
