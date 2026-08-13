@@ -1,0 +1,209 @@
+{
+  "artifacts": {
+    "figure_caption": {
+      "path": "figures/stage13_no_generalisation_training_curves_caption.txt",
+      "sha256": "c758e6c91b068b4eba03773865b9497f2eebf8deee254842707e53d3e33fc970"
+    },
+    "figure_pdf": {
+      "path": "figures/stage13_no_generalisation_training_curves.pdf",
+      "sha256": "a2096f7f322df0faaa1169b100ad9fce88fd729ced0c89da5817d8750c1ba002"
+    },
+    "figure_png": {
+      "path": "figures/stage13_no_generalisation_training_curves.png",
+      "sha256": "5533728484857fb2b0d20ec40e520bccf4b32776353cc087cee9faa7072fd079"
+    },
+    "metrics_table": {
+      "path": "results/tables/stage13_no_generalisation_training_metrics.csv",
+      "sha256": "53a74c8555f3a26b2830b2606377912d794bfc58f3baad80eebe3cefadf06349"
+    },
+    "selection_note": {
+      "path": "results/notes/stage13_no_generalisation_selection.md",
+      "sha256": "da795a74e782e4d698d525e25d27e786b62776d1c6044f035317a77a1fe88145"
+    },
+    "selection_table": {
+      "path": "results/tables/stage13_no_generalisation_selection.csv",
+      "sha256": "26d21e456d5605e5cacebe317b94a47901526cae0085279bea171deb590923f6"
+    }
+  },
+  "candidate_execution_order": [
+    0.25,
+    0.2,
+    0.15,
+    0.1,
+    0.05
+  ],
+  "candidate_qualification_rows": [
+    {
+      "criterion1_reached_by_step_5000": true,
+      "criterion2_persistence": true,
+      "criterion3_test_accuracy_ceiling": true,
+      "criterion4_test_accuracy_plateau": true,
+      "criterion5_test_loss_plateau": false,
+      "exact_training_example_count": 3192,
+      "first_train_accuracy_step": 200,
+      "fraction": 0.25,
+      "maximum_test_accuracy": 0.06454860419034958,
+      "maximum_test_accuracy_step": 9000,
+      "mean_test_accuracy_final_window": 0.061992392502725126,
+      "mean_test_accuracy_preceding_window": 0.05425662826746702,
+      "overall_qualification": false,
+      "persistence_denominator": 177,
+      "persistence_numerator": 174,
+      "persistence_proportion": 0.9830508474576272,
+      "required_horizon": 9050,
+      "selected_control": false,
+      "selection_rank": 1,
+      "test_accuracy_window_difference": 0.007735764235258104,
+      "test_cross_entropy_at_4050": 21.967317581176758,
+      "test_cross_entropy_at_9050": 19.117631912231445,
+      "test_cross_entropy_fractional_fall": 0.12972387996007018
+    },
+    {
+      "criterion1_reached_by_step_5000": true,
+      "criterion2_persistence": true,
+      "criterion3_test_accuracy_ceiling": true,
+      "criterion4_test_accuracy_plateau": true,
+      "criterion5_test_loss_plateau": false,
+      "exact_training_example_count": 2553,
+      "first_train_accuracy_step": 200,
+      "fraction": 0.2,
+      "maximum_test_accuracy": 0.015437968075275421,
+      "maximum_test_accuracy_step": 4850,
+      "mean_test_accuracy_final_window": 0.01144423307850957,
+      "mean_test_accuracy_preceding_window": 0.012104262225329876,
+      "overall_qualification": false,
+      "persistence_denominator": 177,
+      "persistence_numerator": 174,
+      "persistence_proportion": 0.9830508474576272,
+      "required_horizon": 9050,
+      "selected_control": false,
+      "selection_rank": 2,
+      "test_accuracy_window_difference": -0.0006600291468203068,
+      "test_cross_entropy_at_4050": 35.91190719604492,
+      "test_cross_entropy_at_9050": 28.79105567932129,
+      "test_cross_entropy_fractional_fall": 0.19828664286334172
+    },
+    {
+      "criterion1_reached_by_step_5000": true,
+      "criterion2_persistence": true,
+      "criterion3_test_accuracy_ceiling": true,
+      "criterion4_test_accuracy_plateau": true,
+      "criterion5_test_loss_plateau": false,
+      "exact_training_example_count": 1915,
+      "first_train_accuracy_step": 150,
+      "fraction": 0.15,
+      "maximum_test_accuracy": 0.01085132546722889,
+      "maximum_test_accuracy_step": 1500,
+      "mean_test_accuracy_final_window": 0.008585971547290683,
+      "mean_test_accuracy_preceding_window": 0.009190066112205386,
+      "overall_qualification": false,
+      "persistence_denominator": 178,
+      "persistence_numerator": 175,
+      "persistence_proportion": 0.9831460674157303,
+      "required_horizon": 9050,
+      "selected_control": false,
+      "selection_rank": 3,
+      "test_accuracy_window_difference": -0.0006040945649147033,
+      "test_cross_entropy_at_4050": 26.90032196044922,
+      "test_cross_entropy_at_9050": 18.112342834472656,
+      "test_cross_entropy_fractional_fall": 0.3266867637828752
+    },
+    {
+      "criterion1_reached_by_step_5000": true,
+      "criterion2_persistence": true,
+      "criterion3_test_accuracy_ceiling": true,
+      "criterion4_test_accuracy_plateau": true,
+      "criterion5_test_loss_plateau": false,
+      "exact_training_example_count": 1276,
+      "first_train_accuracy_step": 150,
+      "fraction": 0.1,
+      "maximum_test_accuracy": 0.021478911861777306,
+      "maximum_test_accuracy_step": 150,
+      "mean_test_accuracy_final_window": 0.010549278371036053,
+      "mean_test_accuracy_preceding_window": 0.010840138653293252,
+      "overall_qualification": false,
+      "persistence_denominator": 178,
+      "persistence_numerator": 176,
+      "persistence_proportion": 0.9887640449438202,
+      "required_horizon": 9050,
+      "selected_control": false,
+      "selection_rank": 4,
+      "test_accuracy_window_difference": -0.0002908602822571996,
+      "test_cross_entropy_at_4050": 43.07728958129883,
+      "test_cross_entropy_at_9050": 19.750473022460938,
+      "test_cross_entropy_fractional_fall": 0.5415107771535556
+    },
+    {
+      "criterion1_reached_by_step_5000": true,
+      "criterion2_persistence": true,
+      "criterion3_test_accuracy_ceiling": true,
+      "criterion4_test_accuracy_plateau": true,
+      "criterion5_test_loss_plateau": false,
+      "exact_training_example_count": 638,
+      "first_train_accuracy_step": 100,
+      "fraction": 0.05,
+      "maximum_test_accuracy": 0.014990490861237049,
+      "maximum_test_accuracy_step": 50,
+      "mean_test_accuracy_final_window": 0.005744490493088961,
+      "mean_test_accuracy_preceding_window": 0.005492784408852458,
+      "overall_qualification": false,
+      "persistence_denominator": 179,
+      "persistence_numerator": 175,
+      "persistence_proportion": 0.9776536312849162,
+      "required_horizon": 9050,
+      "selected_control": false,
+      "selection_rank": 5,
+      "test_accuracy_window_difference": 0.00025170608423650284,
+      "test_cross_entropy_at_4050": 45.713279724121094,
+      "test_cross_entropy_at_9050": 22.519245147705078,
+      "test_cross_entropy_fractional_fall": 0.5073806717958467
+    }
+  ],
+  "checkpoint_validation": {
+    "all_candidates_passed": true,
+    "all_checkpoint_file_hashes_verified": true,
+    "required_steps": [
+      0,
+      200,
+      3400,
+      4050,
+      5000,
+      7450,
+      8150,
+      8500,
+      8650,
+      9050
+    ]
+  },
+  "creation_timestamp_utc": "2026-07-20T23:28:13.549088+00:00",
+  "data_coverage_limitation": "The matched no-generalisation control changes the fraction of the original training partition available to the model. It therefore controls for training time, architecture, optimiser and regularisation while deliberately changing data coverage. Any later difference between the main condition and this control cannot be attributed solely to generalisation without acknowledging the reduced-data intervention.",
+  "experiment_type": "stage13_no_generalisation_selection",
+  "figure_hashes": {
+    "training_curves_caption_sha256": "c758e6c91b068b4eba03773865b9497f2eebf8deee254842707e53d3e33fc970",
+    "training_curves_pdf_sha256": "a2096f7f322df0faaa1169b100ad9fce88fd729ced0c89da5817d8750c1ba002",
+    "training_curves_png_sha256": "5533728484857fb2b0d20ec40e520bccf4b32776353cc087cee9faa7072fd079"
+  },
+  "implementation_commit": "068d99e0bedd4436b3e721294645cdda0a70734d",
+  "matched_horizon": 9050,
+  "model_seed": 0,
+  "no_control_circuit_metric_inspected": true,
+  "resolved_protocol_ambiguity": {
+    "final_window_steps": "8100, 8150, ..., 9050",
+    "formula_followed": true,
+    "preceding_window_steps": "7100, 7150, ..., 8050",
+    "window_count_each": 20
+  },
+  "schema_version": 1,
+  "selected_fraction": null,
+  "selection_evidence": "training_and_test_curves_only",
+  "selection_outcome": "no_qualifying_fraction",
+  "selection_rule": "Select the largest candidate fraction satisfying all five prespecified criteria.",
+  "source_candidate_registry": {
+    "path": "results/raw/stage13-no-generalisation-s0-154f43de1214/candidate_runs.json",
+    "sha256": "e5de8eaea1251c41b54594bf7bfb3e6eed1881305cdc5ba479c5d4e7182c2df9"
+  },
+  "source_protocol_pre_freeze_sha256": "4cfed98af1736e4d8414fe9c06df32321384a014965ea1e60cc2053e12b66bba",
+  "stage13_run_id": "stage13-no-generalisation-s0-154f43de1214",
+  "stage14_started": false,
+  "stage15_started": false
+}

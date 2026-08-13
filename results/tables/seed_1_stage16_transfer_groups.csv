@@ -1,0 +1,4 @@
+stage16_run_id,tolerance_numerator,tolerance_denominator,tolerance,group_count,group_id,ordered_members_json,within_group_maximum_distance,between_group_minimum_distance,complete_linkage_valid
+stage16-transfer-s1-cc55bd4162c8,1,40,0.025,1,G01,"[""C1"",""C2"",""C3"",""C4"",""C5"",""C6"",""C7""]",0.00701530612244905,,True
+stage16-transfer-s1-cc55bd4162c8,1,20,0.05,1,G01,"[""C1"",""C2"",""C3"",""C4"",""C5"",""C6"",""C7""]",0.00701530612244905,,True
+stage16-transfer-s1-cc55bd4162c8,1,10,0.1,1,G01,"[""C1"",""C2"",""C3"",""C4"",""C5"",""C6"",""C7""]",0.00701530612244905,,True

@@ -1,0 +1,157 @@
+{
+  "schema_version": 1,
+  "freeze_id": "post-stage17-checkpoint-grid-and-concurrency-freeze-v1",
+  "record_type": "administrative_checkpoint_grid_and_concurrency_freeze",
+  "created_at_utc": "2026-07-28T09:43:01Z",
+  "repository": {
+    "branch": "main",
+    "head_before_freeze": "00b639328b693f02e3f864015f6550ee28cb44ef",
+    "working_tree_clean_before_freeze": true
+  },
+  "lifecycle": {
+    "stages_1_through_17_complete": true,
+    "stage15_status": "unavailable",
+    "checkpoint_grid_decision_made": true,
+    "stage18_started": false
+  },
+  "decision_basis": {
+    "permitted_evidence": [
+      "stage12_compute_projection",
+      "stage17_runtime_and_evaluation_counts",
+      "stage17_storage_and_file_count",
+      "hardware_topology",
+      "available_storage",
+      "compute_only_concurrency_benchmarks",
+      "practical_parallelism"
+    ],
+    "scientific_outcomes_used": false,
+    "stage17_family_sizes_used": false,
+    "stage17_transfer_results_used": false,
+    "anticipated_publication_value_used": false
+  },
+  "source_document_hashes": {
+    "experimental_protocol": {
+      "path": "experimental_protocol.md",
+      "pre_freeze_sha256": "0a3d04705bdd871bb7315d8e81a5f8e82b586d47e2d9f5be433fa33c773bb694",
+      "post_freeze_sha256": "4e58f7b76d84c3bf5dc9955fd32ce0245d43a1e97482b9051002be0a9dc064db"
+    },
+    "implementation_order": {
+      "path": "implementation_order.md",
+      "pre_freeze_sha256": "6b69b8013565b8d9d0f2b2fedf7d98d2c1818dfe267c0a28584fa53b9bbc2267",
+      "post_freeze_sha256": "89b37667d2633da27630c36404dc178e6b99a1086dc7d11159c64727153a84f5"
+    }
+  },
+  "checkpoint_grid": {
+    "selection": "full_seven_checkpoint_grid",
+    "checkpoint_steps": [
+      200,
+      3400,
+      7450,
+      8150,
+      8500,
+      8650,
+      9050
+    ],
+    "checkpoint_count": 7,
+    "selected_prospectively": true,
+    "applies_uniformly_to_scaled_main_seeds": true,
+    "sensitivity_cells_per_checkpoint": 18,
+    "projection_main_seed_count": 5,
+    "total_projected_main_sensitivity_cells": 630,
+    "existing_pilot_cells": 18,
+    "remaining_main_sensitivity_cells": 612,
+    "reduced_grid_selected": false
+  },
+  "concurrency": {
+    "device": "cpu",
+    "production_worker_count": 12,
+    "production_intra_op_threads_per_worker": 1,
+    "production_inter_op_threads_per_worker": 1,
+    "environment": {
+      "OMP_NUM_THREADS": "1",
+      "VECLIB_MAXIMUM_THREADS": "1"
+    },
+    "compute_only_ceiling_worker_count": 14,
+    "compute_only_ceiling_intra_op_threads_per_worker": 1,
+    "compute_only_ceiling_is_production_default": false,
+    "physical_core_count": 18,
+    "nominal_unallocated_physical_cores_at_production": 6,
+    "minimum_reserved_headroom_cores": 4,
+    "independent_cells_per_worker": true,
+    "isolated_output_root_per_worker": true,
+    "shared_writable_raw_directories_allowed": false,
+    "shared_writable_tables_allowed": false,
+    "shared_writable_manifests_allowed": false,
+    "deterministic_merge_serial": true,
+    "archive_creation_serial": true,
+    "final_reporting_serial": true
+  },
+  "calibration": {
+    "stage12_compute_projection": {
+      "path": "results/tables/stage12_compute_projection.csv",
+      "sha256": "f6a5de609480ee96831218e9b22f3af6b6a09cd7b0215454223377c40ea2394a"
+    },
+    "stage17_manifest": {
+      "path": "manifests/stage17_sensitivity_stage17-sensitivity-s1-7801e7938531.json",
+      "sha256": "1cc23013436540eb1bb5f0f080327d51a883503617f53e71fb17071b6537ebc0"
+    },
+    "stage17_runtime": {
+      "path": "results/tables/seed_1_stage17_runtime.csv",
+      "sha256": "40b1318df6cd4427b104ea22f9440329f2055d867f59460f12af117d58632b31",
+      "fresh_cell_count": 15,
+      "exact_evaluations": 659524,
+      "search_elapsed_seconds": 56929.18222900001,
+      "mean_search_elapsed_seconds_per_fresh_cell": 3795.278815266667
+    },
+    "stage17_storage": {
+      "raw_allocated_bytes": 5107601408,
+      "archive_bytes": 526897096,
+      "raw_file_count": 40993,
+      "projected_full_grid_raw_allocated_bytes_per_pass": 208390137446,
+      "projected_full_grid_archive_bytes_per_pass": 21497401517,
+      "projected_definitive_plus_reproduction_bytes": 459775077926,
+      "projected_raw_file_count_per_pass": 1672514
+    },
+    "hardware": {
+      "model_identifier": "Mac17,6",
+      "physical_cores": 18,
+      "logical_cores": 18,
+      "reported_performance_level_core_counts": [
+        6,
+        12
+      ],
+      "available_storage_bytes_at_freeze": 1511969955840
+    },
+    "benchmark_harness_sha256": "cdaa66e10b08a8f01bb91d3ece76a7f5cdc43f24887ca16a5f323ab17f131aa9",
+    "benchmark_summary_path": "results/tables/post_stage17_concurrency_benchmark_summary.csv",
+    "benchmark_reports": [
+      {
+        "report_id": "sustained-300s",
+        "source_path_at_freeze": "/private/tmp/stage18_parallel_benchmark_5min.json",
+        "sha256": "24d53e53cf5d11c29264eba1bda9007111d84214a7fbd9af033dedb11979f631",
+        "repository_head": "00b639328b693f02e3f864015f6550ee28cb44ef"
+      },
+      {
+        "report_id": "extended-180s",
+        "source_path_at_freeze": "/private/tmp/stage18_parallel_benchmark_extended.json",
+        "sha256": "114b474e72fadbb6d98a180f3ddd27706b627e6489cd4c2c164ef73765367e3c",
+        "repository_head": "00b639328b693f02e3f864015f6550ee28cb44ef"
+      }
+    ],
+    "production_throughput_cycles_per_second": 3.4644848207614247,
+    "compute_only_ceiling_throughput_cycles_per_second": 3.621917887743947,
+    "production_fraction_of_compute_only_ceiling": 0.9565332313260736,
+    "all_benchmark_integrity_checks_passed": true
+  },
+  "planning_estimate": {
+    "remaining_fresh_cells": 612,
+    "single_pass_single_worker_equivalent_hours_calibrated": 645.1973985953335,
+    "single_pass_single_worker_equivalent_hours_upper": 734.0,
+    "definitive_plus_reproduction_compute_only_days_at_production_lower": 11.12,
+    "definitive_plus_reproduction_compute_only_days_at_production_upper": 12.65,
+    "operational_continuous_days_lower": 12,
+    "operational_continuous_days_upper": 16,
+    "additional_model_training_excluded": true,
+    "serial_packaging_overhead_not_in_compute_only_estimate": true
+  }
+}

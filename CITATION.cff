@@ -1,0 +1,29 @@
+cff-version: 1.2.0
+message: >-
+  If you use this artifact, please cite the archived version using the DOI below.
+title: >-
+  Grokking Opens a Family of Sparse Circuits: Code, Data, and Reproducibility Artifact
+type: software
+authors:
+  - family-names: Kolesnikov
+    given-names: Alex
+version: 1.0.0
+date-released: "2026-08-13"
+doi: 10.5281/zenodo.21917638
+url: https://doi.org/10.5281/zenodo.21917638
+repository-code: https://github.com/AK-314/circuit-families
+license: MIT
+abstract: >-
+  Code, data, selected model checkpoints, recorded analysis outputs, and
+  reproduction materials accompanying “Grokking Opens a Family of Sparse
+  Circuits.” The artifact supports integrity verification, independent
+  recalculation of reported summaries, figure regeneration from source CSVs,
+  checkpoint-level reevaluation, analysis reruns, and from-scratch model
+  retraining under the specified procedure.
+keywords:
+  - grokking
+  - mechanistic interpretability
+  - sparse circuits
+  - transformers
+  - modular arithmetic
+  - reproducibility

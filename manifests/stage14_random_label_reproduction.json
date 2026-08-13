@@ -1,0 +1,120 @@
+{
+  "byte_identical_artifacts": [
+    {
+      "byte_identical": true,
+      "path": "results/tables/seed_0_stage14_random_label_training_metrics.csv",
+      "primary_sha256": "6b5110e3248bcc6d7c595f07b7e18a776ae5b20ce62234ff0ae0edfe3f9fc90a",
+      "reproduction_sha256": "6b5110e3248bcc6d7c595f07b7e18a776ae5b20ce62234ff0ae0edfe3f9fc90a"
+    },
+    {
+      "byte_identical": true,
+      "path": "results/tables/seed_0_stage14_random_label_checkpoints.csv",
+      "primary_sha256": "d62326f96a67b7f5313191625a41f6d8f0c9caf32c021618ac1e56eedba1e39c",
+      "reproduction_sha256": "d62326f96a67b7f5313191625a41f6d8f0c9caf32c021618ac1e56eedba1e39c"
+    },
+    {
+      "byte_identical": true,
+      "path": "results/tables/seed_0_stage14_random_label_masking_validation.csv",
+      "primary_sha256": "6ab805a2257568d2ed44a77efa44f2bcd34494ec441ae6430e1ec16a5305dc0c",
+      "reproduction_sha256": "6ab805a2257568d2ed44a77efa44f2bcd34494ec441ae6430e1ec16a5305dc0c"
+    }
+  ],
+  "byte_identical_masks": [
+    {
+      "byte_identical": true,
+      "path": "results/raw/stage14-random-label-training-s0-df790c07a988-masking/masks/all_retained.json",
+      "primary_sha256": "6beaef00e230f0c05466b6b8a790f6be8aeafdc8807d72a39320930081da4dfc",
+      "reproduction_sha256": "6beaef00e230f0c05466b6b8a790f6be8aeafdc8807d72a39320930081da4dfc"
+    },
+    {
+      "byte_identical": true,
+      "path": "results/raw/stage14-random-label-training-s0-df790c07a988-masking/masks/all_ablated.json",
+      "primary_sha256": "f2462e98b96e0b17a669b23e76ffaae13b6fd70e174714dc900bb969f6e0e378",
+      "reproduction_sha256": "f2462e98b96e0b17a669b23e76ffaae13b6fd70e174714dc900bb969f6e0e378"
+    },
+    {
+      "byte_identical": true,
+      "path": "results/raw/stage14-random-label-training-s0-df790c07a988-masking/masks/head_H0_ablated.json",
+      "primary_sha256": "0f2ae7b3f6f6b298a2379da7715bbf6c9bec0b55970e65050233d8b2bb3370b1",
+      "reproduction_sha256": "0f2ae7b3f6f6b298a2379da7715bbf6c9bec0b55970e65050233d8b2bb3370b1"
+    },
+    {
+      "byte_identical": true,
+      "path": "results/raw/stage14-random-label-training-s0-df790c07a988-masking/masks/neuron_N0_ablated.json",
+      "primary_sha256": "f8b031ec3820adadb02cab02125199985d968b855434209ebac22c1c060e069e",
+      "reproduction_sha256": "f8b031ec3820adadb02cab02125199985d968b855434209ebac22c1c060e069e"
+    },
+    {
+      "byte_identical": true,
+      "path": "results/raw/stage14-random-label-training-s0-df790c07a988-masking/masks/saved_arbitrary_reloaded.json",
+      "primary_sha256": "576ce56217dc7f114b156341c64a985cac2a94b6dbb1d6a27c5b7babecf57611",
+      "reproduction_sha256": "576ce56217dc7f114b156341c64a985cac2a94b6dbb1d6a27c5b7babecf57611"
+    }
+  ],
+  "checkpoint_selection_reproduction": {
+    "absolute_step_mismatch": 0,
+    "classification_identical": true,
+    "matched_checkpoint_count": 7,
+    "matched_steps": [
+      200,
+      3400,
+      7450,
+      8150,
+      8500,
+      8650,
+      9050
+    ],
+    "normalised_manifest_identical": true
+  },
+  "experiment_type": "random_label_independent_reproduction",
+  "implementation_commit": "83ac9bdf42b79cf097b7cfc1b6843bd274b7dbcb",
+  "primary_output": {
+    "checkpoint_selection_manifest": {
+      "normalised_sha256": "37900cf093ee5baee0d087dd579d0fcd55809628eef510bdadbc0222fc6ef66d",
+      "path": "manifests/stage14_random_label_checkpoints.json",
+      "sha256": "60df86dc9b8159f9f774d12bab19da0d0422e6de0ad30e6cdd4be456ee79741d"
+    },
+    "training_manifest": {
+      "normalised_sha256": "a88ca7bc769b2e2dbe9bcb2d8b1f24e97441a1ac4d942fca1869d053aee214d5",
+      "path": "manifests/training_stage14-random-label-training-s0-df790c07a988.json",
+      "sha256": "bd6ad49d7b501500b270c91239b47ab119f28220e3b31bca10183ad8cafc85bc"
+    }
+  },
+  "reproduction_output": {
+    "checkpoint_selection_manifest": {
+      "normalised_sha256": "37900cf093ee5baee0d087dd579d0fcd55809628eef510bdadbc0222fc6ef66d",
+      "path": "manifests/stage14_random_label_checkpoints.json",
+      "sha256": "39c8281df8d2b742f4574009e64ae0706d0619c2fbc2ec22382217a79f1ebc84"
+    },
+    "training_manifest": {
+      "normalised_sha256": "a88ca7bc769b2e2dbe9bcb2d8b1f24e97441a1ac4d942fca1869d053aee214d5",
+      "path": "manifests/training_stage14-random-label-training-s0-df790c07a988.json",
+      "sha256": "83b1eb922f502e232a5fe088206289b5e8dc310181262dd8a4460cea4d1d86aa"
+    }
+  },
+  "reproduction_status": "passed",
+  "schema_version": 1,
+  "scientific_scope": {
+    "diversity_search_started": false,
+    "exact_checkpoint_matching_reproduced": true,
+    "masking_machinery_validation_reproduced": true,
+    "random_label_sparse_search_started": false,
+    "random_label_training_reproduced": true,
+    "stage15_started": false
+  },
+  "stage": 14,
+  "stage14_run_id": "stage14-random-label-training-s0-df790c07a988",
+  "training_reproduction": {
+    "all_checkpoints_reload_verified_in_both_runs": true,
+    "checkpoint_count": 182,
+    "checkpoint_file_sha256_identical": true,
+    "checkpoint_steps_identical": true,
+    "combined_config_sha256_identical": true,
+    "final_metrics_identical": true,
+    "model_state_sha256_identical": true,
+    "normalised_training_manifest_identical": true,
+    "optimizer_state_sha256_identical": true,
+    "raw_metrics_sha256_identical": true,
+    "run_id_identical": true
+  }
+}

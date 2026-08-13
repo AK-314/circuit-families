@@ -1,0 +1,165 @@
+{
+  "classification": {
+    "criterion": "final_training_accuracy_at_least_0.99",
+    "final_training_accuracy": 1.0,
+    "first_step_reaching_99_percent": 200,
+    "label": "memorisation_control",
+    "reached_99_percent_by_step_9050": true,
+    "threshold": 0.99
+  },
+  "diversity_search_started": false,
+  "expected_absolute_step_mismatch": 0,
+  "implementation_commit": "83ac9bdf42b79cf097b7cfc1b6843bd274b7dbcb",
+  "main_model_checkpoint_reference": {
+    "path": "manifests/checkpoints_seed_1.json",
+    "phase_labels_apply_to": "main_model_only",
+    "sha256": "a33b856e07b9223d6ee552810d8b4eb6f20ae2eb74427934933ef022ba48fd23"
+  },
+  "matched_checkpoint_count": 7,
+  "matched_checkpoints": [
+    {
+      "absolute_step_mismatch": 0,
+      "checkpoint_path": "checkpoints/stage14-random-label-training-s0-df790c07a988/step_00000200.pt",
+      "checkpoint_sha256": "a55c731765d2050ca918f905fd1a1ebeba2444ed86071194a905349bf7e3cdda",
+      "main_model_reference_phase_label": "pre-grokking",
+      "model_state_sha256": "5d3d174238158f63837d110c3d47d59469e2a40e9cc97c5edc4b27dcb7f0e29d",
+      "optimizer_state_sha256": "de2d504c4435802186bb6530418a6278e969527b67359b4a5c4fbbb7087972bf",
+      "phase_label_scope": "main_model_reference_only",
+      "reload_verified": true,
+      "requested_step": 200,
+      "selected_random_label_step": 200,
+      "stage14_run_id": "stage14-random-label-training-s0-df790c07a988",
+      "test_accuracy": 0.008613938465714455,
+      "test_cross_entropy": 18.419525146484375,
+      "train_accuracy": 1.0,
+      "train_cross_entropy": 0.09218858182430267
+    },
+    {
+      "absolute_step_mismatch": 0,
+      "checkpoint_path": "checkpoints/stage14-random-label-training-s0-df790c07a988/step_00003400.pt",
+      "checkpoint_sha256": "d23b723dde1eab1166e4c889e3db46b36438ee850294e12d62f2b99f439528f2",
+      "main_model_reference_phase_label": "10%",
+      "model_state_sha256": "9f6a9cd09b191229b4f99bedbb7a55ffb1e8f606e30da9ee2415270032a9430b",
+      "optimizer_state_sha256": "f58bb9d4a14d1fc4dc396b7ac94a8224c92eb759c00d22609b033e8b47694056",
+      "phase_label_scope": "main_model_reference_only",
+      "reload_verified": true,
+      "requested_step": 3400,
+      "selected_random_label_step": 3400,
+      "stage14_run_id": "stage14-random-label-training-s0-df790c07a988",
+      "test_accuracy": 0.00827833078801632,
+      "test_cross_entropy": 21.917863845825195,
+      "train_accuracy": 1.0,
+      "train_cross_entropy": 0.0004341111343819648
+    },
+    {
+      "absolute_step_mismatch": 0,
+      "checkpoint_path": "checkpoints/stage14-random-label-training-s0-df790c07a988/step_00007450.pt",
+      "checkpoint_sha256": "603935a863d5668fa54d38b9a971c0b3e45abb942a3762d75501dd6e2e71da02",
+      "main_model_reference_phase_label": "25%",
+      "model_state_sha256": "bd5c63e0c374f92f4333b0bfded482a04c823570aa55bdcbc2980644940c7b7d",
+      "optimizer_state_sha256": "4f1411087354571b91ca5aa4da5b80b77a2f3448a1c31255964dd7ba77c7e702",
+      "phase_label_scope": "main_model_reference_only",
+      "reload_verified": true,
+      "requested_step": 7450,
+      "selected_random_label_step": 7450,
+      "stage14_run_id": "stage14-random-label-training-s0-df790c07a988",
+      "test_accuracy": 0.010515717789530754,
+      "test_cross_entropy": 27.34349822998047,
+      "train_accuracy": 1.0,
+      "train_cross_entropy": 1.7156833564513363e-05
+    },
+    {
+      "absolute_step_mismatch": 0,
+      "checkpoint_path": "checkpoints/stage14-random-label-training-s0-df790c07a988/step_00008150.pt",
+      "checkpoint_sha256": "f8ae2f048c8ab9d77a1ff77e13f2f348a2095423cbe6a4d5b78059ebce9f8e45",
+      "main_model_reference_phase_label": "50%",
+      "model_state_sha256": "cadd73a0923b1808a683a584810a65f9d9b0b9ff4fd6839ace5a8208a0394c3a",
+      "optimizer_state_sha256": "751b9eb8605a365053742bb960ea0b780a37e360dfb8dfda2ba26fcbf0cdd1ef",
+      "phase_label_scope": "main_model_reference_only",
+      "reload_verified": true,
+      "requested_step": 8150,
+      "selected_random_label_step": 8150,
+      "stage14_run_id": "stage14-random-label-training-s0-df790c07a988",
+      "test_accuracy": 0.01029197871685028,
+      "test_cross_entropy": 15.424567222595215,
+      "train_accuracy": 1.0,
+      "train_cross_entropy": 0.005966304335743189
+    },
+    {
+      "absolute_step_mismatch": 0,
+      "checkpoint_path": "checkpoints/stage14-random-label-training-s0-df790c07a988/step_00008500.pt",
+      "checkpoint_sha256": "b851cb153a857d4d120195419b2fea2e3ee0e0db37cc039878fa6455ccae0a7f",
+      "main_model_reference_phase_label": "75%",
+      "model_state_sha256": "2d2b61278e4b38e9a6eaf5c6b7d2ad24a317c9bee8d0467c2ab6330e71cbf0ce",
+      "optimizer_state_sha256": "c6abbbedcc23f851344ded161e5f9fab394495fbd80acf69e9d43e9e3f554246",
+      "phase_label_scope": "main_model_reference_only",
+      "reload_verified": true,
+      "requested_step": 8500,
+      "selected_random_label_step": 8500,
+      "stage14_run_id": "stage14-random-label-training-s0-df790c07a988",
+      "test_accuracy": 0.01029197871685028,
+      "test_cross_entropy": 22.477142333984375,
+      "train_accuracy": 1.0,
+      "train_cross_entropy": 0.00017614709213376045
+    },
+    {
+      "absolute_step_mismatch": 0,
+      "checkpoint_path": "checkpoints/stage14-random-label-training-s0-df790c07a988/step_00008650.pt",
+      "checkpoint_sha256": "ecefff2a3644581b1bf7a48f9a901e398531f39258bb0890a78202220b4196ba",
+      "main_model_reference_phase_label": "90%",
+      "model_state_sha256": "f2f1c3c48aad9dd2d19d8d64a5717c83aebe4f0ef8ff22ea9decda2e5b7231ac",
+      "optimizer_state_sha256": "12bd38595782f384b140a9496afc78d99e3b778cf0a674072ca0b29f1d1e15e3",
+      "phase_label_scope": "main_model_reference_only",
+      "reload_verified": true,
+      "requested_step": 8650,
+      "selected_random_label_step": 8650,
+      "stage14_run_id": "stage14-random-label-training-s0-df790c07a988",
+      "test_accuracy": 0.010068240575492382,
+      "test_cross_entropy": 25.54132080078125,
+      "train_accuracy": 1.0,
+      "train_cross_entropy": 3.796069722739048e-05
+    },
+    {
+      "absolute_step_mismatch": 0,
+      "checkpoint_path": "checkpoints/stage14-random-label-training-s0-df790c07a988/step_00009050.pt",
+      "checkpoint_sha256": "195a9efc1a9bd69cbbe46e892daaf4ec1709883b86469fbdbb035e75fc11b67c",
+      "main_model_reference_phase_label": "stable post-grokking",
+      "model_state_sha256": "1236e12d8453ac6448eec8eebc39d295ca0ad9812fb3b36f6069d0fdbb7ed724",
+      "optimizer_state_sha256": "f24284a833e45de8acbe7b4b605471da4539d0a37098d3035162a2a20be35c33",
+      "phase_label_scope": "main_model_reference_only",
+      "reload_verified": true,
+      "requested_step": 9050,
+      "selected_random_label_step": 9050,
+      "stage14_run_id": "stage14-random-label-training-s0-df790c07a988",
+      "test_accuracy": 0.010403848253190517,
+      "test_cross_entropy": 32.36903762817383,
+      "train_accuracy": 1.0,
+      "train_cross_entropy": 9.92237801256124e-07
+    }
+  ],
+  "matching_rule": "exact_training_step",
+  "outputs": {
+    "checkpoint_table": {
+      "path": "results/tables/seed_0_stage14_random_label_checkpoints.csv",
+      "sha256": "d62326f96a67b7f5313191625a41f6d8f0c9caf32c021618ac1e56eedba1e39c"
+    },
+    "training_metrics_table": {
+      "path": "results/tables/seed_0_stage14_random_label_training_metrics.csv",
+      "sha256": "6b5110e3248bcc6d7c595f07b7e18a776ae5b20ce62234ff0ae0edfe3f9fc90a"
+    }
+  },
+  "random_label_sparse_search_started": false,
+  "schema_version": 1,
+  "source_metrics": {
+    "path": "results/raw/stage14-random-label-training-s0-df790c07a988/metrics.jsonl",
+    "record_count": 182,
+    "sha256": "ba65af034e26c2e235c7c2851efe326b523164345aa0067f45c5774e4622b260"
+  },
+  "source_training_manifest": {
+    "path": "manifests/training_stage14-random-label-training-s0-df790c07a988.json",
+    "sha256": "bd6ad49d7b501500b270c91239b47ab119f28220e3b31bca10183ad8cafc85bc"
+  },
+  "stage": 14,
+  "stage14_run_id": "stage14-random-label-training-s0-df790c07a988",
+  "stage15_started": false
+}

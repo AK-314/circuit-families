@@ -1,0 +1,10 @@
+{
+  "schema_version": 1,
+  "artifact_title": "Grokking Opens a Family of Sparse Circuits",
+  "frozen_analysis_snapshot_commit": "a55509537a70a225fedc5ce3a1c8236110974a6e",
+  "analysis_freeze_manifest": "manifests/stage22_freeze_stage22-freeze-34241335dcf7.json",
+  "analysis_freeze_manifest_sha256": "248a111f7c328fac81ebe5be5cbd45582487635d43e31848c6a0cd6f06a29f30",
+  "recorded_analysis_implementation_commit": "ab35311e1d199770e273b50a8642c012d3b78d94",
+  "publication_layer_added_after_freeze": true,
+  "git_head_required_for_artifact_verification": false
+}

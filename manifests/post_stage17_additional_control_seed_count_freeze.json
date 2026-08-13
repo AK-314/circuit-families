@@ -1,0 +1,75 @@
+{
+  "schema_version": 1,
+  "freeze_id": "post-stage17-additional-control-seed-count-freeze-v1",
+  "record_type": "administrative_additional_control_seed_count_freeze",
+  "created_at_utc": "2026-07-28T10:19:45Z",
+  "lifecycle": {
+    "stages_1_through_17_complete": true,
+    "stage18_scientific_outputs_visible": false,
+    "stage18_training_started": false,
+    "stage18_analysis_started": false
+  },
+  "control_priority": [
+    "second_no_generalisation_seed",
+    "second_random_label_seed",
+    "further_control_seeds"
+  ],
+  "decision": {
+    "second_no_generalisation_seed": "not_executable",
+    "additional_random_label_seed_count": 0,
+    "additional_random_label_seeds": [],
+    "reason": "resources prioritised for the five required main seeds",
+    "main_seed_completion_priority": true,
+    "replacement_control": null,
+    "stage15_status": "unavailable"
+  },
+  "required_main_seeds": [0, 1, 2, 3, 4],
+  "resource_basis": {
+    "freeze_manifest": {
+      "path": "manifests/post_stage17_checkpoint_grid_and_concurrency_freeze.json",
+      "sha256": "b0c966e260407da1b54180748a6b49bc46788efc78186a04f1a0522e7a2a2cc0"
+    },
+    "compute_projection": {
+      "path": "results/tables/stage12_compute_projection.csv",
+      "sha256": "f6a5de609480ee96831218e9b22f3af6b6a09cd7b0215454223377c40ea2394a"
+    },
+    "projected_definitive_plus_reproduction_bytes": 459775077926,
+    "projected_raw_file_count_per_pass": 1672514,
+    "projected_operational_days": {
+      "minimum": 12,
+      "maximum": 16,
+      "fresh_training_excluded": true
+    },
+    "available_storage_bytes_at_checkpoint_grid_freeze": 1511969955840,
+    "production_worker_count": 12,
+    "threads_per_worker": 1
+  },
+  "decision_basis": {
+    "committed_compute_projection_used": true,
+    "available_disk_capacity_used": true,
+    "production_concurrency_used": true,
+    "expected_main_seed_workload_used": true,
+    "project_schedule_used": true,
+    "main_seed_circuit_outcomes_used": false,
+    "anticipated_control_direction_used": false,
+    "publication_attractiveness_used": false
+  },
+  "source_document_hashes": {
+    "experimental_protocol": {
+      "path": "experimental_protocol.md",
+      "pre_decision_sha256": "4e58f7b76d84c3bf5dc9955fd32ce0245d43a1e97482b9051002be0a9dc064db",
+      "post_decision_sha256": "39a2852052a2e6c0e28f722d8c644be2a6897b2444f969342789385d048b47a7"
+    },
+    "implementation_order": {
+      "path": "implementation_order.md",
+      "pre_decision_sha256": "89b37667d2633da27630c36404dc178e6b99a1086dc7d11159c64727153a84f5",
+      "post_decision_sha256": "416e40146eee8aaf8a42a8e6c28b1e9219c33cdc90f46b01789ce5903fed1e34"
+    }
+  },
+  "outputs": {
+    "note": {
+      "path": "results/notes/post_stage17_additional_control_seed_count_freeze.md",
+      "sha256": "456d69f92e1cc4d075026bbe492d107b8a7d4629a7e534ec0ad137bbf31e0a2c"
+    }
+  }
+}

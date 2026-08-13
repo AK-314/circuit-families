@@ -1,0 +1,63 @@
+{
+  "config": {
+    "path": "configs/task.yaml",
+    "sha256": "7ef9c73ff18f14d1c59cbc1a636d73caa23da099817714ffc70864b1ac00d377"
+  },
+  "details": {
+    "control_training_counts": {
+      "05pct": 638,
+      "10pct": 1276,
+      "15pct": 1915,
+      "20pct": 2553,
+      "25pct": 3192
+    },
+    "dataset_seed": null,
+    "numpy_generator": "PCG64",
+    "primary_training_count": 3830,
+    "random_label_method": "permute_complete_true_label_vector",
+    "random_label_seed": 1,
+    "split_seed": 0,
+    "test_count": 8939,
+    "total_example_count": 12769
+  },
+  "device": {
+    "cuda_available": false,
+    "cuda_device_count": 0,
+    "cuda_devices": [],
+    "machine": "arm64",
+    "mps_available": true,
+    "platform": "macOS-26.5.1-arm64-arm-64bit",
+    "selected_device": "mps"
+  },
+  "experiment_type": "modular_addition_dataset",
+  "git_commit": "8751a04da45bb3719fe9dda1cd1e5f190d7752c1",
+  "hashes": {
+    "archive_sha256": "76c499f9d90d8561d12186f8cc7080f8c5cf7460c9f471c1e7b327b0b15337c5",
+    "config_sha256": "7ef9c73ff18f14d1c59cbc1a636d73caa23da099817714ffc70864b1ac00d377",
+    "dataset_sha256": "af13d2181f5f1122bc528c6dfadbdc67b0a38ea02c10b4fd504a492aca8afafa",
+    "metadata_sha256": "acbfe6a61b48eb2a2ad522389185085858f72c960906e13291ee85f8bc95564f",
+    "random_label_permutation_sha256": "6133ae3b6535595aae903ba9197c6b136b2667a50553fbda3a49331765cb30e5",
+    "random_labels_sha256": "5a4f92635efff86f168c8999b426be000cbdf5e6194e6e7b5d537243583ac5c9",
+    "split_sha256": "c83ac398724817fae6a0d137d0f1c6d0b8786eee43efaff5c3d34de0a891b7f2"
+  },
+  "output_paths": {
+    "dataset_archive": "data/generated/modular_addition_m113.npz",
+    "dataset_manifest": "manifests/dataset_modular-addition-dataset-s0-7ef9c73ff18f.json",
+    "dataset_metadata": "data/generated/modular_addition_m113.metadata.json"
+  },
+  "run_id": "modular-addition-dataset-s0-7ef9c73ff18f",
+  "schema_version": 1,
+  "seed": {
+    "name": "split_seed",
+    "value": 0
+  },
+  "software": {
+    "packages": {
+      "PyYAML": "6.0.3",
+      "numpy": "2.4.6",
+      "torch": "2.13.0"
+    },
+    "python": "3.11.15 (main, Jun 23 2026, 15:46:51) [Clang 22.1.3 ]"
+  },
+  "timestamp_utc": "2026-07-15T14:53:07.333417+00:00"
+}

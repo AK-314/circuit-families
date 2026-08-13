@@ -1,0 +1,84 @@
+Circuit Families artifact assembly and validation
+=================================================
+
+Validation date: 2026-08-13
+
+Provenance
+----------
+Frozen analysis snapshot: a55509537a70a225fedc5ce3a1c8236110974a6e
+Final analysis-freeze manifest SHA-256:
+248a111f7c328fac81ebe5be5cbd45582487635d43e31848c6a0cd6f06a29f30
+Recorded analysis implementation commit:
+ab35311e1d199770e273b50a8642c012d3b78d94
+
+The publication README, reproduction guide, inventories, verifier, and reproduction entry points
+were added after the frozen analysis snapshot. Artifact verification does not assert that the
+deposited directory's Git HEAD equals the frozen snapshot commit.
+
+Assembly
+--------
+Deterministic dataset and metadata                              PASS
+Selected genuine-task checkpoints (35/35)                     PASS
+Selected random-label control checkpoints (7/7)               PASS
+Unique selected checkpoints (42/42)                           PASS
+Checkpoint-level multi-seed archives (35/35)                  PASS
+Checkpoint-level archive inventories (35/35)                  PASS
+Independent multi-seed reproduction comparison log            PASS
+
+Integrity and inexpensive reproduction
+---------------------------------------
+Required public files                                         PASS
+Frozen scientific-file hashes                                 PASS
+Dataset hashes                                                PASS
+Selected checkpoint hashes                                    PASS
+Primary-seed analysis archive                                 PASS
+Fidelity-by-distinctness sensitivity archive                  PASS
+Multi-seed analysis archives                                  PASS
+Independent multi-seed reproduction record                    PASS
+Figure 1--5 source-table hashes                               PASS
+Final analysis freeze                                         PASS
+
+Independent reported-result recalculation
+-----------------------------------------
+Sensitivity cells: 630
+Delayed: 0 / 162 recovered
+Transition: 30 / 198 recovered
+Stable-post: 270 / 270 recovered
+Primary seed changes: +6, +7, +7, 0, +7
+Median change: +7
+Mean change: +5.4
+Exact two-sided sign test: p = 0.125
+Reported-value check                                          PASS
+
+Figure regeneration
+-------------------
+Figures 1--5 regenerated directly from five source CSVs.
+PNG outputs: 5
+PDF outputs: 5
+Source-data validation                                        PASS
+
+Checkpoint-level reevaluation
+-----------------------------
+Audit case: genuine-task seed 0, checkpoint step 9050, primary-family C1.
+Mask ID: component-mask-592cf233fe6e2f1f
+Prediction agreements: 12658 / 12769
+Primary fidelity: 0.9913070718145509
+Retained components: 84
+Saved-record comparison                                       PASS
+
+Git-free clean-room test
+------------------------
+Fresh locked Python 3.11 environment installed with uv.
+Artifact verifier                                             PASS
+Reported-result recalculation                                 PASS
+Recalculated summary CSVs (2/2)                               PASS
+Figure regeneration (10/10 files)                             PASS
+Complete public test suite (481/481)                          PASS
+Python lint checks                                            PASS
+
+Scope
+-----
+The packaging audit did not rerun the complete 630-cell search or retrain all five models. The
+deposit includes the inputs and entry points for those expensive reruns. The frozen independent
+multi-seed reproduction record reports zero deterministic scientific mismatches across 818,386
+compared files.

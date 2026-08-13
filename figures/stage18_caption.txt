@@ -1,0 +1,1 @@
+Stage 18 descriptive main-seed training, structural-family, transfer-group, and full-surface trajectories on the frozen seven-step grid. Empty families remain zero only for family size; undefined transfer counts remain absent.

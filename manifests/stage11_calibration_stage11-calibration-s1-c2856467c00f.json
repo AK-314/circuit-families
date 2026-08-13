@@ -1,0 +1,207 @@
+{
+  "checkpoint": {
+    "checkpoint_sha256": "5b449db5ff9a62d5b621450c013bc25949499ed767e6db1723561a4e87ab8d70",
+    "model_state_sha256": "18c66dc1802016a1bdf888070e87ebc615a98d7d1fb310613be0a7abdeccc72b",
+    "path": "checkpoints/modular-addition-training-s1-5f1bc9dee7ab/step_00009050.pt",
+    "phase": "stable post-grokking",
+    "training_step": 9050
+  },
+  "configuration": {
+    "bit_generator": "PCG64",
+    "candidate_execution_order": [
+      0.99,
+      0.975,
+      0.95,
+      0.9,
+      0.85,
+      0.8
+    ],
+    "candidate_thresholds": [
+      0.99,
+      0.975,
+      0.95,
+      0.9,
+      0.85,
+      0.8
+    ],
+    "component_universe_size": 516,
+    "device": "cpu",
+    "evaluated_example_count": 12769,
+    "evaluation_batch_size": 256,
+    "example_ordering": "lexicographic",
+    "percentile_method": "linear",
+    "random_masks_per_threshold": 100,
+    "sampling": "uniform subset without replacement over all searchable components with no head/neuron stratification",
+    "seed_derivation": "SHA-256 of the frozen threshold-specific seed material; first 16 hexadecimal characters interpreted as uint64"
+  },
+  "creation_timestamp_utc": "2026-07-18T12:11:41.190599+00:00",
+  "experiment_type": "stage11_fidelity_threshold_calibration",
+  "integrity": {
+    "clean_implementation_commit_verified": true,
+    "hook_counts_after": {
+      "blocks.0.attn.hook_z": 0,
+      "blocks.0.mlp.hook_post": 0
+    },
+    "hook_counts_before": {
+      "blocks.0.attn.hook_z": 0,
+      "blocks.0.mlp.hook_post": 0
+    },
+    "hook_counts_unchanged": true,
+    "model_state_sha256_after": "18c66dc1802016a1bdf888070e87ebc615a98d7d1fb310613be0a7abdeccc72b",
+    "model_state_sha256_before": "18c66dc1802016a1bdf888070e87ebc615a98d7d1fb310613be0a7abdeccc72b",
+    "model_state_unchanged": true,
+    "runtime_excluded_from_deterministic_scientific_hashes": true,
+    "scientific_outputs_generated_from_exact_commit": "c2856467c00f47b9baa28ed866b7295b0ac5f3ff",
+    "stage12_started": false
+  },
+  "outputs": {
+    "archive": {
+      "path": "results/archives/stage11-calibration-s1-c2856467c00f.tar.gz",
+      "sha256": "415ac9016d674aa839999dbe176ba18efc1aed96d288c0ccdf023bfd5e9cf074"
+    },
+    "calibration_table": {
+      "path": "results/tables/seed_1_stage11_threshold_calibration.csv",
+      "sha256": "ba69c3da29863cad706bf85edba88886272aa905c32c7633016749f942943c2e"
+    },
+    "evaluation_table": {
+      "path": "results/tables/seed_1_stage11_random_mask_evaluations.csv",
+      "sha256": "f1619806195134c0f7bff8f131797da7bfafbbaf8b02d7af94d1d7c9c1a19596"
+    },
+    "record": {
+      "path": "results/notes/seed_1_stage11_threshold_calibration.md",
+      "sha256": "5111eab67e05e8e2ec8b5806b731e004a9a9a35922a399a6cca6c43752695be2"
+    },
+    "runtime_table": {
+      "included_in_deterministic_scientific_hashes": false,
+      "path": "results/tables/seed_1_stage11_random_mask_runtime.csv",
+      "sha256": "672c6922e1bfc35d3bae4705147208dd2b88796d934398d7665ed0279dff569f"
+    }
+  },
+  "schema_version": 1,
+  "selection": {
+    "mechanical_rule": "select the highest threshold satisfying all four frozen qualification criteria",
+    "prohibited_evidence_excluded": true,
+    "qualification_results": [
+      {
+        "fourier_compatible_or_explained": true,
+        "meaningfully_sparse": true,
+        "qualifies": true,
+        "random_mask_pass_count_at_most_5": true,
+        "threshold": 0.99,
+        "within_10000_evaluation_budget": true
+      },
+      {
+        "fourier_compatible_or_explained": true,
+        "meaningfully_sparse": true,
+        "qualifies": true,
+        "random_mask_pass_count_at_most_5": true,
+        "threshold": 0.975,
+        "within_10000_evaluation_budget": true
+      },
+      {
+        "fourier_compatible_or_explained": true,
+        "meaningfully_sparse": true,
+        "qualifies": true,
+        "random_mask_pass_count_at_most_5": true,
+        "threshold": 0.95,
+        "within_10000_evaluation_budget": true
+      },
+      {
+        "fourier_compatible_or_explained": true,
+        "meaningfully_sparse": true,
+        "qualifies": true,
+        "random_mask_pass_count_at_most_5": true,
+        "threshold": 0.9,
+        "within_10000_evaluation_budget": true
+      },
+      {
+        "fourier_compatible_or_explained": true,
+        "meaningfully_sparse": true,
+        "qualifies": true,
+        "random_mask_pass_count_at_most_5": true,
+        "threshold": 0.85,
+        "within_10000_evaluation_budget": true
+      },
+      {
+        "fourier_compatible_or_explained": true,
+        "meaningfully_sparse": true,
+        "qualifies": true,
+        "random_mask_pass_count_at_most_5": true,
+        "threshold": 0.8,
+        "within_10000_evaluation_budget": true
+      }
+    ],
+    "selected_primary_threshold": 0.99
+  },
+  "software": {
+    "packages": {
+      "PyYAML": "6.0.3",
+      "numpy": "2.4.6",
+      "torch": "2.13.0"
+    },
+    "python": "3.11.15 (main, Jun 23 2026, 15:46:51) [Clang 22.1.3 ]"
+  },
+  "source_manifests": {
+    "checkpoint_selection": {
+      "path": "manifests/checkpoints_seed_1.json",
+      "sha256": "a33b856e07b9223d6ee552810d8b4eb6f20ae2eb74427934933ef022ba48fd23"
+    },
+    "stage10_fourier": {
+      "path": "manifests/stage10_fourier_stage10-fourier-s1-a6f6a5773057.json",
+      "sha256": "fb48876a82926f966583533ca03db99dfe17d4f61192a2a26cdcb107d05b3504"
+    },
+    "stage8_masking": {
+      "path": "manifests/stage8_masking_s1-5f1bc9dee7ab.json",
+      "sha256": "ed6aca8d20d43ea7618936b962c8e865859c21894e5d809580106ffe73a8d4e5"
+    },
+    "stage9_sparse_search": {
+      "archive_path": "results/archives/stage9-sparse-s1-27fffed087e6.tar.gz",
+      "archive_sha256": "8d613c30e98f057bd9dc41c9fe57f5799c71bcedbf072cc82d1c9bd7ba1124c3",
+      "manifest_path": "manifests/stage9_sparse_stage9-sparse-s1-27fffed087e6.json",
+      "manifest_sha256": "f89dbb7df3bd7ab22d0136eb4deb9ca354fa8e312a4818064bd35777b51ae389",
+      "source_masks": [
+        {
+          "archive_member": "stage9-sparse-s1-27fffed087e6/step_00009050/threshold_09900/final_mask.json",
+          "fidelity_threshold": 0.99,
+          "mask_id": "component-mask-d62afd57f53ac8a2",
+          "sha256": "f61240e67b41fa8f60cbe20d22bb6182b9a226f984a4aa7d219ec7bc27758446"
+        },
+        {
+          "archive_member": "stage9-sparse-s1-27fffed087e6/step_00009050/threshold_09750/final_mask.json",
+          "fidelity_threshold": 0.975,
+          "mask_id": "component-mask-cb9d546b33ccf08f",
+          "sha256": "443c313d15fdcba61fe5ec0caa74c517a080e2216d493c9c064cec2461d1c60f"
+        },
+        {
+          "archive_member": "stage9-sparse-s1-27fffed087e6/step_00009050/threshold_09500/final_mask.json",
+          "fidelity_threshold": 0.95,
+          "mask_id": "component-mask-ba4d643e460c1823",
+          "sha256": "be465e02768cf7eda8127f8c0c91b0905eefd6c6942941c6116ba0dd15c03898"
+        },
+        {
+          "archive_member": "stage9-sparse-s1-27fffed087e6/step_00009050/threshold_09000/final_mask.json",
+          "fidelity_threshold": 0.9,
+          "mask_id": "component-mask-22fdcca7a085eaa0",
+          "sha256": "91e2f13a982f3cd5632a9ae17900c6ca64184af5aee1a50a30af792392ee060b"
+        },
+        {
+          "archive_member": "stage9-sparse-s1-27fffed087e6/step_00009050/threshold_08500/final_mask.json",
+          "fidelity_threshold": 0.85,
+          "mask_id": "component-mask-28335ce85bbc2ec0",
+          "sha256": "3309027cc538ad67a7dc602b43a72f66c5f9e06269b322144766d1e09f437c3a"
+        },
+        {
+          "archive_member": "stage9-sparse-s1-27fffed087e6/step_00009050/threshold_08000/final_mask.json",
+          "fidelity_threshold": 0.8,
+          "mask_id": "component-mask-d48d88a7f165f829",
+          "sha256": "12aa85d7ae7daeb18aa6a18d1709a76ad10c2bb373531fbc0a710934e1a5b08a"
+        }
+      ],
+      "table_path": "results/tables/seed_1_stage9_sparse_search.csv",
+      "table_sha256": "9e8d323ab682e39464dd628820de8a622f55ff31276c6eac3fd7310641a05636"
+    }
+  },
+  "source_training_run_id": "modular-addition-training-s1-5f1bc9dee7ab",
+  "stage11_implementation_git_commit": "c2856467c00f47b9baa28ed866b7295b0ac5f3ff",
+  "stage11_run_id": "stage11-calibration-s1-c2856467c00f"
+}

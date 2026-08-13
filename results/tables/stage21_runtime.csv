@@ -1,0 +1,2 @@
+stage21_run_id,wall_clock_seconds,operation,training_performed,circuit_search_performed,network_evaluation_performed
+stage21-figures-e50a93433996,2.513687,committed_source_table_only_figure_generation,False,False,False

@@ -1,0 +1,242 @@
+{
+  "checkpoint": {
+    "model_state_sha256": "18c66dc1802016a1bdf888070e87ebc615a98d7d1fb310613be0a7abdeccc72b",
+    "path": "checkpoints/modular-addition-training-s1-5f1bc9dee7ab/step_00009050.pt",
+    "sha256": "5b449db5ff9a62d5b621450c013bc25949499ed767e6db1723561a4e87ab8d70",
+    "step": 9050
+  },
+  "creation_timestamp_utc": "2026-07-26T12:14:22.569136+00:00",
+  "experiment_stage": 16,
+  "frozen_analysis": {
+    "configuration": "configs/stage16_transfer.json",
+    "configuration_sha256": "cc55bd4162c85ab951d6fdfeb02e6fb3aacd0a367f49c5e135ff6ead4c632ce9",
+    "distance_definition": "maximum absolute fidelity-profile difference",
+    "fidelity_threshold": {
+      "denominator": 100,
+      "numerator": 99
+    },
+    "group_label_convention": "G01_G02_in_deterministic_cluster_order",
+    "grouping_tolerances": [
+      {
+        "denominator": 40,
+        "numerator": 1
+      },
+      {
+        "denominator": 20,
+        "numerator": 1
+      },
+      {
+        "denominator": 10,
+        "numerator": 1
+      }
+    ],
+    "jaccard_cutoff": {
+      "denominator": 2,
+      "numerator": 1
+    },
+    "linkage_method": "deterministic complete linkage",
+    "per_subset_discovery_budget": 10000,
+    "primary_grouping_tolerance": {
+      "denominator": 20,
+      "numerator": 1
+    },
+    "searchable_component_count": 516,
+    "sparsity_boundary": 258,
+    "transfer_fidelity_definition": "masked/full top-one prediction agreement",
+    "transfer_profile_field_order": [
+      "Q1",
+      "Q2",
+      "Q3",
+      "Q4"
+    ]
+  },
+  "implementation_commit": "f9981012a592aaf62fa192cd427b3d0aeeff3171",
+  "integrity": {
+    "all_retained_subset_fidelity_identity": true,
+    "complete_linkage_validation": true,
+    "global_accuracy_reconstruction": true,
+    "global_agreement_reconstruction": true,
+    "hook_count_after": 0,
+    "hook_count_before": 0,
+    "hooks_restored_to_baseline": true,
+    "model_state_sha256_after": "18c66dc1802016a1bdf888070e87ebc615a98d7d1fb310613be0a7abdeccc72b",
+    "model_state_sha256_before": "18c66dc1802016a1bdf888070e87ebc615a98d7d1fb310613be0a7abdeccc72b",
+    "model_state_unchanged": true,
+    "parameter_gradients_absent": true,
+    "repository_clean_at_start": true,
+    "runtime_excluded_from_deterministic_scientific_hashes": true
+  },
+  "model_seed": 1,
+  "outputs": {
+    "archive": {
+      "path": "results/archives/stage16-transfer-s1-cc55bd4162c8.tar.gz",
+      "sha256": "62569d0a6eff197ed6839cf551deacb4061c9ee390faa42aa882c3232a2ca207"
+    },
+    "global_family_transfer": {
+      "path": "results/tables/seed_1_stage16_global_family_transfer.csv",
+      "sha256": "e103301b12099320841be1553c23cdd417c37dcbed8a79c73240126e5e60012f"
+    },
+    "note": {
+      "path": "results/notes/seed_1_stage16_functional_transfer.md",
+      "sha256": "47811d6a620772e007702b53cf26093e8fce0416baf008b85db58272e4fa1b6f"
+    },
+    "runtime_table": {
+      "deterministic_scientific_output": false,
+      "path": "results/tables/seed_1_stage16_runtime.csv",
+      "sha256": "5301ff0af46de356580d8bac55a5a117e6dd1bec396f26a478f59663a9727e76"
+    },
+    "structural_functional_comparison": {
+      "path": "results/tables/seed_1_stage16_structural_functional_comparison.csv",
+      "sha256": "75560349f3fd1200545b1439af99a3118c93179c554ecf8ebfae339740693b48"
+    },
+    "subset_discovery": {
+      "path": "results/tables/seed_1_stage16_subset_discovery.csv",
+      "sha256": "638bd56da1cc5bc10d472535ebd75b298c0d6a2490aeefeec692cb924e2e36be"
+    },
+    "subset_transfer": {
+      "path": "results/tables/seed_1_stage16_subset_transfer.csv",
+      "sha256": "1aedb78c0fbf12b5e58685f5b9426fd2792311e0cdbd36a9c5b4fb111c2fd6b5"
+    },
+    "transfer_distances": {
+      "path": "results/tables/seed_1_stage16_transfer_distances.csv",
+      "sha256": "75560349f3fd1200545b1439af99a3118c93179c554ecf8ebfae339740693b48"
+    },
+    "transfer_groups": {
+      "path": "results/tables/seed_1_stage16_transfer_groups.csv",
+      "sha256": "215b3602092f76775e31f1f43929b878ae11403108c58d4e8b141eb15700e7b9"
+    },
+    "transfer_profiles": {
+      "path": "results/tables/seed_1_stage16_transfer_profiles.csv",
+      "sha256": "c832a4995a208df2d413afea7ccbc12d62d2bc27c10ab90b1ceb5a6a5e9e65c8"
+    }
+  },
+  "results": {
+    "discovery_statuses": {
+      "Q1": "valid_meaningfully_sparse",
+      "Q2": "valid_meaningfully_sparse",
+      "Q3": "valid_meaningfully_sparse",
+      "Q4": "valid_meaningfully_sparse"
+    },
+    "global_transfer_evaluation_count": 28,
+    "structural_pair_count": 21,
+    "subset_discovery_cell_count": 4,
+    "subset_transfer_evaluation_count": 16,
+    "transfer_group_counts": {
+      "0.025": 1,
+      "0.050": 1,
+      "0.100": 1
+    },
+    "valid_subset_discovered_circuit_count": 4
+  },
+  "schema_version": 1,
+  "software": {
+    "device": "cpu",
+    "numpy": "2.4.6",
+    "python": "3.11.15 (main, Jun 23 2026, 15:46:51) [Clang 22.1.3 ]"
+  },
+  "source_training_run_id": "modular-addition-training-s1-5f1bc9dee7ab",
+  "stage12": {
+    "archive": "results/archives/stage12-diversity-s1-020ebf1b5814.tar.gz",
+    "archive_sha256": "7cb6fe6f47778df2b5ccc78d84249631ce4546f775d111b3da04dde9a08ff8da",
+    "circuit_table": "results/tables/seed_1_stage12_circuits.csv",
+    "circuit_table_sha256": "4d1a2e14e5f1f51e775a3105c86c9ac17cd3aa6fefa181ebf5410a268389907f",
+    "circuits": [
+      {
+        "circuit_id": "C1",
+        "global_fidelity": 0.9900540371211528,
+        "global_prediction_agreement_count": 12642,
+        "mask_member_name": "stage12-diversity-s1-020ebf1b5814/cutoff-0.50/restarts/C01/restart_00/search/final_mask.json",
+        "mask_sha256": "f61240e67b41fa8f60cbe20d22bb6182b9a226f984a4aa7d219ec7bc27758446",
+        "retained_component_count": 146
+      },
+      {
+        "circuit_id": "C2",
+        "global_fidelity": 0.9900540371211528,
+        "global_prediction_agreement_count": 12642,
+        "mask_member_name": "stage12-diversity-s1-020ebf1b5814/cutoff-0.50/restarts/C02/restart_00/search/final_mask.json",
+        "mask_sha256": "763ae7ba922025c4dd68904e5436548d8380db98df2b0d481e99bfbd7f831c85",
+        "retained_component_count": 162
+      },
+      {
+        "circuit_id": "C3",
+        "global_fidelity": 0.9901323517894902,
+        "global_prediction_agreement_count": 12643,
+        "mask_member_name": "stage12-diversity-s1-020ebf1b5814/cutoff-0.50/restarts/C03/restart_00/search/final_mask.json",
+        "mask_sha256": "dbfc7307c1efba08ed4ade41846aba0f29a70772b57c4c1795240b2434276c51",
+        "retained_component_count": 176
+      },
+      {
+        "circuit_id": "C4",
+        "global_fidelity": 0.9900540371211528,
+        "global_prediction_agreement_count": 12642,
+        "mask_member_name": "stage12-diversity-s1-020ebf1b5814/cutoff-0.50/restarts/C04/restart_00/search/final_mask.json",
+        "mask_sha256": "3cb82a970a29fb0980e533af7a41716fd0898ca40fb7833a0ab203067b4d004d",
+        "retained_component_count": 162
+      },
+      {
+        "circuit_id": "C5",
+        "global_fidelity": 0.9900540371211528,
+        "global_prediction_agreement_count": 12642,
+        "mask_member_name": "stage12-diversity-s1-020ebf1b5814/cutoff-0.50/restarts/C05/restart_00/search/final_mask.json",
+        "mask_sha256": "55c66cb74d9d515b14a01b881a001552e7d7b53fefd252d740c45197b345ba12",
+        "retained_component_count": 180
+      },
+      {
+        "circuit_id": "C6",
+        "global_fidelity": 0.9900540371211528,
+        "global_prediction_agreement_count": 12642,
+        "mask_member_name": "stage12-diversity-s1-020ebf1b5814/cutoff-0.50/restarts/C06/restart_00/search/final_mask.json",
+        "mask_sha256": "227ef2b8a41f6d781e5758da5896d753e401157322a473abcaf8f43dbf66b1da",
+        "retained_component_count": 180
+      },
+      {
+        "circuit_id": "C7",
+        "global_fidelity": 0.9901323517894902,
+        "global_prediction_agreement_count": 12643,
+        "mask_member_name": "stage12-diversity-s1-020ebf1b5814/cutoff-0.50/restarts/C07/restart_00/search/final_mask.json",
+        "mask_sha256": "409f76bbb29e8f6393ba3edc896c0d17d09d2319fbca8a61b1ab834e8b707604",
+        "retained_component_count": 169
+      }
+    ],
+    "manifest": "manifests/stage12_diversity_stage12-diversity-s1-020ebf1b5814.json",
+    "manifest_sha256": "883638524b7a1da72b6063b920dad69e63ffb1315b81e3b20cdfe06499122046",
+    "overlap_table": "results/tables/seed_1_stage12_pairwise_overlap.csv",
+    "overlap_table_sha256": "dd3fca529e77a234c30338e3d6da121cc568b8f37c637163b4552bd6b841ea42",
+    "primary_family_cell": "cutoff-0.50",
+    "run_id": "stage12-diversity-s1-020ebf1b5814",
+    "source_family_size": 7
+  },
+  "stage15_status": "unavailable",
+  "stage16_run_id": "stage16-transfer-s1-cc55bd4162c8",
+  "stage17_started": false,
+  "transfer_subsets": {
+    "genuine_labels_validated": true,
+    "membership_hash_convention": "sha256(canonical_json({subset_id,ordered_indices}))",
+    "pairwise_disjoint": true,
+    "records": [
+      {
+        "count": 3249,
+        "membership_sha256": "31bf54ce09b6ec1b40d4c83f8b545eca57ea362286d6abf6c9c27fa733f88c87",
+        "subset_id": "Q1"
+      },
+      {
+        "count": 3192,
+        "membership_sha256": "6cc9708176a1e8ae8167bc1a1c1fb3f83a4b6260245ec79b1c9bc9a2c150144f",
+        "subset_id": "Q2"
+      },
+      {
+        "count": 3192,
+        "membership_sha256": "c9b213260f0eaa5d7ac21fefe7ca67d8b2b73dcb3ac774671989320395e15d1b",
+        "subset_id": "Q3"
+      },
+      {
+        "count": 3136,
+        "membership_sha256": "71463517cd6c74ad13a3a5930b27b8bdce2d547e997730421b555ac9234d3fa6",
+        "subset_id": "Q4"
+      }
+    ],
+    "source_path": "src/circuit_families/data/input_subsets.py",
+    "source_sha256": "e969427a2aef309b796906d97abcb28a04140c7780ac9df11c784267c9345143",
+    "union_example_count": 12769
+  }
+}

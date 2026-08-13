@@ -1,0 +1,15 @@
+field,value
+included_main_seeds,"0,1,2,3,4"
+checkpoint_steps,"200,3400,7450,8150,8500,8650,9050"
+primary_fidelity,0.990000
+fidelity_grid,"0.800,0.850,0.900,0.950,0.975,0.990"
+primary_distinctness_cutoff,0.50
+distinctness_grid,"0.25,0.50,0.75"
+transfer_grouping,complete_linkage_max_distance_0.05
+matched_fidelity_tolerance,0.01
+matched_sparsity_tolerance_components,5
+independent_unit,trained_model_seed
+control_random_label,single_seed_descriptive
+control_no_generalisation,unavailable_stage15
+principal_figure_count,5
+freeze_status,provisional_pending_stage18_reproduction

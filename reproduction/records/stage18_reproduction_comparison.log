@@ -1,0 +1,77 @@
+Stage 18 comparison: indexed 818386 scientific paths; hashing begins.
+Stage 18 comparison: 15832 / 818386 files, 1.9%
+Stage 18 comparison: 31995 / 818386 files, 3.9%
+Stage 18 comparison: 47932 / 818386 files, 5.9%
+Stage 18 comparison: 63746 / 818386 files, 7.8%
+Stage 18 comparison: 79920 / 818386 files, 9.8%
+Stage 18 comparison: 95136 / 818386 files, 11.6%
+Stage 18 comparison: 111087 / 818386 files, 13.6%
+Stage 18 comparison: 126439 / 818386 files, 15.4%
+Stage 18 comparison: 141919 / 818386 files, 17.3%
+Stage 18 comparison: 158089 / 818386 files, 19.3%
+Stage 18 comparison: 173633 / 818386 files, 21.2%
+Stage 18 comparison: 189391 / 818386 files, 23.1%
+Stage 18 comparison: 205068 / 818386 files, 25.1%
+Stage 18 comparison: 220936 / 818386 files, 27.0%
+Stage 18 comparison: 236427 / 818386 files, 28.9%
+Stage 18 comparison: 252809 / 818386 files, 30.9%
+Stage 18 comparison: 268069 / 818386 files, 32.8%
+Stage 18 comparison: 284005 / 818386 files, 34.7%
+Stage 18 comparison: 299834 / 818386 files, 36.6%
+Stage 18 comparison: 315796 / 818386 files, 38.6%
+Stage 18 comparison: 331141 / 818386 files, 40.5%
+Stage 18 comparison: 346829 / 818386 files, 42.4%
+Stage 18 comparison: 362441 / 818386 files, 44.3%
+Stage 18 comparison: 378011 / 818386 files, 46.2%
+Stage 18 comparison: 394249 / 818386 files, 48.2%
+Stage 18 comparison: 410258 / 818386 files, 50.1%
+Stage 18 comparison: 426357 / 818386 files, 52.1%
+Stage 18 comparison: 442452 / 818386 files, 54.1%
+Stage 18 comparison: 458676 / 818386 files, 56.0%
+Stage 18 comparison: 474867 / 818386 files, 58.0%
+Stage 18 comparison: 490989 / 818386 files, 60.0%
+Stage 18 comparison: 506553 / 818386 files, 61.9%
+Stage 18 comparison: 522612 / 818386 files, 63.9%
+Stage 18 comparison: 538312 / 818386 files, 65.8%
+Stage 18 comparison: 553940 / 818386 files, 67.7%
+Stage 18 comparison: 569717 / 818386 files, 69.6%
+Stage 18 comparison: 585313 / 818386 files, 71.5%
+Stage 18 comparison: 601448 / 818386 files, 73.5%
+Stage 18 comparison: 617436 / 818386 files, 75.4%
+Stage 18 comparison: 633026 / 818386 files, 77.4%
+Stage 18 comparison: 648414 / 818386 files, 79.2%
+Stage 18 comparison: 664014 / 818386 files, 81.1%
+Stage 18 comparison: 680048 / 818386 files, 83.1%
+Stage 18 comparison: 695932 / 818386 files, 85.0%
+Stage 18 comparison: 711715 / 818386 files, 87.0%
+Stage 18 comparison: 727816 / 818386 files, 88.9%
+Stage 18 comparison: 743636 / 818386 files, 90.9%
+Stage 18 comparison: 759619 / 818386 files, 92.8%
+Stage 18 comparison: 775183 / 818386 files, 94.7%
+Stage 18 comparison: 791047 / 818386 files, 96.7%
+Stage 18 comparison: 807100 / 818386 files, 98.6%
+Stage 18 comparison: 818386 / 818386 files, 100.0%
+Stage 18 comparison: normalized archive inventories 35 / 35
+{
+  "archive_inventory_count": 35,
+  "archive_inventory_mismatch_count": 0,
+  "compared_file_count": 818386,
+  "comparison_policy": {
+    "archive_policy": "compare normalized member inventories; archive byte streams, sizes, and index hashes are packaging duplicates and are excluded",
+    "excluded_nondeterministic_files": [
+      ".DS_Store",
+      "runtime telemetry",
+      "stage18_training registry outputs"
+    ],
+    "normalized_metadata_wrappers": {
+      "hash_inventory.json": "remove .DS_Store rows and recompute file_count before exact JSON comparison",
+      "search_result.json": "remove only search_integrity.hash_inventory_sha256 because the normalized inventory is compared separately"
+    },
+    "scientific_files": "strict path and SHA-256 equality in both directions except the explicitly normalized metadata wrappers"
+  },
+  "deterministic_mismatch_count": 0,
+  "mismatches": [],
+  "normalized_metadata_file_count": 1224,
+  "passed": true,
+  "stage18_run_id": "stage18-scaling-24a9adb84176"
+}

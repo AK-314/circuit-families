@@ -1,0 +1,10 @@
+prediction_index,quantity,resolution_category,resolution_reason,evidence_sources,provisional_pending_stage18_reproduction
+1,Recovered structural family size,Unresolved,"Primary pre-grid families are empty, so the observed change is emergence of sparse recoverability rather than an ordinary contraction estimate.",stage18_family_summary;stage20_paired_deltas,True
+2,Transfer-distinct group count,Unresolved,Transfer-group counts are undefined for the empty primary pre-grid families.,stage20_seed_checkpoint_metrics,True
+3,Circuit size,Unresolved,Circuit size is undefined where the primary family is empty.,stage20_seed_checkpoint_metrics,True
+4,Pairwise structural overlap,Unresolved,Pairwise overlap is undefined where fewer than two primary circuits exist.,stage20_seed_checkpoint_metrics,True
+5,Cross-subset transfer,Unresolved,Cross-subset transfer is undefined for empty primary families and cannot support a complete pre-to-post directional comparison.,stage20_seed_checkpoint_metrics;stage21_figure4_transfer_source,True
+6,Timing of change,Unresolved,Emergence timing varies by seed and 35 fixed-grid comparisons are phase-misaligned; the no-generalisation control is unavailable.,stage20_comparison_registry;stage15_unavailable,True
+7,Matched-fidelity result,Unresolved,"The required pre-grid primary circuits do not exist, so matched-fidelity endpoint comparisons cannot be formed.",stage19_matched_fidelity_summary,True
+8,Matched-sparsity result,Unresolved,"The required pre-grid primary circuits do not exist, so matched-sparsity endpoint comparisons cannot be formed.",stage19_matched_sparsity_summary,True
+9,Empty-family transition,Supported,"All 330 empty cells are reported explicitly, never imputed, and excluded only from metrics that require circuits.",stage19_empty_cells;stage20_paired_deltas,True

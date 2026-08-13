@@ -1,0 +1,60 @@
+{
+  "circuit_analysis": "not_run",
+  "control_configuration": null,
+  "control_training_run": null,
+  "creation_timestamp_utc": "2026-07-25T13:30:53Z",
+  "effect_on_later_analyses": {
+    "genuine_task_analyses_valid": true,
+    "matched_no_generalisation_comparisons": "unavailable",
+    "stage16_permitted": true
+  },
+  "family_size": null,
+  "frozen_control_configuration_created": false,
+  "implementation_commit": "c437edb2c5ded3aeee73b2f329f8a2022e8c3eb0",
+  "qualification_criteria_changed": false,
+  "criteria_relaxed": false,
+  "qualifying_candidate_count": 0,
+  "replacement_control_introduced": false,
+  "repository_clean_before_resolution": true,
+  "resolution_type": "failed_prerequisite_administrative_resolution",
+  "schema_version": 1,
+  "scientific_reason": "Stage 15 could not be executed because the frozen Stage 13 selection rule produced no qualifying matched no-generalisation fraction. No rejected candidate was retrospectively selected, no criterion was relaxed, and no substitute control was introduced.",
+  "selected_fraction": null,
+  "source_document_hashes": {
+    "experimental_protocol": {
+      "path": "experimental_protocol.md",
+      "post_resolution_sha256": "0a3d04705bdd871bb7315d8e81a5f8e82b586d47e2d9f5be433fa33c773bb694",
+      "pre_resolution_sha256": "b2df441e46c09d99144e50c044faf4e078560958eabb097e35e73fe35bb996c1"
+    },
+    "implementation_order": {
+      "path": "implementation_order.md",
+      "post_resolution_sha256": "6b69b8013565b8d9d0f2b2fedf7d98d2c1818dfe267c0a28584fa53b9bbc2267",
+      "pre_resolution_sha256": "822715a93bdc68d398fabdb2086bb35f5ba05d7f7f80c17a5656c4070ebcbe8b"
+    }
+  },
+  "stage": 15,
+  "stage13_failure_record": {
+    "path": "manifests/no_generalisation_control_selection_failure.json",
+    "sha256": "56920a141b2757f769256f6a829ca2eba7c8c49e8ae2edf195296f3d2fcfd0cb"
+  },
+  "stage13_manifest": {
+    "path": "manifests/stage13_no_generalisation_stage13-no-generalisation-s0-154f43de1214.json",
+    "sha256": "25bffe9604896e1d7480fbf03bfa9dab1c7840d546cd7ec149e78bc74820b854"
+  },
+  "stage13_run_id": "stage13-no-generalisation-s0-154f43de1214",
+  "stage13_selection_outcome": "no_qualifying_fraction",
+  "stage13_selection_table": {
+    "path": "results/tables/stage13_no_generalisation_selection.csv",
+    "sha256": "26d21e456d5605e5cacebe317b94a47901526cae0085279bea171deb590923f6"
+  },
+  "stage15_circuit_analysis_executed": false,
+  "stage15_control_training_executed": false,
+  "stage15_diversity_search_executed": false,
+  "stage15_masking_executed": false,
+  "stage15_sparse_search_executed": false,
+  "stage15_transfer_analysis_executed": false,
+  "stage16_started": false,
+  "stage_name": "matched_no_generalisation_control_analysis",
+  "status": "unavailable",
+  "transfer_group_count": null
+}

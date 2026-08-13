@@ -1,0 +1,6 @@
+primary_seed,training_status,training_execution,training_run_id,training_eligibility,grokking_classification,final_training_step,replacement_status,replacement_reason,selected_checkpoint_status,complete_analysis_status
+0,complete,fresh_execution,stage18-main-training-s0-58b8c1235464,eligible,complete_grokking_seed,40000,not_replaced,,not_evaluated,not_started
+1,complete,reference_existing_result,modular-addition-training-s1-5f1bc9dee7ab,eligible,complete_grokking_seed,40000,not_replaced,,complete,not_started
+2,complete,fresh_execution,stage18-main-training-s2-c70f62c0fa7c,eligible,complete_grokking_seed,40000,not_replaced,,not_evaluated,not_started
+3,complete,fresh_execution,stage18-main-training-s3-4c0c7c63ce2f,eligible,complete_grokking_seed,40000,not_replaced,,not_evaluated,not_started
+4,complete,fresh_execution,stage18-main-training-s4-c2881c226349,eligible,complete_grokking_seed,40000,not_replaced,,not_evaluated,not_started

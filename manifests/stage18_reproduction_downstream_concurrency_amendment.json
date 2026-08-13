@@ -1,0 +1,36 @@
+{
+  "schema_version": 1,
+  "record_type": "stage18_reproduction_and_downstream_concurrency_amendment",
+  "creation_date": "2026-07-31",
+  "decision_basis": {
+    "research_advisor_direction": "Run Stage 18 reproduction at one-half to two-thirds of processing capacity while completing Stages 19-22.",
+    "first_draft_deadline_days": 7,
+    "hardware_physical_cores": 18,
+    "scientific_outcomes_used_to_choose_concurrency": false,
+    "prospective_scope": "Stage 18 reproduction scheduling and Stages 19-22 execution"
+  },
+  "selected_policy": {
+    "reproduction_capacity_fraction": "two_thirds",
+    "reproduction_worker_processes": 12,
+    "threads_per_reproduction_worker": 1,
+    "reproduction_scheduling_priority": "low",
+    "reserved_physical_cores_for_downstream_work": 6,
+    "maximum_combined_stage19_to_stage22_threads": 6,
+    "stage18_worker_shard_mapping_changed": false,
+    "stage18_scientific_configuration_changed": false
+  },
+  "lifecycle": {
+    "stage18_definitive_execution_complete": true,
+    "stage18_independent_reproduction_pending": true,
+    "stage18_acceptance_complete": false,
+    "stage19_to_stage22_may_begin_during_reproduction": true,
+    "downstream_results_finalization_requires_successful_stage18_reproduction": true
+  },
+  "identities": {
+    "stage18_run_id": "stage18-scaling-24a9adb84176",
+    "stage18_implementation_commit": "2edaa427d7da142191a484b69949d72406fe51ac",
+    "stage18_finalization_metadata_commit": "ad2cd4cb5588b3aa5ee6a71249786180a315abb1",
+    "stage18_manifest": "manifests/stage18_scaling_stage18-scaling-24a9adb84176.json"
+  },
+  "stage17_inspection_file_excluded": true
+}

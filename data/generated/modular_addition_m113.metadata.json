@@ -1,0 +1,119 @@
+{
+  "arrays": {
+    "control_train_indices_05pct": {
+      "dtype": "int64",
+      "shape": [
+        638
+      ]
+    },
+    "control_train_indices_10pct": {
+      "dtype": "int64",
+      "shape": [
+        1276
+      ]
+    },
+    "control_train_indices_15pct": {
+      "dtype": "int64",
+      "shape": [
+        1915
+      ]
+    },
+    "control_train_indices_20pct": {
+      "dtype": "int64",
+      "shape": [
+        2553
+      ]
+    },
+    "control_train_indices_25pct": {
+      "dtype": "int64",
+      "shape": [
+        3192
+      ]
+    },
+    "inputs": {
+      "dtype": "int16",
+      "shape": [
+        12769,
+        3
+      ]
+    },
+    "pairs": {
+      "dtype": "int16",
+      "shape": [
+        12769,
+        2
+      ]
+    },
+    "random_label_permutation": {
+      "dtype": "int64",
+      "shape": [
+        12769
+      ]
+    },
+    "random_labels": {
+      "dtype": "int16",
+      "shape": [
+        12769
+      ]
+    },
+    "split_permutation": {
+      "dtype": "int64",
+      "shape": [
+        12769
+      ]
+    },
+    "test_indices": {
+      "dtype": "int64",
+      "shape": [
+        8939
+      ]
+    },
+    "train_indices": {
+      "dtype": "int64",
+      "shape": [
+        3830
+      ]
+    },
+    "true_labels": {
+      "dtype": "int16",
+      "shape": [
+        12769
+      ]
+    }
+  },
+  "config_path": "configs/task.yaml",
+  "config_sha256": "7ef9c73ff18f14d1c59cbc1a636d73caa23da099817714ffc70864b1ac00d377",
+  "counts": {
+    "control_train": {
+      "05pct": 638,
+      "10pct": 1276,
+      "15pct": 1915,
+      "20pct": 2553,
+      "25pct": 3192
+    },
+    "primary_test": 8939,
+    "primary_train": 3830,
+    "total_examples": 12769
+  },
+  "experiment_type": "modular_addition_dataset",
+  "hashes": {
+    "dataset_sha256": "af13d2181f5f1122bc528c6dfadbdc67b0a38ea02c10b4fd504a492aca8afafa",
+    "random_label_permutation_sha256": "6133ae3b6535595aae903ba9197c6b136b2667a50553fbda3a49331765cb30e5",
+    "random_labels_sha256": "5a4f92635efff86f168c8999b426be000cbdf5e6194e6e7b5d537243583ac5c9",
+    "split_sha256": "c83ac398724817fae6a0d137d0f1c6d0b8786eee43efaff5c3d34de0a891b7f2"
+  },
+  "run_id": "modular-addition-dataset-s0-7ef9c73ff18f",
+  "schema_version": 1,
+  "seeds": {
+    "dataset_seed": null,
+    "random_label_seed": 1,
+    "split_seed": 0
+  },
+  "task": {
+    "equals_token_id": 113,
+    "modulus": 113,
+    "name": "modular_addition",
+    "pair_order": "lexicographic",
+    "target_rule": "(a + b) % 113"
+  }
+}

@@ -1,0 +1,96 @@
+{
+  "analysis_configuration_path": "configs/stage14_random_label_analysis.yaml",
+  "analysis_configuration_sha256": "9cf400e4ebdcf1cfb93ab654c6253133549475ca3b88487d936718cf594bc899",
+  "analysis_identity_sha256": "7b472aa5163a6b771ea15cb4bfb0d5ea11871ec3cbc1591865cb22bc2ecae270",
+  "analysis_run_id": "stage14-random-label-analysis-s0-7b472aa5163a",
+  "checkpoint_steps": [
+    200,
+    3400,
+    7450,
+    8150,
+    8500,
+    8650,
+    9050
+  ],
+  "control_classification": "memorisation_control",
+  "deterministic_outputs": [
+    {
+      "included_in_deterministic_scientific_hashes": true,
+      "output_name": "sparse_search_table",
+      "path": "results/tables/seed_0_stage14_random_label_sparse_search.csv",
+      "sha256": "2e687cbc1d3ed981acb0c170007de1d0e31cc52e922687eeb134a9b105d09f19"
+    },
+    {
+      "included_in_deterministic_scientific_hashes": true,
+      "output_name": "family_summary_table",
+      "path": "results/tables/seed_0_stage14_random_label_family_summary.csv",
+      "sha256": "f8c62a392e055cf55f05ce5ef511a1f4817e5f0fe221c183940ee1375c57653a"
+    },
+    {
+      "included_in_deterministic_scientific_hashes": true,
+      "output_name": "circuits_table",
+      "path": "results/tables/seed_0_stage14_random_label_circuits.csv",
+      "sha256": "50da480b8833f21f276b2f6dc96bbd4b8267f99fd1843cf07f030591af258741"
+    },
+    {
+      "included_in_deterministic_scientific_hashes": true,
+      "output_name": "pairwise_overlap_table",
+      "path": "results/tables/seed_0_stage14_random_label_pairwise_overlap.csv",
+      "sha256": "def07d3d4d7b80c158ddf18300a3d70c30e671b436a76d4e1af9ef7aad22e42f"
+    },
+    {
+      "included_in_deterministic_scientific_hashes": true,
+      "output_name": "restart_table",
+      "path": "results/tables/seed_0_stage14_random_label_restarts.csv",
+      "sha256": "134dfe743dd8d25eba439c4dfeef0c40f9ad4df6b263345f24a4c8caf65f397d"
+    },
+    {
+      "included_in_deterministic_scientific_hashes": true,
+      "output_name": "frontier_table",
+      "path": "results/tables/seed_0_stage14_random_label_frontier.csv",
+      "sha256": "c6dca3ce977affe98a292b16839823e32f5ef816db96f81e7ce43e5266fbef4c"
+    },
+    {
+      "included_in_deterministic_scientific_hashes": true,
+      "output_name": "fidelity_sensitivity_table",
+      "path": "results/tables/seed_0_stage14_random_label_fidelity_sensitivity.csv",
+      "sha256": "7547727c84a8cb2533257550589163e29cba8d6cb76f11c38027879f145422a1"
+    },
+    {
+      "included_in_deterministic_scientific_hashes": true,
+      "output_name": "distinctness_sensitivity_table",
+      "path": "results/tables/seed_0_stage14_random_label_distinctness_sensitivity.csv",
+      "sha256": "22cf4e68e4cdac882b6f342d4c83463b0d82133c13566cb11df6d55936537bbe"
+    },
+    {
+      "included_in_deterministic_scientific_hashes": true,
+      "output_name": "transfer_table",
+      "path": "results/tables/seed_0_stage14_random_label_transfer.csv",
+      "sha256": "094e009c32179921b91802ec97a9bd391f4b1944de42047c7f9736948671ab87"
+    },
+    {
+      "included_in_deterministic_scientific_hashes": true,
+      "output_name": "analysis_note",
+      "path": "results/notes/seed_0_stage14_random_label_circuit_analysis.md",
+      "sha256": "daabbcf30ce95341d9aa8c0d461ce7508fb54b1db772a17ba836429e4ec5c24a"
+    }
+  ],
+  "experiment_type": "stage14_random_label_circuit_analysis",
+  "implementation_git_commit": "1669bc54b765e11f4fb540f58c779e5a60acb26c",
+  "primary_family_sizes": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+  ],
+  "runtime_output": {
+    "included_in_deterministic_scientific_hashes": false,
+    "path": "results/tables/seed_0_stage14_random_label_runtime.csv",
+    "sha256": "5d2c76e5372e14a0c841bf8caeb678f9c49b51427758c78c3fdeb7cce3eaffc9"
+  },
+  "schema_version": 1,
+  "stage15_started": false
+}

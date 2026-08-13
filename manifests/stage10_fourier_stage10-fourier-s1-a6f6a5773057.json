@@ -1,0 +1,262 @@
+{
+  "checkpoint": {
+    "checkpoint_sha256": "5b449db5ff9a62d5b621450c013bc25949499ed767e6db1723561a4e87ab8d70",
+    "model_state_sha256": "18c66dc1802016a1bdf888070e87ebc615a98d7d1fb310613be0a7abdeccc72b",
+    "path": "checkpoints/modular-addition-training-s1-5f1bc9dee7ab/step_00009050.pt",
+    "phase": "stable post-grokking",
+    "training_step": 9050
+  },
+  "classification": {
+    "circuits": {
+      "0.8": "clear_match",
+      "0.85": "clear_match",
+      "0.9": "clear_match",
+      "0.95": "clear_match",
+      "0.975": "clear_match",
+      "0.99": "clear_match"
+    },
+    "definitions": {
+      "clear_match": "The correct modular-addition shifted relation ranks first and contains at least half of the complete non-DC Fourier power.",
+      "degenerate": "The analysed delta or output tensor has effectively zero non-DC Fourier power, so relation selectivity is not interpretable.",
+      "mismatch": "At least one incorrect shifted frequency relation contains more power than the correct modular-addition relation.",
+      "partial_match": "The correct modular-addition shifted relation ranks first but contains less than half of the complete non-DC Fourier power."
+    },
+    "degenerate_power_threshold": 1e-10,
+    "fraction_threshold": 0.5,
+    "full_model": "clear_match"
+  },
+  "component_association": {
+    "component_count": 516,
+    "gradients_absent_after": true,
+    "method": "Exact single-component zero ablation followed by the Fourier transform of full-model minus ablated-model centred final logits.",
+    "model_state_sha256_after": "18c66dc1802016a1bdf888070e87ebc615a98d7d1fb310613be0a7abdeccc72b",
+    "model_state_sha256_before": "18c66dc1802016a1bdf888070e87ebc615a98d7d1fb310613be0a7abdeccc72b",
+    "ranking": "Descending M0 delta power with frozen component index breaking ties."
+  },
+  "configuration": {
+    "addition_manifold": "M0={(k,k,-k mod 113): k=1,...,112}",
+    "batch_size": 256,
+    "checkpoint_sha256": "5b449db5ff9a62d5b621450c013bc25949499ed767e6db1723561a4e87ab8d70",
+    "checkpoint_step": 9050,
+    "classification_definitions": {
+      "clear_match": "The correct modular-addition shifted relation ranks first and contains at least half of the complete non-DC Fourier power.",
+      "degenerate": "The analysed delta or output tensor has effectively zero non-DC Fourier power, so relation selectivity is not interpretable.",
+      "mismatch": "At least one incorrect shifted frequency relation contains more power than the correct modular-addition relation.",
+      "partial_match": "The correct modular-addition shifted relation ranks first but contains less than half of the complete non-DC Fourier power."
+    },
+    "classification_degenerate_power_threshold": 1e-10,
+    "classification_fraction_threshold": 0.5,
+    "component_association_method": "exact single-component zero ablation; Fourier transform of full-model minus ablated-model centred final logits",
+    "component_ranking": "descending addition-manifold delta power; frozen component index breaks ties",
+    "device": "cpu",
+    "evaluated_example_count": 12769,
+    "evaluated_output_classes": 113,
+    "fft_normalization": "ortho",
+    "fourier_computation_dtype": "complex128",
+    "implementation_git_commit": "2fceb1c6d7d7e950a6f67ba6075173f4164de0d5",
+    "modulus": 113,
+    "output_centering": "subtract_mean_over_output_class",
+    "primary_fidelity_threshold_selected": false,
+    "scientific_real_dtype": "float64",
+    "shifted_relations": "Md={(k,k,-k+d mod 113): k=1,...,112}, d=0,...,112",
+    "source_training_run_id": "modular-addition-training-s1-5f1bc9dee7ab",
+    "stable_post_thresholds": [
+      0.99,
+      0.975,
+      0.95,
+      0.9,
+      0.85,
+      0.8
+    ],
+    "stage11_calibration_performed": false,
+    "stage9_archive_sha256": "8d613c30e98f057bd9dc41c9fe57f5799c71bcedbf072cc82d1c9bd7ba1124c3",
+    "stage9_manifest_sha256": "f89dbb7df3bd7ab22d0136eb4deb9ca354fa8e312a4818064bd35777b51ae389",
+    "stage9_table_sha256": "9e8d323ab682e39464dd628820de8a622f55ff31276c6eac3fd7310641a05636"
+  },
+  "dataset": {
+    "dataset_archive_sha256": "76c499f9d90d8561d12186f8cc7080f8c5cf7460c9f471c1e7b327b0b15337c5",
+    "dataset_metadata_sha256": "acbfe6a61b48eb2a2ad522389185085858f72c960906e13291ee85f8bc95564f",
+    "dataset_sha256": "af13d2181f5f1122bc528c6dfadbdc67b0a38ea02c10b4fd504a492aca8afafa",
+    "example_count": 12769,
+    "example_ordering": "lexicographic",
+    "includes_training_and_test_examples": true,
+    "split_sha256": "c83ac398724817fae6a0d137d0f1c6d0b8786eee43efaff5c3d34de0a891b7f2"
+  },
+  "experiment_type": "fourier_pipeline_sanity_check",
+  "fourier_definition": {
+    "addition_manifold": "M0={(k,k,-k mod 113): k=1,...,112}",
+    "canonical_frequency_pairs": "pair k with 113-k for k=1,...,56",
+    "complex_dtype": "complex128",
+    "fft_normalization": "ortho",
+    "output_centering": "subtract per-input mean over valid output classes",
+    "output_tensor_shape": [
+      113,
+      113,
+      113
+    ],
+    "real_dtype": "float64",
+    "shifted_relations": "Md={(k,k,-k+d mod 113): k=1,...,112}, d=0,...,112"
+  },
+  "integrity": {
+    "hook_counts_after": [
+      [
+        "blocks.0.attn.hook_z",
+        0
+      ],
+      [
+        "blocks.0.mlp.hook_post",
+        0
+      ]
+    ],
+    "hook_counts_before": [
+      [
+        "blocks.0.attn.hook_z",
+        0
+      ],
+      [
+        "blocks.0.mlp.hook_post",
+        0
+      ]
+    ],
+    "hook_counts_unchanged": true,
+    "model_state_sha256_after": "18c66dc1802016a1bdf888070e87ebc615a98d7d1fb310613be0a7abdeccc72b",
+    "model_state_sha256_before": "18c66dc1802016a1bdf888070e87ebc615a98d7d1fb310613be0a7abdeccc72b",
+    "model_state_unchanged": true
+  },
+  "outputs": {
+    "activation_fourier_table": {
+      "path": "results/tables/seed_1_stage10_activation_fourier.csv",
+      "record_count": 512,
+      "sha256": "67e07ea807f5ec62e6ab18ff7af5102ab49808893ea34773f528007e4ba7221d"
+    },
+    "circuit_fourier_figure": {
+      "format": "svg",
+      "path": "figures/stage10-fourier-s1-a6f6a5773057/circuit_fourier_fraction.svg",
+      "sha256": "8912b04e5456aca16f4c7c36064208889391210fae02a7ee8ee1bf6cf6bcf651"
+    },
+    "circuit_fourier_table": {
+      "path": "results/tables/seed_1_stage10_circuit_fourier.csv",
+      "record_count": 6,
+      "sha256": "669e321946673453b0ee57e3c65f69b67a50861b30521e37fde47df4e7e27f60"
+    },
+    "component_association_figure": {
+      "format": "svg",
+      "path": "figures/stage10-fourier-s1-a6f6a5773057/component_association_ranking.svg",
+      "sha256": "f05d19153493687047d1623d32d20e018bc97cd31495541efeccd86f38101fef"
+    },
+    "component_fourier_table": {
+      "path": "results/tables/seed_1_stage10_component_fourier.csv",
+      "record_count": 516,
+      "sha256": "25fe4156340f050ccebc7604b8d8a411ce535af45e4488998c0bce76b4388167"
+    },
+    "embedding_unembedding_table": {
+      "path": "results/tables/seed_1_stage10_embedding_fourier.csv",
+      "record_count": 112,
+      "sha256": "8133065a30ae2ddf7b6fa1df74ffdb99a98cea57da22da9f21dbc5d9c725e61f"
+    },
+    "full_model_fourier_summary": {
+      "path": "results/raw/stage10-fourier-s1-a6f6a5773057/full_model_fourier.json",
+      "sha256": "e3b1917d3b937ed2ee8f7c22bdbde5bdaaf3aea42eadb8e8c4df851ffb8d0a9c"
+    },
+    "retained_association_figure": {
+      "format": "svg",
+      "path": "figures/stage10-fourier-s1-a6f6a5773057/retained_association_fraction.svg",
+      "sha256": "23b6368d71f9218fdfbd398dd529ec131f9550962e7443102d774efeba038964"
+    },
+    "selected_removal_table": {
+      "path": "results/tables/seed_1_stage10_removal_fourier.csv",
+      "record_count": 18,
+      "sha256": "eacfc3c5f9d52d1271d05580fca2e1b74380613b8219af3c922b7aa2e83d670e"
+    }
+  },
+  "schema_version": 1,
+  "scientific_interpretation": "Pipeline diagnostic only. Fourier correspondence supports mechanistic plausibility but does not establish circuit uniqueness, and no primary fidelity threshold is selected.",
+  "selected_removals": {
+    "counts_by_threshold": {
+      "0.8": 3,
+      "0.85": 3,
+      "0.9": 3,
+      "0.95": 3,
+      "0.975": 3,
+      "0.99": 3
+    },
+    "selection_rules": [
+      "highest associated retained component overall",
+      "highest associated retained attention head if present",
+      "highest associated retained MLP neuron if present",
+      "lowest associated retained component",
+      "duplicate component identifiers are evaluated once"
+    ],
+    "total_evaluation_count": 18
+  },
+  "source_training_run_id": "modular-addition-training-s1-5f1bc9dee7ab",
+  "stage10_implementation_git_commit": "2fceb1c6d7d7e950a6f67ba6075173f4164de0d5",
+  "stage10_run_id": "stage10-fourier-s1-a6f6a5773057",
+  "stage9_circuits": [
+    {
+      "fidelity_threshold": 0.99,
+      "final_mask_path": "results/raw/stage9-sparse-s1-27fffed087e6/step_00009050/threshold_09900/final_mask.json",
+      "final_mask_sha256": "f61240e67b41fa8f60cbe20d22bb6182b9a226f984a4aa7d219ec7bc27758446",
+      "mask_id": "component-mask-d62afd57f53ac8a2",
+      "retained_components": 146,
+      "retained_heads": 4,
+      "retained_neurons": 142,
+      "stage9_exact_fidelity": 0.9900540371211528
+    },
+    {
+      "fidelity_threshold": 0.975,
+      "final_mask_path": "results/raw/stage9-sparse-s1-27fffed087e6/step_00009050/threshold_09750/final_mask.json",
+      "final_mask_sha256": "443c313d15fdcba61fe5ec0caa74c517a080e2216d493c9c064cec2461d1c60f",
+      "mask_id": "component-mask-cb9d546b33ccf08f",
+      "retained_components": 119,
+      "retained_heads": 4,
+      "retained_neurons": 115,
+      "stage9_exact_fidelity": 0.9750176208003759
+    },
+    {
+      "fidelity_threshold": 0.95,
+      "final_mask_path": "results/raw/stage9-sparse-s1-27fffed087e6/step_00009050/threshold_09500/final_mask.json",
+      "final_mask_sha256": "be465e02768cf7eda8127f8c0c91b0905eefd6c6942941c6116ba0dd15c03898",
+      "mask_id": "component-mask-ba4d643e460c1823",
+      "retained_components": 108,
+      "retained_heads": 4,
+      "retained_neurons": 104,
+      "stage9_exact_fidelity": 0.950896702952463
+    },
+    {
+      "fidelity_threshold": 0.9,
+      "final_mask_path": "results/raw/stage9-sparse-s1-27fffed087e6/step_00009050/threshold_09000/final_mask.json",
+      "final_mask_sha256": "91e2f13a982f3cd5632a9ae17900c6ca64184af5aee1a50a30af792392ee060b",
+      "mask_id": "component-mask-22fdcca7a085eaa0",
+      "retained_components": 82,
+      "retained_heads": 4,
+      "retained_neurons": 78,
+      "stage9_exact_fidelity": 0.9003054272065157
+    },
+    {
+      "fidelity_threshold": 0.85,
+      "final_mask_path": "results/raw/stage9-sparse-s1-27fffed087e6/step_00009050/threshold_08500/final_mask.json",
+      "final_mask_sha256": "3309027cc538ad67a7dc602b43a72f66c5f9e06269b322144766d1e09f437c3a",
+      "mask_id": "component-mask-28335ce85bbc2ec0",
+      "retained_components": 77,
+      "retained_heads": 4,
+      "retained_neurons": 73,
+      "stage9_exact_fidelity": 0.8512021301589788
+    },
+    {
+      "fidelity_threshold": 0.8,
+      "final_mask_path": "results/raw/stage9-sparse-s1-27fffed087e6/step_00009050/threshold_08000/final_mask.json",
+      "final_mask_sha256": "12aa85d7ae7daeb18aa6a18d1709a76ad10c2bb373531fbc0a710934e1a5b08a",
+      "mask_id": "component-mask-d48d88a7f165f829",
+      "retained_components": 64,
+      "retained_heads": 4,
+      "retained_neurons": 60,
+      "stage9_exact_fidelity": 0.8010024277547184
+    }
+  ],
+  "threshold_calibration": {
+    "all_six_stable_post_thresholds_reported": true,
+    "primary_fidelity_threshold_selected": false,
+    "stage11_calibration_performed": false
+  }
+}

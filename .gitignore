@@ -1,0 +1,45 @@
+# macOS
+.DS_Store
+
+# Python
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+
+# Local Python environment
+.venv/
+
+# Editors
+.vscode/
+.idea/
+
+# Generated datasets
+data/generated/*
+!data/generated/.gitkeep
+!data/generated/modular_addition_m113.npz
+!data/generated/modular_addition_m113.metadata.json
+
+# Model checkpoints
+checkpoints/*
+!checkpoints/.gitkeep
+
+# Large or intermediate raw outputs
+results/raw/*
+!results/raw/.gitkeep
+
+# Temporary files
+*.tmp
+*.log
+
+# Reviewer-generated reproduction outputs
+reproduction/generated/
+
+# Large payloads distributed in the frozen Zenodo artifact
+results/archives/stage18-scaling-24a9adb84176/*.tar.gz
+results/archives/stage18-scaling-24a9adb84176/*_inventory.json
+!results/archives/stage18-scaling-24a9adb84176/index.json
+
+# Small frozen validation record retained in the public source repository
+!reproduction/records/stage18_reproduction_comparison.log

@@ -1,0 +1,1583 @@
+{
+  "acceptance": {
+    "checkpoint_reload_verification": "passed",
+    "verified_checkpoint_count": 182
+  },
+  "checkpoints": [
+    {
+      "file_sha256": "38258bc4f7500c752deef121f27dce733bcce932bea9bd332a293bc7564f414a",
+      "model_state_sha256": "efddd051b047b037b2cc24e46d67f51606979a0c3a20cbbdf3e0e3e8ead378ad",
+      "optimizer_state_sha256": "be4aaa8e6b2252628a20ba7025a5b36dc0d9bbf7d89ebe4ca1f9f375a50a159d",
+      "path": "checkpoints/stage14-random-label-training-s0-df790c07a988/step_00000000.pt",
+      "reload_verified": true,
+      "training_step": 0
+    },
+    {
+      "file_sha256": "6c7a29a8131097a1f90a477937da05314988e13c77c3ef480c19c36d51627209",
+      "model_state_sha256": "6b658af700bb9ba9def7fd5cecae88d33dc279dbd866ea107b735ed859d57548",
+      "optimizer_state_sha256": "2c1f913a1de1d4ec22197f8cb3998bd7e353ab224f16874193fb3f8066eaf36b",
+      "path": "checkpoints/stage14-random-label-training-s0-df790c07a988/step_00000050.pt",
+      "reload_verified": true,
+      "training_step": 50
+    },
+    {
+      "file_sha256": "23aade383f52678f50a69cfdf5f8b29f1a668cee9af92ba2d45aa6e2c13ea54f",
+      "model_state_sha256": "acfe7ff2a2e7db1c6e4ae67b682dc48fc409cc85821fdbcb233411a9931c3d2d",
+      "optimizer_state_sha256": "ee2f0e0eb55367c46988a50b35a2a50ece84614189ea23427d9ba410d524d391",
+      "path": "checkpoints/stage14-random-label-training-s0-df790c07a988/step_00000100.pt",
+      "reload_verified": true,
+      "training_step": 100
+    },
+    {
+      "file_sha256": "c9f5a3a18c9b2e892c186b245a7e1e333734efe2b08999f64269c38df2958c5d",
+      "model_state_sha256": "a976e6fc56b43494bf7a839908520ef69174657a7b7e1ada9bb1c1b7bee34eaf",
+      "optimizer_state_sha256": "16f99322f4e037a0e3585a44e09f4310aa516af5605d1657b1cad78a9a4716a6",
+      "path": "checkpoints/stage14-random-label-training-s0-df790c07a988/step_00000150.pt",
+      "reload_verified": true,
+      "training_step": 150
+    },
+    {
+      "file_sha256": "a55c731765d2050ca918f905fd1a1ebeba2444ed86071194a905349bf7e3cdda",
+      "model_state_sha256": "5d3d174238158f63837d110c3d47d59469e2a40e9cc97c5edc4b27dcb7f0e29d",
+      "optimizer_state_sha256": "de2d504c4435802186bb6530418a6278e969527b67359b4a5c4fbbb7087972bf",
+      "path": "checkpoints/stage14-random-label-training-s0-df790c07a988/step_00000200.pt",
+      "reload_verified": true,
+      "training_step": 200
+    },
+    {
+      "file_sha256": "8c55ab457911f94a98a02efaa881c4774cc5fa1efd82136b65a2de8a8917c5aa",
+      "model_state_sha256": "ce04c1521c69b290735c122939384bd7cf4c912e5e67401b2107da54b78c9593",
+      "optimizer_state_sha256": "442d85b2baada9ee0b65f45df7670641d5a110cc2e648010ff9bd5ebf05c710e",
+      "path": "checkpoints/stage14-random-label-training-s0-df790c07a988/step_00000250.pt",
+      "reload_verified": true,
+      "training_step": 250
+    },
+    {
+      "file_sha256": "b857f6a1b8b859442909f05d1d3871451bfc436a2770faa13ec54727ffd090b5",
+      "model_state_sha256": "5fa4ddb51164645fb4f4ff3a43119e90fa71ca1d8c781b322830892e71b51a6c",
+      "optimizer_state_sha256": "8124080b423c64b85a77ff0dd779f8d05eb59200f5442c4f0769342ef7bca23d",
+      "path": "checkpoints/stage14-random-label-training-s0-df790c07a988/step_00000300.pt",
+      "reload_verified": true,
+      "training_step": 300
+    },
+    {
+      "file_sha256": "e80b2c712332f32154a1c52be4d691eebb65a3776d338d07f005a0b3d52b310b",
+      "model_state_sha256": "03bb8d32edde3afe60f00a4751f4af52585dffb6e4fc58dc6ddd369f8d5c11c6",
+      "optimizer_state_sha256": "2164cc9bd3960b1f5c1341eeee89937b129de8103906bf361482ff6258ad053c",
+      "path": "checkpoints/stage14-random-label-training-s0-df790c07a988/step_00000350.pt",
+      "reload_verified": true,
+      "training_step": 350
+    },
+    {
+      "file_sha256": "8811850bd017557d31717d45f394f4e4003d143a330cb4c52dc2e529a9e6077b",
+      "model_state_sha256": "ba7b0eac8758b474817605e59dcf946cfd55b5def709757aacd46e929e18f262",
+      "optimizer_state_sha256": "e05c97b413c20399dd1be8d1f5078462e297a6521cab1a7fde022adf5002b46c",
+      "path": "checkpoints/stage14-random-label-training-s0-df790c07a988/step_00000400.pt",
+      "reload_verified": true,
+      "training_step": 400
+    },
+    {
+      "file_sha256": "3d64e8dadcea75ba7a0bb9adb3dcdc41fe9514c35b7f5c42f92f155eeea5ae10",
+      "model_state_sha256": "e4a1999acfcba798d204d173e3f5301c669c8d12520206983ea6f8e2054a049a",
+      "optimizer_state_sha256": "fbfa474f7095d83e60f0e38bd55a5b7130474f3226cb9ed1b31d7d91935af22a",
+      "path": "checkpoints/stage14-random-label-training-s0-df790c07a988/step_00000450.pt",
+      "reload_verified": true,
+      "training_step": 450
+    },
+    {
+      "file_sha256": "d235179c2cd6314da32c948f47bbbc2dc2e8a9125633d45793cf871a87c155bf",
+      "model_state_sha256": "63d3fcf7a008a232c4f373269dfd346422c223f6746900afe19545fbcfae6996",
+      "optimizer_state_sha256": "eca2cb75b7f1a6faa7eceaef78b0bf11cc45b6f14f05ef5ebb8fcfdcb9ba23c0",
+      "path": "checkpoints/stage14-random-label-training-s0-df790c07a988/step_00000500.pt",
+      "reload_verified": true,
+      "training_step": 500
+    },
+    {
+      "file_sha256": "59435fa9a9b396223a8684a6f22d7ccf7681b4f16af12c7f0cb6e48bb3ea527d",
+      "model_state_sha256": "dfcc9af308f25b81b4c7d480b57edf5118d37edcb1717627956084c406bc1184",
+      "optimizer_state_sha256": "4114fea96d8eef671bdf8fa1a45daf837eb5e27cee74caa0d668f5874a431295",
+      "path": "checkpoints/stage14-random-label-training-s0-df790c07a988/step_00000550.pt",
+      "reload_verified": true,
+      "training_step": 550
+    },
+    {
+      "file_sha256": "816b164171673c6122d0f121c9b727f2336add7dfbf5e9d52834b0f03039fe18",
+      "model_state_sha256": "00a36487b7baeea24b07fc94a38b11cfbdd16e1bcc1e498679a62f79853403f2",
+      "optimizer_state_sha256": "35906e31a3ed0841bd6a016a8ed876be3f7fdffa3a67124235de97c11a452c41",
+      "path": "checkpoints/stage14-random-label-training-s0-df790c07a988/step_00000600.pt",
+      "reload_verified": true,
+      "training_step": 600
+    },
+    {
+      "file_sha256": "762a34dda64b8677f90cfa9ac539ac3cf9512925c443e01528cf8a9edcb1a18b",
+      "model_state_sha256": "ed2c60e2f299bfb6fe6ec7de0df341ee525de734284956088d6aa7bbcbdd65a8",
+      "optimizer_state_sha256": "71a6d4a977c8d3f4ab64d7522d7cde414910950b70b232df7a0dae21d6f3dae4",
+      "path": "checkpoints/stage14-random-label-training-s0-df790c07a988/step_00000650.pt",
+      "reload_verified": true,
+      "training_step": 650
+    },
+    {
+      "file_sha256": "d753089d17dcf221a92a7293d4c3f3b57ed5b890a75322e2c4b51dc88c33ab4b",
+      "model_state_sha256": "a60cd1e3bc71c855d63cccaadff279cc1fdb3a0ba103423bfa0484b5a5da80dd",
+      "optimizer_state_sha256": "5e4b4b8a9d28af4ff8dca37f0bdfd33c10fd74c4243b14aba2122127aa73fb00",
+      "path": "checkpoints/stage14-random-label-training-s0-df790c07a988/step_00000700.pt",
+      "reload_verified": true,
+      "training_step": 700
+    },
+    {
+      "file_sha256": "7b9ed8efca24a9fc3d8302aa58b25ca48fe368fcf81d069f9d8cd9913ec219e1",
+      "model_state_sha256": "331bc8b4a00404239405253dffab06f3995061981e4abdde85c2c7d0ad22f0a7",
+      "optimizer_state_sha256": "9e7b84c4c7733f73931523de3458fe649fcef6e98f53a4b96b3f6f782d2fd6ba",
+      "path": "checkpoints/stage14-random-label-training-s0-df790c07a988/step_00000750.pt",
+      "reload_verified": true,
+      "training_step": 750
+    },
+    {
+      "file_sha256": "cc7ce0ff43a8a6d3ee940ea5753021779e108b4552db578ef67212e5763d02c9",
+      "model_state_sha256": "f8171416790939113574f871e5f6468ca26e5ba231124cd45f540a4bb6fb8a35",
+      "optimizer_state_sha256": "044cfee7db767534bc97b2fe35056a4e25d8272305a819e0a3d7f2c57d0d1adf",
+      "path": "checkpoints/stage14-random-label-training-s0-df790c07a988/step_00000800.pt",
+      "reload_verified": true,
+      "training_step": 800
+    },
+    {
+      "file_sha256": "ab74d3900550d1b8945968b2f70233c232cfc54459aa24b5efc2ac1e50952689",
+      "model_state_sha256": "513814a5a9210b72b676381a6335363cc19738badf8a484640f21a92b781559c",
+      "optimizer_state_sha256": "47dd118475350dc6ab2b68f7544a123fb18294068dd9674238f164d69020c0f3",
+      "path": "checkpoints/stage14-random-label-training-s0-df790c07a988/step_00000850.pt",
+      "reload_verified": true,
+      "training_step": 850
+    },
+    {
+      "file_sha256": "101af8ee5f496fde19b3e2d01048bb70081bbd17a6a5f23d9410da23e38b33ac",
+      "model_state_sha256": "eb620503434f2f8bf8d0f10eb0891f3681ef5dff25632bdefb2f753d582c4fc8",
+      "optimizer_state_sha256": "cc1cc68100fd0178a955992fe9f4984c41c8c31c2ba75b44cf6ff2b68dad6fa6",
+      "path": "checkpoints/stage14-random-label-training-s0-df790c07a988/step_00000900.pt",
+      "reload_verified": true,
+      "training_step": 900
+    },
+    {
+      "file_sha256": "f7677e4bf8a82ffcfaa4d43669c56ea9c43cb11c7da8a5dbcfdc5cdff7854b15",
+      "model_state_sha256": "50944c92a8f29d0364d36dcffbe46f3f5190b9160ae168acdbfa595f139188c1",
+      "optimizer_state_sha256": "29765326f992a86fce732ee1f99921efff045660affbc066a7222fd9e7936f2d",
+      "path": "checkpoints/stage14-random-label-training-s0-df790c07a988/step_00000950.pt",
+      "reload_verified": true,
+      "training_step": 950
+    },
+    {
+      "file_sha256": "7f18d0fcb1552d6c717ef64693fbf7083787532b38a4328acb358765fac4306c",
+      "model_state_sha256": "6503116e38417367091004163b8203a6930346d0b65afd3b16b46e624df3fb03",
+      "optimizer_state_sha256": "1fa3c4bcdfc1b4844ba6ef9baf6659f74e83aeaa5ff5f4c8388560474bf49aa0",
+      "path": "checkpoints/stage14-random-label-training-s0-df790c07a988/step_00001000.pt",
+      "reload_verified": true,
+      "training_step": 1000
+    },
+    {
+      "file_sha256": "e8cebbfb2ae6ecb80dcb4f019caab8fc34f8a5153acfede1eccaa61ad318fe57",
+      "model_state_sha256": "2f39d535bc960f1009e9857a4eb4879e4e50672eababf71e7932f29ebf8e097a",
+      "optimizer_state_sha256": "7ab708fc14211476b626afefbfe8e59b8861e5fa98be27f91a2dbaf064ac9faf",
+      "path": "checkpoints/stage14-random-label-training-s0-df790c07a988/step_00001050.pt",
+      "reload_verified": true,
+      "training_step": 1050
+    },
+    {
+      "file_sha256": "3ac358dfaa52f9669d2acd6d3c261c68efd2f1be947e68f52314d4a3587c84a9",
+      "model_state_sha256": "bad3734fef95fd86d79651d1ce1aeea58e73d41a9dd5bf97e23d45449a7bf3ee",
+      "optimizer_state_sha256": "aa76057ed3d1ecd4661f3960d967b8d32758fb5fef5d8786fb06a62c11d8b6eb",
+      "path": "checkpoints/stage14-random-label-training-s0-df790c07a988/step_00001100.pt",
+      "reload_verified": true,
+      "training_step": 1100
+    },
+    {
+      "file_sha256": "abead5411e0f0106f4c74a5f4b1d12b2b438bc78609fc5b1abe5b589aa341996",
+      "model_state_sha256": "660aa53140a8e0628d4735a42c5bc65095dff7a35267c975800e7f8be200edba",
+      "optimizer_state_sha256": "5a73ac24c0a3720d70057d48ece8568dc3ca0f91611e029b850d7527825edd00",
+      "path": "checkpoints/stage14-random-label-training-s0-df790c07a988/step_00001150.pt",
+      "reload_verified": true,
+      "training_step": 1150
+    },
+    {
+      "file_sha256": "9394d80fa092120a2165d74da44d5eecc01b0712a8b379161e404f58c1b3aa7a",
+      "model_state_sha256": "e1b42b54b46f53e9d66b2c88e066945cb62ced653f7265e36cad25ec262416df",
+      "optimizer_state_sha256": "6614007df60138a0a904542dcfb5eef74c272fc43e2f73dc822f7f5548cad60d",
+      "path": "checkpoints/stage14-random-label-training-s0-df790c07a988/step_00001200.pt",
+      "reload_verified": true,
+      "training_step": 1200
+    },
+    {
+      "file_sha256": "302bc334c425cab3d8e86c65d11c2e8d7877171ccc51492d155b89a23b4ae1b4",
+      "model_state_sha256": "e24047fb134a7712f12c22704aa7de44813fdeb80df5cd29fb4575c5380e2492",
+      "optimizer_state_sha256": "9201629bf6612f683a4884eb21f271660552a3b9ab5ba3ec0e98e4c387c452c2",
+      "path": "checkpoints/stage14-random-label-training-s0-df790c07a988/step_00001250.pt",
+      "reload_verified": true,
+      "training_step": 1250
+    },
+    {
+      "file_sha256": "966e049b93a52a7a4fa70c600951aa4432597ec8003ab8690e164c3f6a5008a6",
+      "model_state_sha256": "61faf9b5e013794ded07c7bdd3c2cd53d10f0de0755b508d90d552b18ca73664",
+      "optimizer_state_sha256": "ba3de1b97fec915cb87a6b3634d295571dbf3e5b899138d1e4928481deca2618",
+      "path": "checkpoints/stage14-random-label-training-s0-df790c07a988/step_00001300.pt",
+      "reload_verified": true,
+      "training_step": 1300
+    },
+    {
+      "file_sha256": "07dbae1e1443beb0cd333e0dd5306f64b619e243e871b1a898e9336ec046a8dd",
+      "model_state_sha256": "edef7d5792b2bb00db79e188060ecdb18daad64e2c7db825fcc5b470a510bea8",
+      "optimizer_state_sha256": "a096d3f16383471f3a73b0d742ff0436772fd4ac7bcf5aca8cadc5e1c19c6c78",
+      "path": "checkpoints/stage14-random-label-training-s0-df790c07a988/step_00001350.pt",
+      "reload_verified": true,
+      "training_step": 1350
+    },
+    {
+      "file_sha256": "30e93f9dc53837c05f4093c76b23c7f4f9f136e1447b6659d6e26f6eaad3a737",
+      "model_state_sha256": "f17311db1744a32b7eda1379b86e9367a57b9a12d585e6b165243910b4b93e8a",
+      "optimizer_state_sha256": "17932a1ae02d76d4679a1acf3b7cb04f6dd214019e7ddbbe01c2304667c3c7b2",
+      "path": "checkpoints/stage14-random-label-training-s0-df790c07a988/step_00001400.pt",
+      "reload_verified": true,
+      "training_step": 1400
+    },
+    {
+      "file_sha256": "96d421db7e1a5780c02f0e2ca3f031a1fef7ad8eb8081282bb1ebb3bb96b5183",
+      "model_state_sha256": "f1b704b286af12dfb252404730ebea335e778458dfdb7fc4c94c625026d087ac",
+      "optimizer_state_sha256": "3ac56e8636725e87b12c2d3872e274b43dc6995703d847a60e07655834f41979",
+      "path": "checkpoints/stage14-random-label-training-s0-df790c07a988/step_00001450.pt",
+      "reload_verified": true,
+      "training_step": 1450
+    },
+    {
+      "file_sha256": "46944e195aa2d311b905b749116fc6c75ae7647eb4e9f8d9424de186441fd00d",
+      "model_state_sha256": "099e7c84a6e8470160c4f8139b368008ab1ccfece71abe242858b42bd961bf15",
+      "optimizer_state_sha256": "cd4d5abd16a2f6b5182e8431aa1e112b961d4a7025b95884dd594e38f2b4ac4f",
+      "path": "checkpoints/stage14-random-label-training-s0-df790c07a988/step_00001500.pt",
+      "reload_verified": true,
+      "training_step": 1500
+    },
+    {
+      "file_sha256": "3b4a667396e3ab5dec872fbc8e7e6b5f120fdbd84a686b20a4e3575ec13627ef",
+      "model_state_sha256": "4c2e505afad086f0d6daab955108ccea04b0b9c4667185eb65d2f55b5b803f6c",
+      "optimizer_state_sha256": "35e770448173424f64d83620d16361b7a8b06dd1135b95a923a238090e7d3c45",
+      "path": "checkpoints/stage14-random-label-training-s0-df790c07a988/step_00001550.pt",
+      "reload_verified": true,
+      "training_step": 1550
+    },
+    {
+      "file_sha256": "de359f9d607912b92e2347dcf0a648d2a68f0123c43fb3d158f0d770a61ba0d1",
+      "model_state_sha256": "51c82b056d21e7eab54ebeb722ead1ba06a6d8f39d70af199c6e7ad8b03b967a",
+      "optimizer_state_sha256": "88fe55e5fb506e63fd4913155457391d7b57aab70925ff1b06025ada5eb395d5",
+      "path": "checkpoints/stage14-random-label-training-s0-df790c07a988/step_00001600.pt",
+      "reload_verified": true,
+      "training_step": 1600
+    },
+    {
+      "file_sha256": "8f746f0e8b4ed7a942fc4b3bde9e99b8117016b973ea9c9d5f53da824cb3b9b7",
+      "model_state_sha256": "179c6a5cdc968dc43a2a6a3995be0a09e45de8e221f6f31d376804db9f896d52",
+      "optimizer_state_sha256": "04cf1cb8fc33ed0482d8b233a7e4d7af1980ed4fc5e4d0bdeed3223fc001a1b7",
+      "path": "checkpoints/stage14-random-label-training-s0-df790c07a988/step_00001650.pt",
+      "reload_verified": true,
+      "training_step": 1650
+    },
+    {
+      "file_sha256": "636a9c2702b0081e04f2ff5b6bfbb05f924b7a115f12c60a2ab1357e8281db57",
+      "model_state_sha256": "12f33a6591b3dea6bdcc988a34e46f53e56a0cb282adb12df680e207ef69f2bd",
+      "optimizer_state_sha256": "c5143d5065bbe6dc91d2ae23e24b158787dd1dd42e9e5e8234e0b1527894890d",
+      "path": "checkpoints/stage14-random-label-training-s0-df790c07a988/step_00001700.pt",
+      "reload_verified": true,
+      "training_step": 1700
+    },
+    {
+      "file_sha256": "7963636a2fdd930427a93e923738424d9517975fdf11639cd52d29d3e0c3f193",
+      "model_state_sha256": "dde5c8edd6c2d88549884f9f6a9a8d5afc96623f2bb9a5fec0534bd6b2c379d8",
+      "optimizer_state_sha256": "42864fb170c89ca4bdbc64de4b5e9f49ac453bc50b0d6e3747e3e4b3383b73d9",
+      "path": "checkpoints/stage14-random-label-training-s0-df790c07a988/step_00001750.pt",
+      "reload_verified": true,
+      "training_step": 1750
+    },
+    {
+      "file_sha256": "1a0d8642f3312daff8bb3c6afecf7a02dbeaf099fa02e026f1050382328728ae",
+      "model_state_sha256": "abd51690f217225466ec8a5dba7f92802e2661870c29192d29b22f40ad420784",
+      "optimizer_state_sha256": "8d9edc93af66f32b3d7ffaa71103633e5b6ee633fae1957617b01464053891ba",
+      "path": "checkpoints/stage14-random-label-training-s0-df790c07a988/step_00001800.pt",
+      "reload_verified": true,
+      "training_step": 1800
+    },
+    {
+      "file_sha256": "9a7e9fa3dd61522e92c81af37d3d11e9b8ceafa657e03526806f62a4642a2336",
+      "model_state_sha256": "7e6f682041f4c64d10e7f0395b7b2ddf5d1e676a8e45d767eef5ac826079c1aa",
+      "optimizer_state_sha256": "dd025bd0f14dd437ec6a06c6d659bfbaff192e3f41e6ca3f6e39f2e9c95bcb7d",
+      "path": "checkpoints/stage14-random-label-training-s0-df790c07a988/step_00001850.pt",
+      "reload_verified": true,
+      "training_step": 1850
+    },
+    {
+      "file_sha256": "4fdc3212ed97652ffb7946bbd58291ffe2375177f2006e8d8bbc1e7393992855",
+      "model_state_sha256": "683669366a3c6a1f2b9b2f233ff04d47a28ea44d46235a1c1c662cd32ab72072",
+      "optimizer_state_sha256": "a25dd2bd897d19339bfdbd57fbec3cf0bc9671fd52ab65df0afad380bc940786",
+      "path": "checkpoints/stage14-random-label-training-s0-df790c07a988/step_00001900.pt",
+      "reload_verified": true,
+      "training_step": 1900
+    },
+    {
+      "file_sha256": "5b725456a3136371ab843815ff4c293fc619692b132067ad2f9ea2d6c7b04779",
+      "model_state_sha256": "05bbd81e0b8e4f3b5687ff14f9757f7bad066b756ccb75085ccd0252b366482e",
+      "optimizer_state_sha256": "813bf2bcd0ff50a114b17d06715251adce60935372aa6e76b793b137858fcc96",
+      "path": "checkpoints/stage14-random-label-training-s0-df790c07a988/step_00001950.pt",
+      "reload_verified": true,
+      "training_step": 1950
+    },
+    {
+      "file_sha256": "66f0f80fe23c0cc7c4821049a91ef3e2925f880f50451bfbd506bfd9fe6b195c",
+      "model_state_sha256": "e9b60c2ada1ae47a9ccd9eadc5e77cf8d747cd204ce3ef57c47f67a74cb2c124",
+      "optimizer_state_sha256": "1b46570dc39914c30d88eee1b62b8c18a50c27aeaf0788fde23700b6585dac6f",
+      "path": "checkpoints/stage14-random-label-training-s0-df790c07a988/step_00002000.pt",
+      "reload_verified": true,
+      "training_step": 2000
+    },
+    {
+      "file_sha256": "79bfe68bf9298180462363988209c043e945a2743c20cf2a3c25dc432b11b389",
+      "model_state_sha256": "45c55c4cccdccdbf819351ff9946735fc03af0dbc07bff9d88f7a1406c97b5a2",
+      "optimizer_state_sha256": "deb06e98aec4a46ec17143ffc735114bb7fe9674d63d8b5cedec30f9ad4bb19d",
+      "path": "checkpoints/stage14-random-label-training-s0-df790c07a988/step_00002050.pt",
+      "reload_verified": true,
+      "training_step": 2050
+    },
+    {
+      "file_sha256": "84e8b3144e1294a3eaff907b90a6836885a940c93cb2a816bb53468562ec9715",
+      "model_state_sha256": "8c52a449764c1c6612949135d7da9d63d6d04cba69bea2b10861799ceaaba323",
+      "optimizer_state_sha256": "d9c53fd7738dea74776e565aefe742f4b7f0e75e3327cff5f86e8b6049426d9a",
+      "path": "checkpoints/stage14-random-label-training-s0-df790c07a988/step_00002100.pt",
+      "reload_verified": true,
+      "training_step": 2100
+    },
+    {
+      "file_sha256": "a275a0750829f84022dbc47a487fcc47d33a4bd7c9f6b7de97310bed42105c50",
+      "model_state_sha256": "f50cc14180b13c79e0d509bd945f737240681b69e43c2f23a785d2d864dcf3f5",
+      "optimizer_state_sha256": "ecc0ba58941c6bb49ffaedd7b451b3c920e74d78983b2833a4dc2a413914119d",
+      "path": "checkpoints/stage14-random-label-training-s0-df790c07a988/step_00002150.pt",
+      "reload_verified": true,
+      "training_step": 2150
+    },
+    {
+      "file_sha256": "07d2cf0d83f81f20b199f0c2b70c404d353255fb5cc0b3f64ce3451c86c82056",
+      "model_state_sha256": "57db529030e8e0a297cbaab28647e5f8ab1fa7b0442495abc46687a8be805876",
+      "optimizer_state_sha256": "ec7bb1e13623a0534fc91dd66daa32a08cf8a7a451acf5b4a3e64764e063d042",
+      "path": "checkpoints/stage14-random-label-training-s0-df790c07a988/step_00002200.pt",
+      "reload_verified": true,
+      "training_step": 2200
+    },
+    {
+      "file_sha256": "e37003695dc97efec47ca180f0425ba89d4fa30298d6d5fa97d010d28d160327",
+      "model_state_sha256": "0f03eef5eccf513035961b0cdf090090fb1bcd8f9b2c8e5849571d2d1b4ea355",
+      "optimizer_state_sha256": "207432f1b5bdfbdffad3415d69af88cc3f491917f3518f0ff25974dd03dd4c65",
+      "path": "checkpoints/stage14-random-label-training-s0-df790c07a988/step_00002250.pt",
+      "reload_verified": true,
+      "training_step": 2250
+    },
+    {
+      "file_sha256": "ff33ee237bbf8d7dfdc13f508ed7411fe0841329a3ce5ce3db8b9394934dd0ab",
+      "model_state_sha256": "56ad1a8a93ff3f83229459dcb6b7b6dfe9c2104ac02ac842e81aedbe8c452f89",
+      "optimizer_state_sha256": "8a77be3127a8c968b7abe417d3379f84abc3082597d3b7c70a299fe3fb63ce32",
+      "path": "checkpoints/stage14-random-label-training-s0-df790c07a988/step_00002300.pt",
+      "reload_verified": true,
+      "training_step": 2300
+    },
+    {
+      "file_sha256": "ad6c6260f0aba295a57595bb33302f4fee0f5a69ad4c49e33be1b5edcef1bf4f",
+      "model_state_sha256": "6acdd2ee5297c5ecd6b2982ce85ee8d8d6e383035bf2bd1387188b375579d721",
+      "optimizer_state_sha256": "687a815879496564d88fe9a9d1e1594a02f62268f2b468b3cad793fbb8e665fe",
+      "path": "checkpoints/stage14-random-label-training-s0-df790c07a988/step_00002350.pt",
+      "reload_verified": true,
+      "training_step": 2350
+    },
+    {
+      "file_sha256": "eb453e69febad9645d1299a6234fad7e2be51d38a7a9d148023e5a90868a52e9",
+      "model_state_sha256": "dee79787c8445d8b73dcc7c37c5f5cf292a756c7f9f78b5a9dd92b6efde5220b",
+      "optimizer_state_sha256": "2ed521318c59570c9a486b0de2ab2083a3b4dab2679b3a8028e1ee6f7ca6d702",
+      "path": "checkpoints/stage14-random-label-training-s0-df790c07a988/step_00002400.pt",
+      "reload_verified": true,
+      "training_step": 2400
+    },
+    {
+      "file_sha256": "16f43a3a733df1e97d899c726a83a68d9eeec8f935f6910f66dc16047d29041e",
+      "model_state_sha256": "bc3e633c159d69cf15910ff768f6512255439a2dc58007b99806d396b7d424b3",
+      "optimizer_state_sha256": "80604b5330c6cbf7fa4c11372ed95c0357a49d18aa1f2dba0584cd4deb4a98ff",
+      "path": "checkpoints/stage14-random-label-training-s0-df790c07a988/step_00002450.pt",
+      "reload_verified": true,
+      "training_step": 2450
+    },
+    {
+      "file_sha256": "c2e0adb3d5b373b510d2c0d7eec061daa7dda1837d5cf20be3cfa7b6dbef191f",
+      "model_state_sha256": "f17107d350253e4e98bf6b07180e7da8b41e53a64b49018cdfe508513a4a1528",
+      "optimizer_state_sha256": "498d70912038f853bcccd8902273045c4c627154cbc7fe0861bd2855f125a080",
+      "path": "checkpoints/stage14-random-label-training-s0-df790c07a988/step_00002500.pt",
+      "reload_verified": true,
+      "training_step": 2500
+    },
+    {
+      "file_sha256": "e2dcec0acdd0743a6a2203c12615c5d1619b1967ce524b3f05f3eccc94e83c55",
+      "model_state_sha256": "24532c648ee13187ee71e0499ac0b52389705cbd3c69154562060d1d51d098bf",
+      "optimizer_state_sha256": "fe61fbd0a21598bb17177c3dafe551acdde4f0c315c46ff35e16024aae0e180f",
+      "path": "checkpoints/stage14-random-label-training-s0-df790c07a988/step_00002550.pt",
+      "reload_verified": true,
+      "training_step": 2550
+    },
+    {
+      "file_sha256": "8c436efc0ac7c1f7ea6a2b55ed9b3c9e06fee4857cccdf0596cede8aae3409df",
+      "model_state_sha256": "3297c6b8a7412e6e448a020273795964a9d714c701b50a7b22925a733fe64574",
+      "optimizer_state_sha256": "7cdca3a0f6b542030cd21c095ecc7a6c5736fae29b51049954eefa4dd344e81b",
+      "path": "checkpoints/stage14-random-label-training-s0-df790c07a988/step_00002600.pt",
+      "reload_verified": true,
+      "training_step": 2600
+    },
+    {
+      "file_sha256": "e897664942245cf63cd6e021ab430dbab086d34a97b15c525b49d2899cfd095f",
+      "model_state_sha256": "64a1cd52b8e71740ca539264e033632e49556befea1e9b7e19177c6796a8cf5d",
+      "optimizer_state_sha256": "930594928c0099c9ed975480c72249c9381b2dcf30b105b3c5d1fc46239c99a2",
+      "path": "checkpoints/stage14-random-label-training-s0-df790c07a988/step_00002650.pt",
+      "reload_verified": true,
+      "training_step": 2650
+    },
+    {
+      "file_sha256": "af624d6d057ff05bad62a3b86b734296ff64f76ec69e5bf97e2adb57f10387d6",
+      "model_state_sha256": "89e3facb50662f3815df03664d0428aa2a3fbdde2583005b500ff7964a0f5025",
+      "optimizer_state_sha256": "c750b19c29369e350e8e577ea39e9da267b87c145b64c555010bc0d09329d5af",
+      "path": "checkpoints/stage14-random-label-training-s0-df790c07a988/step_00002700.pt",
+      "reload_verified": true,
+      "training_step": 2700
+    },
+    {
+      "file_sha256": "a52e56c558ede45e1261cd994eab123c8bcde9f7cab1379d04b4bdd8cc07869b",
+      "model_state_sha256": "d0cbefe5ad5e48073e247c1d4b66dada861a6f1416daa268bf2022d9bff21256",
+      "optimizer_state_sha256": "5fc3b743652cfd2d86783bb6e0dbf2719d5ea8871b3f72cc608e5c9beb6ad09b",
+      "path": "checkpoints/stage14-random-label-training-s0-df790c07a988/step_00002750.pt",
+      "reload_verified": true,
+      "training_step": 2750
+    },
+    {
+      "file_sha256": "07de482a74e68983d281c646df5b83c67387eac83bca97911078d7e9a81fed5d",
+      "model_state_sha256": "10211b0db962a226bac15bf3857210d4fdc79e4828200f22ba22800b8f144d3f",
+      "optimizer_state_sha256": "718732c1489c56304e60492fcd3d423122c3333476e53ca3c70ed63c2b139059",
+      "path": "checkpoints/stage14-random-label-training-s0-df790c07a988/step_00002800.pt",
+      "reload_verified": true,
+      "training_step": 2800
+    },
+    {
+      "file_sha256": "d91dd72c5b7ff802b8016791dabf6c97695013c28f2da426e9abcc010e345a7f",
+      "model_state_sha256": "2e0eb9e7a69d65ac11165603da729640c6a6e6ef2174deb88b934109f4d8920d",
+      "optimizer_state_sha256": "9831257c3f725fe91a949460569c8902106d219533823c78d7d1202b5360bb41",
+      "path": "checkpoints/stage14-random-label-training-s0-df790c07a988/step_00002850.pt",
+      "reload_verified": true,
+      "training_step": 2850
+    },
+    {
+      "file_sha256": "7fe74d73fb8717e26bed23068c5b55f9a61ae687b931c4b93d4d5f18e86c1ba0",
+      "model_state_sha256": "08f34f31c5dd89218e612c9250f91adca47a29acee8ae01b57f19abe54d88a81",
+      "optimizer_state_sha256": "f893adfa8867852503fce550a6a0fb74e52c8610e53a1f941828d05ed460d917",
+      "path": "checkpoints/stage14-random-label-training-s0-df790c07a988/step_00002900.pt",
+      "reload_verified": true,
+      "training_step": 2900
+    },
+    {
+      "file_sha256": "15bda535f6c003eb3c6fd3021e08a5a0114f5445c41b90911d765bb5a9d4404a",
+      "model_state_sha256": "879e6f397d3f2b4ce8c240502c0713fcf7b7b0a7f1b12c49fe1a055607337aa5",
+      "optimizer_state_sha256": "1c64a4c27e32c1fbc9e2372f00f48e1b814cca15af14ad9de972c7caa5d46ece",
+      "path": "checkpoints/stage14-random-label-training-s0-df790c07a988/step_00002950.pt",
+      "reload_verified": true,
+      "training_step": 2950
+    },
+    {
+      "file_sha256": "98381281d422c3a0093c98dbddb4ba5a2d0397ecd9f1799709559da58fc208b3",
+      "model_state_sha256": "0766310845f957a4f3f09df0fceecd885be1ab3f932ca33f22b991de5d282227",
+      "optimizer_state_sha256": "368173f1a851aa2225b900c95755198619fb0044b3691e9f9f59753bc90be713",
+      "path": "checkpoints/stage14-random-label-training-s0-df790c07a988/step_00003000.pt",
+      "reload_verified": true,
+      "training_step": 3000
+    },
+    {
+      "file_sha256": "7ea2fe1aadba4a00e58641aefaa52c79edbf2ecb939806fd46deb335464fd9ee",
+      "model_state_sha256": "27d94ffa1617f67cfd50ecbdfda5fb15d033b48b27c03dc86ed83737537253c6",
+      "optimizer_state_sha256": "d8419fda58771845e6de39ba978fe3b101fe1f6daaa41fa9afdf8fa67bdd2ac4",
+      "path": "checkpoints/stage14-random-label-training-s0-df790c07a988/step_00003050.pt",
+      "reload_verified": true,
+      "training_step": 3050
+    },
+    {
+      "file_sha256": "aceed30e5692a9cc3f207f3937c2b6a8269b8ba90f2225306d682f5697244259",
+      "model_state_sha256": "d0a32c2cf0c808c2b812145d6a26e8e5ecb8211411e997f2731c9ef4abd6b588",
+      "optimizer_state_sha256": "15ef0d2d06aeef143549d2972ce38b7083bf66ac85a08469e61e22542ee9a323",
+      "path": "checkpoints/stage14-random-label-training-s0-df790c07a988/step_00003100.pt",
+      "reload_verified": true,
+      "training_step": 3100
+    },
+    {
+      "file_sha256": "1d7afe96c0932cf342c9bcfa848bd58e6459342387ac80a70de4be6248bd9aaa",
+      "model_state_sha256": "f6df60fb69a9c96ccb754501272ad5bb01e02a38293bc75f74bb48e4ba9929c3",
+      "optimizer_state_sha256": "ce4715e5208f691a3c27ac7840633a98681e3049a3f26bbb879dcafdd2b38468",
+      "path": "checkpoints/stage14-random-label-training-s0-df790c07a988/step_00003150.pt",
+      "reload_verified": true,
+      "training_step": 3150
+    },
+    {
+      "file_sha256": "071b61f362a93a3cf39ebaca193434671911f0db5d3c0e96eb17eb8be36edf90",
+      "model_state_sha256": "b2ecaf7f20fcb8fba6264e9cf59a21cb6d832a6f3df028740b1e97e5012f6817",
+      "optimizer_state_sha256": "5381d4b24449c302b34f6b6ad6609cfbc8663cad1f9a1ae191c080c2e678a652",
+      "path": "checkpoints/stage14-random-label-training-s0-df790c07a988/step_00003200.pt",
+      "reload_verified": true,
+      "training_step": 3200
+    },
+    {
+      "file_sha256": "e84223c926ec7125be0cb7131b2084c695a2db6a92f5a3a75223318d19e81092",
+      "model_state_sha256": "970aa26f5b6014f340ce9b511f2170be1f808671b5f967380a1307f15ddbe528",
+      "optimizer_state_sha256": "5d95c89a491a17e5688cb09751d4e82538d541443b0c112dc0c767c15e846a9b",
+      "path": "checkpoints/stage14-random-label-training-s0-df790c07a988/step_00003250.pt",
+      "reload_verified": true,
+      "training_step": 3250
+    },
+    {
+      "file_sha256": "22f7c5ba45f9ec29cab14c409665a5b930b2e0596085122d7977d3185019e131",
+      "model_state_sha256": "8900a1a893a4687f85dd355a829801874be9962098b6d7717bb0ff8d756b665b",
+      "optimizer_state_sha256": "01580b2e477359af030f564adc039f4e4eba6c2570b54a3172b4b1fff3cd8255",
+      "path": "checkpoints/stage14-random-label-training-s0-df790c07a988/step_00003300.pt",
+      "reload_verified": true,
+      "training_step": 3300
+    },
+    {
+      "file_sha256": "dc63470b78e5eb64926624a8130f83f7f910bdb86853ebb79cad8462d7c39af0",
+      "model_state_sha256": "4c6b3adf7e3f061dfc10f98dca488d1a7f3adf9381408b12b66e72249fa5f698",
+      "optimizer_state_sha256": "a1f49096f58af8d3064e01aff63743c06dd3552748d3a6205d98e9aa8c7270c0",
+      "path": "checkpoints/stage14-random-label-training-s0-df790c07a988/step_00003350.pt",
+      "reload_verified": true,
+      "training_step": 3350
+    },
+    {
+      "file_sha256": "d23b723dde1eab1166e4c889e3db46b36438ee850294e12d62f2b99f439528f2",
+      "model_state_sha256": "9f6a9cd09b191229b4f99bedbb7a55ffb1e8f606e30da9ee2415270032a9430b",
+      "optimizer_state_sha256": "f58bb9d4a14d1fc4dc396b7ac94a8224c92eb759c00d22609b033e8b47694056",
+      "path": "checkpoints/stage14-random-label-training-s0-df790c07a988/step_00003400.pt",
+      "reload_verified": true,
+      "training_step": 3400
+    },
+    {
+      "file_sha256": "b8f7f877fcc678259278450850512d38dbe8eeeba6ffb3fd0878017920b6031a",
+      "model_state_sha256": "604e40443c18ff569220fe95d6acf0dcb16b4e37bccf787dc41789e7f6458c77",
+      "optimizer_state_sha256": "81afd6539b5cead9d781e849ea8cb8bfe568e3d0f46c64fefc1e450da4edeed6",
+      "path": "checkpoints/stage14-random-label-training-s0-df790c07a988/step_00003450.pt",
+      "reload_verified": true,
+      "training_step": 3450
+    },
+    {
+      "file_sha256": "3821357bd8e4d23f7f947112841a5490f3cf1414f5651815ee7746e94d63219f",
+      "model_state_sha256": "2cba26a0c2602812a51aa31b5ff29f2c712ffe93c3d3cb35636d6c81bb3ba743",
+      "optimizer_state_sha256": "ae59e14156b30850fad810c1d14d23c69cbf312d4008247938105b4f61f0bff3",
+      "path": "checkpoints/stage14-random-label-training-s0-df790c07a988/step_00003500.pt",
+      "reload_verified": true,
+      "training_step": 3500
+    },
+    {
+      "file_sha256": "c215c70912f111276563e477798fec44493f085083b4c1ee5a6b927f830cdc56",
+      "model_state_sha256": "0fa9a8f1416cd243c4cde0509d2e3851d02c6220e28afc7d34a85e4f27821e14",
+      "optimizer_state_sha256": "cf35b079812d64eb03505051494d4429409cf4c60af19874094a5ae95f3907f9",
+      "path": "checkpoints/stage14-random-label-training-s0-df790c07a988/step_00003550.pt",
+      "reload_verified": true,
+      "training_step": 3550
+    },
+    {
+      "file_sha256": "cdf6726502d3c91a0b62b25c13de3e7a654fe172c10dd962b9366cf13e4e880e",
+      "model_state_sha256": "21bff1420d1bcd031d257d684c3967bcc92de051860fb04f21b19ed02bd71406",
+      "optimizer_state_sha256": "2f0336bfb669f40d143152520c0a742bf2664900357650df4ad2626748dd138d",
+      "path": "checkpoints/stage14-random-label-training-s0-df790c07a988/step_00003600.pt",
+      "reload_verified": true,
+      "training_step": 3600
+    },
+    {
+      "file_sha256": "305a3408794cb9d682da7bf2d2419810b003f71962f993a1d53e9d3ad614108f",
+      "model_state_sha256": "895327d33d680a3939308ff9efd000c63f68fc67994e139af845057ef7fb3299",
+      "optimizer_state_sha256": "b31eaf8615dcaeb889ea38759666e3fdeb735e68804f7ba012534d82ef054d6d",
+      "path": "checkpoints/stage14-random-label-training-s0-df790c07a988/step_00003650.pt",
+      "reload_verified": true,
+      "training_step": 3650
+    },
+    {
+      "file_sha256": "40ed1cfc34ccc7c2b34a2e5111ed502eedaf72f3a3bfdbde58d7aa38e0ca8337",
+      "model_state_sha256": "af64cf21b78dfa7427d83614aab7c69926f083c6d89df547fac990e11670849b",
+      "optimizer_state_sha256": "dd2d370f80f105fe0a66bd2d431d26541ff02af6853a6aaff86b67bebb429be3",
+      "path": "checkpoints/stage14-random-label-training-s0-df790c07a988/step_00003700.pt",
+      "reload_verified": true,
+      "training_step": 3700
+    },
+    {
+      "file_sha256": "52e014b23e3b4221b6512d2af7e96a4cd25eb48e5c885c9b840b46b220d7b652",
+      "model_state_sha256": "246148e39e830c92e6d7def23b91e5ae0115d004a98841abacc3696572e7c080",
+      "optimizer_state_sha256": "0536da31be89e36eea7e9047178b10693318c1ab5c57ba487177402ba945d347",
+      "path": "checkpoints/stage14-random-label-training-s0-df790c07a988/step_00003750.pt",
+      "reload_verified": true,
+      "training_step": 3750
+    },
+    {
+      "file_sha256": "f09c385eb42f9c6c092a2b3f4a3bcaf4bd82908b354fe466153dbf3bd3e2573e",
+      "model_state_sha256": "6e6c6d30b77fc298a0458a1b4107d667ab7cd761b552a2f28cea09aaa5c28f8d",
+      "optimizer_state_sha256": "82132a2495fb5dcf6bb15496c33278a13ec9501ed20a7272a620061541af6b8a",
+      "path": "checkpoints/stage14-random-label-training-s0-df790c07a988/step_00003800.pt",
+      "reload_verified": true,
+      "training_step": 3800
+    },
+    {
+      "file_sha256": "9533abb33afda11c0c287e0ac41ee42d1d90a4ff309ade052506437361853701",
+      "model_state_sha256": "fef501fd2a6e0b7c67f059d2f9c7f310bf84366b5e8672cb021d50f82a3f39ff",
+      "optimizer_state_sha256": "ff15d5c70cd294f59578b4a29d779f84b7f26fe7cbb0d1562a7a8de6b525bdca",
+      "path": "checkpoints/stage14-random-label-training-s0-df790c07a988/step_00003850.pt",
+      "reload_verified": true,
+      "training_step": 3850
+    },
+    {
+      "file_sha256": "301e4410a5beb1407c156ae4394e28808415b4188d7244509e70e051d59d1f2f",
+      "model_state_sha256": "ec61eb5db54ab40e45f9f3892fd5706080f0451f18b260ca3e1b57f74d8cfc16",
+      "optimizer_state_sha256": "ad730a8c67412d4bcaad6bfeb26cb5a5b49d365b037bbeb41f813b641b494325",
+      "path": "checkpoints/stage14-random-label-training-s0-df790c07a988/step_00003900.pt",
+      "reload_verified": true,
+      "training_step": 3900
+    },
+    {
+      "file_sha256": "a0e0cb70a646f202cf30848a29c517a8942c4b893d2738dd44c7f53550d03209",
+      "model_state_sha256": "2445a7c0cff7e34b42aa6b6cddce5d8f72f163d39974b9aa03d3754654bda142",
+      "optimizer_state_sha256": "5834a8d8975efe32925aabda1a30a94e93018d7f88b2356335e039bcfa46c58f",
+      "path": "checkpoints/stage14-random-label-training-s0-df790c07a988/step_00003950.pt",
+      "reload_verified": true,
+      "training_step": 3950
+    },
+    {
+      "file_sha256": "de1a60e09f5863e219af5df84e3abe1eba735eb9f209e269f7895a3766c37c4f",
+      "model_state_sha256": "636518c3ae2a16faac709a83728b3b025ff43299aee8b2075c10646beaffca3b",
+      "optimizer_state_sha256": "b0aa09c38a321e89f63e24162d7840536163a8bfcb1dba9c8aaf6ff091be8ad5",
+      "path": "checkpoints/stage14-random-label-training-s0-df790c07a988/step_00004000.pt",
+      "reload_verified": true,
+      "training_step": 4000
+    },
+    {
+      "file_sha256": "268f8003cb9fb071b7d614f6fc8aa9a1dc3bb894ffc5de8b9417ec4b4a485210",
+      "model_state_sha256": "03b292c18c21bee71c37284097892d18d218e8c3b852d93948609138a1b43c96",
+      "optimizer_state_sha256": "889386717c8a693f142a65bb6860308ede25958fadce38f572c01e1687b16041",
+      "path": "checkpoints/stage14-random-label-training-s0-df790c07a988/step_00004050.pt",
+      "reload_verified": true,
+      "training_step": 4050
+    },
+    {
+      "file_sha256": "db1048d7a37cfd7498124e8ee6e4c09c0c11b7bb58ef49a343c96e845d9067da",
+      "model_state_sha256": "2e5913cbf8c8ebd8ac1e4694681cd425f91c687b18bddb577eebff5c00001fbb",
+      "optimizer_state_sha256": "e17eaad0829ef2f988ecaf94666cf0f864b5ff1be82598b88d5eec53e0c25efb",
+      "path": "checkpoints/stage14-random-label-training-s0-df790c07a988/step_00004100.pt",
+      "reload_verified": true,
+      "training_step": 4100
+    },
+    {
+      "file_sha256": "b429a6b83583693799d44f98f0a01e4516f0a68e1f1b3ab2a6cfb1d5dadbd6ec",
+      "model_state_sha256": "f4f611b8cb1e767f959f9f0ea123c8266b814f1c06737551d60e8ea9dc1e423f",
+      "optimizer_state_sha256": "cca7c358662f5740aa98f4c47800a38ef8603b41999b5488dd4864f8edda3038",
+      "path": "checkpoints/stage14-random-label-training-s0-df790c07a988/step_00004150.pt",
+      "reload_verified": true,
+      "training_step": 4150
+    },
+    {
+      "file_sha256": "ab99783e23047c103bfdcffda149b055f31238ee7e3e447c13efe2bb7062c65b",
+      "model_state_sha256": "aaa7f7537a3e258674b4210dd1ecec4a29db7f0788fb76a3ad2ec8c3b4c5a497",
+      "optimizer_state_sha256": "c0c1154e16d2729af632dc3c056b026287f83a5741f52d30b02ad0040b6bac72",
+      "path": "checkpoints/stage14-random-label-training-s0-df790c07a988/step_00004200.pt",
+      "reload_verified": true,
+      "training_step": 4200
+    },
+    {
+      "file_sha256": "c5c4c5a33ab2820d1d35a92fb48b4832bf4231507f6516b34e1a5f5b6b22e1f1",
+      "model_state_sha256": "a07c60499badbfd42337cdbdbe6cb89d06ad80e3425a943f2f055c6d1de76bad",
+      "optimizer_state_sha256": "612d350feaa100cc17cfd8de9b434dcd7c9377102435b0943e6d8494834b735c",
+      "path": "checkpoints/stage14-random-label-training-s0-df790c07a988/step_00004250.pt",
+      "reload_verified": true,
+      "training_step": 4250
+    },
+    {
+      "file_sha256": "086a048ed9161267d3d71f9d779bd5c5e233eb601e6e891501d8b05cd926cc48",
+      "model_state_sha256": "f8db18bbea969e9beb683ecc98805e28f1cf1d0baaf75fee2f77692521d62042",
+      "optimizer_state_sha256": "92fc1d2d9db7c3908d948a7952ceee09958fb48d999664b6c831cf6ed3559ff0",
+      "path": "checkpoints/stage14-random-label-training-s0-df790c07a988/step_00004300.pt",
+      "reload_verified": true,
+      "training_step": 4300
+    },
+    {
+      "file_sha256": "8a609c3366300de8122845a63d7bbe7ce578fb8d3bc347ad87b2a5a5c0423a59",
+      "model_state_sha256": "8b66d6a8b93d2871803609ff23d6728e09dd4147e5d5752805c536775579c753",
+      "optimizer_state_sha256": "9663e8dcb978b20bcd0ac1d620cbf4a8d71ec1ebcea0cd2b55ce460dbcc9c858",
+      "path": "checkpoints/stage14-random-label-training-s0-df790c07a988/step_00004350.pt",
+      "reload_verified": true,
+      "training_step": 4350
+    },
+    {
+      "file_sha256": "9f7daadd554d69480fcb5cffc2d5f66e6e19271d59e1714df24d42c727d76073",
+      "model_state_sha256": "d85c43d189f397b039a1f26d65dce9bb2ce4238f171ac38adb181d57a8d595d2",
+      "optimizer_state_sha256": "311d22695a17c26697883ad0dd61d09a835007dc78df66e0c65b235dae3eb1d2",
+      "path": "checkpoints/stage14-random-label-training-s0-df790c07a988/step_00004400.pt",
+      "reload_verified": true,
+      "training_step": 4400
+    },
+    {
+      "file_sha256": "ad946bb63f80d5ddad7e8da9ecdbb082d78dd49652c0fdd704b4e7c927654c8e",
+      "model_state_sha256": "084d38f16cd0198eeed9ecd0f33238bd1c8a290591b2cdc2eabcc4dadac92805",
+      "optimizer_state_sha256": "9ab1bb191b1f4e626f8c4fd74907f82ff42170c222ba2601b1efcb2f7eb9e2bc",
+      "path": "checkpoints/stage14-random-label-training-s0-df790c07a988/step_00004450.pt",
+      "reload_verified": true,
+      "training_step": 4450
+    },
+    {
+      "file_sha256": "91c1f3d888780b3010796007a3781b9dd10b6f14643500198cf9819bdaa9fc74",
+      "model_state_sha256": "9ab4e27edce216d32b9b6e072bf0d98de4f06fc11bae158dd595f2dd3ec70738",
+      "optimizer_state_sha256": "4f133128692e5e8d979b5a3523a4706b7238dcf0f5c653882ae22471985a7b9f",
+      "path": "checkpoints/stage14-random-label-training-s0-df790c07a988/step_00004500.pt",
+      "reload_verified": true,
+      "training_step": 4500
+    },
+    {
+      "file_sha256": "4e14d01921e808eb24b8281621b3ed7f11064b13758b136cf703437687645b9c",
+      "model_state_sha256": "13214282dd68a3bbd4595e1c8d0b44ddaa4630a101f12e895e023360899d41d1",
+      "optimizer_state_sha256": "491af4d6a3cc1e3aac50f07aaac0edb7ee57fd56dcb7fc3c663982f86b71b5d0",
+      "path": "checkpoints/stage14-random-label-training-s0-df790c07a988/step_00004550.pt",
+      "reload_verified": true,
+      "training_step": 4550
+    },
+    {
+      "file_sha256": "629064b655634e92665e31a3dc2ee89fad431cfb809a57f9f8eb7c832c1cc5e2",
+      "model_state_sha256": "25c7b8ed78d3a3c58c60a62eb3997e48fb795ba719d6356eca64270697026f75",
+      "optimizer_state_sha256": "f8dcc31552c2eac748e967ca8a7eda78563fc9a50a77435c79368f050bcfb3c4",
+      "path": "checkpoints/stage14-random-label-training-s0-df790c07a988/step_00004600.pt",
+      "reload_verified": true,
+      "training_step": 4600
+    },
+    {
+      "file_sha256": "b53343d0bfd079a1206686acf1f95502b7fbd2677da3ac50f86b0d3d27006155",
+      "model_state_sha256": "380c51a61c709d2e19d663e7f110aebf1daecafc94a6c5e6286169e91a1873f5",
+      "optimizer_state_sha256": "768ce6be57a54e106fb022e6c761e3dc7865c826ca4bcbcb1415c019bef9b364",
+      "path": "checkpoints/stage14-random-label-training-s0-df790c07a988/step_00004650.pt",
+      "reload_verified": true,
+      "training_step": 4650
+    },
+    {
+      "file_sha256": "c3785884738806a020d1d9b3b8e7a16a727bebd3cb4d9521143d844a62d87a3f",
+      "model_state_sha256": "f7bc912c41e58dff6551d978ff1baa0544cc82e08b4cb2c5889f830ed0a20f4d",
+      "optimizer_state_sha256": "bda130a9e9e808d77104b9e743289996f0c00ea2ed9c473ba61054dd6235387a",
+      "path": "checkpoints/stage14-random-label-training-s0-df790c07a988/step_00004700.pt",
+      "reload_verified": true,
+      "training_step": 4700
+    },
+    {
+      "file_sha256": "5c1bf57eea48c860fdb0fe6fbf6228de705c64c0509af69413eeb3743d113ade",
+      "model_state_sha256": "bca3a14cb753c77ea64d365e3587784a6a2bc666cf05ff37fcd4ec8f73bec092",
+      "optimizer_state_sha256": "6d0926c7742723886f9c1c5d99df4d23cccb688e640767a1fe1eac53aa9c2829",
+      "path": "checkpoints/stage14-random-label-training-s0-df790c07a988/step_00004750.pt",
+      "reload_verified": true,
+      "training_step": 4750
+    },
+    {
+      "file_sha256": "90999f733cb1c21a5ece5c21564598f35fddab0a390bc543523d8d9663abc717",
+      "model_state_sha256": "8b7e1582d1ec2084d775f75832c58c03d61193af33df2563ba58a1fc16d773c2",
+      "optimizer_state_sha256": "c0a4c260e34037329b5f0a1f7944c9bbca9a3d31c6a7e5595e0263ff4489500a",
+      "path": "checkpoints/stage14-random-label-training-s0-df790c07a988/step_00004800.pt",
+      "reload_verified": true,
+      "training_step": 4800
+    },
+    {
+      "file_sha256": "59b44c4177887f2cb3dc74191e14d1d8cf19768c90617f250e2b5a7f159e3e79",
+      "model_state_sha256": "b652b9a014c44feab6ef8909cc747415aae9d53f9756ab2487cd41b28d0b17a7",
+      "optimizer_state_sha256": "ff8f6198158d311df39aa6a851f301454ccee01b51e285b53c2ea7e657f44716",
+      "path": "checkpoints/stage14-random-label-training-s0-df790c07a988/step_00004850.pt",
+      "reload_verified": true,
+      "training_step": 4850
+    },
+    {
+      "file_sha256": "f62c077f6fcc91c277b60974a5af275d91a9d5f8481b259071ca466f6feeaa88",
+      "model_state_sha256": "954566c721913b012adee2352a90d4ceb2b46662fde3fc511445d8114adbb11f",
+      "optimizer_state_sha256": "3a8a235a043ef3511bfe6f9dea63eb3117dc554a5cc1121bee45a46a24375152",
+      "path": "checkpoints/stage14-random-label-training-s0-df790c07a988/step_00004900.pt",
+      "reload_verified": true,
+      "training_step": 4900
+    },
+    {
+      "file_sha256": "3295c8b84bad962b8c3df7b17c6daf2acc0292c817d77553598e4795fda6b2db",
+      "model_state_sha256": "d04e207662b60bca50a15b9975c33592509e07f4909de623ae53765c3cc947a4",
+      "optimizer_state_sha256": "81adaddae111430633a061a992407338845443ef018414bd1391e50e97041a2c",
+      "path": "checkpoints/stage14-random-label-training-s0-df790c07a988/step_00004950.pt",
+      "reload_verified": true,
+      "training_step": 4950
+    },
+    {
+      "file_sha256": "46e07f48d5c0f84312be742d199ceac2d1e9d034c8b64ce46852471ea96384e1",
+      "model_state_sha256": "5674d26dec4ddcd7d10b88d5cfadf2f9461e4d4090f0716e151857978084c0b5",
+      "optimizer_state_sha256": "d41bbf387c05032aa96a2d7ca033bc716199be908ef09c23309d446092583df3",
+      "path": "checkpoints/stage14-random-label-training-s0-df790c07a988/step_00005000.pt",
+      "reload_verified": true,
+      "training_step": 5000
+    },
+    {
+      "file_sha256": "554e321836112508ff6a941ef83292ccba68f5836c02d29fa4eccdb8a692a060",
+      "model_state_sha256": "494a76038b62477c02ead0129585fb80237188ca6d27b880cbc5fdd64abb2bc9",
+      "optimizer_state_sha256": "1cc7dddb31e684e244c0bafde4b74c6cee5f04eef25981e1ccd4009103895f13",
+      "path": "checkpoints/stage14-random-label-training-s0-df790c07a988/step_00005050.pt",
+      "reload_verified": true,
+      "training_step": 5050
+    },
+    {
+      "file_sha256": "d7f0ef7369ee902bf7c15a674976a6f90d1590a1f74e62743e684007d34b17da",
+      "model_state_sha256": "3ae49283822602f0a0d6578137473171000a4e946a8ad4e9316d9dcf091c05ff",
+      "optimizer_state_sha256": "73c63f02bcb77f6697dac614836a23b8cb3c9f75edb6ab7782dc521da1b7367f",
+      "path": "checkpoints/stage14-random-label-training-s0-df790c07a988/step_00005100.pt",
+      "reload_verified": true,
+      "training_step": 5100
+    },
+    {
+      "file_sha256": "12d0e4f5922b4faf23a4e1f2478e832ccf4034561ee2bf8ac9bff550311010a6",
+      "model_state_sha256": "4a0ccb903fe99d416cb1111307eee973743ae2a3dbb3cfd4644dda66bcccd9a1",
+      "optimizer_state_sha256": "3c79f3790aceb50af20c611366c9b58fd4ca8f286e2c690e74647d1108a67be6",
+      "path": "checkpoints/stage14-random-label-training-s0-df790c07a988/step_00005150.pt",
+      "reload_verified": true,
+      "training_step": 5150
+    },
+    {
+      "file_sha256": "26005bacfa7be21cb77dfe79dff759331c7bcec0638245aa30f78e43cd21b888",
+      "model_state_sha256": "7fd950f980b120ad8323afb49fa46d2300eef55355d60193e5002e18da9d8a4f",
+      "optimizer_state_sha256": "d35b32b5635f47713e02cf26559760b43d0f5c9e7aeaaf63bccfa61642cb7c65",
+      "path": "checkpoints/stage14-random-label-training-s0-df790c07a988/step_00005200.pt",
+      "reload_verified": true,
+      "training_step": 5200
+    },
+    {
+      "file_sha256": "bd3cd294a9c85b5bd953216d244f3aaf258493329b7a6259b31d276d3a1d4edd",
+      "model_state_sha256": "44f26c88192dceb7645e36d78b93fe5d51e2b80472bb2f6424ca467e165c5e07",
+      "optimizer_state_sha256": "27e269f667363e07f48cea2a2d3a19cf9d1b2b3115db5c7fb548d5540086d57b",
+      "path": "checkpoints/stage14-random-label-training-s0-df790c07a988/step_00005250.pt",
+      "reload_verified": true,
+      "training_step": 5250
+    },
+    {
+      "file_sha256": "d91c60cdd8b4745da55b37c596be6f5e065821f080e0476bfb82cf38c81dd14d",
+      "model_state_sha256": "d03c4359696e3ec943e7e28c416dc300e6006450300531f1744ba5a4848f1e21",
+      "optimizer_state_sha256": "db5c03959b996d1c0fdade68295fdfba7433332bd449592fd60c862886b68e40",
+      "path": "checkpoints/stage14-random-label-training-s0-df790c07a988/step_00005300.pt",
+      "reload_verified": true,
+      "training_step": 5300
+    },
+    {
+      "file_sha256": "57d6812880ab39cc64b8684cd4c34b6a9a7293a31eaf41a13b7fdced0fd61f1c",
+      "model_state_sha256": "947f63ec2d4a8a5733ba56bbf7fc5d7ef1cb57eb4faa82ffb5a287ae8da1b2c7",
+      "optimizer_state_sha256": "73c67e17c773902afce7890a705b336765272597a675ef68e3dd447c9fa79380",
+      "path": "checkpoints/stage14-random-label-training-s0-df790c07a988/step_00005350.pt",
+      "reload_verified": true,
+      "training_step": 5350
+    },
+    {
+      "file_sha256": "8eceaa19962b8eb22604f6ddb134f987c51b6cd09bfc384ff1f3fda7d47e4c12",
+      "model_state_sha256": "25c4162ad8a4916bfa382f4c7e2bd410c9bc5c7ddb70f1784553b2e14f6f0245",
+      "optimizer_state_sha256": "8b59a2bf2ce86abdba2522c6f6d3b456d9a0d689ff14df431638326f222a295e",
+      "path": "checkpoints/stage14-random-label-training-s0-df790c07a988/step_00005400.pt",
+      "reload_verified": true,
+      "training_step": 5400
+    },
+    {
+      "file_sha256": "78e0303275bad01a917f2db94427bf103cea84a8e2b18c5c3a847c4f0624565b",
+      "model_state_sha256": "c13a6dfa02b2394e1e3179896dadf00141df3811fb2a13da5c2d89cffb629f7b",
+      "optimizer_state_sha256": "8b6deae38481b171f7f305eb78493bfe77c30e9dad7eac90080693a3a1411367",
+      "path": "checkpoints/stage14-random-label-training-s0-df790c07a988/step_00005450.pt",
+      "reload_verified": true,
+      "training_step": 5450
+    },
+    {
+      "file_sha256": "955edc2e2c93f2ec7601feb798c124eef74f638feacb623d7e92d0da85034efe",
+      "model_state_sha256": "82ae90610160811f00511a177163d1596af55a75a4f4d33b41429046c4f1f104",
+      "optimizer_state_sha256": "8c5b3b0f14fc2e1414049f3981494d364d389fee1f160227ee587765013b917f",
+      "path": "checkpoints/stage14-random-label-training-s0-df790c07a988/step_00005500.pt",
+      "reload_verified": true,
+      "training_step": 5500
+    },
+    {
+      "file_sha256": "2b6cfd9e02914820417b6d3da54f2239cc990d85b0290f9d633473b371935c55",
+      "model_state_sha256": "9d9e3e9caa234d0c42fd11f3051ca89773f739a12de5dc6e2e5bd45c892187d1",
+      "optimizer_state_sha256": "71b434fdee13a5fe3c280468d56f663587c481529ebcd8ab1f5d96a8ae1ed135",
+      "path": "checkpoints/stage14-random-label-training-s0-df790c07a988/step_00005550.pt",
+      "reload_verified": true,
+      "training_step": 5550
+    },
+    {
+      "file_sha256": "49ac88f7e29938ed2b39a20f979363dacc5385eff58c9dacf51f45fcf1a7bd79",
+      "model_state_sha256": "14a03c234897273346716807feee53773e4b0c63141f3fe3cefd17f87b7e741e",
+      "optimizer_state_sha256": "b6af154a8752f42a12105f9364406777452568ba056498daf59d0129173b4a42",
+      "path": "checkpoints/stage14-random-label-training-s0-df790c07a988/step_00005600.pt",
+      "reload_verified": true,
+      "training_step": 5600
+    },
+    {
+      "file_sha256": "d9dfb53e20b2bd4ecf9fd35032f9fef027b62755493a21388a627e4b921a72ca",
+      "model_state_sha256": "41f60b83a77bf9cb4ebe1dfbeef78cec1871d4f3b7c20d584f0d00062e832ed0",
+      "optimizer_state_sha256": "2499430b3daec722a5378487b9d0c8e6969a8d5726245402efb27e1fbee23e7a",
+      "path": "checkpoints/stage14-random-label-training-s0-df790c07a988/step_00005650.pt",
+      "reload_verified": true,
+      "training_step": 5650
+    },
+    {
+      "file_sha256": "78e33f80f37a7eff54f147a0d1ae1e1f2b7a071e895a928f2553eeb3b74f751d",
+      "model_state_sha256": "3003285865c8f0d9178358b268756ac085b1fad979f36cf9b9d98a62340a52fa",
+      "optimizer_state_sha256": "697025489f8a81c1a28ba1bafe3e290df73b4af23b9518babce3d161d6c10104",
+      "path": "checkpoints/stage14-random-label-training-s0-df790c07a988/step_00005700.pt",
+      "reload_verified": true,
+      "training_step": 5700
+    },
+    {
+      "file_sha256": "0000895b30233f1aab5ca0c74fe40ee401dd47542ca4036de94a6233e5c930ef",
+      "model_state_sha256": "27e6940765c55ee4b244aa503f8cdfd25a5b04b7686fe63df4c26d134e5dce16",
+      "optimizer_state_sha256": "b85fe9ec8eae7e8cb4736b8d77ef51acda33b033b9a356c829ad6adbdfb0eda1",
+      "path": "checkpoints/stage14-random-label-training-s0-df790c07a988/step_00005750.pt",
+      "reload_verified": true,
+      "training_step": 5750
+    },
+    {
+      "file_sha256": "2094d52f21433b093fa9476c7b90f4aa125d8a41a58ce97942c40c4688528d59",
+      "model_state_sha256": "458afe15d45972ac65c644144173a054ebf32be6962b2e54cec6213d78fc59e8",
+      "optimizer_state_sha256": "df0f030055fcda84584dc4d051b288bcc9511583a5b9cfe23823f57b76f79817",
+      "path": "checkpoints/stage14-random-label-training-s0-df790c07a988/step_00005800.pt",
+      "reload_verified": true,
+      "training_step": 5800
+    },
+    {
+      "file_sha256": "6f356fb99ec4fdec7dfaac1393c663269a8b995424cbda4475b5a759944319fc",
+      "model_state_sha256": "e4edec6115b7c5ae7e2b14c8f1be32a0641fcbf83fdbc8a495fe15a4aba33dab",
+      "optimizer_state_sha256": "aa71793bc10a4ce771fef290a5c7c3889072a92b7ce877d23f82001ecc56d735",
+      "path": "checkpoints/stage14-random-label-training-s0-df790c07a988/step_00005850.pt",
+      "reload_verified": true,
+      "training_step": 5850
+    },
+    {
+      "file_sha256": "7941c15f6c761b044b0da50d60b2257643b011b993d69b9009459194cb998a42",
+      "model_state_sha256": "329ae8eec8d57682397c0f1c2482231763a06479c8f7b822fb35852364b38ab1",
+      "optimizer_state_sha256": "178ffa8997c9f14415e81c644c6dc43541f5c3a159a771b0e83c27c79af21266",
+      "path": "checkpoints/stage14-random-label-training-s0-df790c07a988/step_00005900.pt",
+      "reload_verified": true,
+      "training_step": 5900
+    },
+    {
+      "file_sha256": "72d7dfff2fdcdd3243f242bc4f9e10b0d7e31d1c2c9c7e9fc0cdfe450653d4c4",
+      "model_state_sha256": "0ddce35978f9f8bd10b448b8687c65013f71e0a1104ec726e1bff607857c81df",
+      "optimizer_state_sha256": "63f80a42541686f1c9028d1115b0d00e8d4d09d23fc0568b82448bc673be4288",
+      "path": "checkpoints/stage14-random-label-training-s0-df790c07a988/step_00005950.pt",
+      "reload_verified": true,
+      "training_step": 5950
+    },
+    {
+      "file_sha256": "e795c4a09a7386741bbb3db4d4cc3d0eb5cab66fb36107ed83fba52b84b568a6",
+      "model_state_sha256": "2ca1c106de6fcab197b78b87a42ff7d9ea53860f1f546b434a67a66d4a3771cd",
+      "optimizer_state_sha256": "6cdaa2aae23b733b8fa001780fd5d7f78d8b9ae1f2ece1856ee385a5bbf13a84",
+      "path": "checkpoints/stage14-random-label-training-s0-df790c07a988/step_00006000.pt",
+      "reload_verified": true,
+      "training_step": 6000
+    },
+    {
+      "file_sha256": "6572fa08ed002540fa7321fa59b441155461cd9576bf8157dc1651b7deb1c11a",
+      "model_state_sha256": "8efcf486d4f54140533406fc3f766ca0a06c9d5bbbd6c0e330c42863a0b3e9f3",
+      "optimizer_state_sha256": "b54bdbab2b76e841e7c5790fed466d0ee6bb9941533d3b4a89180dcdda176599",
+      "path": "checkpoints/stage14-random-label-training-s0-df790c07a988/step_00006050.pt",
+      "reload_verified": true,
+      "training_step": 6050
+    },
+    {
+      "file_sha256": "95581554e3de8c2809b3549d8b38a1899836a9330e0fc762b8c0b4e3215702fb",
+      "model_state_sha256": "126172aa8b4a709a5f3bd322b96a9c344c325d008ec94d0fca8307559cc44748",
+      "optimizer_state_sha256": "2ca303dbc6fcd918857f1a76f6f229907d40929e5fe5204ca6eec23f91553082",
+      "path": "checkpoints/stage14-random-label-training-s0-df790c07a988/step_00006100.pt",
+      "reload_verified": true,
+      "training_step": 6100
+    },
+    {
+      "file_sha256": "12cc91ba26c093398dc7404ba798e464ff26a5ea8831a3de4bdb4b3eb3e4f4b9",
+      "model_state_sha256": "b38a19c8aa2970251c217a06c85dcf560418e82e9cf05306a79e4509e02c442e",
+      "optimizer_state_sha256": "af5c4271d070633773220d81fa510b5d7359bc8b27ad64582ab862dd372f818e",
+      "path": "checkpoints/stage14-random-label-training-s0-df790c07a988/step_00006150.pt",
+      "reload_verified": true,
+      "training_step": 6150
+    },
+    {
+      "file_sha256": "703dfe19873f49aaf5e2cab647de9cb5e01f3c42da628ef8474b5c4365728943",
+      "model_state_sha256": "d9c786147a1c9cfbd460a1de9d5b9576c37e39fb42e368b721b40957aeb4ad5c",
+      "optimizer_state_sha256": "5cc9f341e201f895904dc8046d46f49fe7be839ef931a08c9743324cfec3a9d7",
+      "path": "checkpoints/stage14-random-label-training-s0-df790c07a988/step_00006200.pt",
+      "reload_verified": true,
+      "training_step": 6200
+    },
+    {
+      "file_sha256": "51b2bdb5d6f519c1820cc172852668d3bf3758ed7b0af79c297ecd03716fea01",
+      "model_state_sha256": "a2a1b0ee530b8f0448ef8df70d3b237ec2fa1cf32f3a3b9587b707f9524d8a5b",
+      "optimizer_state_sha256": "ee0dd2beed779690ba6654111040c79d509de76e88ac283af50fe3ce327279b7",
+      "path": "checkpoints/stage14-random-label-training-s0-df790c07a988/step_00006250.pt",
+      "reload_verified": true,
+      "training_step": 6250
+    },
+    {
+      "file_sha256": "f88e36213ddb6e322bb7da937faaf800804a210d47de5688c656b51849c9740b",
+      "model_state_sha256": "e7c16ad0396ef7333cab31fcf2c41e5ddd99de8fa116b4056ae0411a633e6320",
+      "optimizer_state_sha256": "9f1d25f24e8af80248033f04cb906396d12da95dbc8858ade341837f0a9fb05b",
+      "path": "checkpoints/stage14-random-label-training-s0-df790c07a988/step_00006300.pt",
+      "reload_verified": true,
+      "training_step": 6300
+    },
+    {
+      "file_sha256": "e137a50b56b78361c14cc81ebc99cb3b830aa513103bfb9a768739f5d4e4703e",
+      "model_state_sha256": "d70f71b37b0bb8baa569696cb133ff1c4570e3bd8df9da8f4734fcaf26dfb263",
+      "optimizer_state_sha256": "0aaa65c9d8384e66705847f47a51e4f14cd5799367dba3ac22b52fb2faf322db",
+      "path": "checkpoints/stage14-random-label-training-s0-df790c07a988/step_00006350.pt",
+      "reload_verified": true,
+      "training_step": 6350
+    },
+    {
+      "file_sha256": "bfbbdd62dc1d0dd27ec156bbbdcc8844374ba6b1e714aa0ecb74b9b793f649d5",
+      "model_state_sha256": "9ebd53b3638ebed20a7eeeceea51f85685bf7d7fa99e82a3815b8a8b6e35c27d",
+      "optimizer_state_sha256": "7de4aa7ac6440af60cde6beab0d4e40cefc5cadc59ac79292e3bb22d44f566d4",
+      "path": "checkpoints/stage14-random-label-training-s0-df790c07a988/step_00006400.pt",
+      "reload_verified": true,
+      "training_step": 6400
+    },
+    {
+      "file_sha256": "5edf6816fa784cb163c2ab1d7a43310a966bdd3f10548f773f422de17964c59e",
+      "model_state_sha256": "670bacb8777b9fe4e6362dab69b7b7d8975b2810906223a3fd128a918b20b351",
+      "optimizer_state_sha256": "9544c17ba4778ab9531394d487725d912dc6fd8dedc3cfb8c697eafdf4c4c028",
+      "path": "checkpoints/stage14-random-label-training-s0-df790c07a988/step_00006450.pt",
+      "reload_verified": true,
+      "training_step": 6450
+    },
+    {
+      "file_sha256": "33663d5f50fc96e4cf10556371a6e8e2b1d168d1bf505c564bf31d7599090c0c",
+      "model_state_sha256": "ac21e2f8a84c94c0d2d45407c3077c72f31272b5e11056ad9b473563abe644ba",
+      "optimizer_state_sha256": "7432b4b8e7df9b521b097242c14287fb1621a49823d35ed9b054ae4b651761cd",
+      "path": "checkpoints/stage14-random-label-training-s0-df790c07a988/step_00006500.pt",
+      "reload_verified": true,
+      "training_step": 6500
+    },
+    {
+      "file_sha256": "d91619089e713ec51dd9b89dcc727267b26ffd1f70af5c3f538175eeb1dd9d0f",
+      "model_state_sha256": "d17358118ef3d250d8c4f338ffda813635801b68f96703b543c345db99b5225d",
+      "optimizer_state_sha256": "433e1a3a9d9ea71600261d23df27e9fa362b888309265d71ebadbc1cf14754b4",
+      "path": "checkpoints/stage14-random-label-training-s0-df790c07a988/step_00006550.pt",
+      "reload_verified": true,
+      "training_step": 6550
+    },
+    {
+      "file_sha256": "b1b1797cea2d135039621640532744e5de03ae0041031a79281024755f9e7c38",
+      "model_state_sha256": "b078cf2dabd6f0585ada5cf2726b59f5a001cc6b5bf5a5c0b8d72649aac38578",
+      "optimizer_state_sha256": "4c036b69489fbcdd6faa9e494bf9012c574da67740d9bbf70c720e12706d3cd0",
+      "path": "checkpoints/stage14-random-label-training-s0-df790c07a988/step_00006600.pt",
+      "reload_verified": true,
+      "training_step": 6600
+    },
+    {
+      "file_sha256": "dd828a31c48cec4c519f4c3c0bb6944c0eb05d0a72e595990d144bcda4c98553",
+      "model_state_sha256": "1794b0629aa5c07bd659c4af4d4ef826ba56ab60f5f5c3a8079eeb8260896845",
+      "optimizer_state_sha256": "6665fa8ca60b5b85340c57cab280a40cf6d1bc415212e6241c9c0ff21950bb88",
+      "path": "checkpoints/stage14-random-label-training-s0-df790c07a988/step_00006650.pt",
+      "reload_verified": true,
+      "training_step": 6650
+    },
+    {
+      "file_sha256": "f6885e45f668a8aac58d6cd69014ffe5b322fa18824baea2764c6cb51c047124",
+      "model_state_sha256": "86469516593513d9c37f5f80b036c6258cf2b91db30a2360af4698317b2b6915",
+      "optimizer_state_sha256": "9b4519245d5c608cf54be9d470df03536cde733f628aa2138f0c319ef61553cc",
+      "path": "checkpoints/stage14-random-label-training-s0-df790c07a988/step_00006700.pt",
+      "reload_verified": true,
+      "training_step": 6700
+    },
+    {
+      "file_sha256": "7e820c76fc4df72ee88c29ce057b92edb23fb8b32e7db65500d71c1506bdedaf",
+      "model_state_sha256": "e0c033a6ab62473502f4ca22265288566704d9867348c9372ce2f6ec1b71b6a0",
+      "optimizer_state_sha256": "d56568675420cc6eed7d36b30184a1310430320330e3335b0eedb7427e425fd9",
+      "path": "checkpoints/stage14-random-label-training-s0-df790c07a988/step_00006750.pt",
+      "reload_verified": true,
+      "training_step": 6750
+    },
+    {
+      "file_sha256": "96b0e22cedc60144121abc999872f07661f0a2d0d2aaae8c389f71269207a8f8",
+      "model_state_sha256": "b8ea640a4c02382e1ea286f92d8c8ed1ab8ce49acd4c0ff70965cbd2a4a2f22d",
+      "optimizer_state_sha256": "d77a5e335427aa09df2896415dd06b37c50f4c2ac12b45ed16da9f5417a94f7c",
+      "path": "checkpoints/stage14-random-label-training-s0-df790c07a988/step_00006800.pt",
+      "reload_verified": true,
+      "training_step": 6800
+    },
+    {
+      "file_sha256": "d307221de36f9add6837e5e12cd99819025441301fef72ce3329f9e2f712cee3",
+      "model_state_sha256": "dae491189891d1c086504efec02936611eea80aebd73a272a83498640b9bcc74",
+      "optimizer_state_sha256": "e8357578fe8fc5e6c94814a03a13204679402b3fc9f39cb4478a44ff18ccbdc2",
+      "path": "checkpoints/stage14-random-label-training-s0-df790c07a988/step_00006850.pt",
+      "reload_verified": true,
+      "training_step": 6850
+    },
+    {
+      "file_sha256": "f3da1c013a46e865f632c0355023b3b2ec25b4fd4714024ce090cfec4dfe8c87",
+      "model_state_sha256": "9b85d79af7a2378174553ff58299a634f80a57d14af147ca210867b683a29870",
+      "optimizer_state_sha256": "8546864b021e39d6626fab32616161c89c8c4cf97fa5363a703e03268203acaa",
+      "path": "checkpoints/stage14-random-label-training-s0-df790c07a988/step_00006900.pt",
+      "reload_verified": true,
+      "training_step": 6900
+    },
+    {
+      "file_sha256": "ce7bc87360c537a759b502a3021d2a30e8711157d94c33f0d03e1f8b17ba5f1a",
+      "model_state_sha256": "94f315a75de863442b269e31511a38226c9dda9d427eece12720b4139daaf46f",
+      "optimizer_state_sha256": "6448d522fc98877689ff13b634322e012e82d0fbdf1bfc36cbf16089e83a24e1",
+      "path": "checkpoints/stage14-random-label-training-s0-df790c07a988/step_00006950.pt",
+      "reload_verified": true,
+      "training_step": 6950
+    },
+    {
+      "file_sha256": "886687a8a25561e8853d13f7f36a89b540fe7e77c9674cb8564e413e4ef8b939",
+      "model_state_sha256": "735e97588e23cc794bf29363151d379d1e471df2bbf7f320244cedd2be0c0429",
+      "optimizer_state_sha256": "f5bc6f6515611115068caa4f72a7b3d5a36ce64b6044f03da447c13fe800a15e",
+      "path": "checkpoints/stage14-random-label-training-s0-df790c07a988/step_00007000.pt",
+      "reload_verified": true,
+      "training_step": 7000
+    },
+    {
+      "file_sha256": "01c215727418c0060eca229f1d4b649a9c44438c359de87f6596d7e719f5855a",
+      "model_state_sha256": "23cd327f6250397f68b5caea6401f1f8425a47fb5df31c11c446ee7853d905f6",
+      "optimizer_state_sha256": "b53fa59c154325662e9509ba70c26e5d43f5fa419c70e74b49a51edde4051f0e",
+      "path": "checkpoints/stage14-random-label-training-s0-df790c07a988/step_00007050.pt",
+      "reload_verified": true,
+      "training_step": 7050
+    },
+    {
+      "file_sha256": "8b3942bb56eb8a30a92036ff5158c8c96ae96db760075e7cb0ddd21ed282d73a",
+      "model_state_sha256": "03c3f9b7c0f7eacceaceeb19412db8c46d84f8958c3010da9aeb356467422d54",
+      "optimizer_state_sha256": "6ace8cd438aa3b54e86b4ac138f145f1fe4f4d62657bce58f709c95fe11617aa",
+      "path": "checkpoints/stage14-random-label-training-s0-df790c07a988/step_00007100.pt",
+      "reload_verified": true,
+      "training_step": 7100
+    },
+    {
+      "file_sha256": "4512232eebd5adf12be874ef7066a98752b2951e318755ca3259d1e523963818",
+      "model_state_sha256": "22d113d8107e3adc53d24010c6991d4ca33e17bcda998d77269e27023eb1d735",
+      "optimizer_state_sha256": "1e36669b61b07ce97cbad322130ac57ec2663adb040993d7795650bc0251b69d",
+      "path": "checkpoints/stage14-random-label-training-s0-df790c07a988/step_00007150.pt",
+      "reload_verified": true,
+      "training_step": 7150
+    },
+    {
+      "file_sha256": "ee939138c4ee48d88cbc86657a085c1e3218b1b405847e5fb8c8bb1f65e3e6c8",
+      "model_state_sha256": "d569cff3540293de588d816eebfa19e6bd5d37793014537fe57cc8712ab3dd9b",
+      "optimizer_state_sha256": "21a6de75c929090feef5336f5931f2e39b9f189ac43921d296766ac8d6a78439",
+      "path": "checkpoints/stage14-random-label-training-s0-df790c07a988/step_00007200.pt",
+      "reload_verified": true,
+      "training_step": 7200
+    },
+    {
+      "file_sha256": "ff126d6e90653b3e6282c472299acb3b26a66a66ba62030f0900a20401c1d767",
+      "model_state_sha256": "165808d1a99ea92577cf944c91d627f35ff62efedf1c58ec7c544096ce5e4760",
+      "optimizer_state_sha256": "8c55d919439634e26cf8fa0277effc6c9c77017fc2f267d2ef8b5ec57bafb9a8",
+      "path": "checkpoints/stage14-random-label-training-s0-df790c07a988/step_00007250.pt",
+      "reload_verified": true,
+      "training_step": 7250
+    },
+    {
+      "file_sha256": "9cf0b0a34af8b13dba680e62658d742156ecee9beb3f311c3c1743fab6a7d6db",
+      "model_state_sha256": "59d644ce1e02881818b98f87eee39ca11f9ad66bfb5df5857f473d3498ab663d",
+      "optimizer_state_sha256": "fb767552a1541455fe84bb4b73cbc4f9101e0182fe49a7d53de4375f2c60f7ad",
+      "path": "checkpoints/stage14-random-label-training-s0-df790c07a988/step_00007300.pt",
+      "reload_verified": true,
+      "training_step": 7300
+    },
+    {
+      "file_sha256": "8073d962a5223a1a3f85e4b4dfd5fffc7bb8d9653305fddb8ee3afdb386e0812",
+      "model_state_sha256": "65d8eff613aefef2136703ec4e919eca06135ebf1dc36907fc0764361107a0f6",
+      "optimizer_state_sha256": "6e3b9b6f29c0a641e794023b4f9c8ec03db05cfe2f92e0e1cca3b95abca2cb2b",
+      "path": "checkpoints/stage14-random-label-training-s0-df790c07a988/step_00007350.pt",
+      "reload_verified": true,
+      "training_step": 7350
+    },
+    {
+      "file_sha256": "203de3bd2fe4497787469bda8c95fe510acab3add9ece67ad8809b82fb6d94b8",
+      "model_state_sha256": "58b64d874bfdd25cda5a014ab58491fc4933e11f8a4a8300e6d2b7b6abd469d5",
+      "optimizer_state_sha256": "219a6f21088956fada606437d8d592a46f8c78f3559020891e23906a59d4a66e",
+      "path": "checkpoints/stage14-random-label-training-s0-df790c07a988/step_00007400.pt",
+      "reload_verified": true,
+      "training_step": 7400
+    },
+    {
+      "file_sha256": "603935a863d5668fa54d38b9a971c0b3e45abb942a3762d75501dd6e2e71da02",
+      "model_state_sha256": "bd5c63e0c374f92f4333b0bfded482a04c823570aa55bdcbc2980644940c7b7d",
+      "optimizer_state_sha256": "4f1411087354571b91ca5aa4da5b80b77a2f3448a1c31255964dd7ba77c7e702",
+      "path": "checkpoints/stage14-random-label-training-s0-df790c07a988/step_00007450.pt",
+      "reload_verified": true,
+      "training_step": 7450
+    },
+    {
+      "file_sha256": "2ec3ba73958153362920a43c8d97bb306d91dc7cbc1612f4be06b5a6941a9cf7",
+      "model_state_sha256": "7d0d47230066a14dc74534f037242034185d8f63573ae66366d3a1e36964379c",
+      "optimizer_state_sha256": "f5f8f65d311dbc20a15c8c39ca2d2fc90adbaeea0672316c7fb9428070e12dfd",
+      "path": "checkpoints/stage14-random-label-training-s0-df790c07a988/step_00007500.pt",
+      "reload_verified": true,
+      "training_step": 7500
+    },
+    {
+      "file_sha256": "81e75f452d89281ea0d385d1da94836848237ef7713fc230228311ca5cdb0f18",
+      "model_state_sha256": "4fe32fdbba664e0fc9c3cc8216e1b6e9d95cc17ac4afbba6de323c495d8e7dd5",
+      "optimizer_state_sha256": "d2c811816e0df95847fc00ad811001b16b85bfa43d451d6644b159f4230b4c57",
+      "path": "checkpoints/stage14-random-label-training-s0-df790c07a988/step_00007550.pt",
+      "reload_verified": true,
+      "training_step": 7550
+    },
+    {
+      "file_sha256": "8ccf2ce25b128fae055435b0b47c881211a7a434ac470b18e735f5a4afb42a1e",
+      "model_state_sha256": "ae0a677cb19029f787a5600a191296c378f379d5f131a9526e24d9c901c9ed7a",
+      "optimizer_state_sha256": "284a5943a78c0c932f25f1109a370cd05d51e50d7ae7859c380d8f03f09195a9",
+      "path": "checkpoints/stage14-random-label-training-s0-df790c07a988/step_00007600.pt",
+      "reload_verified": true,
+      "training_step": 7600
+    },
+    {
+      "file_sha256": "10f7f2fd6159139c43e4c2a163b0b49490ea3ef1cc292d7d248ff347945ba99e",
+      "model_state_sha256": "fff0e82e73ddaa0ea5e94416f4a5f34f6a85db32d1b19d80c19218d991e9901d",
+      "optimizer_state_sha256": "b9cc582893561add82c96f3c774499871e932146b728fd08cc62b0f2f6540335",
+      "path": "checkpoints/stage14-random-label-training-s0-df790c07a988/step_00007650.pt",
+      "reload_verified": true,
+      "training_step": 7650
+    },
+    {
+      "file_sha256": "9095f941d7ec56e3799878a982097f0c35226d04c291234ea24f66c865dbc8da",
+      "model_state_sha256": "3d77053c7efca8cb0e97c81b77e079a430a8eba755e7f25c75a60490a080500a",
+      "optimizer_state_sha256": "1d940fe500994e6c7e1cef2f4e595004bdd720376e18c987b9f496edb79d98cb",
+      "path": "checkpoints/stage14-random-label-training-s0-df790c07a988/step_00007700.pt",
+      "reload_verified": true,
+      "training_step": 7700
+    },
+    {
+      "file_sha256": "3930f7c00ed1a3ed5ed3920a3a23033595f0ea669309b26c067e8337273a613f",
+      "model_state_sha256": "347c7c7d01d9065baec413cea5d3a07c93786499afbeb0bc25dc1ecdc723a1f6",
+      "optimizer_state_sha256": "8c747c358c8bad487adad05f53f4695f085355d7cf363f99efbde75a6c8323f4",
+      "path": "checkpoints/stage14-random-label-training-s0-df790c07a988/step_00007750.pt",
+      "reload_verified": true,
+      "training_step": 7750
+    },
+    {
+      "file_sha256": "ed1c2a587713381d9af104366d067e01200c5127427ddaa168ab403796fcd282",
+      "model_state_sha256": "52dfaa5ea36b38678915a70c870e7a06bd449475e33b2d2151c53b7a09fc46be",
+      "optimizer_state_sha256": "779cbea3a364f8daa314920c399fcaf703776e29184576cd62556e67c9c66bbc",
+      "path": "checkpoints/stage14-random-label-training-s0-df790c07a988/step_00007800.pt",
+      "reload_verified": true,
+      "training_step": 7800
+    },
+    {
+      "file_sha256": "3df83f9d804a5ea3432678d591ed09a8454620a2593c0f3f88e09d25721cd11c",
+      "model_state_sha256": "163beba7fad74636d18676336875e38da4f117ea1e8d962ec3a497227bf80d2a",
+      "optimizer_state_sha256": "f790fc4472c24e507422130c9a0af895e769572f9357e8f5dce941eb97541fe5",
+      "path": "checkpoints/stage14-random-label-training-s0-df790c07a988/step_00007850.pt",
+      "reload_verified": true,
+      "training_step": 7850
+    },
+    {
+      "file_sha256": "f82c224163fcd496ba83c473552537a91c46f1cc4e1ad1e484907cdadc89e142",
+      "model_state_sha256": "8d03a078e1e20f8616e6dcdf1a61e117468cb72e87a64625b849d7b8fefde915",
+      "optimizer_state_sha256": "d64ba40e9b28e70a294cfe9876ce5e50839dbc633a7aec5d3d2650996970df1e",
+      "path": "checkpoints/stage14-random-label-training-s0-df790c07a988/step_00007900.pt",
+      "reload_verified": true,
+      "training_step": 7900
+    },
+    {
+      "file_sha256": "23ec5def57b82cfc9a711830d3c1423d85ed601ce2ac73b46a52e492d1a3ef32",
+      "model_state_sha256": "70ee0d9c26c307b3e4ee30c657f56643ff29e9ff71ae6cfdfa4bdb57dc64ebea",
+      "optimizer_state_sha256": "188e7464c6a74fa0a01694a5289187c5c1666e1938afa9b68e76e709040e2be6",
+      "path": "checkpoints/stage14-random-label-training-s0-df790c07a988/step_00007950.pt",
+      "reload_verified": true,
+      "training_step": 7950
+    },
+    {
+      "file_sha256": "1fb2649f61af0cf1ccee8f3b2659650e361807ca7d24a8dd1dd65752b7d7d3d1",
+      "model_state_sha256": "261fe2d7ecb3e9ea1942455a3df11f0b68066f751cb48d095d2c073866141297",
+      "optimizer_state_sha256": "a86b252e1ebbb1913ba3e5c725d8ec3e874b2221864fd6beccb87869b79341cf",
+      "path": "checkpoints/stage14-random-label-training-s0-df790c07a988/step_00008000.pt",
+      "reload_verified": true,
+      "training_step": 8000
+    },
+    {
+      "file_sha256": "9b5f5597e744409669efebb10d302af209cd8b44ef8b8152bd37a17d501c2e7a",
+      "model_state_sha256": "d69ff4ba669081d7b85894f03f6b4dfc788b7e9ab39b77bd71bb76eeabda0aec",
+      "optimizer_state_sha256": "61a2b48d400d3bf6e4e8a70b7ece093bf5cf9fdbb59eb465f41110221ada7852",
+      "path": "checkpoints/stage14-random-label-training-s0-df790c07a988/step_00008050.pt",
+      "reload_verified": true,
+      "training_step": 8050
+    },
+    {
+      "file_sha256": "2c816818284471ca2590abd6222ac41abaceac7566aed6c65a4760a4f01e316a",
+      "model_state_sha256": "ace811b156fd2947ac77a7b750e4660268370621986052accaf55722997b8f8e",
+      "optimizer_state_sha256": "427a7edc1173aad299255ecdc1275ebc4589695f46f9df410b6ee52c5b752dcf",
+      "path": "checkpoints/stage14-random-label-training-s0-df790c07a988/step_00008100.pt",
+      "reload_verified": true,
+      "training_step": 8100
+    },
+    {
+      "file_sha256": "f8ae2f048c8ab9d77a1ff77e13f2f348a2095423cbe6a4d5b78059ebce9f8e45",
+      "model_state_sha256": "cadd73a0923b1808a683a584810a65f9d9b0b9ff4fd6839ace5a8208a0394c3a",
+      "optimizer_state_sha256": "751b9eb8605a365053742bb960ea0b780a37e360dfb8dfda2ba26fcbf0cdd1ef",
+      "path": "checkpoints/stage14-random-label-training-s0-df790c07a988/step_00008150.pt",
+      "reload_verified": true,
+      "training_step": 8150
+    },
+    {
+      "file_sha256": "30de0f405964caed4afc1c6cc040ba2667548b5f95c58603c12352eabeea81fc",
+      "model_state_sha256": "955e6063aa1209a99b6c80066704f4ccb9c5cca6d1a2d8cb164a1abc357897af",
+      "optimizer_state_sha256": "d03bfbcde4934b9a22d006c3be39c5ec8a7aae4d091d567727c4af3131dc713f",
+      "path": "checkpoints/stage14-random-label-training-s0-df790c07a988/step_00008200.pt",
+      "reload_verified": true,
+      "training_step": 8200
+    },
+    {
+      "file_sha256": "4e10947d1fdc6caaf494e5f271805e345f774a1f39261ece2d845eaca947a3b6",
+      "model_state_sha256": "0a8b9085921c743c16d85671b1ae6be47620af909291e8f0441c2344fc381b33",
+      "optimizer_state_sha256": "45a43a6ab19a650d9a7af603e5f956ebec829655ddd717993352d35bd3683ad4",
+      "path": "checkpoints/stage14-random-label-training-s0-df790c07a988/step_00008250.pt",
+      "reload_verified": true,
+      "training_step": 8250
+    },
+    {
+      "file_sha256": "d12bf4fc3fc52124889f526ee963870f32990b9a3f212900d1757ff0ac38d011",
+      "model_state_sha256": "eff3ab0b528d76f2c1151d337193309c4626d54285a7575297e5bd541c88cdc4",
+      "optimizer_state_sha256": "02778cd63a10479d4291147d91066fe22854d1f4eaed3352ef30f87877e2bc4a",
+      "path": "checkpoints/stage14-random-label-training-s0-df790c07a988/step_00008300.pt",
+      "reload_verified": true,
+      "training_step": 8300
+    },
+    {
+      "file_sha256": "d7f1acc34c2e8a307bdb5e7f6ae88df8625f1e0359792061cb4975c2932d2635",
+      "model_state_sha256": "b55833ac380b0b0a35feb600027d91f9bbb119e1e39bbee655e9535bc8d77522",
+      "optimizer_state_sha256": "1b7af42d2e33a8b6d6f899eb628f98e4b8b377360e9b1cdfecf01b89ea34b913",
+      "path": "checkpoints/stage14-random-label-training-s0-df790c07a988/step_00008350.pt",
+      "reload_verified": true,
+      "training_step": 8350
+    },
+    {
+      "file_sha256": "23fe1d1b18dae8007c9acb1148344ef98db0646a1c1ea11eb1b1c00c355eb3c8",
+      "model_state_sha256": "4e878b14dc1e1e3d0baeaf71047214b964c0c8158a2dbacc7c6c9459e62d4f73",
+      "optimizer_state_sha256": "3e1d67a1d0d2b106704fdc2e232d75d60aaa84167bce062637f5eab680c3590c",
+      "path": "checkpoints/stage14-random-label-training-s0-df790c07a988/step_00008400.pt",
+      "reload_verified": true,
+      "training_step": 8400
+    },
+    {
+      "file_sha256": "d5c5be1d6ef853c39c74c1ccab0b405353514e22ae1228b56775825e7908d120",
+      "model_state_sha256": "c0b6da74a4efb7b2f09106f1a15e45c9b9af5b5865e1c58b165afa7de0703284",
+      "optimizer_state_sha256": "0850210785793cd5b51ec42c8a8b0552756a872bc4fff5c6b9ec1946d9460637",
+      "path": "checkpoints/stage14-random-label-training-s0-df790c07a988/step_00008450.pt",
+      "reload_verified": true,
+      "training_step": 8450
+    },
+    {
+      "file_sha256": "b851cb153a857d4d120195419b2fea2e3ee0e0db37cc039878fa6455ccae0a7f",
+      "model_state_sha256": "2d2b61278e4b38e9a6eaf5c6b7d2ad24a317c9bee8d0467c2ab6330e71cbf0ce",
+      "optimizer_state_sha256": "c6abbbedcc23f851344ded161e5f9fab394495fbd80acf69e9d43e9e3f554246",
+      "path": "checkpoints/stage14-random-label-training-s0-df790c07a988/step_00008500.pt",
+      "reload_verified": true,
+      "training_step": 8500
+    },
+    {
+      "file_sha256": "8d95524b246fedc354c5aaa7b5401e059580d9c98479a3e63387242e233880f5",
+      "model_state_sha256": "8da51533ecfe183728f4f3573dc49b9df63b3296555244f0af9259f5f826cdef",
+      "optimizer_state_sha256": "7ca9768ffc058ea7e4f7ab77d595c0185f8a97f8fce0b4c4047e9bfbcfaac4c7",
+      "path": "checkpoints/stage14-random-label-training-s0-df790c07a988/step_00008550.pt",
+      "reload_verified": true,
+      "training_step": 8550
+    },
+    {
+      "file_sha256": "810ceb85fd1de4cb45e89cb3ac1f3bb2c96dcf97613062896b9ec3bcf1c13705",
+      "model_state_sha256": "a9bbb5cbca40fbcd3a921ce83657af42f2bf98724d8b27438667cf81d72056cb",
+      "optimizer_state_sha256": "e69a3fad4d0d82e64debecaf07211bfd60f0bf9900209b6a223c58b05dfd5bf7",
+      "path": "checkpoints/stage14-random-label-training-s0-df790c07a988/step_00008600.pt",
+      "reload_verified": true,
+      "training_step": 8600
+    },
+    {
+      "file_sha256": "ecefff2a3644581b1bf7a48f9a901e398531f39258bb0890a78202220b4196ba",
+      "model_state_sha256": "f2f1c3c48aad9dd2d19d8d64a5717c83aebe4f0ef8ff22ea9decda2e5b7231ac",
+      "optimizer_state_sha256": "12bd38595782f384b140a9496afc78d99e3b778cf0a674072ca0b29f1d1e15e3",
+      "path": "checkpoints/stage14-random-label-training-s0-df790c07a988/step_00008650.pt",
+      "reload_verified": true,
+      "training_step": 8650
+    },
+    {
+      "file_sha256": "1ace20ae8f166d5c260bdbdf286225c1bf3e9b4572c864145a567f4410b44fd9",
+      "model_state_sha256": "e0fc51fb9c2de1dfc494695cc7137237c51d0ba486d32bbbd3467b8c80b27b51",
+      "optimizer_state_sha256": "d75b840ad459a85962ad88466d1460b4e3bd942e6d0368cbcab7bfe4ed086ad0",
+      "path": "checkpoints/stage14-random-label-training-s0-df790c07a988/step_00008700.pt",
+      "reload_verified": true,
+      "training_step": 8700
+    },
+    {
+      "file_sha256": "f32c7a3d1e3a4c94dd6f5bcf8ec65ba880dbc6d0af9887fd0b390bc41cb92a98",
+      "model_state_sha256": "902d42c278efe05375d076bece54e2d9a5ca4168518f3e4da93ec149b34c4854",
+      "optimizer_state_sha256": "e6657979ace7dd8c3d3309cc4aa1ff38f9ed717f4339111ee48fbc287a610880",
+      "path": "checkpoints/stage14-random-label-training-s0-df790c07a988/step_00008750.pt",
+      "reload_verified": true,
+      "training_step": 8750
+    },
+    {
+      "file_sha256": "039c657cfefb9ab6a7ab738e35ea2d8de755c5b9b26a2cfa43f79dfc76a9280f",
+      "model_state_sha256": "3c45aea8efaf7b779ea9df92cc5ef45ee1b5a02dbdc6910217c2bb2aeb1ea653",
+      "optimizer_state_sha256": "60851295ccd7c80d8d31ca9e67aabe5ca668d78d252a03fb7de62f283f09daa0",
+      "path": "checkpoints/stage14-random-label-training-s0-df790c07a988/step_00008800.pt",
+      "reload_verified": true,
+      "training_step": 8800
+    },
+    {
+      "file_sha256": "40c599356893f6c833e06d9a70f4724fbb8b2684f6508d8485fd2825789b5ffa",
+      "model_state_sha256": "cc00b30ef326bf44bfd992b8aadefae55c78dee9df052e8601f1090b3aae30dd",
+      "optimizer_state_sha256": "d30582172b6761ca9a3f340edbe017d3e089d42ee1d08e7a2ba2ac14afed710c",
+      "path": "checkpoints/stage14-random-label-training-s0-df790c07a988/step_00008850.pt",
+      "reload_verified": true,
+      "training_step": 8850
+    },
+    {
+      "file_sha256": "b1c0ba49ed91a2dd33b4a91c462a5b8bf33008b815a50929d0c96619be5565e5",
+      "model_state_sha256": "82a250481ad4592d088ef3d2c2703e9734e732dc09293e0ff2814300c9cb7813",
+      "optimizer_state_sha256": "8d30bf16ccd5ed0c8e207e2987b08aa02fbe74a35ab78745d9f91301c5814905",
+      "path": "checkpoints/stage14-random-label-training-s0-df790c07a988/step_00008900.pt",
+      "reload_verified": true,
+      "training_step": 8900
+    },
+    {
+      "file_sha256": "9a1cd50b586110811ec85465276a857c844147d91680042f5c619a4dee88c40f",
+      "model_state_sha256": "52c5078952aca548851affb3ac9c3450468ad04067865809a0b51c1f859ecd28",
+      "optimizer_state_sha256": "8ce8652580b3a212a919a6724c70f27c93982df050a379d8c714196a3daba331",
+      "path": "checkpoints/stage14-random-label-training-s0-df790c07a988/step_00008950.pt",
+      "reload_verified": true,
+      "training_step": 8950
+    },
+    {
+      "file_sha256": "30d25123bc10fe43b2a887f03662fc424b983c82af2535d4d4bf45aa8327e68f",
+      "model_state_sha256": "22bae2edc74c826edd8cdc1a2f6ef471832663c682eaca8b7876ca755fd19a69",
+      "optimizer_state_sha256": "160ea0a6aa8dec1029c6e7fb1b0748c10d3bbdd27f64c585c39013e757f09491",
+      "path": "checkpoints/stage14-random-label-training-s0-df790c07a988/step_00009000.pt",
+      "reload_verified": true,
+      "training_step": 9000
+    },
+    {
+      "file_sha256": "195a9efc1a9bd69cbbe46e892daaf4ec1709883b86469fbdbb035e75fc11b67c",
+      "model_state_sha256": "1236e12d8453ac6448eec8eebc39d295ca0ad9812fb3b36f6069d0fdbb7ed724",
+      "optimizer_state_sha256": "f24284a833e45de8acbe7b4b605471da4539d0a37098d3035162a2a20be35c33",
+      "path": "checkpoints/stage14-random-label-training-s0-df790c07a988/step_00009050.pt",
+      "reload_verified": true,
+      "training_step": 9050
+    }
+  ],
+  "configs": {
+    "combined_sha256": "df790c07a988ba395aa449cb757f29b79513e228052935ce6230f628c62c1f31",
+    "model": {
+      "path": "configs/model.yaml",
+      "sha256": "0b263f3e01b5de162663632903069e87fc675e29b2f3e46f0979e8ae7537952c"
+    },
+    "task": {
+      "path": "configs/task.yaml",
+      "sha256": "7ef9c73ff18f14d1c59cbc1a636d73caa23da099817714ffc70864b1ac00d377"
+    },
+    "training": {
+      "path": "configs/training.yaml",
+      "sha256": "ebe04e9854542d13839903767f8da04f6af7560df5f782572c5308a1ca02d89a"
+    }
+  },
+  "dataset": {
+    "archive_path": "data/generated/modular_addition_m113.npz",
+    "archive_sha256": "76c499f9d90d8561d12186f8cc7080f8c5cf7460c9f471c1e7b327b0b15337c5",
+    "canonical_hashes": {
+      "dataset_sha256": "af13d2181f5f1122bc528c6dfadbdc67b0a38ea02c10b4fd504a492aca8afafa",
+      "random_label_permutation_sha256": "6133ae3b6535595aae903ba9197c6b136b2667a50553fbda3a49331765cb30e5",
+      "random_labels_sha256": "5a4f92635efff86f168c8999b426be000cbdf5e6194e6e7b5d537243583ac5c9",
+      "split_sha256": "c83ac398724817fae6a0d137d0f1c6d0b8786eee43efaff5c3d34de0a891b7f2"
+    },
+    "manifest_path": "manifests/dataset_modular-addition-dataset-s0-7ef9c73ff18f.json",
+    "metadata_path": "data/generated/modular_addition_m113.metadata.json",
+    "metadata_sha256": "acbfe6a61b48eb2a2ad522389185085858f72c960906e13291ee85f8bc95564f",
+    "test_count": 8939,
+    "total_count": 12769,
+    "train_count": 3830
+  },
+  "device": {
+    "cuda_available": false,
+    "cuda_device_count": 0,
+    "cuda_devices": [],
+    "device_index": null,
+    "device_type": "cpu",
+    "mps_available": true,
+    "selected_device": "cpu",
+    "selected_device_name": "CPU"
+  },
+  "execution": {
+    "checkpoint_final_step": true,
+    "checkpoint_interval": 50,
+    "checkpoint_step_zero": true,
+    "evaluate_step_zero": true,
+    "evaluation_interval": 50,
+    "max_steps": 9050,
+    "mode": "full"
+  },
+  "experiment_type": "stage14-random-label-training",
+  "final_metrics": {
+    "checkpoint_path": "checkpoints/stage14-random-label-training-s0-df790c07a988/step_00009050.pt",
+    "checkpoint_sha256": "195a9efc1a9bd69cbbe46e892daaf4ec1709883b86469fbdbb035e75fc11b67c",
+    "gradient_norm": 3.2065488539956277e-06,
+    "learning_rate": 0.001,
+    "mode": "full",
+    "model_state_sha256": "1236e12d8453ac6448eec8eebc39d295ca0ad9812fb3b36f6069d0fdbb7ed724",
+    "optimizer_state_sha256": "f24284a833e45de8acbe7b4b605471da4539d0a37098d3035162a2a20be35c33",
+    "run_id": "stage14-random-label-training-s0-df790c07a988",
+    "schema_version": 1,
+    "test_accuracy": 0.010403848253190517,
+    "test_loss": 32.36903762817383,
+    "train_accuracy": 1.0,
+    "train_loss": 9.92237801256124e-07,
+    "training_step": 9050,
+    "weight_norm": 60.35732650756836
+  },
+  "git_commit": "83ac9bdf42b79cf097b7cfc1b6843bd274b7dbcb",
+  "hashes": {
+    "combined_config_sha256": "df790c07a988ba395aa449cb757f29b79513e228052935ce6230f628c62c1f31",
+    "metrics_jsonl_sha256": "ba65af034e26c2e235c7c2851efe326b523164345aa0067f45c5774e4622b260"
+  },
+  "mode": "full",
+  "output_paths": {
+    "checkpoint_directory": "checkpoints/stage14-random-label-training-s0-df790c07a988",
+    "metrics_jsonl": "results/raw/stage14-random-label-training-s0-df790c07a988/metrics.jsonl",
+    "training_manifest": "manifests/training_stage14-random-label-training-s0-df790c07a988.json"
+  },
+  "run_id": "stage14-random-label-training-s0-df790c07a988",
+  "run_identity": {
+    "checkpoint_matching": "exact_training_step",
+    "control_type": "random_label",
+    "dataset_archive_sha256": "76c499f9d90d8561d12186f8cc7080f8c5cf7460c9f471c1e7b327b0b15337c5",
+    "dataset_manifest_sha256": "8c0d9531267181cd3bbf9d247085b6463efec04c8477a4e6c4137a37c54fd667",
+    "dataset_sha256": "af13d2181f5f1122bc528c6dfadbdc67b0a38ea02c10b4fd504a492aca8afafa",
+    "final_step": 9050,
+    "implementation_commit": "83ac9bdf42b79cf097b7cfc1b6843bd274b7dbcb",
+    "label_intervention": "true_modular_addition_labels_to_frozen_random_labels",
+    "main_checkpoint_manifest_sha256": "a33b856e07b9223d6ee552810d8b4eb6f20ae2eb74427934933ef022ba48fd23",
+    "model_config_sha256": "0b263f3e01b5de162663632903069e87fc675e29b2f3e46f0979e8ae7537952c",
+    "model_seed": 0,
+    "random_label_bit_generator": "PCG64",
+    "random_label_method": "permute_complete_true_label_vector",
+    "random_label_permutation_sha256": "6133ae3b6535595aae903ba9197c6b136b2667a50553fbda3a49331765cb30e5",
+    "random_label_seed": 1,
+    "random_labels": true,
+    "random_labels_sha256": "5a4f92635efff86f168c8999b426be000cbdf5e6194e6e7b5d537243583ac5c9",
+    "split_sha256": "c83ac398724817fae6a0d137d0f1c6d0b8786eee43efaff5c3d34de0a891b7f2",
+    "stage8_manifest_sha256": "ed6aca8d20d43ea7618936b962c8e865859c21894e5d809580106ffe73a8d4e5",
+    "task_config_sha256": "7ef9c73ff18f14d1c59cbc1a636d73caa23da099817714ffc70864b1ac00d377",
+    "training_config_sha256": "ebe04e9854542d13839903767f8da04f6af7560df5f782572c5308a1ca02d89a",
+    "true_labels": false
+  },
+  "schema_version": 1,
+  "seed": {
+    "name": "model_seed",
+    "value": 0
+  },
+  "software": {
+    "packages": {
+      "PyYAML": "6.0.3",
+      "numpy": "2.4.6",
+      "torch": "2.13.0",
+      "transformer-lens": "3.5.1"
+    },
+    "python": "3.11.15 (main, Jun 23 2026, 15:46:51) [Clang 22.1.3 ]"
+  },
+  "timestamp_utc": "2026-07-22T20:09:41.986811+00:00"
+}
