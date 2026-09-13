@@ -15,18 +15,25 @@ The uploaded August manuscripts and LaTeX archive remain unchanged.
   350 full E5 Jensen–Shannon runs. Passed.
 - Source-registry validation: current source and generated-file SHA-256 hashes,
   builder identity and principal results. Passed.
-- Manuscript tests: three passed. Checks cover the principal numerical claims,
+- Manuscript tests: five passed. Checks cover the principal numerical claims,
   LaTeX references, citation keys, figure existence and preservation of the original
-  paired endpoint and the failed margin gate.
-- Focused compatibility tests: 42 passed in 4.20 seconds.
+  paired endpoint and the failed margin gate, random-mask plot aggregation, and the
+  median ordering across every fidelity tolerance.
+- Focused compatibility tests: 42 passed.
 - Ruff: passed on both manuscript Python files using the analysis repository's configuration.
 - Tectonic: both PDFs compiled with no warnings on the final build.
 - Visual inspection: all manuscript and supplementary pages inspected; updated figure
   legends and table-caption widths checked after recompilation.
 
-The main PDF has nine pages, including one page of references. The supplement has seven.
+The main PDF has twelve pages, including references. The supplement has eight.
 Page reduction also reflects moving from the original article layout to the official
 TMLR style; it is not a word-for-word compression ratio.
+
+This presentation revision adds scientific explanation and replaces all three original
+manuscript figures: an annotated checkpoint map, paired optimiser comparisons, and
+per-model random-mask distributions. A fourth main figure shows all fidelity grids;
+the pairwise overlap plot is separated by seed in the supplement. Legends are outside
+the plotting regions. All 20 PDF pages were rendered and visually inspected.
 
 ## Commands
 

@@ -109,6 +109,13 @@ Jaccard is $K/(a+b-K)$. Its expectation is calculated by summing this transform 
 
 The analysis covers 78 within-family pairs from seeds 0, 1, 2 and 4 at step 9,050, with 100,000 deterministic Monte Carlo draws per pair and null as a numerical check. Each row records the exact mean, standard deviation, equal-tail 95\% null interval, inclusive lower and upper tails, mid-percentile and z-score, alongside simulation summaries. The interval describes random-mask Jaccard variation, not uncertainty in an estimated scientific effect. The pooled median z-scores are +2.37 for size matching and +1.67 for composition matching. Seed~1 is closer to its matched expectation than the other final stable seeds. Pair rows share masks and are not independent hypothesis tests.
 
+\begin{figure}[tb]
+\centering
+\includegraphics[width=\linewidth]{overlap_nulls.pdf}
+\caption{\textbf{Small raw overlaps exceed the matched random-subset expectation in aggregate.} The 78 final within-family pairs, separated by model. Each pair is plotted against its exact expected Jaccard under two matching rules. Points above the diagonal overlap more than their matched expectation. Seed~1 lies closer to equality than the other models. The two marks for a pair share the same observed value; they are alternative baselines, not additional observations.}
+\label{fig:overlap}
+\end{figure}
+
 \subsection{Behavioural null}
 The 27 observed masks give 21 unique seed/head-count/neuron-count profiles. For each, 100 total-size-matched and 100 composition-matched masks are evaluated over the full domain. Matching by profile avoids treating duplicate profiles as independent random-mask samples. Seeds are derived from canonical SHA-256 material including the analysis, checkpoint, composition and null identity; PCG64 draws are deterministic.
 

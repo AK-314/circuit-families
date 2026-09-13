@@ -40,7 +40,10 @@ def digest(path: Path) -> str:
 
 
 def load(repo: Path) -> dict[str, pd.DataFrame]:
-    return {name: pd.read_csv(repo / "results/tables" / path) for name, path in SOURCES.items()}
+    return {
+        name: pd.read_csv(repo / "results/tables" / path)
+        for name, path in SOURCES.items()
+    }
 
 
 def primary(data: dict[str, pd.DataFrame]) -> pd.DataFrame:
@@ -54,7 +57,9 @@ def validate(data: dict[str, pd.DataFrame]) -> dict:
     assert set(zip(p.model_seed, p.checkpoint_step, strict=True)) == expected
     assert len(data["e3"]) == 210 and len(p) == 35
     assert data["e3"].locally_single_deletion_minimal.all()
-    assert p.groupby("phase_label").size().to_dict() == dict(zip(PHASES, [9, 11, 15], strict=True))
+    assert p.groupby("phase_label").size().to_dict() == dict(
+        zip(PHASES, [9, 11, 15], strict=True)
+    )
     ranges = [(510, 515), (297, 515), (65, 146)]
     for phase, bounds in zip(PHASES, ranges, strict=True):
         sizes = p.loc[p.phase_label == phase, "terminal_retained_components"]
@@ -84,7 +89,10 @@ def validate(data: dict[str, pd.DataFrame]) -> dict:
     assert data["e4"].final_fidelity.ge(0.99).all()
     assert data["js"].criterion_tolerance.eq(0.0005).all()
     assert data["js"].final_criterion_value.le(0.0005).all()
-    assert len(data["grid"]) == 420 and data["grid"].locally_single_deletion_minimal.sum() == 419
+    assert (
+        len(data["grid"]) == 420
+        and data["grid"].locally_single_deletion_minimal.sum() == 419
+    )
     assert len(data["calibration"]) == 60
     assert len(data["e1"]) == 156 and data["e1"].pair_id.nunique() == 78
     assert data["e1"].groupby("null_model").size().eq(78).all()
@@ -96,14 +104,21 @@ def validate(data: dict[str, pd.DataFrame]) -> dict:
     assert data["observed"].observed_retained_heads.eq(4).all()
     f = data["families"]
     assert len(f) == 630
-    f = f[np.isclose(f.displayed_fidelity, 0.99) & np.isclose(f.displayed_jaccard_cutoff, 0.5)]
+    f = f[
+        np.isclose(f.displayed_fidelity, 0.99)
+        & np.isclose(f.displayed_jaccard_cutoff, 0.5)
+    ]
     joined = f.merge(
         p[["model_seed", "checkpoint_step", "phase_label"]],
         on=["model_seed", "checkpoint_step"],
         validate="one_to_one",
     )
     assert joined.loc[joined.phase_label != "stable_post", "family_size"].eq(0).all()
-    assert joined.loc[joined.phase_label == "stable_post", "family_size"].isin([6, 7]).all()
+    assert (
+        joined.loc[joined.phase_label == "stable_post", "family_size"]
+        .isin([6, 7])
+        .all()
+    )
     return {
         "status": "validated",
         "model_seeds": 5,
@@ -152,172 +167,324 @@ def save(fig, out: Path, name: str) -> None:
 def figures(data: dict[str, pd.DataFrame], out: Path) -> None:
     style()
     p = primary(data)
-    fig, axes = plt.subplots(1, 2, figsize=(6.6, 2.75), layout="constrained")
-    markers = dict(zip(PHASES, ["o", "^", "s"], strict=True))
+    phase_colors = dict(zip(PHASES, ["#737980", "#C28A38", "#2473A3"], strict=True))
+    phase_handles = [
+        Line2D([], [], marker="o", ls="", color=phase_colors[q], label=LABELS[q])
+        for q in PHASES
+    ]
+
+    # The common-grid matrix shows every endpoint without crowded late-time curves.
+    fig = plt.figure(figsize=(6.6, 4.6), layout="constrained")
+    grids = fig.add_gridspec(2, 1, height_ratios=[1, 1.05])
+    ax = fig.add_subplot(grids[0])
     for seed in range(5):
         g = data["training"]
         g = g[(g.model_seed == seed) & (g.training_step <= 11000)]
-        axes[0].plot(
-            g.training_step, g.test_accuracy, color=COLORS[seed], lw=1, label=f"Seed {seed}"
-        )
-        g = p[p.model_seed == seed].sort_values("checkpoint_step")
-        axes[1].plot(
-            g.checkpoint_step,
-            g.terminal_retained_components,
+        ax.plot(
+            g.training_step,
+            g.test_accuracy,
             color=COLORS[seed],
-            lw=0.85,
-            alpha=0.75,
+            lw=1.1,
+            label=f"Seed {seed}",
         )
-        for phase in PHASES:
-            h = g[g.phase_label == phase]
-            axes[1].scatter(
-                h.checkpoint_step,
-                h.terminal_retained_components,
-                marker=markers[phase],
-                color=COLORS[seed],
-                s=20,
-                zorder=3,
-                edgecolors="white",
-                linewidths=0.3,
-            )
-    axes[0].plot(STEPS, [-0.035] * 7, "|", color="black", markersize=4, clip_on=False)
-    axes[0].set(
-        title="(a) Test accuracy",
+    ax.plot(STEPS, [-0.035] * 7, "|", color="black", markersize=5, clip_on=False)
+    ax.set(
+        title="(a) Generalisation occurs at different training steps",
         xlabel="Training step",
-        ylabel="Accuracy",
-        ylim=(-0.02, 1.03),
+        ylabel="Test accuracy",
+        ylim=(-0.02, 1.04),
         xlim=(0, 11000),
+        yticks=[0, 0.5, 1],
     )
-    axes[0].legend(frameon=False, ncol=2, loc="upper left", columnspacing=0.7)
-    axes[1].set(
-        title="(b) First greedy circuit",
-        xlabel="Training step",
-        ylabel="Retained components",
-        ylim=(0, 535),
-        xlim=(0, 9500),
+    ax.legend(frameon=False, ncol=5, loc="lower center", bbox_to_anchor=(0.5, 1.16))
+    ax = fig.add_subplot(grids[1])
+    sizes = p.pivot(
+        index="model_seed",
+        columns="checkpoint_step",
+        values="terminal_retained_components",
+    ).reindex(columns=STEPS)
+    phases = p.pivot(
+        index="model_seed", columns="checkpoint_step", values="phase_label"
+    ).reindex(columns=STEPS)
+    cmap = matplotlib.colors.LinearSegmentedColormap.from_list(
+        "retained_size", ["#195E8C", "#78ADC7", "#F1F3F4"]
     )
-    axes[1].axhline(258, color="0.5", ls="--", lw=0.7)
-    axes[1].legend(
-        handles=[
-            Line2D([], [], marker=markers[q], color="0.3", ls="", label=LABELS[q], markersize=4)
-            for q in PHASES
-        ],
-        frameon=False,
-        loc="center left",
+    im = ax.imshow(sizes, vmin=0, vmax=516, cmap=cmap, aspect="auto")
+    for i in range(5):
+        for j in range(7):
+            v = int(sizes.iloc[i, j])
+            phase = LABELS[phases.iloc[i, j]][0]
+            ax.text(
+                j,
+                i,
+                f"{v} {phase}",
+                ha="center",
+                va="center",
+                color="white" if v < 180 else "#17232B",
+                fontsize=8,
+            )
+    ax.set(
+        title="(b) Components retained at 99% prediction agreement",
+        xticks=range(7),
+        xticklabels=[f"{s:,}" for s in STEPS],
+        yticks=range(5),
+        yticklabels=[f"Seed {s}" for s in range(5)],
+        xlabel="Analysed checkpoint",
     )
+    ax.tick_params(length=0)
+    for spine in ax.spines.values():
+        spine.set_visible(False)
+    bar = fig.colorbar(im, ax=ax, fraction=0.025, pad=0.02, ticks=[0, 258, 516])
+    bar.set_label("Retained components")
     save(fig, out, "trajectory")
 
-    fig, axes = plt.subplots(1, 3, figsize=(6.6, 2.65), sharey=True, layout="constrained")
-    for ax, key, title in zip(
-        axes,
-        ["e3", "e4", "js"],
-        ["(a) Greedy, top-one 0.990", "(b) Annealing, top-one 0.990", "(c) Annealing, JS 0.0005"],
-        strict=True,
-    ):
-        d = (
-            p.rename(columns={"terminal_retained_components": "final_retained_components"})
-            if key == "e3"
-            else data[key]
-        )
-        for j, phase in enumerate(PHASES):
-            groups = list(d[d.phase_label == phase].groupby(["model_seed", "checkpoint_step"]))
-            for x, ((seed, _step), g) in zip(
-                np.linspace(j - 0.3, j + 0.3, len(groups)), groups, strict=True
-            ):
-                v = g.final_retained_components
-                c = COLORS[seed]
-                ax.vlines(x, v.min(), v.max(), color=c, lw=0.75)
-                censored = key != "e3" and g.budget_censored.any()
-                ax.scatter(
-                    x,
-                    v.median(),
-                    s=15,
-                    edgecolor=c,
-                    linewidth=0.7,
-                    facecolor="white" if censored else c,
-                    zorder=3,
-                )
-        ax.axhline(258, color="0.5", ls="--", lw=0.7)
+    # Paired axes give position a numerical meaning and directly test search dependence.
+    fig, axes = plt.subplots(
+        1, 2, figsize=(6.6, 3.45), sharex=True, sharey=True, layout="constrained"
+    )
+    greedy_js = data["grid"].loc[
+        (data["grid"].criterion_name == JS)
+        & np.isclose(data["grid"].criterion_tolerance, 0.0005)
+    ]
+    for ax, key, greedy, size_col, title in [
+        (
+            axes[0],
+            "e4",
+            p,
+            "terminal_retained_components",
+            "(a) Top-one agreement ≥ 0.990",
+        ),
+        (
+            axes[1],
+            "js",
+            greedy_js,
+            "final_retained_components",
+            "(b) JS divergence ≤ 0.0005",
+        ),
+    ]:
+        ax.plot([0, 516], [0, 516], color="0.55", lw=0.8)
+        ax.axhline(258, color="0.6", ls="--", lw=0.7)
+        ax.axvline(258, color="0.6", ls="--", lw=0.7)
+        for row in greedy.itertuples():
+            g = data[key][
+                (data[key].model_seed == row.model_seed)
+                & (data[key].checkpoint_step == row.checkpoint_step)
+            ]
+            v = g.final_retained_components
+            x = getattr(row, size_col)
+            c = phase_colors[row.phase_label]
+            ax.vlines(x, v.min(), v.max(), color=c, lw=0.9, alpha=0.8)
+            ax.scatter(
+                x,
+                v.median(),
+                color=c,
+                s=19,
+                alpha=0.85,
+                edgecolors="white",
+                linewidths=0.3,
+                zorder=3,
+            )
         ax.set(
-            xticks=[0, 1, 2],
-            xticklabels=["Delayed", "Transition", "Stable"],
-            ylim=(0, 535),
             title=title,
+            xlabel="Greedy: retained components",
+            xlim=(0, 540),
+            ylim=(0, 540),
+            xticks=[0, 258, 516],
+            yticks=[0, 258, 516],
         )
-        ax.tick_params(axis="x", length=0)
-    axes[0].set_ylabel("Retained components")
+        ax.set_aspect("equal")
+    axes[0].set_ylabel("Annealing: retained components")
+    fig.legend(handles=phase_handles, frameon=False, ncol=3, loc="outside upper center")
     save(fig, out, "search_robustness")
 
-    fig, axes = plt.subplots(1, 2, figsize=(6.6, 2.9), layout="constrained")
-    for null, marker in [("size_matched", "o"), ("basis_stratified", "^")]:
-        for seed, g in data["e1"][data["e1"].null_model == null].groupby("model_seed"):
-            axes[0].scatter(
-                g.exact_null_mean,
-                g.observed_jaccard,
-                marker=marker,
-                s=14,
-                facecolor="none",
-                edgecolor=COLORS[seed],
-                alpha=0.75,
-                linewidth=0.65,
+    # Pool only within a model, with each distinct matching profile weighted equally.
+    fig, ax = plt.subplots(figsize=(6.6, 2.85), layout="constrained")
+    null_colors = {"size_matched": "#A9AFB5", "basis_stratified": "#2473A3"}
+    observed = data["observed"].drop_duplicates(["model_seed", "circuit_id"])
+    display_rows = []
+    for i, seed in enumerate([0, 1, 2, 4]):
+        for null, offset in [("size_matched", -0.18), ("basis_stratified", 0.18)]:
+            g = data["e2"][
+                (data["e2"].model_seed == seed) & (data["e2"].null_model == null)
+            ]
+            values = g.primary_fidelity
+            ax.boxplot(
+                values,
+                positions=[i + offset],
+                widths=0.26,
+                whis=(0, 100),
+                showfliers=False,
+                patch_artist=True,
+                manage_ticks=False,
+                boxprops={"facecolor": null_colors[null], "alpha": 0.65},
+                medianprops={"color": "#17232B"},
+                whiskerprops={"color": null_colors[null]},
+                capprops={"color": null_colors[null]},
             )
-    axes[0].plot([0, 0.33], [0, 0.33], color="0.5", lw=0.7, ls="--")
-    axes[0].set(
-        xlim=(0, 0.33),
-        ylim=(0, 0.33),
-        xlabel="Expected Jaccard under matched null",
-        ylabel="Observed Jaccard",
-        title="(a) Structural overlap",
+            display_rows.append(
+                {
+                    "model_seed": seed,
+                    "group": null,
+                    "count": len(values),
+                    "minimum": values.min(),
+                    "q25": values.quantile(0.25),
+                    "median": values.median(),
+                    "q75": values.quantile(0.75),
+                    "maximum": values.max(),
+                }
+            )
+        obs = observed[observed.model_seed == seed].observed_primary_fidelity
+        ax.scatter(
+            np.full(len(obs), i), obs, marker="D", color="#B45532", s=20, zorder=4
+        )
+        display_rows.append(
+            {
+                "model_seed": seed,
+                "group": "recovered",
+                "count": len(obs),
+                "minimum": obs.min(),
+                "q25": obs.quantile(0.25),
+                "median": obs.median(),
+                "q75": obs.quantile(0.75),
+                "maximum": obs.max(),
+            }
+        )
+    ax.axhline(0.99, color="#B45532", ls="--", lw=0.8)
+    ax.set(
+        xticks=range(4),
+        xticklabels=["Seed 0", "Seed 1", "Seed 2", "Seed 4"],
+        ylabel="Prediction agreement with full model",
+        ylim=(0, 1.06),
+        yticks=[0, 0.25, 0.5, 0.75, 0.99],
+        yticklabels=["0", "0.25", "0.50", "0.75", "0.99"],
     )
-    axes[0].legend(
+    fig.legend(
         handles=[
+            Line2D(
+                [], [], color="#B45532", marker="D", ls="", label="Recovered circuits"
+            ),
             Line2D(
                 [],
                 [],
-                ls="",
-                marker=m,
-                color="0.3",
-                markerfacecolor="none",
-                label=label,
-                markersize=4,
-            )
-            for m, label in [("o", "Size matched"), ("^", "Composition matched")]
+                color=null_colors["basis_stratified"],
+                lw=6,
+                label="Random: same heads + neuron count",
+            ),
+            Line2D(
+                [],
+                [],
+                color=null_colors["size_matched"],
+                lw=6,
+                label="Random: same total size",
+            ),
         ],
-        loc="lower right",
         frameon=False,
+        ncol=1,
+        loc="outside upper center",
     )
-    profiles = data["observed"][["profile_id", "model_seed", "observed_retained_components"]]
-    profiles = profiles.drop_duplicates().sort_values(
-        ["model_seed", "observed_retained_components"]
-    )
-    for i, row in enumerate(profiles.itertuples(index=False)):
-        for null, offset, marker in [("size_matched", -0.14, "o"), ("basis_stratified", 0.14, "^")]:
-            g = data["e2"][
-                (data["e2"].profile_id == row.profile_id) & (data["e2"].null_model == null)
-            ].primary_fidelity
-            c = COLORS[row.model_seed]
-            axes[1].vlines(i + offset, g.min(), g.max(), color=c, lw=0.65, alpha=0.7)
-            axes[1].scatter(i + offset, g.median(), s=12, marker=marker, color=c)
-        obs = (
-            data["observed"]
-            .loc[data["observed"].profile_id == row.profile_id, "observed_primary_fidelity"]
-            .min()
-        )
-        axes[1].scatter(i, obs, color=COLORS[row.model_seed], marker="D", s=12)
-    axes[1].axhline(0.99, color="0.5", ls="--", lw=0.6)
-    axes[1].set(
-        ylim=(0, 1.04),
-        xlabel="Seed / composition profile",
-        ylabel="Top-one fidelity",
-        title="(b) Behavioural fidelity",
-    )
-    centers = []
-    for seed in [0, 1, 2, 4]:
-        positions = np.flatnonzero(profiles.model_seed.to_numpy() == seed)
-        centers.append(float(np.mean(positions)))
-    axes[1].set_xticks(centers, ["Seed 0", "Seed 1", "Seed 2", "Seed 4"])
-    axes[1].text(0.03, 0.83, "Observed circuits", transform=axes[1].transAxes, fontsize=7)
     save(fig, out, "matched_nulls")
+    pd.DataFrame(display_rows).to_csv(
+        out / "generated/behavioural_null_display.csv", index=False
+    )
+
+    fig, axes = plt.subplots(
+        1, 3, figsize=(6.6, 3.15), sharey=True, layout="constrained"
+    )
+    for ax, d, tolerance, size, title in [
+        (
+            axes[0],
+            data["e3"],
+            "displayed_fidelity",
+            "terminal_retained_components",
+            "(a) Top-one agreement",
+        ),
+        (
+            axes[1],
+            data["grid"][data["grid"].criterion_name == JS],
+            "criterion_tolerance",
+            "final_retained_components",
+            "(b) JS divergence",
+        ),
+        (
+            axes[2],
+            data["grid"][data["grid"].criterion_name == MARGIN],
+            "criterion_tolerance",
+            "final_retained_components",
+            "(c) Margin error",
+        ),
+    ]:
+        levels = sorted(
+            d[tolerance].unique(), reverse=tolerance == "displayed_fidelity"
+        )
+        for phase in PHASES:
+            g = d[d.phase_label == phase].groupby(tolerance)[size]
+            lo, mid, hi = [
+                g.agg(op).reindex(levels).to_numpy() for op in ["min", "median", "max"]
+            ]
+            ax.fill_between(range(6), lo, hi, color=phase_colors[phase], alpha=0.1)
+            ax.plot(range(6), mid, color=phase_colors[phase], marker="o", ms=3, lw=1)
+        ax.axhline(258, color="0.5", lw=0.7, ls="--")
+        ax.set(
+            title=title,
+            ylim=(0, 535),
+            xticks=range(6),
+            xticklabels=[f"{x:g}" for x in levels],
+            xlabel="Strict → permissive",
+            yticks=[0, 258, 516],
+        )
+        ax.tick_params(axis="x", labelrotation=55)
+    axes[0].set_ylabel("Greedy: retained components")
+    fig.legend(handles=phase_handles, ncol=3, frameon=False, loc="outside upper center")
+    save(fig, out, "fidelity_tradeoff")
+
+    fig, axes = plt.subplots(
+        1, 4, figsize=(6.6, 2.65), sharex=True, sharey=True, layout="constrained"
+    )
+    for ax, seed in zip(axes, [0, 1, 2, 4], strict=True):
+        for null, marker, color in [
+            ("size_matched", "o", "#A9AFB5"),
+            ("basis_stratified", "^", "#2473A3"),
+        ]:
+            g = data["e1"][
+                (data["e1"].model_seed == seed) & (data["e1"].null_model == null)
+            ]
+            ax.scatter(
+                g.exact_null_mean,
+                g.observed_jaccard,
+                marker=marker,
+                s=12,
+                color=color,
+                alpha=0.8,
+                linewidths=0,
+            )
+        ax.plot([0, 0.33], [0, 0.33], color="0.5", ls="--", lw=0.7)
+        ax.set(
+            title=f"Seed {seed}",
+            xlim=(0, 0.33),
+            ylim=(0, 0.33),
+            xticks=[0, 0.15, 0.3],
+            yticks=[0, 0.15, 0.3],
+        )
+        ax.set_aspect("equal")
+    axes[0].set_ylabel("Observed Jaccard")
+    fig.supxlabel("Expected Jaccard for independent matched subsets", fontsize=8)
+    fig.legend(
+        handles=[
+            Line2D([], [], marker="o", ls="", color="#A9AFB5", label="Same total size"),
+            Line2D(
+                [],
+                [],
+                marker="^",
+                ls="",
+                color="#2473A3",
+                label="Same heads + neuron count",
+            ),
+        ],
+        frameon=False,
+        ncol=2,
+        loc="outside upper center",
+    )
+    save(fig, out, "overlap_nulls")
 
 
 def number(x) -> str:
@@ -443,7 +610,16 @@ def tables(data: dict[str, pd.DataFrame], out: Path) -> None:
         "endpoints are locally minimal and uncensored.",
         "e5grid",
         "lr rr rr rr",
-        ["Metric", "Tolerance", "Delayed", "Sparse", "Transition", "Sparse", "Stable", "Sparse"],
+        [
+            "Metric",
+            "Tolerance",
+            "Delayed",
+            "Sparse",
+            "Transition",
+            "Sparse",
+            "Stable",
+            "Sparse",
+        ],
         rows,
     )
     rows = []
@@ -479,7 +655,9 @@ def tables(data: dict[str, pd.DataFrame], out: Path) -> None:
     )
     rows = []
     position_display = []
-    for row in primary(data).sort_values(["model_seed", "checkpoint_step"]).itertuples():
+    for row in (
+        primary(data).sort_values(["model_seed", "checkpoint_step"]).itertuples()
+    ):
         e4 = data["e4"][
             (data["e4"].model_seed == row.model_seed)
             & (data["e4"].checkpoint_step == row.checkpoint_step)
@@ -539,7 +717,9 @@ def tables(data: dict[str, pd.DataFrame], out: Path) -> None:
 
 def main() -> None:
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("--repo", type=Path, default=Path(__file__).resolve().parents[1])
+    parser.add_argument(
+        "--repo", type=Path, default=Path(__file__).resolve().parents[1]
+    )
     parser.add_argument("--out", type=Path, default=Path(__file__).resolve().parent)
     parser.add_argument("--validate-only", action="store_true")
     args = parser.parse_args()
@@ -565,7 +745,9 @@ def main() -> None:
                 if p.is_file()
             },
         }
-        (args.out / "source_registry.json").write_text(json.dumps(registry, indent=2) + "\n")
+        (args.out / "source_registry.json").write_text(
+            json.dumps(registry, indent=2) + "\n"
+        )
     else:
         registry_path = args.out / "source_registry.json"
         if registry_path.exists():

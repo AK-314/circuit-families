@@ -26,8 +26,9 @@
     "e5_full_js_runs": 350,
     "model_evaluations_performed_by_builder": 0
   },
-  "builder_sha256": "72f05f06b9a3adf59247ae828ccc8bfe6d35eb55881a1269462aec165d44b7d9",
+  "builder_sha256": "bd4d75aca3411f17bae7caf0a91aacf9d6592901ae03d9dca8c8026bd950a461",
   "generated_files": {
+    "generated/behavioural_null_display.csv": "a5ea69f2a30fc9a69e3428a9cfdf3d3389e2b2629eacfe39a9218e5c702a68e1",
     "generated/calibration.tex": "24b8e67a5e0e327d745d465075594465dc77fbc1420576f386ad8043508fe613",
     "generated/e3_grid.tex": "8db1b00e21e30886eba43ee1a05311bbe56be5e36da9918b0ef9f7a4428368e9",
     "generated/e5_grid.tex": "cdfc0958d5fbbbd26de3602b4c62d2ab264fa9117a0debeb535d0e46ad692fc4",
@@ -35,11 +36,15 @@
     "generated/positions.tex": "225d73ec20a376c2bc3fca53f50919615d24d1afc7f2d2110e1a49d75b2133e8",
     "generated/search_summary.csv": "e79b78a3f7a40085021aafc8ed5a4497a4540e5107a96e5cd4e82c36f542f6d0",
     "generated/search_summary.tex": "650fbd4fda4f5c51fda89c7762998f77277307709955dc1bb9ba8bd0e58d015e",
-    "figures/matched_nulls.pdf": "dde441425fa6c46965de6ba6c0342cbf7dad6de589b411f2b2b7dc8260e7d5cf",
-    "figures/matched_nulls.png": "76ac5d1e9a1cfe53ee53b07997fadfe806a0760552a4786d60d17fcf8978ea2c",
-    "figures/search_robustness.pdf": "46926ae6458ebfdc774c7615f61a4849864bea06c4ba112ea7740d460a863b3b",
-    "figures/search_robustness.png": "c968d69f53f5c0379e16e90014f750364792d458e6b8012c7849e2f1931ba696",
-    "figures/trajectory.pdf": "80c112410d2de0c4e9b1aa20054ba774938c3288c2510549afa56e42f353f86c",
-    "figures/trajectory.png": "4c704b90863e0aa8c4ea073309ac0c7ad2720f49d6e26e7a70e74e41c36c6fa6"
+    "figures/fidelity_tradeoff.pdf": "823776204234c099c4591811361424ac84ba0db5ce2d567f69a26f968aa2cf24",
+    "figures/fidelity_tradeoff.png": "0f1502afdaf52a286bdb7a84e6f8f99071f2cc6f2a6feb1e6d9b75fd23e2a02f",
+    "figures/matched_nulls.pdf": "f19f7144082e268593c4e6af08740ab2c0d5323bb5a12f2da09e64588f1eda28",
+    "figures/matched_nulls.png": "803e1249acba21cb4f9bde8e61b4d75abbd09151f8595390b2a33be24f2f696b",
+    "figures/overlap_nulls.pdf": "276e00283a94b09d658e78404d4087e76d2de39d332f2f89fcfe88a68a0bfd03",
+    "figures/overlap_nulls.png": "9003895e92ffaa435c2915689d254892a539769bb7325a926b1a2aee3ae6a521",
+    "figures/search_robustness.pdf": "ec587367f1b2605b8a57d0bcd36142f5ceeb27ccfb8cfe760c74707a7baf2424",
+    "figures/search_robustness.png": "f5debf2291283945f216f0df96ed4a371d9c29911374d40106be4fb9e7679dc9",
+    "figures/trajectory.pdf": "a7619f8ee9e525f88ab3353656a368752ea76424b1a2edc08fbd6083fdfe690e",
+    "figures/trajectory.png": "f83ade30c23e5246dee8e08cb70bb2600b5ead947e483f76e58f98dca9f22b04"
   }
 }
