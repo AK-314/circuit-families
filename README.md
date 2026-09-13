@@ -9,6 +9,14 @@ This GitHub repository is the lightweight source view. The complete version 1.0.
 repository omits the large checkpoints and detailed analysis archives; the Zenodo DOI identifies
 the complete frozen release.
 
+## TMLR revision (13 September 2026)
+
+The revised Phase I manuscript, **Sparse Circuit Families Across Grokking**, is in
+[`manuscript/`](manuscript/). The [revision release](https://github.com/AK-314/circuit-families/releases/tag/phase1-tmlr-revision-2026-09-13)
+adds E1–E5 source/results and saved search masks. This is an author-review revision,
+not an accepted or submitted TMLR paper. The original v1.0.0 files and DOI above remain
+unchanged; Zenodo archival of the follow-up is pending. Phase II is separate.
+
 Recovered circuit families are outputs of the deposited component basis, intervention, and
 search procedure. An empty result means procedural non-recovery under that procedure, not
 mathematical absence. Multiple recovered masks do not establish algorithmic identity or causal

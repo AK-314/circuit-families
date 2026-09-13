@@ -1,0 +1,138 @@
+\documentclass[10pt]{article}
+\usepackage[preprint]{tmlr}
+\input{preamble}
+\title{Sparse Circuit Families Across Grokking\\Supplementary Material}
+\author{\name Alex Kolesnikov \\
+\addr Lumiere Research Scholar Programme}
+\renewcommand{\thesection}{S\arabic{section}}
+\renewcommand{\thetable}{S\arabic{table}}
+\renewcommand{\thefigure}{S\arabic{figure}}
+\begin{document}
+\maketitle
+\section{Training and sampling}
+The complete modular-addition domain consists of $113^2=12,769$ ordered pairs. A fixed pseudorandom partition gives 3,830 training and 8,939 test examples, shared by all five initialisations. Inputs have context length three, with a vocabulary of 114 tokens including the separator and an output vocabulary of 113 residue classes. Only final-position logits enter the task loss and circuit metrics. Models use TransformerLens, float32, one causal attention layer, residual width 128, four width-32 heads, 512 ReLU neurons, learned positional embeddings, no normalisation and no dropout. Full-batch AdamW uses learning rate 0.001, $(\beta_1,\beta_2)=(0.9,0.98)$, $\epsilon=10^{-8}$ and weight decay 1 for 40,000 steps. Checkpoints and metrics are saved every 50 steps.
+
+Each run satisfies the eligibility rule: training accuracy reaches 99.9\%, a subsequent interval has test accuracy below 10\%, and test accuracy later reaches stable 99\% performance. Stable onset is the fifth checkpoint in the first sequence of five consecutive saved checkpoints reaching 99\% test accuracy. All models memorise by step 200. Table~\ref{tab:landmarks} gives their subsequent landmarks.
+\begin{table}[h]
+\centering
+\caption{Full-model behavioural landmarks.}\label{tab:landmarks}
+\begin{tabular}{crr}
+\toprule Seed & First test accuracy $>10\%$ & Stable onset\\\midrule
+0 & 1,550 & 5,900\\
+1 & 3,450 & 9,050\\
+2 & 4,600 & 7,750\\
+3 & 6,950 & 10,400\\
+4 & 3,600 & 6,850\\\bottomrule
+\end{tabular}
+\end{table}
+
+The original plan used per-seed behavioural landmarks. Following pilot work, a common grid of seven steps was frozen before multi-seed circuit-family outcomes were available. It reproduces the pilot's full landmark grid: 200, 3,400, 7,450, 8,150, 8,500, 8,650 and 9,050. Delayed positions precede the first saved checkpoint above 10\% test accuracy; transitional positions lie between that point and stable onset. The grid has nine delayed, eleven transitional and fifteen stable positions. Seed~3's last analysed position is transitional, with test accuracy approximately 0.773. It is not reclassified or substituted with its later stable checkpoint.
+
+\section{Masking and the original family search}
+\label{sec:ssearch}
+\subsection{Intervention and validation}
+Components are indexed canonically as four whole attention heads and 512 individual MLP neurons. A head gate multiplies the complete head output before its residual-stream contribution. A neuron gate multiplies its post-ReLU activation before the MLP output projection. All positions use the same mask. Embeddings, positional embeddings, biases, unembeddings and other operations remain present. Retained weights are never retrained.
+
+Validation at every analysed position checks that the all-retained mask reproduces full-model top-one predictions exactly and logits within numerical tolerance. Additional tests cover all-ablated and individual-component masks, component indexing, mask serialisation, repeat evaluation, hook restoration and parameter immutability. Fidelity is the integer prediction-agreement count divided by 12,769; displayed decimals do not determine eligibility.
+
+\subsection{Candidate ranking and acceptance}
+Let $g_i$ be a component's multiplicative gate. The ranking loss $L$ is mean cross-entropy against the full checkpoint's top-one predictions on the complete domain. Candidate deletion damage is estimated as $-g_i\partial L/\partial g_i$. Lower estimated damage is tested first in candidate batches of 16. The estimate ranks candidates only: each candidate undergoes an exact forward evaluation. The highest-fidelity admissible deletion in the first batch containing one is accepted, after which ranking is refreshed. A complete failed pass over every retained component establishes local single-deletion minimality.
+
+For later family members, a reuse penalty modifies component ordering. Every accepted member separately passes the fidelity and size criteria and the Jaccard ceiling against every existing member. Randomness is derived from model seed, checkpoint index, requested member and restart index. The first requested circuit uses one deterministic path; later requested members may use five deterministic restarts. Each requested member receives 10,000 exact evaluations and the family cell receives 50,000 in total. The target is ten members. No analysed family reaches that target, and searches for further members can exhaust their allowances; the observed six or seven members are not a saturation estimate.
+
+\subsection{Complete top-one sensitivity accounting}
+The family grid crosses six fidelity thresholds and three Jaccard ceilings at 35 positions. Of 630 executed cells, 300 are nonempty and 330 empty. Family sizes 0, 1, 2, 3, 4, 5, 6, 7 and 8 occur in 330, 3, 15, 34, 18, 15, 157, 48 and 10 cells respectively. All empty cells terminate on the first path at a locally minimal fidelity-valid mask larger than 258, using 531--6,757 evaluations (median 1,146). No empty result is imputed as a one-member family.
+
+The first path's endpoint is identical across the three Jaccard ceilings because no previously accepted mask exists. Reconstruction therefore yields 210 unique endpoint rows, all locally single-deletion minimal and uncensored. Table~\ref{tab:e3grid} reports their size distributions and the number meeting the sparsity cutoff. Multiplying its position counts by three recovers the phase-by-fidelity nonempty-cell counts in the original 630-cell grid.
+\input{generated/e3_grid}
+
+At stable positions, the mean family count under $J\leq0.25$ is 3.6 at fidelity 0.800 and 4.4 at 0.990. The $J\leq0.50$ and $J\leq0.75$ conditions have identical means at each fidelity and reach 6.733 at 0.990. Separate searches need not return nested masks as fidelity changes. Nonemptiness itself cannot validate robustness to an overlap ceiling: the first mask is unaffected by that ceiling. The recovery of multiple members at $J\leq0.25$ is the relevant multiplicity check.
+
+\section{Independent search and non-argmax criteria}
+\subsection{Non-monotone optimisation and stopping}
+Every stream begins with all 516 components retained. It selects deletion, addition or swap with weights 0.5, 0.1 and 0.4, sampling the eligible component sets uniformly. Exact complete-domain evaluation checks feasibility. Infeasible masks are rejected; feasible masks are accepted with probability $\min\{1,\exp(-\Delta|C|/T)\}$. Temperature declines geometrically from 0.5 to 0.02 as a function of unique exact stochastic evaluations. Evaluation results are cached by mask identity. The stochastic stage ends at 20,000 unique evaluations or 40,000 proposals.
+
+The smallest verified mask then receives canonical-order cleanup: try each retained component, accept the first feasible deletion, restart the scan, and stop on a complete failed pass. Cleanup has its own 10,000-unique-evaluation allowance. Its completion proves local single-deletion minimality, not convergence of the stochastic search. The recorded \texttt{budget\_censored} flag is set when the proposal limit is reached or cleanup exhausts its budget. Reaching the planned 20,000-unique-evaluation allowance does not itself set this flag. A separate plateau flag records whether the best stochastic size remained unchanged for at least 5,000 unique evaluations. Table~\ref{tab:searchsummary} reports both: uncensored must not be read as plateau-converged.
+
+\input{generated/search_summary}
+
+Ten PCG64 streams are derived independently for each seed--checkpoint position, with SHA-256-based seeds binding the analysis and run identity. E5 streams also bind criterion and tolerance. The top-one positive control uses five streams at seed~0, step 9,050. Its gate requires at least four sparse successes and a best size no greater than 105, or 1.25 times the frozen greedy first-circuit size of 84. This gate passed before the 350-run E4 analysis.
+
+\subsection{Metric definitions}
+Jensen--Shannon divergence is the mean of the two KL terms to the midpoint distribution, as defined in the main paper, using natural logarithms and unscaled logits (temperature~1). Its frozen tolerance grid is $0.0001,0.0005,0.001,0.005,0.01,0.05$.
+
+For margin preservation, let $y_x=\arg\max_k z_k(x)$ be the full checkpoint's predicted class and define
+\[
+ m(x)=z_{y_x}(x)-\max_{k\ne y_x}z_k(x),\qquad
+ m_C(x)=z^C_{y_x}(x)-\max_{k\ne y_x}z^C_k(x).
+\]
+The masked margin uses the same reference class even if its own prediction differs. Normalised mean absolute reference-margin error is
+\[
+ \MR(C;M)=\frac{|X|^{-1}\sum_x|m_C(x)-m(x)|}
+ {|X|^{-1}\sum_x|m(x)|}.
+\]
+Its frozen tolerances are $0.01,0.025,0.05,0.10,0.20,0.40$. Lower discrepancy is better for both criteria. The full-model reference margin is positive in these records; its scale is reported by checkpoint in Table~\ref{tab:positions}.
+
+The deterministic grid retains the original top-one pseudo-target Taylor ranking, but accepts a deletion only when exact discrepancy meets the active tolerance; candidate selection within an admissible batch uses the discrepancy. Every one of the 420 planned runs is retained. Of these, 419 endpoints complete local cleanup and are uncensored. The exception is seed~0, step 9,050, margin tolerance 0.05: retained size 458, budget-censored and not locally minimal. Its observed endpoint remains in the grid and is marked in Table~\ref{tab:e5grid}.
+
+\input{generated/e5_grid}
+
+\subsection{Stable-only calibration}
+Before any E5 outcome, the design specified five streams at seed~0, step 9,050, for every frozen tolerance. A metric selects its strictest tolerance with at least four sparse successes, all five local cleanups complete, and no censored run. The 60 calibration runs are separate from the 350-stream full analysis. Table~\ref{tab:calibration} retains all tolerances, including failed gates. Jensen--Shannon selects 0.0005; no margin tolerance qualifies. In particular, 3/5 successes at margin tolerance 0.40 are not rounded up or replaced by its below-cutoff median.
+
+\input{generated/calibration}
+
+\subsection{Checkpoint-level results}
+Table~\ref{tab:positions} retains all 35 positions. E4 and E5 entries are minimum/median/maximum over ten streams. The full-model confidence scale and raw mean absolute margin error are given alongside E5. These quantities are diagnostics of the saved outputs, not an additional search or a fitted confidence adjustment. Per-run output distributions, discrepancies, accuracy and cross-entropy remain available in the machine-readable records.
+\input{generated/positions}
+
+\section{Analysis sequence and provenance}
+The original protocol was initiated before family results and later amended to the common checkpoint grid before the multi-seed family analysis. The original analysis was frozen after its independent reproduction and downstream revalidation. The five follow-ups do not replace that freeze:
+\begin{enumerate}
+\item E1 compares the final stable pairs with matched overlap nulls; E2 evaluates matched random masks; E3 reconstructs first-path endpoints from existing records. These were designed after the original results were visible.
+\item The E4--E5 robustness contract was committed before any E4 checkpoint search. It fixed the 35 positions, continuous retained-size endpoint, non-monotone optimiser and budgets, stable positive-control gate, and both E5 metric grids.
+\item After E4 completed but before E5 ran, an amendment added metric-specific stable calibration and full annealing at the selected tolerances. The deterministic grids remained required for both metrics.
+\item Calibration passed for Jensen--Shannon and failed for margin. An implementation initially required both metrics to pass. After calibration, that execution check was corrected to follow the already-written per-metric eligibility rule. No tolerance, gate or result changed. The full Jensen--Shannon analysis ran; the full margin analysis did not.
+\end{enumerate}
+No delayed or transitional E5 outcome selected the Jensen--Shannon tolerance. Nevertheless, that tolerance is calibrated for compact recovery at one stable position, rather than a task-independent notion of equal fidelity. Its checkpoint-to-checkpoint behaviour is consequently reported together with the full tolerance grids.
+
+Source configurations, masks and results retain their original manifests. The revised figures and tables are deterministic aggregations of those records, generated without training or masked forward evaluations. The manuscript builder, \texttt{build\_manuscript.py}, records input hashes in \texttt{source\_registry.json}, validates coverage and key numerical claims, and exports its display data. The accompanying README gives build instructions and a source map. Exact-domain evaluation removes input-sampling uncertainty in a mask's reported fidelity, not variability across training seeds or search paths.
+
+\section{Matched structural and behavioural nulls}
+\subsection{Exact Jaccard null}
+For two independently sampled subsets of an $N$-component universe with fixed sizes $a$ and $b$, intersection $K$ has probability
+\[
+ \Pr(K=k)=\frac{\binom{a}{k}\binom{N-a}{b-k}}{\binom{N}{b}},
+ \quad \max(0,a+b-N)\leq k\leq\min(a,b).
+\]
+Jaccard is $K/(a+b-K)$. Its expectation is calculated by summing this transform against the exact distribution; substituting the mean intersection into the ratio is not the same calculation. The composition-matched null draws independently within the four-head and 512-neuron strata. Its intersection law is the convolution of the two hypergeometric laws. Since every observed final circuit retains all four heads, the stratified null always shares those heads.
+
+The analysis covers 78 within-family pairs from seeds 0, 1, 2 and 4 at step 9,050, with 100,000 deterministic Monte Carlo draws per pair and null as a numerical check. Each row records the exact mean, standard deviation, equal-tail 95\% null interval, inclusive lower and upper tails, mid-percentile and z-score, alongside simulation summaries. The interval describes random-mask Jaccard variation, not uncertainty in an estimated scientific effect. The pooled median z-scores are +2.37 for size matching and +1.67 for composition matching. Seed~1 is closer to its matched expectation than the other final stable seeds. Pair rows share masks and are not independent hypothesis tests.
+
+\subsection{Behavioural null}
+The 27 observed masks give 21 unique seed/head-count/neuron-count profiles. For each, 100 total-size-matched and 100 composition-matched masks are evaluated over the full domain. Matching by profile avoids treating duplicate profiles as independent random-mask samples. Seeds are derived from canonical SHA-256 material including the analysis, checkpoint, composition and null identity; PCG64 draws are deterministic.
+
+No random mask passes the 0.990 threshold. Each profile/null has zero successes in 100 draws, yielding a two-sided exact 95\% upper confidence limit of 0.0362 for its random-mask pass probability. The plus-one Monte Carlo tail $1/101$ is not a selection-corrected significance test: the observed masks were selected by optimisation, whereas the null masks were sampled uniformly. Neither null preserves empirical component-selection frequencies or reproduces the family-search selection process.
+
+\section{Original secondary analyses}
+\subsection{Final family structure and operand profiles}
+At step 9,050, seeds 0, 1, 2 and 4 contribute respectively 6, 7, 7 and 7 primary circuits. Their retained-size ranges are 66--84, 146--180, 81--92 and 74--82; median sizes are 71, 169, 85 and 80. Within-family Jaccard ranges are 0.0949--0.2797, 0.0657--0.3092, 0.1067--0.2899 and 0.0845--0.2339. The full 78-pair listings are retained rather than reduced to the most separated example.
+
+Q1--Q4 partition the test split by low (0--56) and high (57--112) operands. Q1 uses two low operands; Q2 low/high; Q3 high/low; Q4 two high operands. The four subset fidelities form a profile, and pair distance is the maximum absolute coordinate difference. Deterministic complete linkage at tolerance 0.05 defines profile groups. These subsets are unseen in model training but included in the complete-domain circuit-discovery objective.
+
+All fifteen stable primary families form one group. Across the final 78 pairs, profile distances range from 0.000616 to 0.007653, with median 0.003133. Across all stable primary families, the maximum is 0.009885. Among the 300 nonempty sensitivity cells, 285 form one group and 15 form two; all two-group outcomes occur at fidelity 0.800, 0.850 or 0.900. No higher-fidelity setting yields two groups at the selected tolerance.
+
+An exploratory seed~1 analysis discovers one circuit separately on each operand subset and evaluates all sixteen discovery-by-evaluation combinations. Mean diagonal fidelity is 0.99021 and mean off-diagonal fidelity 0.88420; Q1-to-Q4 transfer is 0.66709. This different discovery objective reveals conditional asymmetry without establishing distinct algorithms.
+
+\subsection{Fourier pilot}
+At seed~1, step 9,050, centred full-domain output logits are Fourier transformed. The diagnostic asks whether the correct shifted-addition relation ranks first and accounts for at least half of non-DC power. The full model and one sparse circuit at each of six fidelity thresholds pass. Circuit addition-manifold fractions range from 0.691749 to 0.731648. The primary pilot circuit retains 146 components, with fidelity 0.990054 and addition-manifold fraction 0.731648. This diagnostic does not cover all final family members.
+
+\subsection{Matched longitudinal comparisons and original endpoints}
+For every earlier--later checkpoint pair within a seed, fidelity matching pairs circuits within 0.01 global agreement and size matching pairs circuits within five components. Both use one-to-one matching without replacement, first maximising pair count and then minimising total matching discrepancy. Of 105 possible within-seed checkpoint comparisons per scheme, 26 admit fidelity matches and 22 size matches. Comparisons lacking eligible circuits remain undefined.
+
+The original primary family-size change from step 200 to 9,050 is $+6,+7,+7,0,+7$, with median +7, mean +5.4 and exact two-sided sign-test probability 0.125 after omitting the zero difference. Step 3,400 to 9,050 gives the same values, not independent evidence. The originally specified change in transfer-group count is undefined because the early families are empty; no group count is imputed as zero. Secondary matched comparisons do not show a consistent cross-seed contraction towards a single mask and are retained as descriptive records, not a new confirmatory endpoint.
+
+\subsection{Controls}
+One random-label model uses the same inputs and split with a separately seeded permutation of the complete label vector. No primary family is recovered at any of the seven steps. A structured no-generalisation control was unavailable under its prespecified eligibility rule and was not replaced post hoc. These controls do not isolate the effect of generalisation from task structure or correlated training dynamics.
+
+\end{document}

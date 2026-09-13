@@ -1,0 +1,182 @@
+\begin{abstract}
+When a model learns to generalise, does its behaviour become recoverable from one sparse circuit or from several? We follow five one-layer transformers through grokking on modular addition, searching for circuit families at seven fixed checkpoints and evaluating every candidate over all 12,769 inputs. At 99\% agreement with the full model, the first greedy search retains 510--515 of 516 components in the delayed phase and 65--146 after stable generalisation. All fifteen stable checkpoint positions support six or seven sparse masks; none of the twenty earlier positions yields a qualifying mask. A non-monotone search with ten restarts per position preserves this separation. The final stable families contain 27 circuits: none of 4,200 size- or composition-matched random masks reaches their fidelity, although the recovered masks overlap more than matched random subsets. Preserving output distributions is more demanding. Under a calibrated Jensen--Shannon criterion, stable search endpoints retain 209--368 components, compared with 432--515 earlier, but only four of fifteen stable positions meet the original half-model sparsity cutoff. Thus the large change in recoverable size survives changes in search and fidelity, while the binary sparsity boundary does not. These results connect longitudinal compression to circuit non-uniqueness and show why circuit-family claims should be evaluated alongside the size--fidelity relation that makes recovery possible.
+\end{abstract}
+
+\section{Introduction}
+
+Grokking separates fitting the training data from learning a rule that generalises. A network can memorise an algorithmic dataset long before its test accuracy improves \citep{power2022grokking}. This interval makes grokking useful for studying how computation changes during learning. In modular-addition transformers, Fourier features can develop before the rise in test accuracy, followed by the removal of competing memorisation behaviour \citep{nanda2023progress}. In sparse-parity networks, prediction-preserving subnetworks become smaller as generalisation develops \citep{merrill2023two}. Compression is therefore already part of the empirical account of grokking.
+
+Circuit discovery introduces a further question: how many sparse explanations can be recovered at each point in that trajectory? A procedure returning one mask cannot reveal whether it has found an isolated solution or one of several alternatives. Circuit non-uniqueness has been demonstrated in exhaustive small-network studies \citep{meloux2025everything}, and overlap-aware discovery can recover multiple faithful masks at trained endpoints \citep{chen2026rome}. Following such families during learning could distinguish a transition towards one selected explanation from a transition towards a regime with several recoverable explanations.
+
+We study this distinction in five transformers trained on addition modulo 113. The task permits evaluation over the entire input domain, so a mask's measured fidelity does not depend on which evaluation examples happen to be sampled. We search the same basis of four attention heads and 512 MLP neurons at seven common training checkpoints. The original family criterion requires at least 0.990 agreement with the corresponding full model, no more than 258 retained components, and pairwise Jaccard overlap at most 0.50. Here a circuit is a behaviour-preserving component subset under zero ablation, and a recovered family is the set returned within a specified search budget. The study concerns the development of these recoverable explanations, not the number of distinct algorithms in the network.
+
+The family result is sharp: every analysed stable position yields six or seven circuits, whereas every delayed and transitional position is empty at the primary criterion. But interpreting this pattern requires more than counting masks. A sparsity cutoff can hide a gradual size change; a single deletion order can make early recovery unnecessarily difficult; argmax agreement can conceal large changes in output confidence; and low overlap is partly an intended consequence of diversity-seeking search. We address these issues with matched structural and behavioural nulls, the complete first-search endpoint trajectories, an independent non-monotone search, and two non-argmax fidelity criteria.
+
+The combined result distinguishes three properties that a binary family diagram conflates. First, the number of components needed by the tested searches drops substantially after stable generalisation. Second, the resulting argmax-faithful masks are non-unique and behaviourally special relative to matched random masks. Third, the amount of compression depends on what must be preserved: the separation in retained size survives a strict distributional criterion, but crossing the half-model boundary does not occur at every stable checkpoint. This distinction is the paper's central contribution. It connects the temporal development of sparse explanations to the measurement choices that determine when a circuit family can be recovered.
+
+\section{Related work}
+
+\paragraph{Grokking and compression.}
+\citet{nanda2023progress} traced Fourier-structured computation in modular-addition transformers, showing why the first appearance of useful internal structure need not coincide with the behavioural transition. \citet{merrill2023two} defined an active subnetwork by pruning low-magnitude neurons while preserving predictions, and tracked its size through sparse-parity grokking. This is a direct antecedent to our retained-size measurement. \citet{varma2023efficiency} explained grokking through competition between solutions of different efficiency under weight decay. \citet{demoss2025complexity} studied model-complexity dynamics using a rate--distortion account of compression. Our contribution is not the general claim that grokking accompanies compression. It is the joint measurement of recoverable mask multiplicity and retained size across training, together with tests of which features persist when the search path and fidelity criterion change.
+
+\paragraph{Circuit discovery and non-uniqueness.}
+Automated circuit discovery searches for restricted computations that preserve selected model behaviour \citep{conmy2023automated,bhaskar2024finding}. Faithfulness and component overlap need not measure the same thing \citep{hanna2024faith}. \citet{meloux2025everything} demonstrated non-identifiability of mechanistic explanations in small networks, while \citet{chen2026rome} deliberately searched for multiple sparse, faithful, low-overlap circuits. \citet{bayatmakou2026many} found that structurally different circuits induced by input variation could remain causally interchangeable. These studies motivate examining alternatives to a single recovered mask. We follow their recoverability across a learning trajectory rather than treating multiplicity solely as an endpoint property. Unlike trainable sparse-subnetwork studies \citep{frankle2019lottery}, our interventions leave all retained weights fixed: no circuit is retrained after masking.
+
+\section{Experimental design}
+\label{sec:methods}
+
+\subsection{Models, checkpoints and components}
+
+The task maps an ordered pair $(a,b)\in\{0,\ldots,112\}^2$ to $(a+b)\bmod113$. A fixed split places 3,830 pairs in training and 8,939 in testing. Each model is a one-layer causal transformer with residual width 128, four width-32 attention heads, a 512-neuron ReLU MLP, learned positional embeddings, and no normalisation or dropout. Five initialisations share the same data split. Training uses full-batch AdamW for 40,000 steps, with learning rate $10^{-3}$ and weight decay 1; details are in Supplement~S1.
+
+All five models reach 99.9\% training accuracy by step 200. We classify a checkpoint as \emph{delayed} after memorisation and before the first saved checkpoint exceeding 10\% test accuracy; as \emph{transitional} thereafter until stable generalisation; and as \emph{stable} from the fifth checkpoint in the first sequence of five consecutive saved checkpoints reaching 99\% test accuracy. Checkpoints are saved every 50 steps. Stable onset occurs at steps 5,900, 9,050, 7,750, 10,400 and 6,850 for seeds 0--4.
+
+Circuit analysis uses steps 200, 3,400, 7,450, 8,150, 8,500, 8,650 and 9,050. This common grid was taken from the pilot trajectory and frozen before the multi-seed family analysis. It contains nine delayed, eleven transitional and fifteen stable positions. Seed~3 becomes stable outside the grid, so the stable observations come from four models. Phase labels are assigned from the full-model training records, independently of circuit recovery.
+
+The component universe $U$ contains four whole attention heads and 512 MLP neurons. For a retained mask $C\subseteq U$, excluded head outputs are zeroed before entering the residual stream and excluded neuron activations are zeroed after ReLU, before the MLP output projection. Embeddings, unembeddings, biases and all other operations remain active. We measure size as $|C|$, with the original sparsity convention $|C|\leq258$.
+
+\subsection{Fidelity and family discovery}
+
+For full checkpoint $M$, masked checkpoint $M_C$, and the complete input domain $X$, top-one fidelity is
+\begin{equation}
+ F(C;M)=\frac{1}{|X|}\sum_{x\in X}
+ \mathbf{1}\{\arg\max M_C(x)=\arg\max M(x)\}.
+ \label{eq:fidelity}
+\end{equation}
+This is agreement with the checkpoint, not accuracy against arithmetic labels. Candidate masks are evaluated on all $|X|=\N$ inputs. A family contains masks satisfying $F\geq\tau$, $|C|\leq258$, and
+\begin{equation}
+ J(C_i,C_j)=\frac{|C_i\cap C_j|}{|C_i\cup C_j|}\leq\delta
+ \quad\text{for all }i\ne j.
+\end{equation}
+The primary values are $\tau=0.990$ and $\delta=0.50$. The complete sensitivity grid crosses six fidelities, $0.800,0.850,0.900,0.950,0.975,0.990$, with three overlap ceilings, $0.25,0.50,0.75$, at all 35 positions: 630 family-search settings.
+
+The first search starts with every component retained. A Taylor estimate of deletion damage ranks candidates; exact evaluation determines acceptance. Within the first candidate batch containing an admissible deletion, the highest-fidelity candidate is selected. Subsequent family members are sought with a component-reuse penalty and must pass the pairwise overlap constraint. Each requested member has an allowance of 10,000 exact evaluations, each family cell has 50,000, and the target family size is ten. The first member follows one deterministic path; later members may use up to five seeded restarts. Supplement~S2 gives the algorithm and stopping rules.
+
+We also recover the terminal size of the first path before applying the 258-component filter. This yields 210 distinct seed--checkpoint--fidelity endpoints, because the overlap ceiling cannot affect the first member. These endpoints make the size trajectory observable even where the reported family is empty.
+
+\subsection{Search and fidelity robustness}
+
+The independent search proposes uniformly sampled deletions, additions and swaps with probabilities $0.5,0.1,0.4$. It starts from the full mask and rejects any proposal violating the active fidelity constraint. Feasible deletions and swaps are accepted; feasible additions use a cooled Metropolis rule with retained count as the energy. This permits the search to replace components and revisit larger masks. Each of ten streams per position receives up to 20,000 unique stochastic evaluations or 40,000 proposals, followed by a separate canonical-order deletion cleanup. A stable positive-control gate preceded the full top-one analysis.
+
+For non-argmax fidelity, let $p_x=\operatorname{softmax}(M(x))$, $q_x=\operatorname{softmax}(M_C(x))$, and $r_x=(p_x+q_x)/2$. We use mean Jensen--Shannon divergence
+\begin{equation}
+ \JS(C;M)=\frac{1}{2|X|}\sum_x
+ \left[\operatorname{KL}(p_x\|r_x)+\operatorname{KL}(q_x\|r_x)\right],
+ \label{eq:js}
+\end{equation}
+with natural logarithms and temperature~1. We separately measure the mean absolute change in the full model's top-class logit margin, normalised by its mean absolute reference margin (Supplement~S3). Both criteria use complete-domain evaluation.
+
+The deterministic first-circuit search is repeated at six tolerances per criterion, giving 420 runs. Its Taylor ranking is held fixed; exact admissibility uses the new criterion. For annealing, a prespecified stable-only calibration selects the strictest tolerance at which at least four of five streams recover at most 258 components, all complete cleanup, and none is censored. Jensen--Shannon selects $0.0005$; no margin tolerance passes. We therefore run the full 350-stream annealing analysis for Jensen--Shannon only, while retaining the entire deterministic grid for both metrics.
+
+\subsection{Matched nulls and evidence structure}
+
+At step 9,050, the four stable primary families supply 27 circuits and 78 within-family pairs. For each pair we compare observed Jaccard overlap with independent uniformly drawn subsets preserving either each mask's total size or its separate head and neuron counts. Exact hypergeometric calculations provide the null expectation, interval and tails; deterministic Monte Carlo draws check those calculations. For behavioural nulls, we evaluate 100 masks per unique seed/composition profile under each matching rule: 21 profiles and 4,200 full-domain evaluations.
+
+The independently trained model is the unit of replication. Checkpoints, masks, pairs and optimiser streams are nested observations. We report their distributions descriptively and retain the original seed-level paired endpoint in Section~\ref{sec:families}. The family analysis was frozen before these follow-ups. Structural and behavioural nulls and first-path reconstruction (E1--E3) were designed after the original results; search and non-argmax follow-ups (E4--E5) had prospective rules before their respective outcomes. Supplement~S4 records the sequence and calibration decisions.
+
+\section{Results}
+
+\subsection{The change in retained size is much larger than the sparsity cutoff}
+\label{sec:trajectory}
+
+At fidelity 0.990, the first greedy path ends with 510--515 components during the delayed phase, 297--515 during transition, and 65--146 after stable generalisation. The corresponding medians are 514, 514 and 82. Every endpoint is locally single-deletion minimal and uncensored. Thus the primary family boundary does not arise from endpoints narrowly crossing 258: delayed masks remain almost full-sized, while stable masks retain less than 29\% of the component basis (Figure~\ref{fig:trajectory}).
+
+\begin{figure}[tb]
+\centering
+\includegraphics[width=\linewidth]{trajectory.pdf}
+\caption{\textbf{Generalisation and first-circuit recovery across training.} Left: unsmoothed test accuracy for five models, with the seven analysis steps marked below the axis. Right: terminal greedy size at fidelity 0.990, with phase indicated by marker shape. Lines connect observed checkpoints; no intervening masks were searched. The dashed horizontal line is the 258-component criterion. Each endpoint is locally single-deletion minimal and uncensored.}
+\label{fig:trajectory}
+\end{figure}
+
+The separation persists across the six top-one fidelity levels. Even at 0.800, delayed endpoints retain 483--496 components and stable endpoints 39--64. No delayed endpoint meets the size cutoff at any threshold; every stable endpoint does. Transition is graded: 4/11 positions meet it at 0.800, 2/11 at 0.850 and 0.900, 1/11 at 0.950 and 0.975, and none at 0.990. These are separate threshold searches, not a fitted continuous curve.
+
+The independent search reaches a similar size separation (Figure~\ref{fig:robustness}). Across 350 top-one annealing runs, delayed endpoints retain 508--515 components, transitional endpoints 264--515, and stable endpoints 58--136. All 150 stable runs meet the original sparsity criterion and all 200 earlier runs fail it. Addition and swap moves therefore do not remove the contrast found by greedy deletion. Budget censoring remains concentrated in the earlier phases; Table~S3 reports it separately from the local cleanup checks.
+
+\begin{figure}[tb]
+\centering
+\includegraphics[width=\linewidth]{search_robustness.pdf}
+\caption{\textbf{Retained size under two searches and two fidelity criteria.} Each point denotes a seed--checkpoint position, coloured by model seed as in Figure~\ref{fig:trajectory}. Greedy points are individual endpoints. Annealing points show the median of ten streams, with vertical bars spanning their full range. Horizontal offsets separate positions within each phase and have no numerical meaning. Open annealing markers flag positions with at least one budget-censored stream. The dashed line marks 258 components. All shown endpoints complete single-deletion cleanup.}
+\label{fig:robustness}
+\end{figure}
+
+\subsection{Stable models admit multiple behaviourally special masks}
+\label{sec:families}
+
+Under the primary family criterion, none of the nine delayed or eleven transitional positions yields an eligible family. All fifteen stable positions yield six or seven circuits (Table~\ref{tab:families}). At step 7,450, for example, seeds 0 and 4 are stable and each yields seven circuits, while seeds 1, 2 and 3 are transitional and yield none. Seed~2 enters the recovered-family regime by step 8,150 and seed~1 by step 9,050. The association therefore recurs at different training steps.
+
+\begin{table}[tb]
+\centering\small
+\caption{\textbf{Primary family size on the common checkpoint grid.} D, T and S denote delayed, transitional and stable phases. Entries give phase and recovered member count.}
+\label{tab:families}
+\begin{tabular}{crrrrrrr}
+\toprule
+Seed & 200 & 3,400 & 7,450 & 8,150 & 8,500 & 8,650 & 9,050\\
+\midrule
+0 & D:0 & T:0 & S:7 & S:7 & S:7 & S:6 & S:6\\
+1 & D:0 & D:0 & T:0 & T:0 & T:0 & T:0 & S:7\\
+2 & D:0 & D:0 & T:0 & S:7 & S:7 & S:7 & S:7\\
+3 & D:0 & D:0 & T:0 & T:0 & T:0 & T:0 & T:0\\
+4 & D:0 & D:0 & S:7 & S:7 & S:6 & S:6 & S:7\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Across all 630 family settings, delayed positions are nonempty in 0/162 cells, transitional positions in 30/198, and stable positions in 270/270. Tightening the overlap ceiling to 0.25 reduces the number of alternatives but still yields three to seven circuits in each final stable family at fidelity 0.990. The original paired endpoint, the change in primary family size from step 200 to 9,050, is $+6,+7,+7,0,+7$ across seeds. Its two-sided exact sign-test probability is 0.125 after excluding the zero difference. The repeated checkpoint surface describes where the change occurs; it does not increase the number of independent models.
+
+At the final checkpoint, the four stable models yield 27 masks retaining 66--180 components, with fidelity 0.9901--0.9918. All retain the four attention heads. Their 78 within-family Jaccard values range from 0.0657 to 0.3092. Size matching changes the meaning of these small raw overlaps: the pooled observed median is 0.1581, whereas the median pair-specific expectation is 0.0879 under total-size matching and 0.1085 when head and neuron counts are preserved. The families are more overlapping, not more disjoint, than those random-subset baselines (Figure~\ref{fig:nulls}, left).
+
+Their behaviour is markedly different from random subsets. None of the 4,200 matched random masks reaches fidelity 0.990. Under total-size matching, median fidelity is 0.0261 and the maximum is 0.4120. Preserving the four heads and the exact neuron count produces a stronger null, with median 0.2830 and maximum 0.6361, still far below every recovered circuit (Figure~\ref{fig:nulls}, right). Low overlap alone is not the evidence that makes these masks interesting. It is the recovery of several different component selections that each preserve behaviour where typical selections of the same size and composition do not.
+
+\begin{figure}[tb]
+\centering
+\includegraphics[width=\linewidth]{matched_nulls.pdf}
+\caption{\textbf{Matched controls distinguish overlap from behavioural fidelity.} Left: observed Jaccard versus its pair-specific exact expectation under each null, for 78 within-family pairs. The diagonal denotes equality; colour denotes model seed. Right: random-mask fidelity for each of 21 seed/composition profiles, sorted within seed by retained size. Points are medians and bars span all 100 draws per null; diamonds show the minimum observed circuit fidelity for that profile. The same random draws are reused for observed circuits sharing a profile.}
+\label{fig:nulls}
+\end{figure}
+
+The original operand-subset probe provides a descriptive check on the recovered families. All fifteen stable families form one group at its 0.05 tolerance; their largest within-family profile difference is below 0.01. A one-seed Fourier pilot also preserves the expected addition signature in one circuit at each fidelity level. We give these secondary analyses, rather than a mechanistic interpretation of the family count, in Supplement~S6.
+
+\subsection{Preserving distributions requires larger circuits}
+\label{sec:nonargmax}
+
+The non-argmax analyses show that substantial compression and crossing the half-model threshold are different results. At the calibrated Jensen--Shannon tolerance $0.0005$, the independent search retains 209--368 components at stable positions, versus 432--515 at transitional positions and 509--515 when delayed. Every observed stable endpoint is smaller than every observed earlier endpoint. The stable median is 276.5, however, and only 40/150 stable streams satisfy $|C|\leq258$ (Figure~\ref{fig:robustness}, right). Those 40 runs come from four positions, each with ten successes: seed~0 at step 9,050, seed~2 at step 9,050, and seed~4 at steps 7,450 and 9,050.
+
+All stable Jensen--Shannon runs are uncensored. All 90 delayed runs and 48/110 transitional runs are budget-censored, although every run finishes local deletion cleanup. The endpoint ranges establish separation in what these searches recovered, while the search records show where further exploration remains most consequential.
+
+The full deterministic tolerance grids make the metric dependence explicit (Supplement~S3). At Jensen--Shannon tolerance 0.0005, the median sizes are 515, 514 and 281 in delayed, transitional and stable positions; 5/15 stable positions meet the size cutoff. At tolerance 0.005, all fifteen stable positions do, with median size 191, while no earlier position does. No Jensen--Shannon tolerance yields a sparse delayed endpoint.
+
+Margin preservation is more demanding still. At normalised margin error 0.20, median retained sizes are 507, 480 and 349 in the three phases, with no sparse endpoint. At 0.40 they are 493, 426 and 246, and 11/15 stable positions are sparse. In the stable-only annealing calibration, even this loosest margin tolerance yields only 3/5 sparse masks, below the required four successes. The full margin annealing analysis is therefore not run. The margin grid remains evidence for greater post-generalisation compressibility, but not for uniformly sparse recovery under stringent preservation of logit margins.
+
+\section{Discussion}
+
+The experiments resolve the original family result into a size change and a multiplicity result. Before stable generalisation, the tested searches usually retain nearly the full model to preserve its predictions. Afterwards, the argmax criterion admits extensive deletion and several alternative masks. This is more informative than either a single selected circuit or a binary empty/nonempty diagram: it shows both how far a checkpoint is from the sparsity boundary and whether crossing that boundary exposes multiple recoverable solutions.
+
+The follow-ups sharpen rather than simply repeat that observation. Non-monotone search reproduces the top-one size separation. Distributional fidelity preserves a substantial gap but moves many stable endpoints above the original cutoff. Random-mask controls show that the recovered identities matter, while matched overlap calculations remove the inference that low raw Jaccard is unusual. Together these results support a practical lesson for longitudinal circuit analysis: report retained size and alternative masks alongside the fidelity definition. Otherwise a change in the measurement rule can appear to change whether a family exists, even when a sizeable compression difference remains.
+
+The relation to earlier grokking work is consequently specific. Sparse subnetworks and compression dynamics are established observations; our measurements show how a multi-solution recovery problem develops within that setting and which aspects of its apparent boundary depend on the criterion. Multiple masks can coexist with a shared task computation. A discovery method that returns one of them may change its selected components across checkpoints without that change uniquely identifying a change of algorithm. Measuring alternative solutions makes that ambiguity visible.
+
+\section{Limitations}
+
+The full checkpoint's behaviour is the reference at every training step. Before generalisation, fidelity requires preserving its errors as well as its correct outputs; afterwards, it largely requires preserving the arithmetic rule. Thus the observed size change could reflect a simpler prediction function, a computation better aligned with the component basis, an easier search landscape, or a combination. It does not locate the first appearance of a generalising mechanism or establish a causal effect of grokking. The one available random-label control yields no primary family at seven checkpoints, but changes task structure as well as generalisation. A planned structured no-generalisation control did not meet its selection rule.
+
+Both searches operate on the same mixed head/neuron basis and use zero ablation. A head and a neuron have different parameter and computational costs, so retained count is not a parameter- or FLOP-compression ratio. Annealing can add and swap components but never accepts an infeasible mask; it cannot traverse arbitrary disconnected feasible regions. Nor does finishing the allocated search establish convergence: only 43/150 stable top-one streams and 21/150 stable Jensen--Shannon streams meet the recorded stochastic plateau criterion, despite all completing local cleanup. Locally minimal endpoints and empty families are therefore not global optima or nonexistence results. Family counts are finite-search lower bounds, and the independent-search follow-ups test first-mask recovery rather than independently reproducing complete families.
+
+The fidelity criteria preserve different information. Temperature-one Jensen--Shannon divergence constrains output distributions but can remain insensitive to changes among highly confident logits; the margin results show why it does not settle the confidence explanation. Likewise, the four operand subsets were held out from training but included in full-domain circuit search. Their profiles are descriptive subdivisions of the discovery domain, not independent functional validation. Neither those profiles nor the single-seed Fourier pilot establish distinct algorithms or causal interchangeability.
+
+Finally, the study uses one task, one architecture and five initialisations on one split, with four models contributing stable checkpoints. The grid samples late training unevenly and omits seed~3's stable onset. More broadly, the robustness studies follow an observed original result, although their execution rules were frozen before the new search outcomes. The data support a consistent pattern in this setting, not a population-level law about grokking.
+
+\section{Conclusion}
+
+Sparse circuit recovery changes substantially across the analysed grokking trajectories. Under top-one fidelity, stable checkpoints support several compact, behaviourally special masks; earlier checkpoints do not yield qualifying masks. Changing both search and fidelity preserves a large separation in recovered size but not a universal half-model sparsity boundary. The useful object is therefore not a family count in isolation, but the family together with the size--fidelity relation under which its members become recoverable.
+
+\section*{Reproducibility}
+The accompanying supplement specifies the search budgets, metric definitions, calibration decisions and complete checkpoint summaries. Saved masks, result tables and configurations retain their provenance hashes. The original frozen experiment is archived at \url{https://doi.org/10.5281/zenodo.21917638}; development code is at \url{https://github.com/AK-314/circuit-families}. The E1--E5 follow-up records and the manuscript figure builder are maintained separately from that original freeze. Release packaging and anonymous submission materials are tracked in the manuscript README.
+
+\section*{Use of AI}
+Generative AI assisted with coding, analysis, manuscript drafting, editing and formatting. The author is responsible for checking the analyses, references and final scientific claims.
+
+\section*{Acknowledgements}
+I thank Eleftheria Fassman of Cornell University for advice and guidance throughout this project.
+
+\bibliographystyle{tmlr}
+\bibliography{references}

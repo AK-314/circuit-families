@@ -1,0 +1,7 @@
+analysis,phase,run_count,minimum,median,maximum,sparse,censored,plateau
+e4,delayed_pre_generalisation,90,508,514.0,515,0,86,42
+e4,transition,110,264,513.0,515,0,58,53
+e4,stable_post,150,58,71.0,136,150,0,43
+js,delayed_pre_generalisation,90,509,513.0,515,0,90,35
+js,transition,110,432,511.0,515,0,48,66
+js,stable_post,150,209,276.5,368,40,0,21

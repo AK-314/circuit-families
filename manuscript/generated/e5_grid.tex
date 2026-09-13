@@ -1,0 +1,26 @@
+\begingroup\small\setlength{\tabcolsep}{4pt}
+\begin{longtable}{lr rr rr rr}
+\caption{Complete deterministic non-argmax grid. Each phase reports minimum/median/maximum retained size and sparse positions. The starred group contains one censored endpoint (seed 0, step 9,050, size 458); all other endpoints are locally minimal and uncensored.}\label{tab:e5grid}\\
+\toprule
+Metric & Tolerance & Delayed & Sparse & Transition & Sparse & Stable & Sparse \\
+
+\midrule\endfirsthead
+\toprule
+Metric & Tolerance & Delayed & Sparse & Transition & Sparse & Stable & Sparse \\
+
+\midrule\endhead
+\bottomrule\endfoot
+JS & 0.0001 & 512/516/516 & 0/9 & 507/515/516 & 0/11 & 275/361/420 & 0/15 \\
+JS & 0.0005 & 512/515/515 & 0/9 & 465/514/515 & 0/11 & 212/281/353 & 5/15 \\
+JS & 0.001 & 510/514/515 & 0/9 & 455/511/515 & 0/11 & 194/254/323 & 9/15 \\
+JS & 0.005 & 510/511/514 & 0/9 & 339/507/513 & 0/11 & 147/191/249 & 15/15 \\
+JS & 0.01 & 508/510/512 & 0/9 & 304/499/510 & 0/11 & 132/170/217 & 15/15 \\
+JS & 0.05 & 484/495/500 & 0/9 & 153/422/482 & 1/11 & 90/111/144 & 15/15 \\
+Margin & 0.01 & 513/515/516 & 0/9 & 514/515/516 & 0/11 & 501/509/514 & 0/15 \\
+Margin & 0.025 & 511/514/515 & 0/9 & 511/514/515 & 0/11 & 468/488/502 & 0/15 \\
+Margin & 0.05 & 510/514/515 & 0/9 & 492/513/515 & 0/11 & 422/464/484$^{*}$ & 0/15 \\
+Margin & 0.1 & 510/513/514 & 0/9 & 459/506/513 & 0/11 & 352/430/449 & 0/15 \\
+Margin & 0.2 & 502/507/511 & 0/9 & 408/480/504 & 0/11 & 269/349/382 & 0/15 \\
+Margin & 0.4 & 478/493/505 & 0/9 & 286/426/473 & 0/11 & 176/246/322 & 11/15 \\
+\end{longtable}
+\endgroup

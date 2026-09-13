@@ -1,0 +1,45 @@
+{
+  "analysis": "manuscript_aggregation_only",
+  "source_files": {
+    "results/tables/stage21_figure1_training_curves_source.csv": "d22f84c586fa2bcbbdfe1e5a28a45f37b5663f83e8d745094a6b87952d71176d",
+    "results/tables/stage21_figure2_family_dynamics_source.csv": "c12441181fedaf21c710f2b0bf7dcc88a2e2291ed15a756c148ff37ed1974d43",
+    "results/tables/phase1_tmlr_e1_jaccard_null_v1/pairwise_jaccard_null.csv": "7cba50cfa5625faa67ffe590d6717fc8e6c6bd2018a590ffbd02f2dad8ee2caa",
+    "results/tables/phase1_tmlr_e2_random_mask_fidelity_v1/random_mask_fidelity_evaluations.csv": "7eee40bcf68866cd513818299ab2900b69ae987bdce1dda724662eb30ad996d8",
+    "results/tables/phase1_tmlr_e2_random_mask_fidelity_v1/random_mask_fidelity_circuit_summary.csv": "35fdbf8e2b72d79603b248205b27bb15cac5b95e0385b4aaf70c09fa36329228",
+    "results/tables/phase1_tmlr_e3_greedy_endpoint_trajectory_v1/greedy_endpoint_trajectories.csv": "63f2d5fbf85ccc8afb4259b140b60ce43e7941e27c7f634ea2da895e91be9276",
+    "results/tables/phase1_tmlr_e4_independent_search_v1/independent_search_runs.csv": "0e6a809f4c26d84d9c01a02452e791048d93454ef5cdbfbcd7b4424a30f96604",
+    "results/tables/phase1_tmlr_e5_greedy_grid_v1/nonargmax_fidelity_runs.csv": "d1b684bbcb50112a044d1346a643f7b82d6d6d4a73ff554c4f9e3ccb4ea86225",
+    "results/tables/phase1_tmlr_e5_calibration_v1/nonargmax_fidelity_runs.csv": "4a2c511c44391215885156bb34eb6c0115f011e8c8b257423937b103e7b319c9",
+    "results/tables/phase1_tmlr_e5_full_js_v1/nonargmax_fidelity_runs.csv": "f06204512a0c016b9995fde463e38e5e52f253cfd6db78e0cf0eea7ff6e6a00f"
+  },
+  "validation": {
+    "status": "validated",
+    "model_seeds": 5,
+    "positions": 35,
+    "family_cells": 630,
+    "e1_pairs": 78,
+    "e2_masks": 4200,
+    "e3_endpoints": 210,
+    "e4_runs": 350,
+    "e5_grid_runs": 420,
+    "e5_calibration_runs": 60,
+    "e5_full_js_runs": 350,
+    "model_evaluations_performed_by_builder": 0
+  },
+  "builder_sha256": "72f05f06b9a3adf59247ae828ccc8bfe6d35eb55881a1269462aec165d44b7d9",
+  "generated_files": {
+    "generated/calibration.tex": "24b8e67a5e0e327d745d465075594465dc77fbc1420576f386ad8043508fe613",
+    "generated/e3_grid.tex": "8db1b00e21e30886eba43ee1a05311bbe56be5e36da9918b0ef9f7a4428368e9",
+    "generated/e5_grid.tex": "cdfc0958d5fbbbd26de3602b4c62d2ab264fa9117a0debeb535d0e46ad692fc4",
+    "generated/positions.csv": "16e6cb20aa6a5c675937d2eff37578c7422388a3d019e149b9ebb8c8ec0c63e2",
+    "generated/positions.tex": "225d73ec20a376c2bc3fca53f50919615d24d1afc7f2d2110e1a49d75b2133e8",
+    "generated/search_summary.csv": "e79b78a3f7a40085021aafc8ed5a4497a4540e5107a96e5cd4e82c36f542f6d0",
+    "generated/search_summary.tex": "650fbd4fda4f5c51fda89c7762998f77277307709955dc1bb9ba8bd0e58d015e",
+    "figures/matched_nulls.pdf": "dde441425fa6c46965de6ba6c0342cbf7dad6de589b411f2b2b7dc8260e7d5cf",
+    "figures/matched_nulls.png": "76ac5d1e9a1cfe53ee53b07997fadfe806a0760552a4786d60d17fcf8978ea2c",
+    "figures/search_robustness.pdf": "46926ae6458ebfdc774c7615f61a4849864bea06c4ba112ea7740d460a863b3b",
+    "figures/search_robustness.png": "c968d69f53f5c0379e16e90014f750364792d458e6b8012c7849e2f1931ba696",
+    "figures/trajectory.pdf": "80c112410d2de0c4e9b1aa20054ba774938c3288c2510549afa56e42f353f86c",
+    "figures/trajectory.png": "4c704b90863e0aa8c4ea073309ac0c7ad2720f49d6e26e7a70e74e41c36c6fa6"
+  }
+}
