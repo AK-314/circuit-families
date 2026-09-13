@@ -1,0 +1,10 @@
+\begin{table}[tb]\centering\small
+\caption{\textbf{Shared neurons matter, but do not suffice.} All interventions retain the four attention heads. Core: neurons in every original family member. Entries report full-domain prediction agreement. Removing the core fails the 0.990 criterion for all 27 members; taking the union of members also fails in three models.}
+\label{tab:core}
+\begin{tabular}{crrrrr}\toprule
+Seed & Members & Core neurons & Core only & Core removed & Union \\\midrule
+0 & 6 & 3 & 0.0458 & 0.7723--0.9511 & 0.9829 \\
+1 & 7 & 8 & 0.0341 & 0.6918--0.7622 & 0.9995 \\
+2 & 7 & 4 & 0.0408 & 0.7710--0.8502 & 0.8599 \\
+4 & 7 & 1 & 0.0324 & 0.9290--0.9874 & 0.8541 \\
+\bottomrule\end{tabular}\end{table}

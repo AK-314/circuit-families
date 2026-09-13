@@ -1,0 +1,18 @@
+\begingroup\small\setlength{\tabcolsep}{4pt}
+\begin{longtable}{rrrrrr}
+\caption{Cross-metric scores of the same 27 original family masks at step 9,050. Ranges across members; JS uses natural logs. Both reference and masked logits use the stated common temperature. Margin error is normalised by the reference margin.}\label{tab:originalmetrics}\\
+\toprule
+Seed & $n$ & JS, $T=1$ & JS, $T=2$ & JS, $T=4$ & Margin error \\
+
+\midrule\endfirsthead
+\toprule
+Seed & $n$ & JS, $T=1$ & JS, $T=2$ & JS, $T=4$ & Margin error \\
+
+\midrule\endhead
+\bottomrule\endfoot
+0 & 6 & 0.128--0.213 & 0.379--0.463 & 0.450--0.487 & 0.852--0.884 \\
+1 & 7 & 0.025--0.028 & 0.116--0.126 & 0.218--0.230 & 0.653--0.668 \\
+2 & 7 & 0.108--0.140 & 0.335--0.382 & 0.415--0.442 & 0.848--0.863 \\
+4 & 7 & 0.169--0.185 & 0.413--0.430 & 0.466--0.475 & 0.880--0.889 \\
+\end{longtable}
+\endgroup

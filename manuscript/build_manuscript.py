@@ -32,6 +32,10 @@ SOURCES = {
     "grid": "phase1_tmlr_e5_greedy_grid_v1/nonargmax_fidelity_runs.csv",
     "calibration": "phase1_tmlr_e5_calibration_v1/nonargmax_fidelity_runs.csv",
     "js": "phase1_tmlr_e5_full_js_v1/nonargmax_fidelity_runs.csv",
+    "review_masks": "phase1_review_followup_v1/evaluation/mask_evaluations.csv",
+    "review_families": "phase1_review_followup_v1/audit/annealing_saved_pool_families.csv",
+    "review_confidence": "phase1_review_followup_v1/audit/confidence_positions.csv",
+    "review_optimizer": "phase1_review_followup_v1/audit/optimizer_phase_summary.csv",
 }
 
 
@@ -40,14 +44,114 @@ def digest(path: Path) -> str:
 
 
 def load(repo: Path) -> dict[str, pd.DataFrame]:
-    return {
-        name: pd.read_csv(repo / "results/tables" / path)
-        for name, path in SOURCES.items()
-    }
+    return {name: pd.read_csv(repo / "results/tables" / path) for name, path in SOURCES.items()}
 
 
 def primary(data: dict[str, pd.DataFrame]) -> pd.DataFrame:
     return data["e3"].loc[np.isclose(data["e3"].displayed_fidelity, 0.99)].copy()
+
+
+def review_displays(data: dict[str, pd.DataFrame], out: Path) -> None:
+    """Display the post-review audit and fixed-mask evaluations without reevaluation."""
+    d = data["review_masks"]
+    assert len(d) == 70 and set(d.model_seed) == {0, 1, 2, 4}
+    original = d[d.kind == "original"]
+    removed = d[d.kind == "without_core"]
+    core = d[d.kind == "core"]
+    assert len(original) == len(removed) == 27
+    assert original.passes_top1_099.all()
+    assert not removed.passes_top1_099.any() and not core.passes_top1_099.any()
+    assert core.retained_neurons.tolist() == [3, 8, 4, 1]
+    assert not original["passes_js_0.0005"].any()
+    assert not original["passes_margin_0.4"].any()
+    f = data["review_families"]
+    assert len(f) == 60
+    assert f[(f.analysis == "e4") & (f.cutoff == 0.5)].maximum_saved_pool_family.eq(10).all()
+    rows, detailed = [], []
+    for seed, group in d.groupby("model_seed"):
+        c = group[group.kind == "core"].iloc[0]
+        r = group[group.kind == "without_core"]
+        u = group[group.kind == "union"].iloc[0]
+        o = group[group.kind == "original"]
+        rows.append(
+            f"{seed} & {len(o)} & {c.retained_neurons} & {c.top1_fidelity:.4f} & "
+            f"{r.top1_fidelity.min():.4f}--{r.top1_fidelity.max():.4f} & "
+            f"{u.top1_fidelity:.4f} " + r"\\"
+        )
+        detailed.append(
+            [
+                str(seed),
+                str(len(o)),
+                *[
+                    f"{o[col].min():.3f}--{o[col].max():.3f}"
+                    for col in ["js_T1_mean", "js_T2_mean", "js_T4_mean", "normalized_margin_error"]
+                ],
+            ]
+        )
+    (out / "generated/family_core.tex").write_text(
+        "\n".join(
+            [
+                r"\begin{table}[tb]\centering\small",
+                r"\caption{\textbf{Shared neurons matter, but do not suffice.} "
+                r"All interventions retain the four attention heads. Core: neurons in every "
+                r"original family member. Entries report full-domain prediction agreement. "
+                r"Removing the core fails the 0.990 criterion for all 27 members; taking "
+                r"the union of members also fails in three models.}",
+                r"\label{tab:core}",
+                r"\begin{tabular}{crrrrr}\toprule",
+                r"Seed & Members & Core neurons & Core only & Core removed & Union \\\midrule",
+                *rows,
+                r"\bottomrule\end{tabular}\end{table}",
+                "",
+            ]
+        )
+    )
+    longtable(
+        out,
+        "original_cross_metric",
+        "Cross-metric scores of the same 27 original "
+        "family masks at step 9,050. Ranges across members; JS uses natural logs. "
+        "Both reference and masked logits use the stated common temperature. "
+        "Margin error is normalised by the reference margin.",
+        "originalmetrics",
+        "rrrrrr",
+        ["Seed", "$n$", "JS, $T=1$", "JS, $T=2$", "JS, $T=4$", "Margin error"],
+        detailed,
+    )
+    rows = []
+    for (analysis, seed), group in f.groupby(["analysis", "model_seed"]):
+        half = group[group.cutoff == 0.5].maximum_saved_pool_family
+        quarter = group[group.cutoff == 0.25].maximum_saved_pool_family
+        rows.append(
+            [
+                "Top-one" if analysis == "e4" else "JS",
+                str(seed),
+                str(len(half)),
+                f"{quarter.min()}--{quarter.max()}",
+                f"{half.min()}--{half.max()}",
+                str(int(half.ge(2).sum())),
+            ]
+        )
+    longtable(
+        out,
+        "saved_pool_families",
+        "Largest qualifying family in each pool of ten saved "
+        "annealing masks, computed exactly after the runs. Ranges span stable positions "
+        "within a seed. Multiplicity means at least two qualifying masks at Jaccard 0.50; "
+        "zero means no mask meets the 258-component bound.",
+        "savedfamilies",
+        "lrrrrr",
+        ["Criterion", "Seed", "Positions", "$J\\leq0.25$", "$J\\leq0.50$", "Multiplicity"],
+        rows,
+    )
+
+
+def validate_review(data: dict[str, pd.DataFrame]) -> None:
+    d = data["review_masks"]
+    assert len(d) == 70 and d.example_count.eq(12769).all()
+    assert d.retained_heads.eq(4).all()
+    assert d[d.kind == "original"].passes_top1_099.all()
+    assert not d[d.kind.isin(["core", "without_core"])].passes_top1_099.any()
 
 
 def validate(data: dict[str, pd.DataFrame]) -> dict:
@@ -57,9 +161,7 @@ def validate(data: dict[str, pd.DataFrame]) -> dict:
     assert set(zip(p.model_seed, p.checkpoint_step, strict=True)) == expected
     assert len(data["e3"]) == 210 and len(p) == 35
     assert data["e3"].locally_single_deletion_minimal.all()
-    assert p.groupby("phase_label").size().to_dict() == dict(
-        zip(PHASES, [9, 11, 15], strict=True)
-    )
+    assert p.groupby("phase_label").size().to_dict() == dict(zip(PHASES, [9, 11, 15], strict=True))
     ranges = [(510, 515), (297, 515), (65, 146)]
     for phase, bounds in zip(PHASES, ranges, strict=True):
         sizes = p.loc[p.phase_label == phase, "terminal_retained_components"]
@@ -89,10 +191,7 @@ def validate(data: dict[str, pd.DataFrame]) -> dict:
     assert data["e4"].final_fidelity.ge(0.99).all()
     assert data["js"].criterion_tolerance.eq(0.0005).all()
     assert data["js"].final_criterion_value.le(0.0005).all()
-    assert (
-        len(data["grid"]) == 420
-        and data["grid"].locally_single_deletion_minimal.sum() == 419
-    )
+    assert len(data["grid"]) == 420 and data["grid"].locally_single_deletion_minimal.sum() == 419
     assert len(data["calibration"]) == 60
     assert len(data["e1"]) == 156 and data["e1"].pair_id.nunique() == 78
     assert data["e1"].groupby("null_model").size().eq(78).all()
@@ -104,21 +203,14 @@ def validate(data: dict[str, pd.DataFrame]) -> dict:
     assert data["observed"].observed_retained_heads.eq(4).all()
     f = data["families"]
     assert len(f) == 630
-    f = f[
-        np.isclose(f.displayed_fidelity, 0.99)
-        & np.isclose(f.displayed_jaccard_cutoff, 0.5)
-    ]
+    f = f[np.isclose(f.displayed_fidelity, 0.99) & np.isclose(f.displayed_jaccard_cutoff, 0.5)]
     joined = f.merge(
         p[["model_seed", "checkpoint_step", "phase_label"]],
         on=["model_seed", "checkpoint_step"],
         validate="one_to_one",
     )
     assert joined.loc[joined.phase_label != "stable_post", "family_size"].eq(0).all()
-    assert (
-        joined.loc[joined.phase_label == "stable_post", "family_size"]
-        .isin([6, 7])
-        .all()
-    )
+    assert joined.loc[joined.phase_label == "stable_post", "family_size"].isin([6, 7]).all()
     return {
         "status": "validated",
         "model_seeds": 5,
@@ -169,8 +261,7 @@ def figures(data: dict[str, pd.DataFrame], out: Path) -> None:
     p = primary(data)
     phase_colors = dict(zip(PHASES, ["#737980", "#C28A38", "#2473A3"], strict=True))
     phase_handles = [
-        Line2D([], [], marker="o", ls="", color=phase_colors[q], label=LABELS[q])
-        for q in PHASES
+        Line2D([], [], marker="o", ls="", color=phase_colors[q], label=LABELS[q]) for q in PHASES
     ]
 
     # The common-grid matrix shows every endpoint without crowded late-time curves.
@@ -203,9 +294,9 @@ def figures(data: dict[str, pd.DataFrame], out: Path) -> None:
         columns="checkpoint_step",
         values="terminal_retained_components",
     ).reindex(columns=STEPS)
-    phases = p.pivot(
-        index="model_seed", columns="checkpoint_step", values="phase_label"
-    ).reindex(columns=STEPS)
+    phases = p.pivot(index="model_seed", columns="checkpoint_step", values="phase_label").reindex(
+        columns=STEPS
+    )
     cmap = matplotlib.colors.LinearSegmentedColormap.from_list(
         "retained_size", ["#195E8C", "#78ADC7", "#F1F3F4"]
     )
@@ -243,8 +334,7 @@ def figures(data: dict[str, pd.DataFrame], out: Path) -> None:
         1, 2, figsize=(6.6, 3.45), sharex=True, sharey=True, layout="constrained"
     )
     greedy_js = data["grid"].loc[
-        (data["grid"].criterion_name == JS)
-        & np.isclose(data["grid"].criterion_tolerance, 0.0005)
+        (data["grid"].criterion_name == JS) & np.isclose(data["grid"].criterion_tolerance, 0.0005)
     ]
     for ax, key, greedy, size_col, title in [
         (
@@ -304,9 +394,7 @@ def figures(data: dict[str, pd.DataFrame], out: Path) -> None:
     display_rows = []
     for i, seed in enumerate([0, 1, 2, 4]):
         for null, offset in [("size_matched", -0.18), ("basis_stratified", 0.18)]:
-            g = data["e2"][
-                (data["e2"].model_seed == seed) & (data["e2"].null_model == null)
-            ]
+            g = data["e2"][(data["e2"].model_seed == seed) & (data["e2"].null_model == null)]
             values = g.primary_fidelity
             ax.boxplot(
                 values,
@@ -334,9 +422,7 @@ def figures(data: dict[str, pd.DataFrame], out: Path) -> None:
                 }
             )
         obs = observed[observed.model_seed == seed].observed_primary_fidelity
-        ax.scatter(
-            np.full(len(obs), i), obs, marker="D", color="#B45532", s=20, zorder=4
-        )
+        ax.scatter(np.full(len(obs), i), obs, marker="D", color="#B45532", s=20, zorder=4)
         display_rows.append(
             {
                 "model_seed": seed,
@@ -360,9 +446,7 @@ def figures(data: dict[str, pd.DataFrame], out: Path) -> None:
     )
     fig.legend(
         handles=[
-            Line2D(
-                [], [], color="#B45532", marker="D", ls="", label="Recovered circuits"
-            ),
+            Line2D([], [], color="#B45532", marker="D", ls="", label="Recovered circuits"),
             Line2D(
                 [],
                 [],
@@ -383,13 +467,9 @@ def figures(data: dict[str, pd.DataFrame], out: Path) -> None:
         loc="outside upper center",
     )
     save(fig, out, "matched_nulls")
-    pd.DataFrame(display_rows).to_csv(
-        out / "generated/behavioural_null_display.csv", index=False
-    )
+    pd.DataFrame(display_rows).to_csv(out / "generated/behavioural_null_display.csv", index=False)
 
-    fig, axes = plt.subplots(
-        1, 3, figsize=(6.6, 3.15), sharey=True, layout="constrained"
-    )
+    fig, axes = plt.subplots(1, 3, figsize=(6.6, 3.15), sharey=True, layout="constrained")
     for ax, d, tolerance, size, title in [
         (
             axes[0],
@@ -413,14 +493,10 @@ def figures(data: dict[str, pd.DataFrame], out: Path) -> None:
             "(c) Margin error",
         ),
     ]:
-        levels = sorted(
-            d[tolerance].unique(), reverse=tolerance == "displayed_fidelity"
-        )
+        levels = sorted(d[tolerance].unique(), reverse=tolerance == "displayed_fidelity")
         for phase in PHASES:
             g = d[d.phase_label == phase].groupby(tolerance)[size]
-            lo, mid, hi = [
-                g.agg(op).reindex(levels).to_numpy() for op in ["min", "median", "max"]
-            ]
+            lo, mid, hi = [g.agg(op).reindex(levels).to_numpy() for op in ["min", "median", "max"]]
             ax.fill_between(range(6), lo, hi, color=phase_colors[phase], alpha=0.1)
             ax.plot(range(6), mid, color=phase_colors[phase], marker="o", ms=3, lw=1)
         ax.axhline(258, color="0.5", lw=0.7, ls="--")
@@ -445,9 +521,7 @@ def figures(data: dict[str, pd.DataFrame], out: Path) -> None:
             ("size_matched", "o", "#A9AFB5"),
             ("basis_stratified", "^", "#2473A3"),
         ]:
-            g = data["e1"][
-                (data["e1"].model_seed == seed) & (data["e1"].null_model == null)
-            ]
+            g = data["e1"][(data["e1"].model_seed == seed) & (data["e1"].null_model == null)]
             ax.scatter(
                 g.exact_null_mean,
                 g.observed_jaccard,
@@ -655,9 +729,7 @@ def tables(data: dict[str, pd.DataFrame], out: Path) -> None:
     )
     rows = []
     position_display = []
-    for row in (
-        primary(data).sort_values(["model_seed", "checkpoint_step"]).itertuples()
-    ):
+    for row in primary(data).sort_values(["model_seed", "checkpoint_step"]).itertuples():
         e4 = data["e4"][
             (data["e4"].model_seed == row.model_seed)
             & (data["e4"].checkpoint_step == row.checkpoint_step)
@@ -717,19 +789,19 @@ def tables(data: dict[str, pd.DataFrame], out: Path) -> None:
 
 def main() -> None:
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument(
-        "--repo", type=Path, default=Path(__file__).resolve().parents[1]
-    )
+    parser.add_argument("--repo", type=Path, default=Path(__file__).resolve().parents[1])
     parser.add_argument("--out", type=Path, default=Path(__file__).resolve().parent)
     parser.add_argument("--validate-only", action="store_true")
     args = parser.parse_args()
     data = load(args.repo)
     report = validate(data)
+    validate_review(data)
     if not args.validate_only:
         for directory in ["figures", "generated"]:
             (args.out / directory).mkdir(parents=True, exist_ok=True)
         figures(data, args.out)
         tables(data, args.out)
+        review_displays(data, args.out)
         registry = {
             "analysis": "manuscript_aggregation_only",
             "source_files": {
@@ -745,9 +817,7 @@ def main() -> None:
                 if p.is_file()
             },
         }
-        (args.out / "source_registry.json").write_text(
-            json.dumps(registry, indent=2) + "\n"
-        )
+        (args.out / "source_registry.json").write_text(json.dumps(registry, indent=2) + "\n")
     else:
         registry_path = args.out / "source_registry.json"
         if registry_path.exists():

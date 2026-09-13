@@ -10,7 +10,11 @@
     "results/tables/phase1_tmlr_e4_independent_search_v1/independent_search_runs.csv": "0e6a809f4c26d84d9c01a02452e791048d93454ef5cdbfbcd7b4424a30f96604",
     "results/tables/phase1_tmlr_e5_greedy_grid_v1/nonargmax_fidelity_runs.csv": "d1b684bbcb50112a044d1346a643f7b82d6d6d4a73ff554c4f9e3ccb4ea86225",
     "results/tables/phase1_tmlr_e5_calibration_v1/nonargmax_fidelity_runs.csv": "4a2c511c44391215885156bb34eb6c0115f011e8c8b257423937b103e7b319c9",
-    "results/tables/phase1_tmlr_e5_full_js_v1/nonargmax_fidelity_runs.csv": "f06204512a0c016b9995fde463e38e5e52f253cfd6db78e0cf0eea7ff6e6a00f"
+    "results/tables/phase1_tmlr_e5_full_js_v1/nonargmax_fidelity_runs.csv": "f06204512a0c016b9995fde463e38e5e52f253cfd6db78e0cf0eea7ff6e6a00f",
+    "results/tables/phase1_review_followup_v1/evaluation/mask_evaluations.csv": "a670177ab19b8eaadc617e3c020d85fa5d97c989cba9d0d115c6e4927d2cf298",
+    "results/tables/phase1_review_followup_v1/audit/annealing_saved_pool_families.csv": "2bc48211a52aa5f0def7a40ecf512d35e6185c609144daf50fa860dcc6d032e0",
+    "results/tables/phase1_review_followup_v1/audit/confidence_positions.csv": "51a41ac54683461492b479b3266aa63881492f710581fb76d70693027367f2d4",
+    "results/tables/phase1_review_followup_v1/audit/optimizer_phase_summary.csv": "e37ae62f4a85448ff0b086b932090fe5fd4387a43274c8a15edc64e1af5b8542"
   },
   "validation": {
     "status": "validated",
@@ -26,14 +30,17 @@
     "e5_full_js_runs": 350,
     "model_evaluations_performed_by_builder": 0
   },
-  "builder_sha256": "bd4d75aca3411f17bae7caf0a91aacf9d6592901ae03d9dca8c8026bd950a461",
+  "builder_sha256": "92b8e7ed842942de2905b12d9bc94a1f2ca23da6f602c6deff66326adae424c0",
   "generated_files": {
     "generated/behavioural_null_display.csv": "a5ea69f2a30fc9a69e3428a9cfdf3d3389e2b2629eacfe39a9218e5c702a68e1",
     "generated/calibration.tex": "24b8e67a5e0e327d745d465075594465dc77fbc1420576f386ad8043508fe613",
     "generated/e3_grid.tex": "8db1b00e21e30886eba43ee1a05311bbe56be5e36da9918b0ef9f7a4428368e9",
     "generated/e5_grid.tex": "cdfc0958d5fbbbd26de3602b4c62d2ab264fa9117a0debeb535d0e46ad692fc4",
+    "generated/family_core.tex": "335163e25df4ad6185e5043af8180d5b1883ac2961bcbd3df400f9eec03f1879",
+    "generated/original_cross_metric.tex": "c9c4a8e164529975e0833b8c006ff7e67f3929510e4ae8ed952009612805cc58",
     "generated/positions.csv": "16e6cb20aa6a5c675937d2eff37578c7422388a3d019e149b9ebb8c8ec0c63e2",
     "generated/positions.tex": "225d73ec20a376c2bc3fca53f50919615d24d1afc7f2d2110e1a49d75b2133e8",
+    "generated/saved_pool_families.tex": "8b9443f773c3f46411b77f91e89a3827529d78d2ac4b533abb333134bc63bec3",
     "generated/search_summary.csv": "e79b78a3f7a40085021aafc8ed5a4497a4540e5107a96e5cd4e82c36f542f6d0",
     "generated/search_summary.tex": "650fbd4fda4f5c51fda89c7762998f77277307709955dc1bb9ba8bd0e58d015e",
     "figures/fidelity_tradeoff.pdf": "823776204234c099c4591811361424ac84ba0db5ce2d567f69a26f968aa2cf24",

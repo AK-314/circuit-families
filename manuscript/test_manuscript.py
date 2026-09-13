@@ -7,9 +7,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent
 REPO = Path(os.environ.get("PHASE1_REPO", ROOT.parent))
-SPEC = importlib.util.spec_from_file_location(
-    "build_manuscript", ROOT / "build_manuscript.py"
-)
+SPEC = importlib.util.spec_from_file_location("build_manuscript", ROOT / "build_manuscript.py")
 BUILDER = importlib.util.module_from_spec(SPEC)
 SPEC.loader.exec_module(BUILDER)
 
@@ -18,6 +16,28 @@ def test_frozen_coverage_and_headline_numbers():
     report = BUILDER.validate(BUILDER.load(REPO))
     assert report["status"] == "validated"
     assert report["model_evaluations_performed_by_builder"] == 0
+
+
+def test_review_followup_coverage_and_family_core_claims():
+    data = BUILDER.load(REPO)
+    BUILDER.validate_review(data)
+    masks = data["review_masks"]
+    original = masks[masks.kind == "original"]
+    assert len(original) == 27
+    assert not original["passes_js_0.0005"].any()
+    assert not original["passes_margin_0.4"].any()
+    assert masks[masks.kind == "core"].retained_neurons.tolist() == [3, 8, 4, 1]
+    families = data["review_families"]
+    half = families[families.cutoff == 0.5]
+    assert half[half.analysis == "e4"].maximum_saved_pool_family.eq(10).all()
+    js = half[half.analysis == "js"]
+    assert js.maximum_saved_pool_family.ge(2).sum() == 4
+    assert sorted(js[js.maximum_saved_pool_family.ge(2)].maximum_saved_pool_family) == [
+        4,
+        10,
+        10,
+        10,
+    ]
 
 
 def test_tex_references_and_graphics_exist():
@@ -58,8 +78,7 @@ def test_behavioural_plot_counts_each_observed_mask_and_random_draw_once():
             ]
         else:
             values = data["e2"].loc[
-                (data["e2"].model_seed == row.model_seed)
-                & (data["e2"].null_model == row.group),
+                (data["e2"].model_seed == row.model_seed) & (data["e2"].null_model == row.group),
                 "primary_fidelity",
             ]
         assert row.count == len(values)
@@ -82,10 +101,6 @@ def test_full_tolerance_grids_support_reported_median_ordering():
             "final_retained_components",
         ),
     ]:
-        medians = (
-            table.groupby([*criteria, tolerance, "phase_label"])[value]
-            .median()
-            .unstack()
-        )
+        medians = table.groupby([*criteria, tolerance, "phase_label"])[value].median().unstack()
         assert (medians.stable_post < medians.delayed_pre_generalisation).all()
         assert (medians.stable_post < medians.transition).all()

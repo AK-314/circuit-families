@@ -1,4 +1,7 @@
-# Revision validation
+# Earlier presentation-only revision validation
+
+For the subsequent scientific follow-up and current manuscript, see
+[REVIEW_VALIDATION.md](REVIEW_VALIDATION.md). The record below is historical.
 
 Date: 13 September 2026. Scientific source commit: `8d138b8`.
 

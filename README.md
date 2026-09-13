@@ -8,16 +8,16 @@ modular-addition transformers.
 
 The study finds a large reduction in recovered circuit size after stable
 generalisation, together with several distinct masks that preserve the model's
-predictions. The revised paper includes matched random-mask controls, an
-independent search, and distributional and margin fidelity analyses.
+predictions. The revised paper includes matched random-mask controls, independent
+families, shared-core interventions, and distributional and margin fidelity analyses.
 
 ## Data and reproduction
 
 The [original v1.0.0 archive](https://doi.org/10.5281/zenodo.21917638)
 contains the selected checkpoints and detailed original search records.
-The [follow-up release](https://github.com/AK-314/circuit-families/releases/tag/phase1-tmlr-revision-2026-09-13)
-adds E1–E5 source, results and saved masks. Current manuscript PDFs are linked above;
-the release retains its earlier manuscript snapshot.
+The [follow-up release](https://github.com/AK-314/circuit-families/releases/tag/phase1-tmlr-review-followup-2026-09-13)
+adds E1–E5 source, results and saved masks, plus the post-review evaluations and
+current manuscripts. Earlier releases are preserved.
 
 With Python 3.11 and [uv](https://docs.astral.sh/uv/):
 
