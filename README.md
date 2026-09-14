@@ -16,8 +16,9 @@ families, shared-core interventions, and distributional and margin fidelity anal
 The [original v1.0.0 archive](https://doi.org/10.5281/zenodo.21917638)
 contains the selected checkpoints and detailed original search records.
 The [follow-up release](https://github.com/AK-314/circuit-families/releases/tag/phase1-tmlr-review-followup-2026-09-13)
-adds E1–E5 source, results and saved masks, plus the post-review evaluations and
-current manuscripts. Earlier releases are preserved.
+adds E1–E5 source, results and saved masks, plus the exploratory evaluations.
+The paper linked above incorporates the September 14 claim and citation corrections.
+Earlier releases are preserved.
 
 With Python 3.11 and [uv](https://docs.astral.sh/uv/):
 

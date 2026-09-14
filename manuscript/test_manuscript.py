@@ -26,6 +26,9 @@ def test_review_followup_coverage_and_family_core_claims():
     assert len(original) == 27
     assert not original["passes_js_0.0005"].any()
     assert not original["passes_margin_0.4"].any()
+    loose_js = original[original["passes_js_0.05"]]
+    assert len(loose_js) == 7
+    assert set(loose_js.model_seed) == {1}
     assert masks[masks.kind == "core"].retained_neurons.tolist() == [3, 8, 4, 1]
     families = data["review_families"]
     half = families[families.cutoff == 0.5]
@@ -62,6 +65,19 @@ def test_original_primary_endpoint_not_relabelled():
     assert "0.125" in paper and "0.125" in supplement
     assert "designed after the original results" in paper
     assert "full margin annealing analysis is therefore not run" in paper
+
+
+def test_final_claim_qualifications():
+    paper = (ROOT / "paper.tex").read_text()
+    supplement = (ROOT / "supplement.tex").read_text()
+    assert "A retrospective audit finds ten-member families" in paper
+    assert "does not exclude a sufficient proper subset" in paper
+    assert "does not exclude a sufficient proper subset" in supplement
+    assert "more components are needed" not in paper
+    assert "padded with optional neurons" not in paper
+    assert "after the peer review" not in supplement
+    assert "post-review" not in paper + supplement
+    assert "Seven masks, all from seed~1" in paper
 
 
 def test_behavioural_plot_counts_each_observed_mask_and_random_draw_once():

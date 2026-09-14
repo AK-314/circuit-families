@@ -28,7 +28,7 @@ PHASE1_REPO="$PWD" uv run pytest -q /path/to/manuscript/test_manuscript.py
 ```
 
 The builder reads tables at scientific commit `145f991`: unchanged E1–E5 records
-plus the separate post-review follow-up. It produces four main figures, one
+plus the separate exploratory follow-up. It produces four main figures, one
 supplementary figure, a main core-intervention table and seven supplementary
 tables (the landmark table is typeset directly). It records input/output hashes
 in `source_registry.json` and does not evaluate a model.
@@ -42,12 +42,14 @@ proposal traces are not duplicated in the lightweight follow-up release.
 
 ## Submission preparation
 
-These are named author-review PDFs in TMLR preprint style. Before submission,
-switch to review style and anonymise the paper, supplement and code links.
+These are the named public PDFs in TMLR preprint style. A separate anonymous
+review package has been prepared locally for submission; do not upload these
+named PDFs to the double-blind review form.
 The original [v1.0.0 DOI](https://doi.org/10.5281/zenodo.21917638) is unchanged;
 Zenodo archival of the follow-up remains pending.
 
-Current checks are recorded in [REVIEW_VALIDATION.md](REVIEW_VALIDATION.md);
+Final claim corrections and checks are recorded in [CORRECTIONS.md](CORRECTIONS.md).
+[REVIEW_VALIDATION.md](REVIEW_VALIDATION.md) records the exploratory evaluation;
 [VALIDATION.md](VALIDATION.md) retains the earlier presentation-only checks.
 Official TMLR style files are retained unchanged from
 [revision 7bf90ef](https://github.com/JmlrOrg/tmlr-style-file/tree/7bf90efe3a0debbba703c05c43f3ff7e4d4a2992);
